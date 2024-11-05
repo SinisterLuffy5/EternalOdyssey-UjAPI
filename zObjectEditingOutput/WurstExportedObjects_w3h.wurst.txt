@@ -1,0 +1,850 @@
+package WurstExportedObjects_w3h
+import ObjEditingNatives
+
+// Modified Table (contains all custom objects)
+
+@compiletime function create_w3h_B00L()
+	let def = createObjectDefinition("w3h", 'B00L', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNR.blp")
+	..setString("ftip", "More Power")
+	..setString("fube", "new spell")
+	..setString("ftat", "Cidsfx3-b.mdx,Cidsfx3-b.mdx,Cidsfx3-b.mdx,Cidsfx3-b.mdx,Cidsfx3-b.mdx")
+	..setString("fta0", "chest")
+	..setString("fta1", "hand,right")
+	..setString("fta2", "hand,left")
+	..setString("fta3", "foot,right")
+	..setString("fta4", "foot,left")
+	..setInt("ftac", 5)
+
+
+@compiletime function create_w3h_B00J()
+	let def = createObjectDefinition("w3h", 'B00J', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Raienryuu")
+	..setString("fube", "Increase hp regen")
+	..setString("ftat", "natsusfx7.mdx,natsusfx26.mdx,natsusfx27.mdx")
+	..setString("fta0", "left,hand")
+	..setString("fta1", "right,hand")
+	..setString("fta2", "origin")
+	..setInt("ftac", 3)
+
+
+@compiletime function create_w3h_B00I()
+	let def = createObjectDefinition("w3h", 'B00I', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Cambio Forma")
+	..setString("fube", "Increase attack")
+	..setString("ftat", "hibarisfx6.mdx,hibarisfx7.mdx")
+	..setString("fta0", "origin")
+	..setString("fta1", "chest")
+	..setInt("ftac", 2)
+
+
+@compiletime function create_w3h_B00H()
+	let def = createObjectDefinition("w3h", 'B00H', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Saiyan")
+	..setString("fube", "Increase spell damage")
+	..setString("ftat", "gokusfx9.mdx")
+	..setString("fta0", "origin")
+
+
+@compiletime function create_w3h_B00G()
+	let def = createObjectDefinition("w3h", 'B00G', 'BNsi')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNAttack.blp")
+	..setString("ftip", "Debuff : Disarm")
+	..setString("fube", "This unit will not attack.")
+	..setString("ftat", "")
+
+
+@compiletime function create_w3h_B00F()
+	let def = createObjectDefinition("w3h", 'B00F', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNGearCloud.blp")
+	..setString("ftip", "Cloud Ring")
+	..setString("fube", "Block spell damage")
+	..setString("frac", "orc")
+	..setString("ftat", "CloudSeal.mdx")
+	..setString("fta0", "origin")
+
+
+@compiletime function create_w3h_B00E()
+	let def = createObjectDefinition("w3h", 'B00E', 'BUau')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Alastor")
+	..setString("fube", "Increase life regeneration")
+	..setString("frac", "human")
+	..setString("ftat", "")
+
+
+@compiletime function create_w3h_B00D()
+	let def = createObjectDefinition("w3h", 'B00D', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Mystic Eyes")
+	..setString("fube", "Increase attack")
+	..setString("ftat", "Ryogisfx11.mdx")
+	..setString("fta0", "origin")
+
+
+@compiletime function create_w3h_B00C()
+	let def = createObjectDefinition("w3h", 'B00C', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Murasame")
+	..setString("fube", "Increase attack")
+	..setString("ftat", "Akamesfx20.mdx,Akamesfx20.mdx,Akamesfx20.mdx,Akamesfx20.mdx,Akamesfx20.mdx")
+	..setString("fta0", "chest")
+	..setString("fta1", "hand,right")
+	..setString("fta2", "hand,left")
+	..setString("fta3", "foot,right")
+	..setString("fta4", "foot,left")
+	..setInt("ftac", 5)
+
+
+@compiletime function create_w3h_B00B()
+	let def = createObjectDefinition("w3h", 'B00B', 'BUau')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "7 Swordmaster")
+	..setString("fube", "Increase movespeed")
+	..setString("frac", "human")
+	..setString("ftat", "")
+
+
+@compiletime function create_w3h_B00A()
+	let def = createObjectDefinition("w3h", 'B00A', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNGearRain.blp")
+	..setString("ftip", "Rain Ring")
+	..setString("fube", "Take periodic damage")
+	..setString("frac", "orc")
+	..setString("ftat", "Abilities\\Spells\\Other\\GeneralAuraTarget\\GeneralAuraTarget.mdl")
+	..setString("fta0", "origin")
+
+
+@compiletime function create_w3h_B009()
+	let def = createObjectDefinition("w3h", 'B009', 'BUau')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Argonaut")
+	..setString("fube", "Increase hp regen and movespeed")
+	..setString("frac", "human")
+	..setString("ftat", "")
+
+
+@compiletime function create_w3h_B008()
+	let def = createObjectDefinition("w3h", 'B008', 'BUau')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Devil Thought")
+	..setString("fube", "Increase movespeed")
+	..setString("frac", "human")
+	..setString("ftat", "")
+
+
+@compiletime function create_w3h_B007()
+	let def = createObjectDefinition("w3h", 'B007', 'BUau')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Mera mera no mi")
+	..setString("fube", "Increase hp regen")
+	..setString("frac", "human")
+	..setString("ftat", "")
+
+
+@compiletime function create_w3h_B006()
+	let def = createObjectDefinition("w3h", 'B006', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Avalon")
+	..setString("fube", "Increase hp regen")
+	..setString("ftat", "saltersfx13.mdx")
+	..setString("fta0", "origin")
+
+
+@compiletime function create_w3h_B005()
+	let def = createObjectDefinition("w3h", 'B005', 'BPSE')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNThunderclap.blp")
+	..setString("ftip", "|cffFF3333Paused")
+	..setString("fnsf", "")
+	..setString("ftat", "")
+
+
+@compiletime function create_w3h_B004()
+	let def = createObjectDefinition("w3h", 'B004', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Meteor")
+	..setString("fube", "Allow travel through some terrain")
+	..setString("ftat", "Jellalsfx11.mdx")
+	..setString("fta0", "origin")
+
+
+@compiletime function create_w3h_B003()
+	let def = createObjectDefinition("w3h", 'B003', 'BUau')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNSlow.blp")
+	..setString("ftip", "|cffFF3333Slow")
+	..setString("fube", "This unit is Slowed.")
+	..setString("frac", "other")
+	..setString("ftat", "Abilities\\Spells\\Human\\slow\\slowtarget.mdl")
+	..setInt("ftac", 1)
+
+
+@compiletime function create_w3h_B002()
+	let def = createObjectDefinition("w3h", 'B002', 'BUau')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNSilence.blp")
+	..setString("ftip", "|cffFF3333Silence")
+	..setString("fube", "This unit is Silenced; it cannot cast spells.")
+	..setString("frac", "other")
+	..setString("ftat", "Abilities\\Spells\\Other\\Silence\\SilenceTarget.mdl")
+	..setString("fta0", "overhead")
+	..setInt("ftac", 1)
+
+
+@compiletime function create_w3h_B001()
+	let def = createObjectDefinition("w3h", 'B001', 'Binv')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Mist Body")
+	..setString("fube", "This unit is invisible")
+
+
+@compiletime function create_w3h_B000()
+	let def = createObjectDefinition("w3h", 'B000', 'Binf')
+	..setString("fart", "ReplaceableTextures\\CommandButtons\\BTNE.blp")
+	..setString("ftip", "Battle Intimate")
+	..setString("fube", "Increase attack")
+
+
+// Original Table (contains all modified default objects)
+// Wurst does not support modifying default objects
+// but you can copy these functions and replace 'xxxx' with a new, custom id.
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfus')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfum')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xful')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfos')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfom')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfol')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfns')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfnm')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfnl')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfla')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfhs')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfhm')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xfhl')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xesn')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xdis')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xclf')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xbof')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xbli')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Xbdt')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XUdd')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XOre')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XOeq')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XNvc')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XNmo')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XNhs')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XNcs')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XIct')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XHfs')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XHbz')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XEtq')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XEsf')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XErf')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'XErc')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bweb')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bwea')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bult')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Btsa')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Btrv')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Btdg')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bssi')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bssd')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bspo')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bsha')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bpsi')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bpsd')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bpoi')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bpoc')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bplg')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bpig')
+	..setString("fart", "")
+	..setString("fnam", "")
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bphx')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bmlc')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bmfa')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bmec')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Blsa')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bliq')
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bivs')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bgra')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bfre')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bens')
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Beng')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bena')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Beat')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bdtm')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bdtl')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bdtb')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bdig')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bdcm')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bdcl')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bdcb')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bcy2')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bcsi')
+	..setString("fart", "")
+	..setString("fnam", "")
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bcsd')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Basl')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Barm')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'Bam2')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BUts')
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BUst')
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BUsp')
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BUcs')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BUad')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BPSE')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BOww')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BOwd')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BOvc')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BOsh')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BOea')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNva')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNto')
+	..setString("fart", "")
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNst')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNsl')
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNrf')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNpm')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNpi')
+	..setString("fart", "")
+	..setString("fnam", "")
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNlm')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNin')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNfy')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNdi')
+	..setString("fart", "")
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BNcg')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BIwb')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BIsh')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BIrg')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BIpd')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BIpb')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BImo')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BHca')
+	..setString("fnsf", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BHbz')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BFig')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BEst')
+	..setString("fart", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'BEia')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'ANmd')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'AEtr')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+
+@compiletime function create_w3h_xxxx()
+	let def = createObjectDefinition("w3h", 'xxxx', 'AEsd')
+	..setString("fart", "")
+	..setString("fnam", "")
+
+

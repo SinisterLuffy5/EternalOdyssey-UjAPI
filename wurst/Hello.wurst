@@ -1,0 +1,56 @@
+package Hello
+
+import Acheron
+import ClosureEvents
+import ClosureTimers
+import StringUtils
+import ObjectIds
+
+init
+	let un = createUnit(players[0], ACHERON_ID)
+	players[0]..panCamToTimed(un, 0)..select(un)
+
+	EventListener.add(EVENT_PLAYER_CHAT_FILTER) -> 
+		let msg = EventData.getChatMessage()
+		let s = msg.split(" ")
+		if msg.contains("-unit")
+			unit spawn
+			if s.get(2) != null
+				for i = 0 to s.get(2).toInt() - 1
+					spawn = createUnit(EventData.getTriggerPlayer(), s.get(1).fromRawCode(), vec2(GetMouseWorldX(), GetMouseWorldY()), angle(0))
+					print("Unit created: " + spawn.getName() + ":" + spawn.getTypeId().toRawCode())
+			else
+				spawn = createUnit(EventData.getTriggerPlayer(), s.get(1).fromRawCode(), vec2(GetMouseWorldX(), GetMouseWorldY()), angle(0))
+				print("Unit created: " + spawn.getName() + ":" + spawn.getTypeId().toRawCode())
+		//else if msg == "-shana"
+			//print("Shana's unit id: " + HERO_O00R.toRawCode())
+		else if msg == "-kill"
+			ENUM_GROUP.enumUnitsSelected(EventData.getTriggerPlayer(), null)
+			for u from ENUM_GROUP
+				u.kill()
+				print("Unit killed: " + u.getName() + ":" + u.getTypeId().toRawCode())
+			ENUM_GROUP.clear()
+		else if msg.contains("-hp")
+			ENUM_GROUP.enumUnitsSelected(EventData.getTriggerPlayer(), null)
+			for u from ENUM_GROUP
+				u.setHP(s.get(1).toReal())
+				print(u.getName() + " health point set to " + s.get(1))
+			ENUM_GROUP.clear()
+		else if msg.contains("-item")
+			createItem(s.get(1).fromRawCode(), vec2(GetMouseWorldX(), GetMouseWorldY()))
+		else if msg.contains("-lvl")
+			ENUM_GROUP.enumUnitsSelected(EventData.getTriggerPlayer(), null)
+			for u from ENUM_GROUP
+				u.setLevel(s.get(1).toInt(), false)
+				print(u.getName() + " level set to " + s.get(1))
+			ENUM_GROUP.clear()
+		else if msg == "-nf"
+			Cheat("iseedeadpeople")
+		else if msg == "-ncd"
+			print("Spell cooldown refresh enabled for all selected units!")
+			let p = EventData.getTriggerPlayer()
+			doPeriodically(ANIMATION_PERIOD) (CallbackPeriodic cb) ->
+				ENUM_GROUP.enumUnitsSelected(p, null)
+				for u from ENUM_GROUP
+					u.resetCooldown()
+				ENUM_GROUP.clear()

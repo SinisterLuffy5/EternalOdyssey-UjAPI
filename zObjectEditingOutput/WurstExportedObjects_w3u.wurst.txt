@@ -1,0 +1,3166 @@
+package WurstExportedObjects_w3u
+import ObjEditingNatives
+
+// Modified Table (contains all custom objects)
+
+@compiletime function create_w3u_o001()
+	let def = createObjectDefinition("w3u", 'o001', 'owtw')
+	..setString("uabi", "Adtg")
+	..setUnreal("uacq", 800.0)
+	..setInt("udef", 30)
+	..setInt("ua1b", 200)
+	..setString("umdl", "StructHuTowerMagic.mdl")
+	..setInt("uhpm", 10000)
+	..setUnreal("ulpz", 235.0)
+	..setString("ua1m", "ExplosiveBolt.mdl")
+	..setReal("usca", 1.5)
+	..setInt("usin", 1800)
+	..setString("upap", "")
+	..setUnreal("uhpr", 10.0)
+	..setString("uhrt", "always")
+	..setReal("ussc", 2.0)
+	..setInt("ua1s", 101)
+	..setInt("usid", 1800)
+
+
+@compiletime function create_w3u_o000()
+	let def = createObjectDefinition("w3u", 'o000', 'owtw')
+	..setString("uabi", "Adtg")
+	..setUnreal("uacq", 1100.0)
+	..setInt("udef", 30)
+	..setInt("ua1b", 300)
+	..setString("umdl", "StructHuTowerMagic.mdl")
+	..setInt("uhpm", 15000)
+	..setUnreal("ulpz", 235.0)
+	..setString("ua1m", "ExplosiveBolt.mdl")
+	..setReal("usca", 1.5)
+	..setInt("usin", 1800)
+	..setString("upap", "")
+	..setInt("ua1r", 1100)
+	..setUnreal("uhpr", 20.0)
+	..setString("uhrt", "always")
+	..setReal("ussc", 2.0)
+	..setInt("ua1s", 101)
+	..setInt("usid", 1800)
+
+
+@compiletime function create_w3u_n004()
+	let def = createObjectDefinition("w3u", 'n004', 'ngme')
+	..setString("umdl", "units\\creeps\\GrizzlyBear\\GrizzlyBear.mdl")
+	..setString("unam", "Raging Bear")
+	..setInt("usin", 1800)
+	..setString("upat", "PathTextures\\4x4Default.tga")
+	..setReal("ussc", 2.5)
+	..setString("usei", "I00R,I00S,I00T,I00V,I01H,I01I,I01M,I01O,I02K")
+	..setInt("usid", 1800)
+	..setString("uubs", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_n003()
+	let def = createObjectDefinition("w3u", 'n003', 'ngme')
+	..setString("umdl", "units\\creeps\\GolemStatue\\GolemStatue.mdl")
+	..setString("unam", "Battle Golem")
+	..setInt("usin", 1800)
+	..setString("upat", "PathTextures\\4x4Default.tga")
+	..setReal("ussc", 2.5)
+	..setString("usei", "I02G,I02V,I02I,I032,I02J,I02C")
+	..setInt("usid", 1800)
+	..setString("uubs", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_n002()
+	let def = createObjectDefinition("w3u", 'n002', 'ngme')
+	..setString("umdl", "Units\\Creeps\\tuskarLord\\tuskarLord.mdl")
+	..setString("unam", "Tuskarr Chieftain")
+	..setInt("usin", 1800)
+	..setString("upat", "PathTextures\\4x4Default.tga")
+	..setReal("ussc", 2.5)
+	..setString("usei", "I017,I01P,I02D,I01V,I02W,I01W,I01A")
+	..setInt("usid", 1800)
+	..setString("uubs", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_n001()
+	let def = createObjectDefinition("w3u", 'n001', 'ngme')
+	..setString("umdl", "Units\\Creeps\\Hydra\\Hydra.mdl")
+	..setString("unam", "Ancient Hydra")
+	..setInt("usin", 1800)
+	..setString("upat", "PathTextures\\4x4Default.tga")
+	..setReal("ussc", 2.5)
+	..setString("usei", "I00H,I00K,I00M,I00N")
+	..setInt("usid", 1800)
+	..setString("uubs", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_n000()
+	let def = createObjectDefinition("w3u", 'n000', 'ngme')
+	..setString("umdl", "units\\creeps\\FurbolgTracker\\FurbolgTracker.mdl")
+	..setString("unam", "Furbolg Tracker")
+	..setInt("usin", 1800)
+	..setString("upat", "PathTextures\\4x4Default.tga")
+	..setReal("ussc", 2.5)
+	..setString("usei", "I013,I014,I012,I002,I016")
+	..setInt("usid", 1800)
+	..setString("uubs", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_h00S()
+	let def = createObjectDefinition("w3u", 'h00S', 'hpea')
+	..setString("uabi", "Avul,Aloc,Amil")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNZigguratUpgrade.blp")
+	..setReal("uble", 0.0)
+	..setInt("ufle", 0)
+	..setUnreal("ucbs", 0.0)
+	..setUnreal("ucpt", 0.0)
+	..setString("umdl", "")
+	..setInt("ufoo", 0)
+	..setInt("uhpm", 10000)
+	..setInt("umpi", 10000)
+	..setInt("umpm", 10000)
+	..setReal("usca", 0.1)
+	..setString("umvt", "")
+	..setString("unam", "Dummy Transmitter")
+	..setInt("usin", 800)
+	..setUnreal("uhpr", 10000.0)
+	..setUnreal("umvr", 3.0)
+	..setString("utyp", "")
+	..setString("ushu", "")
+	..setInt("uaen", 0)
+
+
+@compiletime function create_w3u_h00R()
+	let def = createObjectDefinition("w3u", 'h00R', 'htow')
+	..setString("uabi", "Avul,Aloc,Amic")
+	..setString("ushb", "")
+	..setUnreal("ucol", 0.0)
+	..setString("umdl", "")
+	..setString("unam", "Dummy Receiver")
+	..setString("upat", "")
+	..setString("upap", "")
+	..setString("utyp", "")
+
+
+@compiletime function create_w3u_h000()
+	let def = createObjectDefinition("w3u", 'h000', 'hpea')
+	..setString("uabi", "Avul,Aloc")
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNZigguratUpgrade.blp")
+	..setReal("uble", 0.0)
+	..setInt("ufle", 0)
+	..setUnreal("ucbs", 0.0)
+	..setUnreal("ucpt", 0.0)
+	..setString("umdl", "")
+	..setInt("ufoo", 0)
+	..setInt("uhpm", 10000)
+	..setInt("umpi", 10000)
+	..setInt("umpm", 10000)
+	..setReal("usca", 0.1)
+	..setString("umvt", "fly")
+	..setString("unam", "Dummy Event")
+	..setInt("usin", 800)
+	..setUnreal("uhpr", 10000.0)
+	..setUnreal("umvr", 3.0)
+	..setString("utyp", "")
+	..setString("ushu", "")
+	..setInt("uaen", 0)
+
+
+@compiletime function create_w3u_H01A()
+	let def = createObjectDefinition("w3u", 'H01A', 'Hblm')
+	..setString("uabi", "A097,A098,AInv")
+	..setUnreal("uacq", 500.0)
+	..setInt("uagi", 18)
+	..setUnreal("uagp", 1.8)
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNZwei.blp")
+	..setUnreal("ucpt", 0.25)
+	..setUnreal("ua1c", 1.88)
+	..setInt("udef", 2)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 15)
+	..setString("umdl", "ReinforceZwei.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A01O,A01Q,A01R,A01S,A094")
+	..setInt("uhhd", 1)
+	..setInt("uint", 30)
+	..setUnreal("uinp", 2.3)
+	..setInt("umpi", 9999)
+	..setString("ua1m", "zweisfx1.mdl")
+	..setInt("ua1z", 1400)
+	..setString("unam", "Reinforce Zwei")
+	..setInt("usin", 1200)
+	..setString("upro", "Reinforce Zwei")
+	..setInt("ua1r", 400)
+	..setUnreal("uhpr", 0.0)
+	..setInt("ua1s", 3)
+	..setInt("usid", 1200)
+	..setUnreal("ustp", 1.7)
+	..setString("ua1g", "ground,structure,debris,item,ward")
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+
+
+@compiletime function create_w3u_H019()
+	let def = createObjectDefinition("w3u", 'H019', 'Hmkg')
+	..setInt("uagi", 31)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNfirefly.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.79)
+	..setInt("udef", 3)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 14)
+	..setString("umdl", "firefly.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A090,A091,A092,A093")
+	..setInt("uhhd", 1)
+	..setInt("uint", 16)
+	..setUnreal("uinp", 1.8)
+	..setInt("umpi", 9999)
+	..setString("unam", "Firefly")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Firefly")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 18)
+	..setUnreal("ustp", 1.7)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H018()
+	let def = createObjectDefinition("w3u", 'H018', 'Hmkg')
+	..setString("uabi", "A08Y,A08Z,AInv")
+	..setInt("uagi", 19)
+	..setUnreal("uagp", 1.8)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNByakuran.blp")
+	..setUnreal("ucpt", 0.33)
+	..setUnreal("ua1c", 1.76)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 12)
+	..setString("umdl", "byakuran.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A08T,A08U,A08V,A08W,A08X")
+	..setInt("uhhd", 1)
+	..setInt("uint", 17)
+	..setUnreal("uinp", 1.7)
+	..setInt("umpi", 9999)
+	..setString("unam", "Byakuran")
+	..setInt("usin", 1200)
+	..setString("upro", "Byakuran")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 30)
+	..setUnreal("ustp", 2.25)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H017()
+	let def = createObjectDefinition("w3u", 'H017', 'Hmkg')
+	..setString("uabi", "A08R,A08S,AInv")
+	..setInt("uagi", 16)
+	..setUnreal("uagp", 1.7)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNJotaro.blp")
+	..setUnreal("ucpt", 0.33)
+	..setUnreal("ua1c", 1.84)
+	..setInt("udef", 4)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 16)
+	..setString("umdl", "jotaro.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A08N,A08O,A008,A08P,A08Q")
+	..setInt("uhhd", 1)
+	..setUnreal("uinp", 1.6)
+	..setInt("umpi", 9999)
+	..setString("unam", "Kujo Jotaro")
+	..setInt("usin", 1200)
+	..setString("upro", "Kujo Jotaro")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 3)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 33)
+	..setUnreal("ustp", 2.2)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H016()
+	let def = createObjectDefinition("w3u", 'H016', 'Hmkg')
+	..setString("uabi", "A084,A085,AInv")
+	..setInt("uagi", 31)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNbisgohan.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.88)
+	..setInt("udef", 3)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 14)
+	..setString("umdl", "bisgohan.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A081,A082,A03H,A03L,A083")
+	..setInt("uhhd", 1)
+	..setInt("uint", 19)
+	..setUnreal("uinp", 1.6)
+	..setInt("umpi", 9999)
+	..setString("unam", "Beast Gohan")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Beast Gohan")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 17)
+	..setUnreal("ustp", 1.9)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H015()
+	let def = createObjectDefinition("w3u", 'H015', 'Hmkg')
+	..setString("uabi", "A08L,A08M,AInv")
+	..setInt("uagi", 30)
+	..setUnreal("uagp", 2.25)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNAcheron.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.75)
+	..setInt("udef", 3)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 12)
+	..setString("umdl", "Acheron.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A08F,A08H,A08I,A08J,A08K")
+	..setInt("uhhd", 1)
+	..setInt("uint", 16)
+	..setUnreal("uinp", 1.6)
+	..setInt("umpi", 9999)
+	..setString("unam", "Acheron")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Acheron")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 18)
+	..setUnreal("ustp", 1.7)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H014()
+	let def = createObjectDefinition("w3u", 'H014', 'Hmkg')
+	..setString("uabi", "A08D,A08E,AInv")
+	..setInt("uagi", 20)
+	..setUnreal("uagp", 1.7)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNcidkageno.blp")
+	..setUnreal("ucpt", 0.25)
+	..setUnreal("ua1c", 1.93)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 17)
+	..setString("umdl", "CidKageno.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A086,A087,A088,A089,A08B")
+	..setInt("uhhd", 1)
+	..setInt("uint", 32)
+	..setUnreal("uinp", 2.2)
+	..setInt("umpi", 9999)
+	..setString("unam", "Cid Kageno")
+	..setInt("usin", 1200)
+	..setString("upra", "INT")
+	..setString("upro", "Cid Kageno")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 3)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 18)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H013()
+	let def = createObjectDefinition("w3u", 'H013', 'Hmkg')
+	..setString("uabi", "A07Z,A080,A07V,A07W,A07X,A07Y,AInv")
+	..setInt("uagi", 33)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNNatsuDragnel.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.88)
+	..setInt("udef", 3)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 12)
+	..setString("umdl", "NatsuDragnel.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A07Q,A07R,A07S,A07T,A07U")
+	..setInt("uhhd", 1)
+	..setInt("uint", 16)
+	..setUnreal("uinp", 1.6)
+	..setInt("umpi", 9999)
+	..setString("unam", "Natsu Dragneel")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Natsu Dragneel")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 20)
+	..setUnreal("ustp", 1.9)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H012()
+	let def = createObjectDefinition("w3u", 'H012', 'Hmkg')
+	..setString("uabi", "A07O,A07P,AInv")
+	..setInt("uagi", 31)
+	..setUnreal("uagp", 2.35)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNHibari.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.74)
+	..setInt("udef", 4)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 16)
+	..setString("umdl", "hibarikyoya.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A07I,A07J,A07K,A07M,A07N")
+	..setInt("uhhd", 1)
+	..setInt("uint", 18)
+	..setUnreal("uinp", 1.6)
+	..setInt("umpi", 9999)
+	..setString("unam", "Hibari Kyoya")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Hibari Kyoya")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 3)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 17)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H011()
+	let def = createObjectDefinition("w3u", 'H011', 'Hmkg')
+	..setString("uabi", "A07D,A07E,AInv")
+	..setInt("uagi", 30)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNGokuS4.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.88)
+	..setInt("udef", 2)
+	..setInt("ua1b", 15)
+	..setString("umdl", "Gokus4.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A076,A077,A078,A07A,A07C")
+	..setInt("uhhd", 1)
+	..setInt("uint", 19)
+	..setUnreal("uinp", 1.6)
+	..setInt("umpi", 9999)
+	..setString("unam", "Goku S4")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Goku S4")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 16)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H010()
+	let def = createObjectDefinition("w3u", 'H010', 'Hmkg')
+	..setString("uabi", "A074,A075,AInv")
+	..setInt("uagi", 18)
+	..setUnreal("uagp", 1.9)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNGojo.blp")
+	..setUnreal("ucpt", 0.33)
+	..setUnreal("ua1c", 1.87)
+	..setInt("udef", 2)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 11)
+	..setString("umdl", "Gojoh.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A06Z,A070,A071,A072,A073")
+	..setInt("uhhd", 1)
+	..setInt("uint", 17)
+	..setUnreal("uinp", 1.75)
+	..setInt("umpi", 9999)
+	..setString("unam", "Satoru Gojo")
+	..setInt("usin", 1200)
+	..setString("upro", "Satoru Gojo")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 32)
+	..setUnreal("ustp", 2.3)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00Z()
+	let def = createObjectDefinition("w3u", 'H00Z', 'Hmkg')
+	..setString("uabi", "A07G,A07H,AInv")
+	..setInt("uagi", 18)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNAsta.blp")
+	..setUnreal("ucpt", 0.33)
+	..setUnreal("ua1c", 1.83)
+	..setInt("udef", 2)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 14)
+	..setString("umdl", "Asta.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A06U,A06V,A06W,A06X,A06Y")
+	..setInt("uhhd", 1)
+	..setInt("uint", 17)
+	..setUnreal("uinp", 1.9)
+	..setInt("umpi", 9999)
+	..setString("unam", "Asta")
+	..setInt("usin", 1200)
+	..setString("upro", "Asta")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 30)
+	..setUnreal("ustp", 2.1)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00Y()
+	let def = createObjectDefinition("w3u", 'H00Y', 'Hmkg')
+	..setString("uabi", "A06S,A06T,AInv")
+	..setInt("uagi", 34)
+	..setUnreal("uagp", 2.1)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNJingliu.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.65)
+	..setInt("udef", 4)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 14)
+	..setString("umdl", "Jingliu.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A01A,A06O,A06P,A06Q,A06R")
+	..setInt("uhhd", 1)
+	..setInt("uint", 17)
+	..setUnreal("uinp", 1.7)
+	..setInt("umpi", 9999)
+	..setString("unam", "Jingliu")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Jingliu")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 3)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 19)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00X()
+	let def = createObjectDefinition("w3u", 'H00X', 'Hmkg')
+	..setString("uabi", "A06M,A06N,AInv")
+	..setInt("uagi", 19)
+	..setUnreal("uagp", 1.8)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNFuxuan.blp")
+	..setUnreal("ucpt", 0.25)
+	..setUnreal("ua1c", 1.75)
+	..setInt("udef", 2)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 14)
+	..setString("umdl", "Fuxuan.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A06G,A06I,A06J,A06K,A06L")
+	..setInt("uhhd", 1)
+	..setInt("uint", 32)
+	..setUnreal("uinp", 2.2)
+	..setInt("umpi", 9999)
+	..setString("unam", "Fuxuan")
+	..setInt("usin", 1200)
+	..setString("upra", "INT")
+	..setString("upro", "Fuxuan")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 16)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00W()
+	let def = createObjectDefinition("w3u", 'H00W', 'Hmkg')
+	..setString("uabi", "A06F,A06E,A06C,AInv")
+	..setInt("uagi", 17)
+	..setUnreal("uagp", 1.7)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNace.blp")
+	..setUnreal("ucpt", 0.33)
+	..setUnreal("ua1c", 1.87)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 16)
+	..setString("umdl", "ace.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A068,A069,A06A,A06B,A06D")
+	..setInt("uhhd", 1)
+	..setInt("uint", 18)
+	..setUnreal("uinp", 1.9)
+	..setInt("umpi", 9999)
+	..setString("unam", "Portgas D. Ace")
+	..setInt("usin", 1200)
+	..setString("upro", "Portgas D. Ace")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 33)
+	..setUnreal("ustp", 2.25)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00V()
+	let def = createObjectDefinition("w3u", 'H00V', 'Hmkg')
+	..setString("uabi", "A065,A067,AInv")
+	..setInt("uagi", 34)
+	..setUnreal("uagp", 2.15)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNMuramasa.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.77)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 11)
+	..setString("umdl", "Muramasa.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A060,A061,A062,A063,A064")
+	..setInt("uhhd", 1)
+	..setInt("uint", 17)
+	..setUnreal("uinp", 1.9)
+	..setInt("umpi", 9999)
+	..setString("unam", "Senji Muramasa")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Senji Muramasa")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 18)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00U()
+	let def = createObjectDefinition("w3u", 'H00U', 'Hmkg')
+	..setString("uabi", "A05Y,A05Z,AInv")
+	..setInt("uagi", 32)
+	..setUnreal("uagp", 2.25)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNEsdeath.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.74)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 13)
+	..setString("umdl", "esdeath.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A05T,A05U,A05V,A05W,A05X")
+	..setInt("uhhd", 1)
+	..setInt("uint", 17)
+	..setUnreal("uinp", 1.8)
+	..setInt("umpi", 9999)
+	..setReal("usca", 1.05)
+	..setString("unam", "Esdeath")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Esdeath")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 18)
+	..setUnreal("ustp", 1.7)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00T()
+	let def = createObjectDefinition("w3u", 'H00T', 'Hmkg')
+	..setString("uabi", "A05R,A05S,AInv")
+	..setInt("uagi", 33)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNLeeSeha.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.85)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 15)
+	..setString("umdl", "seha.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A00M,A01X,A05O,A05P,A05Q")
+	..setInt("uhhd", 1)
+	..setInt("uint", 20)
+	..setInt("umpi", 9999)
+	..setString("unam", "Lee Seha")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Lee Seha")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 16)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00Q()
+	let def = createObjectDefinition("w3u", 'H00Q', 'Hmkg')
+	..setString("uabi", "A05N,A07F,AInv")
+	..setInt("uagi", 31)
+	..setUnreal("uagp", 2.3)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNOgita.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.65)
+	..setInt("udef", 4)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 15)
+	..setString("umdl", "ogitasoji.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A05I,A05J,A05K,A05L,A05M")
+	..setInt("uhhd", 1)
+	..setInt("uint", 19)
+	..setUnreal("uinp", 1.7)
+	..setInt("umpi", 9999)
+	..setReal("usca", 0.95)
+	..setString("unam", "Okita Souji")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Okita Souji")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 16)
+	..setUnreal("ustp", 1.9)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00P()
+	let def = createObjectDefinition("w3u", 'H00P', 'Hmkg')
+	..setString("uabi", "A05G,A05H,AInv")
+	..setInt("uagi", 31)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNMokuo.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.94)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 16)
+	..setString("umdl", "Mokuo.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A05B,A05C,A05D,A05E,A05F")
+	..setInt("uhhd", 1)
+	..setInt("uint", 19)
+	..setUnreal("uinp", 1.7)
+	..setInt("umpi", 9999)
+	..setString("unam", "Fujiwara no Mokuo")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Fujiwara no Mokuo")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 17)
+	..setUnreal("ustp", 1.7)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00O()
+	let def = createObjectDefinition("w3u", 'H00O', 'Hmkg')
+	..setString("uabi", "A059,A05A,A053,AInv")
+	..setInt("uagi", 31)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNVegeta.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.81)
+	..setInt("udef", 2)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 16)
+	..setString("umdl", "VegetaBody.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A054,A055,A056,A057,A058")
+	..setInt("uhhd", 1)
+	..setInt("uint", 18)
+	..setUnreal("uinp", 1.8)
+	..setInt("umpi", 9999)
+	..setString("unam", "Vegeta")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Vegeta")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 17)
+	..setUnreal("ustp", 1.7)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00N()
+	let def = createObjectDefinition("w3u", 'H00N', 'Hmkg')
+	..setString("uabi", "A04X,A052,AInv")
+	..setInt("uagi", 33)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNCronus.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.78)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 14)
+	..setString("umdl", "Cronus.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A04S,A04T,A04U,A04V,A04W")
+	..setInt("uhhd", 1)
+	..setInt("uint", 18)
+	..setUnreal("uinp", 1.7)
+	..setInt("umpi", 9999)
+	..setString("unam", "Kamen Rider Cronus")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Kamen Rider Cronus")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 16)
+	..setUnreal("ustp", 1.7)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00M()
+	let def = createObjectDefinition("w3u", 'H00M', 'Hblm')
+	..setString("uabi", "A04Q,A04R,AInv")
+	..setUnreal("uacq", 500.0)
+	..setInt("uagi", 17)
+	..setUnreal("uagp", 1.6)
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNKiana.blp")
+	..setUnreal("ucpt", 0.25)
+	..setUnreal("ua1c", 1.81)
+	..setInt("udef", 2)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 19)
+	..setString("umdl", "KianaHV.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A04L,A04M,A04N,A04O,A04P")
+	..setInt("uhhd", 1)
+	..setInt("uint", 32)
+	..setUnreal("uinp", 2.25)
+	..setInt("umpi", 9999)
+	..setString("ua1m", "Abilities\\Weapons\\SpiritOfVengeanceMissile\\SpiritOfVengeanceMissile.mdl")
+	..setInt("ua1z", 1700)
+	..setString("unam", "Kiana Kaslana")
+	..setInt("usin", 1200)
+	..setString("upro", "Kiana Kaslana")
+	..setInt("ua1r", 400)
+	..setUnreal("uhpr", 0.0)
+	..setInt("usid", 1200)
+	..setUnreal("ustp", 1.75)
+	..setString("ua1g", "ground,structure,debris,item,ward")
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+
+
+@compiletime function create_w3u_H00L()
+	let def = createObjectDefinition("w3u", 'H00L', 'Hmkg')
+	..setString("uabi", "A04J,A04K,AInv")
+	..setInt("uagi", 18)
+	..setUnreal("uagp", 1.7)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNYugi.blp")
+	..setUnreal("ucpt", 0.25)
+	..setUnreal("ua1c", 1.83)
+	..setInt("udef", 4)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 11)
+	..setString("umdl", "Yugi.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A04E,A04F,A04G,A04H,A04I")
+	..setInt("uhhd", 1)
+	..setInt("uint", 30)
+	..setUnreal("uinp", 2.3)
+	..setInt("umpi", 9999)
+	..setString("unam", "Yugi")
+	..setInt("usin", 1200)
+	..setString("upra", "INT")
+	..setString("upro", "Yugi")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 17)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00K()
+	let def = createObjectDefinition("w3u", 'H00K', 'Hmkg')
+	..setString("uabi", "A04C,A04D,AInv")
+	..setInt("uagi", 30)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNAliceZuberg.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.85)
+	..setInt("udef", 2)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 16)
+	..setString("umdl", "Alice.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A047,A048,A049,A04A,A04B")
+	..setInt("uhhd", 1)
+	..setInt("uint", 17)
+	..setUnreal("uinp", 1.8)
+	..setInt("umpi", 9999)
+	..setString("unam", "Alice Zuberg")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Alice Zuberg")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 19)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00J()
+	let def = createObjectDefinition("w3u", 'H00J', 'Hmkg')
+	..setString("uabi", "A045,A046,AInv")
+	..setInt("uagi", 19)
+	..setUnreal("uagp", 1.65)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNHutao.blp")
+	..setUnreal("ucpt", 0.25)
+	..setUnreal("ua1c", 1.82)
+	..setInt("udef", 3)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 19)
+	..setString("umdl", "Hutao.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A040,A041,A042,A03P,A044")
+	..setInt("uhhd", 1)
+	..setInt("uint", 31)
+	..setUnreal("uinp", 2.2)
+	..setInt("umpi", 9999)
+	..setString("unam", "Hu Tao")
+	..setInt("usin", 1200)
+	..setString("upra", "INT")
+	..setString("upro", "Hu Tao")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 17)
+	..setUnreal("ustp", 1.75)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00I()
+	let def = createObjectDefinition("w3u", 'H00I', 'Hmkg')
+	..setString("uabi", "A03Y,A03Z,A03T,A03V,A03X,AInv")
+	..setInt("uagi", 17)
+	..setUnreal("uagp", 1.7)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNYamaji.blp")
+	..setUnreal("ucpt", 0.33)
+	..setUnreal("ua1c", 1.75)
+	..setInt("ua1d", 5)
+	..setInt("ua1b", 17)
+	..setString("umdl", "Genryuusai.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A03Q,A03R,A03S,A03U,A03W")
+	..setInt("uhhd", 1)
+	..setInt("uint", 18)
+	..setUnreal("uinp", 1.6)
+	..setInt("umpi", 9999)
+	..setString("unam", "Yamamoto Genryusai")
+	..setInt("usin", 1200)
+	..setString("upro", "Yamamoto Genryusai")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 31)
+	..setUnreal("ustp", 2.2)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00H()
+	let def = createObjectDefinition("w3u", 'H00H', 'Hmkg')
+	..setString("uabi", "A03E,A03F,AInv")
+	..setInt("uagi", 21)
+	..setUnreal("uagp", 1.6)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNArthurProto.blp")
+	..setUnreal("ucpt", 0.33)
+	..setUnreal("ua1c", 1.95)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 11)
+	..setString("umdl", "Arthur Proto.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A039,A03A,A03B,A03C,A03D")
+	..setInt("uhhd", 1)
+	..setInt("uint", 16)
+	..setUnreal("uinp", 1.8)
+	..setInt("umpi", 9999)
+	..setReal("usca", 0.95)
+	..setString("unam", "Arthur Prototype")
+	..setInt("usin", 1200)
+	..setString("upro", "Arthur Prototype")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 3)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 33)
+	..setUnreal("ustp", 2.2)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00G()
+	let def = createObjectDefinition("w3u", 'H00G', 'Hmkg')
+	..setString("uabi", "A037,A038,AInv")
+	..setInt("uagi", 32)
+	..setUnreal("uagp", 2.3)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNTsunayoshi.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.69)
+	..setInt("udef", 3)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 15)
+	..setString("umdl", "Tsunayoshi.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A032,A033,A034,A035,A036")
+	..setInt("uhhd", 1)
+	..setInt("uint", 19)
+	..setInt("umpi", 9999)
+	..setString("unam", "Sawada Tsunayoshi")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Sawada Tsunayoshi")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 3)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 16)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00F()
+	let def = createObjectDefinition("w3u", 'H00F', 'Hmkg')
+	..setString("uabi", "A030,A031,AInv")
+	..setInt("uagi", 19)
+	..setUnreal("uagp", 1.9)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNShana.blp")
+	..setUnreal("ucpt", 0.25)
+	..setUnreal("ua1c", 1.85)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 19)
+	..setString("umdl", "Shana.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A02V,A02W,A02X,A02Y,A02Z")
+	..setInt("uhhd", 1)
+	..setInt("uint", 31)
+	..setUnreal("uinp", 2.25)
+	..setInt("umpi", 9999)
+	..setString("unam", "Shana")
+	..setInt("usin", 1200)
+	..setString("upra", "INT")
+	..setString("upro", "Shana")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 3)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 17)
+	..setUnreal("ustp", 1.6)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00E()
+	let def = createObjectDefinition("w3u", 'H00E', 'Hmkg')
+	..setString("uabi", "A02T,A02U,AInv")
+	..setInt("uagi", 31)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNRyogi.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.9)
+	..setInt("udef", 3)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 18)
+	..setString("umdl", "Ryougi.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A02N,A02O,A02P,A02Q,A02S")
+	..setInt("uhhd", 1)
+	..setInt("uint", 21)
+	..setUnreal("uinp", 1.8)
+	..setInt("umpi", 9999)
+	..setReal("usca", 1.05)
+	..setString("unam", "Ryougi Shiki")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Ryougi Shiki")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 17)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00D()
+	let def = createObjectDefinition("w3u", 'H00D', 'Hmkg')
+	..setString("uabi", "A02L,A02M,AInv")
+	..setInt("uagi", 32)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNAkame.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.83)
+	..setInt("udef", 2)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 15)
+	..setString("umdl", "Akame.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A02G,A02H,A02I,A02J,A02K")
+	..setInt("uhhd", 1)
+	..setInt("uint", 17)
+	..setUnreal("uinp", 1.7)
+	..setInt("umpi", 9999)
+	..setString("unam", "Akame")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Akame")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 19)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00C()
+	let def = createObjectDefinition("w3u", 'H00C', 'Hmkg')
+	..setString("uabi", "A02E,A02F,AInv")
+	..setInt("uagi", 30)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNMusashi.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.76)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 12)
+	..setString("umdl", "Musashi.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A029,A02A,A02B,A02C,A02D")
+	..setInt("uhhd", 1)
+	..setInt("uint", 17)
+	..setUnreal("uinp", 1.7)
+	..setInt("umpi", 9999)
+	..setString("unam", "Musashi Miyamoto")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Musashi Miyamoto")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 19)
+	..setUnreal("ustp", 1.8)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00B()
+	let def = createObjectDefinition("w3u", 'H00B', 'Hmkg')
+	..setString("uabi", "A027,A028,A021,AInv")
+	..setInt("uagi", 34)
+	..setUnreal("uagp", 2.3)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNIchigo.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.75)
+	..setInt("udef", 3)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 17)
+	..setString("umdl", "IchigoShikai.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A022,A023,A024,A025,A026")
+	..setInt("uhhd", 1)
+	..setInt("uint", 20)
+	..setUnreal("uinp", 1.6)
+	..setInt("umpi", 9999)
+	..setString("unam", "Kurosaki Ichigo")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Kurosaki Ichigo")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 18)
+	..setUnreal("ustp", 1.75)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H00A()
+	let def = createObjectDefinition("w3u", 'H00A', 'Hmkg')
+	..setString("uabi", "A01Z,A020,AInv")
+	..setInt("uagi", 18)
+	..setUnreal("uagp", 1.9)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNbellcranel.blp")
+	..setUnreal("ucpt", 0.33)
+	..setUnreal("ua1c", 1.75)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 13)
+	..setString("umdl", "BellCranel.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A01T,A01U,A01V,A01W,A01Y")
+	..setInt("uhhd", 1)
+	..setInt("uint", 16)
+	..setUnreal("uinp", 1.6)
+	..setInt("umpi", 9999)
+	..setString("unam", "Bell Cranel")
+	..setInt("usin", 1200)
+	..setString("upro", "Bell Cranel")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 30)
+	..setUnreal("ustp", 2.3)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H009()
+	let def = createObjectDefinition("w3u", 'H009', 'Hmkg')
+	..setInt("uagi", 33)
+	..setUnreal("uagp", 2.3)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNMei.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.94)
+	..setInt("udef", 2)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 15)
+	..setString("umdl", "RaidenMei.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "")
+	..setInt("uhhd", 1)
+	..setInt("uint", 16)
+	..setUnreal("uinp", 1.71)
+	..setInt("umpi", 9999)
+	..setString("unam", "Raiden Mei")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Raiden Mei")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 19)
+	..setUnreal("ustp", 1.84)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H008()
+	let def = createObjectDefinition("w3u", 'H008', 'Hmkg')
+	..setString("uabi", "A01L,A01M,AInv")
+	..setInt("uagi", 33)
+	..setUnreal("uagp", 2.2)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNYomi.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.81)
+	..setInt("udef", 2)
+	..setInt("ua1d", 5)
+	..setInt("ua1b", 14)
+	..setString("umdl", "Isayama yomi.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A01G,A01H,A01N,A01J,A01K")
+	..setInt("uhhd", 1)
+	..setInt("uint", 19)
+	..setUnreal("uinp", 1.72)
+	..setInt("umpi", 9999)
+	..setString("unam", "Isayama Yomi")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Isayama Yomi")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 17)
+	..setUnreal("ustp", 1.77)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H007()
+	let def = createObjectDefinition("w3u", 'H007', 'Hmkg')
+	..setString("uabi", "A01D,A01F,AInv")
+	..setInt("uagi", 17)
+	..setUnreal("uagp", 1.63)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNSabo.blp")
+	..setUnreal("ucpt", 0.33)
+	..setUnreal("ua1c", 2.04)
+	..setInt("udef", 5)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 19)
+	..setString("umdl", "Sabo.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A018,A019,A01E,A01B,A01C")
+	..setInt("uhhd", 1)
+	..setInt("uint", 18)
+	..setUnreal("uinp", 1.74)
+	..setInt("umpi", 9999)
+	..setString("unam", "Sabo")
+	..setInt("usin", 1200)
+	..setString("upro", "Sabo")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 3)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 30)
+	..setUnreal("ustp", 2.25)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H006()
+	let def = createObjectDefinition("w3u", 'H006', 'Hmkg')
+	..setString("uabi", "A016,A017,AInv")
+	..setInt("uagi", 22)
+	..setUnreal("uagp", 1.75)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNSaberAlter.blp")
+	..setUnreal("ucpt", 0.33)
+	..setUnreal("ua1c", 1.85)
+	..setInt("udef", 3)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 14)
+	..setString("umdl", "SaberAlter.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A011,A012,A013,A014,A015")
+	..setInt("uhhd", 1)
+	..setInt("uint", 18)
+	..setUnreal("uinp", 1.84)
+	..setInt("umpi", 9999)
+	..setString("unam", "Saber Alter")
+	..setInt("usin", 1200)
+	..setString("upro", "Saber Alter")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 31)
+	..setUnreal("ustp", 2.1)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H005()
+	let def = createObjectDefinition("w3u", 'H005', 'Hmkg')
+	..setString("uabi", "A00Z,A010,A00V,A00W,A00X,AInv")
+	..setInt("uagi", 33)
+	..setUnreal("uagp", 2.3)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNHyde.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.94)
+	..setInt("udef", 2)
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 15)
+	..setString("umdl", "KidoHyde.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A00R,A00S,A00T,A00U,A00Y")
+	..setInt("uhhd", 1)
+	..setInt("uint", 16)
+	..setUnreal("uinp", 1.71)
+	..setInt("umpi", 9999)
+	..setString("unam", "Kido Hyde")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Kido Hyde")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 19)
+	..setUnreal("ustp", 1.84)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H004()
+	let def = createObjectDefinition("w3u", 'H004', 'Hmkg')
+	..setString("uabi", "A00P,A00Q,AInv")
+	..setInt("uagi", 30)
+	..setUnreal("uagp", 2.09)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNJellal.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.86)
+	..setInt("udef", 4)
+	..setInt("ua1d", 5)
+	..setInt("ua1b", 18)
+	..setString("umdl", "Jellal.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A00I,A00J,A00K,A00L,A00O")
+	..setInt("uhhd", 1)
+	..setInt("uint", 19)
+	..setUnreal("uinp", 1.65)
+	..setInt("umpi", 9999)
+	..setString("unam", "Jellal Fernandes")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Jellal Fernandes")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 3)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 17)
+	..setUnreal("ustp", 1.76)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H003()
+	let def = createObjectDefinition("w3u", 'H003', 'Hblm')
+	..setString("uabi", "A00G,A00H,AInv")
+	..setUnreal("uacq", 500.0)
+	..setInt("uagi", 22)
+	..setUnreal("uagp", 1.95)
+	..setString("uico", "ReplaceableTextures\\CommandButtons\\BTNMystogan.blp")
+	..setUnreal("ucpt", 0.25)
+	..setUnreal("ua1c", 1.71)
+	..setInt("udef", 1)
+	..setInt("ua1d", 5)
+	..setInt("ua1b", 14)
+	..setString("umdl", "Mystogan.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A009,A00A,A00B,A00E,A00F")
+	..setInt("uhhd", 1)
+	..setInt("uint", 33)
+	..setUnreal("uinp", 2.2)
+	..setInt("umpi", 9999)
+	..setString("ua1m", "Mystosfx1.mdl")
+	..setInt("ua1z", 1400)
+	..setString("unam", "Mystogan")
+	..setInt("usin", 1200)
+	..setString("upro", "Mystogan")
+	..setInt("ua1r", 400)
+	..setUnreal("uhpr", 0.0)
+	..setInt("ua1s", 5)
+	..setInt("usid", 1200)
+	..setInt("ustr", 16)
+	..setUnreal("ustp", 1.95)
+	..setString("ua1g", "ground,structure,debris,item,ward")
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+
+
+@compiletime function create_w3u_H002()
+	let def = createObjectDefinition("w3u", 'H002', 'Hmkg')
+	..setString("uabi", "A006,A007,AInv")
+	..setInt("uagi", 30)
+	..setUnreal("uagp", 2.25)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNAlpha.blp")
+	..setUnreal("ucpt", 0.29)
+	..setUnreal("ua1c", 1.93)
+	..setInt("ua1d", 3)
+	..setInt("ua1b", 10)
+	..setString("umdl", "AlphaCW.mdl")
+	..setInt("ufoo", 0)
+	..setString("uhab", "A001,A002,A003,A004,A005")
+	..setInt("uhhd", 1)
+	..setInt("uint", 20)
+	..setUnreal("uinp", 1.55)
+	..setInt("umpi", 9999)
+	..setString("unam", "Alpha Crimson Weave")
+	..setInt("usin", 1200)
+	..setString("upra", "AGI")
+	..setString("upro", "Alpha Crimson Weave")
+	..setUnreal("uhpr", 0.0)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 4)
+	..setInt("usid", 1200)
+	..setInt("umvs", 300)
+	..setInt("ustr", 16)
+	..setUnreal("ustp", 1.96)
+	..setUnreal("umvr", 1.0)
+	..setString("usnd", "")
+	..setString("ucs1", "")
+
+
+@compiletime function create_w3u_H001()
+	let def = createObjectDefinition("w3u", 'H001', 'Hblm')
+	..setString("uabi", "")
+	..setUnreal("uacq", 700.0)
+	..setUnreal("uagp", 3.5)
+	..setString("uico", "replaceabletextures\\commandbuttons\\BTNGilgameshCaster.blp")
+	..setUnreal("ua1c", 1.96)
+	..setInt("udef", 80)
+	..setInt("ua1d", 5)
+	..setInt("ua1b", 161)
+	..setString("umdl", "GilgameshCaster.mdl")
+	..setString("uhab", "")
+	..setInt("uhpm", 26300)
+	..setUnreal("uinp", 3.9)
+	..setString("ua1m", "Abilities\\Weapons\\LordofFlameMissile\\LordofFlameMissile.mdl")
+	..setInt("ua1z", 2200)
+	..setReal("usca", 1.1)
+	..setString("unam", "King Gilgamesh")
+	..setInt("usin", 1200)
+	..setString("upro", "King Gilgamesh")
+	..setString("urac", "orc")
+	..setInt("ua1r", 500)
+	..setUnreal("uhpr", 102.0)
+	..setInt("ua1s", 7)
+	..setInt("usid", 1200)
+	..setInt("umvs", 400)
+	..setUnreal("ustp", 3.1)
+	..setUnreal("umvr", 1.0)
+
+
+@compiletime function create_w3u_x001()
+	let def = createObjectDefinition("w3u", 'x001', 'Ewar')
+	..setInt("wurs", 42)
+	..setString("unam", "Shana")
+	..setString("upro", "Flame Haze")
+	..setInt("upru", 1)
+	..setString("umdl", "xn2.mdx")
+
+
+// Original Table (contains all modified default objects)
+// Wurst does not support modifying default objects
+// but you can copy these functions and replace 'xxxx' with a new, custom id.
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'zmar')
+	..setString("ua2m", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'zjug')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'uswb')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'uskm')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'uske')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'uplg')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'uloc')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'uktn')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'uktg')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ucsC')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ucsB')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ucs3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ucs2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ucs1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ubdr')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ubdd')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'uabc')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ownr')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'owar')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ovlj')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'otot')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'oswy')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'osw3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'osw2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'osw1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ospm')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'osp4')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'osp3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'osp2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'osp1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'oosc')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'onzg')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'omtg')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ohwd')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ogrk')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'oeye')
+	..setInt("usin", 1500)
+	..setInt("usid", 1500)
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'odkt')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ocbw')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nzlc')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nzin')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nwgt')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nwe3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nwe2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nwe1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nwc2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nwc1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nwat')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nwad')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nw2w')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nvr2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nvr1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nvr0')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nvlw')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nvl2')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nvk2')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nvil')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ntt2')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ntor')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ntnt')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ntn2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nthr')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nth1')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nth0')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nten')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ntav')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nsw3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nsw2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nsw1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nssn')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nspp')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nspc')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nslh')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nshw')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nshr')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nshp')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nsha')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nser')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nrzs')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nrzb')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nqb4')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nqb3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nqb2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nqb1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'npnw')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'npgr')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'npgf')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nowl')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nowe')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'now3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'now2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nnzg')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmsh')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmrk')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmrf')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmre')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmrd')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmrc')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmrb')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmra')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmr9')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmr8')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmr7')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmr6')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmr5')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmr4')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmr3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmr2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmr0')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmoo')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmh1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmh0')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmg1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmg0')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmer')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmed')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nmdm')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nlv3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nlv2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nlv1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'njks')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nico')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nhns')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nhew')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nhem')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nhef')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nhcn')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngzd')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngzc')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngza')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngz4')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngz3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngz2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngz1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngwr')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngt2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngol')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngob')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngni')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngnh')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngme')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nglm')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngbl')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ngad')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfv4')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfv3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfv2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfv1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfv0')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfrm')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfr2')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfr1')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfoh')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfnp')
+	..setString("uabi", "ACnr,ANre,Avul,Adtg")
+	..setUnreal("uacq", 800.0)
+	..setString("ua1t", "chaos")
+	..setUnreal("ua1c", 0.1)
+	..setInt("ua1d", 1)
+	..setInt("ua1b", 499)
+	..setString("umdl", "buildings\\other\\FountainOfLife\\FountainOfHealth.mdl")
+	..setUnreal("uma1", 0.15)
+	..setString("ua1m", "Abilities\\Weapons\\ChimaeraAcidMissile\\ChimaeraAcidMissile.mdl")
+	..setInt("ua1z", 1800)
+	..setInt("usin", 1800)
+	..setString("upat", "PathTextures\\8x8Default.tga")
+	..setInt("ua1r", 700)
+	..setUnreal("urb1", 250.0)
+	..setInt("ua1s", 200)
+	..setInt("usid", 1800)
+	..setString("ua1g", "ground,structure,debris,air,item,ward")
+	..setString("utub", "")
+	..setInt("uaen", 1)
+	..setString("ua1w", "missile")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfh1')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfh0')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfgl')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfac')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfa2')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nfa1')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nemi')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'negz')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'negm')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'negf')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nefm')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nef7')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nef6')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nef5')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nef4')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nef3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nef2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nef1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nef0')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndrz')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndru')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndrr')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndro')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndrk')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndrj')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndrg')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndrb')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndr3')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndr2')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndr1')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndmu')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndmg')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndkw')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndke')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndgt')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ndfl')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nct2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nct1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncp3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncp2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncop')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncnt')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncbf')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncbe')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncbd')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncbc')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncbb')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncba')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncb9')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncb8')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncb7')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncb6')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncb5')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncb4')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncb3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncb2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncb1')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ncb0')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nbwd')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nbsw')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nbsp')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nbsm')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nbse')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'nbfl')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hwt3')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hwt2')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hwat')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hrtt')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hrif')
+	..setString("uabi", "")
+	..setUnreal("uacq", 500.0)
+	..setInt("ubdi", 5)
+	..setInt("ubba", 30)
+	..setInt("ubsi", 5)
+	..setUnreal("ua1c", 0.9)
+	..setString("udty", "small")
+	..setInt("ua1d", 5)
+	..setInt("ua1b", 23)
+	..setString("umdl", "DrustrealmmonsterWhite.mdl")
+	..setInt("uhpm", 290)
+	..setUnreal("uma1", 0.15)
+	..setString("ua1m", "Abilities\\Weapons\\AncientProtectorMissile\\AncientProtectorMissile.mdl")
+	..setInt("ua1z", 1600)
+	..setInt("ua1r", 300)
+	..setInt("ua1s", 5)
+	..setInt("usid", 800)
+	..setInt("umvs", 310)
+	..setString("upgr", "")
+	..setString("ua1w", "missile")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hrdh')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hpxe')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hphx')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hmtt')
+	..setString("uabi", "")
+	..setInt("ubdi", 6)
+	..setInt("ubba", 40)
+	..setInt("ubsi", 6)
+	..setUnreal("ucol", 32.0)
+	..setUnreal("ua1c", 1.0)
+	..setInt("udea", 3)
+	..setInt("udef", 9)
+	..setString("udty", "large")
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 37)
+	..setString("umdl", "CataclysmcrocodileBlack.mdl")
+	..setInt("uhpm", 390)
+	..setString("ua1m", "Abilities\\Weapons\\HydraliskImpact\\HydraliskImpact.mdl")
+	..setInt("ua1r", 200)
+	..setReal("ussc", 1.5)
+	..setInt("ua1s", 5)
+	..setInt("usid", 800)
+	..setInt("umvs", 310)
+	..setString("ua1g", "ground,structure,debris,air,item,ward")
+	..setString("utyp", "")
+	..setString("ua1w", "missile")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hmil')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hhdl')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hfoo')
+	..setString("uabi", "")
+	..setInt("ubdi", 4)
+	..setInt("ubsi", 4)
+	..setUnreal("ucol", 32.0)
+	..setUnreal("ua1c", 0.9)
+	..setInt("udef", 3)
+	..setString("udty", "medium")
+	..setInt("ua1d", 4)
+	..setInt("ua1b", 8)
+	..setString("umdl", "Podlingorange.mdl")
+	..setInt("uhpm", 310)
+	..setInt("ua1r", 100)
+	..setInt("ua1s", 3)
+	..setInt("usid", 800)
+	..setInt("umvs", 310)
+	..setString("upgr", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hcth')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'hbew')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'haro')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'even')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'espv')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'eshd')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'ensh')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'enec')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'eilw')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'efon')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'edtm')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'edot')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'edoc')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'edcm')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Uwar')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Uktl')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Uear')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Uclc')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Otcc')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Opgh')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Ocb2')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Npld')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Nman')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Nklj')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Nkjx')
+	..setString("unsf", "")
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Nalm')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Nal3')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Nal2')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Naka')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Hvwd')
+	..setString("utub", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Hpal')
+	..setInt("uhpm", 99999)
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Harf')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Emns')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Eilm')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Eidm')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Eevm')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Eevi')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Edmm')
+	..setString("unsf", "")
+
+
+@compiletime function create_w3u_xxxx()
+	let def = createObjectDefinition("w3u", 'xxxx', 'Ecen')
+	..setString("utub", "")
+
+

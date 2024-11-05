@@ -1,0 +1,2242 @@
+package WurstExportedObjects_w3t
+import ObjEditingNatives
+
+// Modified Table (contains all custom objects)
+
+@compiletime function create_w3t_I044()
+	let def = createObjectDefinition("w3t", 'I044', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNAcheron10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "True Color")
+	..setInt("ipaw", 0)
+	..setString("utip", "True Color")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I043()
+	let def = createObjectDefinition("w3t", 'I043', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNcidkageno10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Shadow Garden")
+	..setInt("ipaw", 0)
+	..setString("utip", "Shadow Garden")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I032()
+	let def = createObjectDefinition("w3t", 'I032', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNMistBox.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 10|cffffdc00|nAgility|r : 10|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 2500)
+	..setString("unam", "Box Vongola Mist")
+	..setInt("istr", 0)
+	..setString("utip", "Box Vongola Mist")
+	..setString("utub", "|cffffdc00Strength |r: 10|cffffdc00|nAgility|r : 10|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I031()
+	let def = createObjectDefinition("w3t", 'I031', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNArcobalenoMist.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 50|cffffdc00|nAgility|r : 50|n|cffffdc00Intelligence|r : 120|n|cff7cbfc1Passive|r : Absorb 1.3 damage per point of mana, only absorbed 21% of damage taken")
+	..setInt("igol", 16000)
+	..setString("unam", "Arcobaleno Mist")
+	..setInt("istr", 0)
+	..setString("utip", "Arcobaleno Mist")
+	..setString("utub", "|cffffdc00Strength |r: 50|cffffdc00|nAgility|r : 50|n|cffffdc00Intelligence|r : 120|n|cff7cbfc1Passive|r : Absorb 1.3 damage per point of mana, only absorbed 21% of damage taken")
+
+
+@compiletime function create_w3t_I030()
+	let def = createObjectDefinition("w3t", 'I030', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNMistX.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 80|n|cff7cbfc1Passive|r : Absorb 1 damage per point of mana, only absorbed 17% of damage taken")
+	..setInt("igol", 11000)
+	..setString("unam", "Gear Vongola Mist Ring X")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Mist Ring X")
+	..setString("utub", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 80|n|cff7cbfc1Passive|r : Absorb 1 damage per point of mana, only absorbed 17% of damage taken")
+
+
+@compiletime function create_w3t_I02Z()
+	let def = createObjectDefinition("w3t", 'I02Z', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGearMist.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 60|n|cff7cbfc1Passive|r : Absorb 0.8 damage per point of mana, only absorbed 13% of damage taken")
+	..setInt("igol", 8200)
+	..setString("unam", "Gear Vongola Mist Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Mist Ring")
+	..setString("utub", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 60|n|cff7cbfc1Passive|r : Absorb 0.8 damage per point of mana, only absorbed 13% of damage taken")
+
+
+@compiletime function create_w3t_I02Y()
+	let def = createObjectDefinition("w3t", 'I02Y', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRealMist.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 40")
+	..setInt("igol", 6000)
+	..setString("unam", "Real Vongola Mist Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Real Vongola Mist Ring")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 40")
+
+
+@compiletime function create_w3t_I02X()
+	let def = createObjectDefinition("w3t", 'I02X', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingMist.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 30")
+	..setInt("igol", 4200)
+	..setString("unam", "Vongola Mist Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Mist Ring")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 30")
+
+
+@compiletime function create_w3t_I02W()
+	let def = createObjectDefinition("w3t", 'I02W', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingMist.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 30")
+	..setInt("igol", 1400)
+	..setString("unam", "Vongola Mist Ring (Recipe)")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Mist Ring (Recipe)")
+	..setString("utub", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 30")
+
+
+@compiletime function create_w3t_I02V()
+	let def = createObjectDefinition("w3t", 'I02V', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRainBox.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 10|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 10")
+	..setInt("igol", 2500)
+	..setString("unam", "Box Vongola Rain")
+	..setInt("istr", 0)
+	..setString("utip", "Box Vongola Rain")
+	..setString("utub", "|cffffdc00Strength |r: 10|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 10")
+
+
+@compiletime function create_w3t_I02U()
+	let def = createObjectDefinition("w3t", 'I02U', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNNatsuDragnel10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Igneel Son")
+	..setInt("ipaw", 0)
+	..setString("utip", "Igneel Son")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I02T()
+	let def = createObjectDefinition("w3t", 'I02T', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNHibari10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Vongola Guardian")
+	..setInt("ipaw", 0)
+	..setString("utip", "Vongola Guardian")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I02S()
+	let def = createObjectDefinition("w3t", 'I02S', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNArcobalenoRain.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 50|cffffdc00|nAgility|r : 120|n|cffffdc00Intelligence|r : 50|n|cff7cbfc1Passive|r : When deal damage higher than 9% of target max hp, deal 80 damage per second for 5s. stack up to 8 times.")
+	..setInt("igol", 16000)
+	..setString("unam", "Arcobaleno Rain")
+	..setInt("istr", 0)
+	..setString("utip", "Arcobaleno Rain")
+	..setString("utub", "|cffffdc00Strength |r: 50|cffffdc00|nAgility|r : 120|n|cffffdc00Intelligence|r : 50|n|cff7cbfc1Passive|r : When deal damage higher than 9% of target max hp, deal 80 damage per second for 5s. stack up to 8 times.")
+
+
+@compiletime function create_w3t_I02R()
+	let def = createObjectDefinition("w3t", 'I02R', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNGokuS410k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Monkey Power")
+	..setInt("ipaw", 0)
+	..setString("utip", "Monkey Power")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I02Q()
+	let def = createObjectDefinition("w3t", 'I02Q', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNGojo10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Honored One")
+	..setInt("ipaw", 0)
+	..setString("utip", "Honored One")
+	..setString("utub", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I02P()
+	let def = createObjectDefinition("w3t", 'I02P', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNAsta10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Devilmen")
+	..setInt("ipaw", 0)
+	..setString("utip", "Devilmen")
+	..setString("utub", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I02O()
+	let def = createObjectDefinition("w3t", 'I02O', 'bspd')
+	..setString("iabi", "A043")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNArcobalenoSun.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A043")
+	..setString("ides", "|cffffdc00Strength |r: 120|cffffdc00|nAgility|r : 50|n|cffffdc00Intelligence|r : 50|n|cff7cbfc1Active|r : Restore 3700 health. CD 120s")
+	..setInt("igol", 16000)
+	..setString("unam", "Arcobaleno Sun")
+	..setInt("istr", 0)
+	..setString("utip", "Arcobaleno Sun")
+	..setString("utub", "|cffffdc00Strength |r: 120|cffffdc00|nAgility|r : 50|n|cffffdc00Intelligence|r : 50|n|cff7cbfc1Active|r : Restore 3700 health. CD 120s")
+	..setInt("iusa", 1)
+
+
+@compiletime function create_w3t_I02N()
+	let def = createObjectDefinition("w3t", 'I02N', 'bspd')
+	..setString("iabi", "A03O")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNArcobalenoStorm.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A03O")
+	..setString("ides", "|cffffdc00Strength |r: 50|cffffdc00|nAgility|r : 50|n|cffffdc00Intelligence|r : 120|n|cff7cbfc1Active|r : Storm explode dealt 3000 damage on 600 radius. CD 120s")
+	..setInt("igol", 16000)
+	..setString("unam", "Arcobaleno Storm")
+	..setInt("istr", 0)
+	..setString("utip", "Arcobaleno Storm")
+	..setString("utub", "|cffffdc00Strength |r: 50|cffffdc00|nAgility|r : 50|n|cffffdc00Intelligence|r : 120|n|cff7cbfc1Active|r : Storm explode dealt 3000 damage on 600 radius. CD 120s")
+	..setInt("iusa", 1)
+
+
+@compiletime function create_w3t_I02M()
+	let def = createObjectDefinition("w3t", 'I02M', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRainX.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 80|n|cffffdc00Intelligence|r : 40|n|cff7cbfc1Passive|r : When deal damage higher than 9% of target max hp, deal 60 damage per second for 5s. stack up to 8 times.")
+	..setInt("igol", 11000)
+	..setString("unam", "Gear Vongola Rain Ring X")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Rain Ring X")
+	..setString("utub", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 80|n|cffffdc00Intelligence|r : 40|n|cff7cbfc1Passive|r : When deal damage higher than 9% of target max hp, deal 60 damage per second for 5s. stack up to 8 times.")
+
+
+@compiletime function create_w3t_I02L()
+	let def = createObjectDefinition("w3t", 'I02L', 'bspd')
+	..setString("iabi", "A03N")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNArcobalenoCloud.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A03N")
+	..setString("ides", "|cffffdc00Strength |r: 50|cffffdc00|nAgility|r : 120|n|cffffdc00Intelligence|r : 50|n|cff7cbfc1Active|r : Create shield to block spell up to 10000 damage for 4 seconds. CD 120s")
+	..setInt("igol", 16000)
+	..setString("unam", "Arcobaleno Cloud")
+	..setInt("istr", 0)
+	..setString("utip", "Arcobaleno Cloud")
+	..setString("utub", "|cffffdc00Strength |r: 50|cffffdc00|nAgility|r : 120|n|cffffdc00Intelligence|r : 50|n|cff7cbfc1Active|r : Create shield to block spell up to 10000 damage for 4 seconds. CD 120s")
+	..setInt("iusa", 1)
+
+
+@compiletime function create_w3t_I02K()
+	let def = createObjectDefinition("w3t", 'I02K', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaEmblem.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your ring item|n|cffffdc00Gear Vongola Cloud/Sky/Storm/Sun Ring X + |nBox Vongola Cloud/Sky/Storm/Sun -> |nArcobaleno Cloud/Sky/Storm/Sun Ring|r")
+	..setInt("igol", 2500)
+	..setString("unam", "Upgrade Ring Lv 5")
+	..setInt("istr", 0)
+	..setString("utip", "Upgrade Ring Lv 5")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your ring item|n|cffffdc00Gear Vongola Cloud/Sky/Storm/Sun Ring X + |nBox Vongola Cloud/Sky/Storm/Sun -> |nArcobaleno Cloud/Sky/Storm/Sun Ring|r")
+
+
+@compiletime function create_w3t_I02J()
+	let def = createObjectDefinition("w3t", 'I02J', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNSunBox.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 10|n|cffffdc00Intelligence|r : 10")
+	..setInt("igol", 2500)
+	..setString("unam", "Box Vongola Sun")
+	..setInt("istr", 0)
+	..setString("utip", "Box Vongola Sun")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 10|n|cffffdc00Intelligence|r : 10")
+
+
+@compiletime function create_w3t_I02I()
+	let def = createObjectDefinition("w3t", 'I02I', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNStormBox.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 10|cffffdc00|nAgility|r : 10|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 2500)
+	..setString("unam", "Box Vongola Storm")
+	..setInt("istr", 0)
+	..setString("utip", "Box Vongola Storm")
+	..setString("utub", "|cffffdc00Strength |r: 10|cffffdc00|nAgility|r : 10|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I02H()
+	let def = createObjectDefinition("w3t", 'I02H', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGearRain.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 60|n|cffffdc00Intelligence|r : 30|n|cff7cbfc1Passive|r : When deal damage higher than 9% of target max hp, deal 40 damage per second for 5s. stack up to 8 times.")
+	..setInt("igol", 8200)
+	..setString("unam", "Gear Vongola Rain Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Rain Ring")
+	..setString("utub", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 60|n|cffffdc00Intelligence|r : 30|n|cff7cbfc1Passive|r : When deal damage higher than 9% of target max hp, deal 40 damage per second for 5s. stack up to 8 times.")
+
+
+@compiletime function create_w3t_I02G()
+	let def = createObjectDefinition("w3t", 'I02G', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNCloudBox.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 10|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 10")
+	..setInt("igol", 2500)
+	..setString("unam", "Box Vongola Cloud")
+	..setInt("istr", 0)
+	..setString("utip", "Box Vongola Cloud")
+	..setString("utub", "|cffffdc00Strength |r: 10|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 10")
+
+
+@compiletime function create_w3t_I02F()
+	let def = createObjectDefinition("w3t", 'I02F', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRealRain.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 6000)
+	..setString("unam", "Real Vongola Rain Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Real Vongola Rain Ring")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I02E()
+	let def = createObjectDefinition("w3t", 'I02E', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingRain.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 4200)
+	..setString("unam", "Vongola Rain Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Rain Ring")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I02D()
+	let def = createObjectDefinition("w3t", 'I02D', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingRain.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 20|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 1400)
+	..setString("unam", "Vongola Rain Ring (Recipe)")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Rain Ring (Recipe)")
+	..setString("utub", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 20|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I02C()
+	let def = createObjectDefinition("w3t", 'I02C', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNThunderBox.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 10|n|cffffdc00Intelligence|r : 10")
+	..setInt("igol", 2500)
+	..setString("unam", "Box Vongola Thunder")
+	..setInt("istr", 0)
+	..setString("utip", "Box Vongola Thunder")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 10|n|cffffdc00Intelligence|r : 10")
+
+
+@compiletime function create_w3t_I02B()
+	let def = createObjectDefinition("w3t", 'I02B', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNJingliu10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Swordmaster")
+	..setInt("ipaw", 0)
+	..setString("utip", "Swordmaster")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I02A()
+	let def = createObjectDefinition("w3t", 'I02A', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNfuxuan10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Foreseer")
+	..setInt("ipaw", 0)
+	..setString("utip", "Foreseer")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I029()
+	let def = createObjectDefinition("w3t", 'I029', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNace10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Mera mera no mi")
+	..setInt("ipaw", 0)
+	..setString("utip", "Mera mera no mi")
+	..setString("utub", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I028()
+	let def = createObjectDefinition("w3t", 'I028', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNMuramasa10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Blacksmith Artisan")
+	..setInt("ipaw", 0)
+	..setString("utip", "Blacksmith Artisan")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I027()
+	let def = createObjectDefinition("w3t", 'I027', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNEsdeath10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Imperial General")
+	..setInt("ipaw", 0)
+	..setString("utip", "Imperial General")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I026()
+	let def = createObjectDefinition("w3t", 'I026', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNLeeSeha10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Special Agent")
+	..setInt("ipaw", 0)
+	..setString("utip", "Special Agent")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I025()
+	let def = createObjectDefinition("w3t", 'I025', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNOgita10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Shinsegumi")
+	..setInt("ipaw", 0)
+	..setString("utip", "Shinsegumi")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I024()
+	let def = createObjectDefinition("w3t", 'I024', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNMokuo10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Tohou")
+	..setInt("ipaw", 0)
+	..setString("utip", "Tohou")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I023()
+	let def = createObjectDefinition("w3t", 'I023', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNVegeta10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Saiyajin")
+	..setInt("ipaw", 0)
+	..setString("utip", "Saiyajin")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I022()
+	let def = createObjectDefinition("w3t", 'I022', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNCronus10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Henshin")
+	..setInt("ipaw", 0)
+	..setString("utip", "Henshin")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I021()
+	let def = createObjectDefinition("w3t", 'I021', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNKiana10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Honkai")
+	..setInt("ipaw", 0)
+	..setString("utip", "Honkai")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I020()
+	let def = createObjectDefinition("w3t", 'I020', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNyugi10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Card Man")
+	..setInt("ipaw", 0)
+	..setString("utip", "Card Man")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I01Z()
+	let def = createObjectDefinition("w3t", 'I01Z', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNAlicezuberg10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Fragrant Olive")
+	..setInt("ipaw", 0)
+	..setString("utip", "Fragrant Olive")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I01Y()
+	let def = createObjectDefinition("w3t", 'I01Y', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNhutao10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Genshin")
+	..setInt("ipaw", 0)
+	..setString("utip", "Genshin")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I01X()
+	let def = createObjectDefinition("w3t", 'I01X', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNYamaji10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Shigekuni")
+	..setInt("ipaw", 0)
+	..setString("utip", "Shigekuni")
+	..setString("utub", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I01W()
+	let def = createObjectDefinition("w3t", 'I01W', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingSun.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 30|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 1400)
+	..setString("unam", "Vongola Sun Ring (Recipe)")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Sun Ring (Recipe)")
+	..setString("utub", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 30|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I01V()
+	let def = createObjectDefinition("w3t", 'I01V', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingStorm.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 30")
+	..setInt("igol", 1400)
+	..setString("unam", "Vongola Storm Ring (Recipe)")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Storm Ring (Recipe)")
+	..setString("utub", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 30")
+
+
+@compiletime function create_w3t_I01U()
+	let def = createObjectDefinition("w3t", 'I01U', 'bspd')
+	..setString("iabi", "A096")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNArcobalenoThunder.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A096")
+	..setString("ides", "|cffffdc00Strength |r: 120|cffffdc00|nAgility|r : 50|n|cffffdc00Intelligence|r : 50|n|cff7cbfc1Passive|r : When take damage higher than 12% max hp, cast chain lightning to attacker, Deal 53% of damage taken. CD 9s")
+	..setInt("igol", 16000)
+	..setString("unam", "Arcobaleno Thunder")
+	..setInt("istr", 0)
+	..setString("utip", "Arcobaleno Thunder")
+	..setString("utub", "|cffffdc00Strength |r: 120|cffffdc00|nAgility|r : 50|n|cffffdc00Intelligence|r : 50|n|cff7cbfc1Passive|r : When take damage higher than 12% max hp, cast chain lightning to attacker, Deal 53% of damage taken. CD 9s")
+
+
+@compiletime function create_w3t_I01T()
+	let def = createObjectDefinition("w3t", 'I01T', 'bspd')
+	..setString("iabi", "A03O")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGearStorm.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A03O")
+	..setString("ides", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 60|n|cff7cbfc1Active|r : Storm explode dealt 1300 damage on 600 radius. CD 120s")
+	..setInt("igol", 8200)
+	..setString("unam", "Gear Vongola Storm Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Storm Ring")
+	..setString("utub", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 60|n|cff7cbfc1Active|r : Storm explode dealt 1300 damage on 600 radius. CD 120s")
+	..setInt("iusa", 1)
+
+
+@compiletime function create_w3t_I01S()
+	let def = createObjectDefinition("w3t", 'I01S', 'bspd')
+	..setString("iabi", "A096")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNThunderX.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A096")
+	..setString("ides", "|cffffdc00Strength |r: 80|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 40|n|cff7cbfc1Passive|r : When take damage higher than 12% max hp, cast chain lightning to attacker, Deal 45% of damage taken. CD 9s")
+	..setInt("igol", 11000)
+	..setString("unam", "Gear Vongola Thunder Ring X")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Thunder Ring X")
+	..setString("utub", "|cffffdc00Strength |r: 80|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 40|n|cff7cbfc1Passive|r : When take damage higher than 12% max hp, cast chain lightning to attacker, Deal 45% of damage taken. CD 9s")
+
+
+@compiletime function create_w3t_I01R()
+	let def = createObjectDefinition("w3t", 'I01R', 'bspd')
+	..setString("iabi", "A043")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGearSun.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A043")
+	..setString("ides", "|cffffdc00Strength |r: 60|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 30|n|cff7cbfc1Active|r : Restore 1200 health. CD 120s")
+	..setInt("igol", 8200)
+	..setString("unam", "Gear Vongola Sun Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Sun Ring")
+	..setString("utub", "|cffffdc00Strength |r: 60|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 30|n|cff7cbfc1Active|r : Restore 1200 health. CD 120s")
+	..setInt("iusa", 1)
+
+
+@compiletime function create_w3t_I01Q()
+	let def = createObjectDefinition("w3t", 'I01Q', 'bspd')
+	..setString("iabi", "A096")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGearThunder.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A096")
+	..setString("ides", "|cffffdc00Strength |r: 60|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 30|n|cff7cbfc1Passive|r : When take damage higher than 12% max hp, cast chain lightning to attacker, Deal 37% of damage taken. CD 9s")
+	..setInt("igol", 8200)
+	..setString("unam", "Gear Vongola Thunder Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Thunder Ring")
+	..setString("utub", "|cffffdc00Strength |r: 60|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 30|n|cff7cbfc1Passive|r : When take damage higher than 12% max hp, cast chain lightning to attacker, Deal 37% of damage taken. CD 9s")
+
+
+@compiletime function create_w3t_I01P()
+	let def = createObjectDefinition("w3t", 'I01P', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingCloud.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 20|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 1400)
+	..setString("unam", "Vongola Cloud Ring (Recipe)")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Cloud Ring (Recipe)")
+	..setString("utub", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 20|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I01O()
+	let def = createObjectDefinition("w3t", 'I01O', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNThunderLizardEgg.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your ring item|n|cffffdc00Gear Vongola Cloud/Sky/Storm/Sun Ring -> |nGear Vongola Cloud/Sky/Storm/Sun Ring X|r")
+	..setInt("igol", 2800)
+	..setString("unam", "Upgrade Ring Lv 4")
+	..setInt("istr", 0)
+	..setString("utip", "Upgrade Ring Lv 4")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your ring item|n|cffffdc00Gear Vongola Cloud/Sky/Storm/Sun Ring -> |nGear Vongola Cloud/Sky/Storm/Sun Ring X|r")
+
+
+@compiletime function create_w3t_I01N()
+	let def = createObjectDefinition("w3t", 'I01N', 'bspd')
+	..setString("iabi", "A03N")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGearCloud.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A03N")
+	..setString("ides", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 60|n|cffffdc00Intelligence|r : 30|n|cff7cbfc1Active|r : Create shield to block spell up to 3500 damage for 4 seconds. CD 120s")
+	..setInt("igol", 8200)
+	..setString("unam", "Gear Vongola Cloud Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Cloud Ring")
+	..setString("utub", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 60|n|cffffdc00Intelligence|r : 30|n|cff7cbfc1Active|r : Create shield to block spell up to 3500 damage for 4 seconds. CD 120s")
+	..setInt("iusa", 1)
+
+
+@compiletime function create_w3t_I01M()
+	let def = createObjectDefinition("w3t", 'I01M', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNScrollOfTownPortal.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your ring item|n|cffffdc00Real Vongola Cloud/Storm/Sun Ring -> |nGear Vongola Cloud/Storm/Sun Ring|r")
+	..setInt("igol", 2200)
+	..setString("unam", "Upgrade Ring Lv 3")
+	..setInt("istr", 0)
+	..setString("utip", "Upgrade Ring Lv 3")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your ring item|n|cffffdc00Real Vongola Cloud/Storm/Sun Ring -> |nGear Vongola Cloud/Storm/Sun Ring|r")
+
+
+@compiletime function create_w3t_I01L()
+	let def = createObjectDefinition("w3t", 'I01L', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRealSun.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 6000)
+	..setString("unam", "Real Vongola Sun Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Real Vongola Sun Ring")
+	..setString("utub", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I01K()
+	let def = createObjectDefinition("w3t", 'I01K', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRealStorm.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 40")
+	..setInt("igol", 6000)
+	..setString("unam", "Real Vongola Storm Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Real Vongola Storm Ring")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 40")
+
+
+@compiletime function create_w3t_I01J()
+	let def = createObjectDefinition("w3t", 'I01J', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRealThunder.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 6000)
+	..setString("unam", "Real Vongola Thunder Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Real Vongola Thunder Ring")
+	..setString("utub", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I01I()
+	let def = createObjectDefinition("w3t", 'I01I', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNScrollOfProtection.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your ring item|n|cffffdc00Vongola Cloud/Storm/Sun Ring -> |nReal Vongola Cloud/Storm/Sun Ring|r")
+	..setInt("igol", 1800)
+	..setString("unam", "Upgrade Ring Lv 2")
+	..setInt("istr", 0)
+	..setString("utip", "Upgrade Ring Lv 2")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your ring item|n|cffffdc00Vongola Cloud/Storm/Sun Ring -> |nReal Vongola Cloud/Storm/Sun Ring|r")
+
+
+@compiletime function create_w3t_I01H()
+	let def = createObjectDefinition("w3t", 'I01H', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNScroll.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your ring item|n|cffffdc00Vongola Ring -> Half Vongola Ring|r")
+	..setInt("igol", 1400)
+	..setString("unam", "Upgrade Ring Lv 1")
+	..setInt("istr", 0)
+	..setString("utip", "Upgrade Ring Lv 1")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your ring item|n|cffffdc00Vongola Ring -> Half Vongola Ring|r")
+
+
+@compiletime function create_w3t_I01G()
+	let def = createObjectDefinition("w3t", 'I01G', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRealCloud.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 6000)
+	..setString("unam", "Real Vongola Cloud Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Real Vongola Cloud Ring")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I01F()
+	let def = createObjectDefinition("w3t", 'I01F', 'bspd')
+	..setString("iabi", "A043")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNSunX.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A043")
+	..setString("ides", "|cffffdc00Strength |r: 80|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 40|n|cff7cbfc1Active|r : Restore 2200 health. CD 120s")
+	..setInt("igol", 11000)
+	..setString("unam", "Gear Vongola Sun Ring X")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Sun Ring X")
+	..setString("utub", "|cffffdc00Strength |r: 80|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 40|n|cff7cbfc1Active|r : Restore 2200 health. CD 120s")
+	..setInt("iusa", 1)
+
+
+@compiletime function create_w3t_I01E()
+	let def = createObjectDefinition("w3t", 'I01E', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingSun.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 4200)
+	..setString("unam", "Vongola Sun Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Sun Ring")
+	..setString("utub", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I01D()
+	let def = createObjectDefinition("w3t", 'I01D', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingStorm.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 30")
+	..setInt("igol", 4200)
+	..setString("unam", "Vongola Storm Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Storm Ring")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 30")
+
+
+@compiletime function create_w3t_I01C()
+	let def = createObjectDefinition("w3t", 'I01C', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingThunder.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 4200)
+	..setString("unam", "Vongola Thunder Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Thunder Ring")
+	..setString("utub", "|cffffdc00Strength |r: 30|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I01B()
+	let def = createObjectDefinition("w3t", 'I01B', 'bspd')
+	..setString("iabi", "A03O")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNStormX.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A03O")
+	..setString("ides", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 80|n|cff7cbfc1Active|r : Storm explode dealt 2000 damage on 600 radius. CD 120s")
+	..setInt("igol", 11000)
+	..setString("unam", "Gear Vongola Storm Ring X")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Storm Ring X")
+	..setString("utub", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 40|n|cffffdc00Intelligence|r : 80|n|cff7cbfc1Active|r : Storm explode dealt 2000 damage on 600 radius. CD 120s")
+	..setInt("iusa", 1)
+
+
+@compiletime function create_w3t_I01A()
+	let def = createObjectDefinition("w3t", 'I01A', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingThunder.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 30|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 1400)
+	..setString("unam", "Vongola Thunder Ring (Recipe)")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Thunder Ring (Recipe)")
+	..setString("utub", "|cffe97777Requirement|r|cffffdc00 |r: Half Vongola Ring|cffffdc00|nStrength |r: 30|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I019()
+	let def = createObjectDefinition("w3t", 'I019', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNVongolaRingCloud.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 4200)
+	..setString("unam", "Vongola Cloud Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Cloud Ring")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 30|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I018()
+	let def = createObjectDefinition("w3t", 'I018', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNHalfRing.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+	..setInt("igol", 2800)
+	..setString("unam", "Half Vongola Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Half Vongola Ring")
+	..setString("utub", "|cffffdc00Strength |r: 20|cffffdc00|nAgility|r : 20|n|cffffdc00Intelligence|r : 20")
+
+
+@compiletime function create_w3t_I017()
+	let def = createObjectDefinition("w3t", 'I017', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGoldRing.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 10|cffffdc00|nAgility|r : 10|n|cffffdc00Intelligence|r : 10")
+	..setInt("igol", 1400)
+	..setString("unam", "Vongola Ring")
+	..setInt("istr", 0)
+	..setString("utip", "Vongola Ring")
+	..setString("utub", "|cffffdc00Strength |r: 10|cffffdc00|nAgility|r : 10|n|cffffdc00Intelligence|r : 10")
+
+
+@compiletime function create_w3t_I016()
+	let def = createObjectDefinition("w3t", 'I016', 'wswd')
+	..setString("iabi", "A03M")
+	..setString("icid", "A03M")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 |r: Place an ward to scout an area for 200 seconds")
+	..setInt("igol", 100)
+	..setString("uhot", "S")
+	..setInt("ilvo", 2)
+	..setInt("ipri", 41)
+	..setInt("isto", 7)
+	..setInt("istr", 200)
+	..setString("utip", "Sentry Wards")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 |r: Place an ward to scout an area for 200 seconds")
+	..setInt("iuse", 1)
+
+
+@compiletime function create_w3t_I015()
+	let def = createObjectDefinition("w3t", 'I015', 'fgdg')
+	..setString("iabi", "A03L")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNRejuvenation.blp")
+	..setString("icid", "A03L")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 |r: Restore 900 health over 16 seconds on 1000 radius.")
+	..setInt("igol", 100)
+	..setString("uhot", "S")
+	..setInt("ilev", 2)
+	..setString("unam", "Scroll of Rejuvenation")
+	..setInt("ilvo", 2)
+	..setInt("ipri", 41)
+	..setInt("istr", 0)
+	..setString("utip", "Scroll of Rejuvenation")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 |r: Restore 900 health over 16 seconds on 1000 radius.")
+
+
+@compiletime function create_w3t_I014()
+	let def = createObjectDefinition("w3t", 'I014', 'wlsd')
+	..setString("iabi", "A03K")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNPotionOfClarity.blp")
+	..setString("icid", "A03K")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 |r: Restore 500 mana over 16 seconds")
+	..setInt("igol", 100)
+	..setString("uhot", "S")
+	..setString("unam", "Clarity Potion")
+	..setInt("ilvo", 2)
+	..setInt("ipri", 41)
+	..setInt("istr", 0)
+	..setString("utip", "Clarity Potion")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 |r: Restore 500 mana over 16 seconds")
+
+
+@compiletime function create_w3t_I013()
+	let def = createObjectDefinition("w3t", 'I013', 'wlsd')
+	..setString("iabi", "A03J")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNScrollUber.blp")
+	..setString("icid", "A03J")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 |r: Increase movement speed by 100% for 10 seconds. CD 10s")
+	..setString("uhot", "S")
+	..setString("unam", "Scroll of Speed")
+	..setInt("ilvo", 2)
+	..setInt("ipri", 41)
+	..setInt("istr", 0)
+	..setString("utip", "Scroll of Speed")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 |r: Increase movement speed by 100% for 10 seconds. CD 10s")
+	..setInt("iuse", 2)
+
+
+@compiletime function create_w3t_I012()
+	let def = createObjectDefinition("w3t", 'I012', 'wlsd')
+	..setString("iabi", "A03I")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNHealingSalve.blp")
+	..setString("icid", "A03I")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 |r: Restore 900 health over 16 seconds")
+	..setInt("igol", 100)
+	..setString("uhot", "S")
+	..setString("unam", "Healing Salve")
+	..setInt("ilvo", 2)
+	..setInt("ipri", 41)
+	..setInt("istr", 0)
+	..setString("utip", "Healing Salve")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 |r: Restore 900 health over 16 seconds")
+
+
+@compiletime function create_w3t_I011()
+	let def = createObjectDefinition("w3t", 'I011', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNzwei10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Blessed Wind")
+	..setInt("ipaw", 0)
+	..setString("utip", "Blessed Wind")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I010()
+	let def = createObjectDefinition("w3t", 'I010', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNFirefly10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Henshin")
+	..setInt("ipaw", 0)
+	..setString("utip", "Henshin")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I00Z()
+	let def = createObjectDefinition("w3t", 'I00Z', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNNecklace.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 3|n|cffffdc00Agility |r: 3|cffffdc00|nIntelligence |r: 5")
+	..setInt("igol", 400)
+	..setString("unam", "Necklace")
+	..setInt("istr", 0)
+	..setString("utip", "Necklace")
+	..setString("utub", "|cffffdc00Strength |r: 3|n|cffffdc00Agility |r: 3|cffffdc00|nIntelligence |r: 5")
+
+
+@compiletime function create_w3t_I00Y()
+	let def = createObjectDefinition("w3t", 'I00Y', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNByakuran10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Mare Powers")
+	..setInt("ipaw", 0)
+	..setString("utip", "Mare Powers")
+	..setString("utub", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I00X()
+	let def = createObjectDefinition("w3t", 'I00X', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNAdvancedUnholyStrength.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 5|n|cffffdc00Agility |r: 3|n|cffffdc00Intelligence |r: 3")
+	..setInt("igol", 400)
+	..setString("unam", "Red Gauntlet")
+	..setInt("istr", 0)
+	..setString("utip", "Red Gauntlet")
+	..setString("utub", "|cffffdc00Strength |r: 5|n|cffffdc00Agility |r: 3|n|cffffdc00Intelligence |r: 3")
+
+
+@compiletime function create_w3t_I00W()
+	let def = createObjectDefinition("w3t", 'I00W', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNJotaro10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Star Platinum")
+	..setInt("ipaw", 0)
+	..setString("utip", "Star Platinum")
+	..setString("utub", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I00V()
+	let def = createObjectDefinition("w3t", 'I00V', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNSnazzyScroll.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your accessory item|n|cffffdc00Gauntlet -> Red Gauntlet|nSlipper -> Seretei|nMantle -> Necklace|r")
+	..setInt("igol", 300)
+	..setString("unam", "Upgrade Accessory")
+	..setInt("istr", 0)
+	..setString("utip", "Upgrade Accessory")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your accessory item|n|cffffdc00Gauntlet -> Red Gauntlet|nSlipper -> Seretei|nMantle -> Necklace|r")
+
+
+@compiletime function create_w3t_I00U()
+	let def = createObjectDefinition("w3t", 'I00U', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNLionHorn.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 3|cffffdc00|nAgility |r: 5|n|cffffdc00Intelligence|r : 3")
+	..setInt("igol", 400)
+	..setString("unam", "Seretei")
+	..setInt("istr", 0)
+	..setString("utip", "Seretei")
+	..setString("utub", "|cffffdc00Strength |r: 3|cffffdc00|nAgility |r: 5|n|cffffdc00Intelligence|r : 3")
+
+
+@compiletime function create_w3t_I00T()
+	let def = createObjectDefinition("w3t", 'I00T', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNMantleOfIntelligence.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Intelligence |r: 3")
+	..setInt("igol", 100)
+	..setString("unam", "Mantle")
+	..setInt("istr", 0)
+	..setString("utip", "Mantle")
+	..setString("utub", "|cffffdc00Intelligence |r: 3")
+
+
+@compiletime function create_w3t_I00S()
+	let def = createObjectDefinition("w3t", 'I00S', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNSlippersOfAgility.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Agility |r: 3")
+	..setInt("igol", 100)
+	..setString("unam", "Slipper")
+	..setInt("istr", 0)
+	..setString("utip", "Slipper")
+	..setString("utub", "|cffffdc00Agility |r: 3")
+
+
+@compiletime function create_w3t_I00R()
+	let def = createObjectDefinition("w3t", 'I00R', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNGauntletsOfOgrePower.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 3")
+	..setInt("igol", 100)
+	..setString("unam", "Gauntlet")
+	..setInt("istr", 0)
+	..setString("utip", "Gauntlet")
+	..setString("utub", "|cffffdc00Strength |r: 3")
+
+
+@compiletime function create_w3t_I00Q()
+	let def = createObjectDefinition("w3t", 'I00Q', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNbisgohan10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Kemono Gohan")
+	..setInt("ipaw", 0)
+	..setString("utip", "Kemono Gohan")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I00P()
+	let def = createObjectDefinition("w3t", 'I00P', 'bspd')
+	..setString("iabi", "A03N")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNCloudX.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A03N")
+	..setString("ides", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 80|n|cffffdc00Intelligence|r : 40|n|cff7cbfc1Active|r : Create shield to block spell up to 6000 damage for 4 seconds. CD 120s")
+	..setInt("igol", 11000)
+	..setString("unam", "Gear Vongola Cloud Ring X")
+	..setInt("istr", 0)
+	..setString("utip", "Gear Vongola Cloud Ring X")
+	..setString("utub", "|cffffdc00Strength |r: 40|cffffdc00|nAgility|r : 80|n|cffffdc00Intelligence|r : 40|n|cff7cbfc1Active|r : Create shield to block spell up to 6000 damage for 4 seconds. CD 120s")
+	..setInt("iusa", 1)
+
+
+@compiletime function create_w3t_I00O()
+	let def = createObjectDefinition("w3t", 'I00O', 'bspd')
+	..setString("iabi", "A03G")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNWhiteBoot.blp")
+	..setString("icla", "Charged")
+	..setString("icid", "A03G")
+	..setString("ides", "|cffffdc00Strength |r: 10|cffffdc00|nAgility |r: 10|cffffdc00|nIntelligence |r: 10|cffffdc00|nMovement speed |r: 100|n|cff7cbfc1Active|r : Teleports to point target up to 800 range. CD 40s")
+	..setInt("igol", 2700)
+	..setString("unam", "White Boot")
+	..setInt("istr", 1)
+	..setString("utip", "White Boot")
+	..setString("utub", "|cffffdc00Strength |r: 10|cffffdc00|nAgility |r: 10|cffffdc00|nIntelligence |r: 10|cffffdc00|nMovement speed |r: 100|n|cff7cbfc1Active|r : Teleports to point target up to 800 range. CD 40s")
+	..setInt("iusa", 1)
+
+
+@compiletime function create_w3t_I00N()
+	let def = createObjectDefinition("w3t", 'I00N', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNWhiteBoot.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffe97777Requirement|r|cffffdc00 |r: Boots of Speed Lv 3|cffffdc00|nStrength |r: 10|cffffdc00|nAgility |r: 10|cffffdc00|nIntelligence |r: 10|cffffdc00|nMovement speed |r: 100|n|cff7cbfc1Active|r : Teleports to point target up to 800 range. CD 40s")
+	..setInt("igol", 1800)
+	..setString("unam", "White Boot (Recipe)")
+	..setInt("istr", 0)
+	..setString("utip", "White Boot (Recipe)")
+	..setString("utub", "|cffe97777Requirement|r|cffffdc00 |r: Boots of Speed Lv 3|cffffdc00|nStrength |r: 10|cffffdc00|nAgility |r: 10|cffffdc00|nIntelligence |r: 10|cffffdc00|nMovement speed |r: 100|n|cff7cbfc1Active|r : Teleports to point target up to 800 range. CD 40s")
+
+
+@compiletime function create_w3t_I00M()
+	let def = createObjectDefinition("w3t", 'I00M', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNBoot.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffe97777Requirement|r|cffffdc00 |r: Boots of Speed Lv 3|cffffdc00|nStrength |r: 10|cffffdc00|nAgility |r: 10|cffffdc00|nIntelligence |r: 10|cffffdc00|nMovement speed |r: 100")
+	..setInt("igol", 1300)
+	..setString("unam", "Pirate Boot (Recipe)")
+	..setInt("istr", 0)
+	..setString("utip", "Pirate Boot (Recipe)")
+	..setString("utub", "|cffe97777Requirement|r|cffffdc00 |r: Boots of Speed Lv 3|cffffdc00|nStrength |r: 10|cffffdc00|nAgility |r: 10|cffffdc00|nIntelligence |r: 10|cffffdc00|nMovement speed |r: 100")
+
+
+@compiletime function create_w3t_I00L()
+	let def = createObjectDefinition("w3t", 'I00L', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNBoot.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Strength |r: 10|cffffdc00|nAgility |r: 10|cffffdc00|nIntelligence |r: 10|cffffdc00|nMovement speed |r: 100")
+	..setInt("igol", 2200)
+	..setString("unam", "Pirate Boot")
+	..setInt("istr", 1)
+	..setString("utip", "Pirate Boot")
+	..setString("utub", "|cffffdc00Strength |r: 10|cffffdc00|nAgility |r: 10|cffffdc00|nIntelligence |r: 10|cffffdc00|nMovement speed |r: 100")
+
+
+@compiletime function create_w3t_I00K()
+	let def = createObjectDefinition("w3t", 'I00K', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNScrollOfHaste.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your boot item|n|cffffdc00Boots of Speed Lv 1 -> Boots of Speed Lv 2 -> Boots of Speed Lv 3|r")
+	..setInt("igol", 300)
+	..setString("unam", "Upgrade Boot Lv 1")
+	..setInt("istr", 0)
+	..setString("utip", "Upgrade Boot Lv 1")
+	..setString("utub", "|cff7cbfc1Active|r|cffffdc00 : |rUpgrade your boot item|n|cffffdc00Boots of Speed Lv 1 -> Boots of Speed Lv 2 -> Boots of Speed Lv 3|r")
+
+
+@compiletime function create_w3t_I00J()
+	let def = createObjectDefinition("w3t", 'I00J', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNWirtsOtherLeg.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Movement speed |r: 75")
+	..setInt("igol", 900)
+	..setString("unam", "Boots of Speed Lv 3")
+	..setInt("istr", 1)
+	..setString("utip", "Boots of Speed Lv 3")
+	..setString("utub", "|cffffdc00Movement speed |r: 75")
+
+
+@compiletime function create_w3t_I00I()
+	let def = createObjectDefinition("w3t", 'I00I', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNBoots.blp")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Movement speed |r: 50")
+	..setInt("igol", 600)
+	..setString("unam", "Boots of Speed Lv 2")
+	..setInt("istr", 1)
+	..setString("utip", "Boots of Speed Lv 2")
+	..setString("utub", "|cffffdc00Movement speed |r: 50")
+
+
+@compiletime function create_w3t_I00H()
+	let def = createObjectDefinition("w3t", 'I00H', 'bspd')
+	..setString("iabi", "")
+	..setString("icla", "Charged")
+	..setString("ides", "|cffffdc00Movement speed |r: 25")
+	..setInt("igol", 300)
+	..setString("unam", "Boots of Speed Lv 1")
+	..setInt("istr", 0)
+	..setString("utip", "Boots of Speed Lv 1")
+	..setString("utub", "|cffffdc00Movement speed |r: 25")
+
+
+@compiletime function create_w3t_I00G()
+	let def = createObjectDefinition("w3t", 'I00G', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNArthurProto10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Male Excalibur")
+	..setInt("ipaw", 0)
+	..setString("utip", "Male Excalibur")
+	..setString("utub", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I00F()
+	let def = createObjectDefinition("w3t", 'I00F', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNTsunayoshi10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "X-Gloves")
+	..setInt("ipaw", 0)
+	..setString("utip", "X-Gloves")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I00E()
+	let def = createObjectDefinition("w3t", 'I00E', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNshana10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Alastor")
+	..setInt("ipaw", 0)
+	..setString("utip", "Alastor")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I00D()
+	let def = createObjectDefinition("w3t", 'I00D', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNRyogi10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Mystic Eyes")
+	..setInt("ipaw", 0)
+	..setString("utip", "Mystic Eyes")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I00C()
+	let def = createObjectDefinition("w3t", 'I00C', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNAkame10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Murasame")
+	..setInt("ipaw", 0)
+	..setString("utip", "Murasame")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I00B()
+	let def = createObjectDefinition("w3t", 'I00B', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNMusashi10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Samurai Remnant")
+	..setInt("ipaw", 0)
+	..setString("utip", "Samurai Remnant")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I00A()
+	let def = createObjectDefinition("w3t", 'I00A', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNIchigo10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Vasto Lord")
+	..setInt("ipaw", 0)
+	..setString("utip", "Vasto Lord")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I009()
+	let def = createObjectDefinition("w3t", 'I009', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNBellCranel10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Eiyuu Ganbou")
+	..setInt("ipaw", 0)
+	..setString("utip", "Eiyuu Ganbou")
+	..setString("utub", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I008()
+	let def = createObjectDefinition("w3t", 'I008', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNYomi10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Category A")
+	..setInt("ipaw", 0)
+	..setString("utip", "Category A")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I007()
+	let def = createObjectDefinition("w3t", 'I007', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNSabo10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Revolutionary")
+	..setInt("ipaw", 0)
+	..setString("utip", "Revolutionary")
+	..setString("utub", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I006()
+	let def = createObjectDefinition("w3t", 'I006', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNSaberAlter10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Black Excalibur")
+	..setInt("ipaw", 0)
+	..setString("utip", "Black Excalibur")
+	..setString("utub", "|cffffdc00Strength|r : 70|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I005()
+	let def = createObjectDefinition("w3t", 'I005', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNHyde10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Under Night In Birth")
+	..setInt("ipaw", 0)
+	..setString("utip", "Under Night In Birth")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I004()
+	let def = createObjectDefinition("w3t", 'I004', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNJellal10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Heavenly Magic")
+	..setInt("ipaw", 0)
+	..setString("utip", "Heavenly Magic")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I003()
+	let def = createObjectDefinition("w3t", 'I003', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNMystogan10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Another Jellal")
+	..setInt("ipaw", 0)
+	..setString("utip", "Another Jellal")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 30|n|cffffdc00Intelligence|r : 70|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I002()
+	let def = createObjectDefinition("w3t", 'I002', 'manh')
+	..setString("iabi", "")
+	..setString("iico", "ReplaceableTextures\\CommandButtons\\BTNSelectHeroOn.blp")
+	..setString("icla", "Permanent")
+	..setString("ides", "|cffffdc00This is our secret...|r")
+	..setInt("igol", 10000)
+	..setString("unam", "Secret Item")
+	..setInt("istr", 0)
+	..setString("utip", "Secret Item")
+	..setString("utub", "|cffffdc00This is our secret...|r")
+
+
+@compiletime function create_w3t_I001()
+	let def = createObjectDefinition("w3t", 'I001', 'bspd')
+	..setString("iabi", "")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNAlpha10k.blp")
+	..setString("ides", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+	..setInt("idro", 0)
+	..setInt("igol", 10000)
+	..setString("unam", "Unknown Construct")
+	..setInt("ipaw", 0)
+	..setString("utip", "Unknown Construct")
+	..setString("utub", "|cffffdc00Strength|r : 30|n|cffffdc00Agility|r : 70|n|cffffdc00Intelligence|r : 30|n|cffffdc00Life Regen|r : 10|n|cffffdc00Mana Regen|r : 5")
+
+
+@compiletime function create_w3t_I000()
+	let def = createObjectDefinition("w3t", 'I000', 'bspd')
+	..setString("iabi", "A000")
+	..setString("iico", "replaceabletextures\\commandbuttons\\BTNHL_Holy_Grail.blp")
+	..setString("icla", "PowerUp")
+	..setString("icid", "A000")
+	..setString("ides", "|cffffdc00Strength|r : 25|n|cffffdc00Agility|r : 25|n|cffffdc00Intelligence|r : 25|n|cff5edc8dActive|r : Heal 1300 hp. CD 120s")
+	..setInt("igol", 5000)
+	..setString("unam", "Hori Grail")
+	..setString("utip", "Hori Grail")
+	..setString("utub", "|cffffdc00Strength|r : 25|n|cffffdc00Agility|r : 25|n|cffffdc00Intelligence|r : 25|n|cff5edc8dActive|r : Heal 1300 hp. CD 120s")
+	..setInt("iusa", 1)
+
+
+// Original Table (contains all modified default objects)
+// Wurst does not support modifying default objects
+// but you can copy these functions and replace 'xxxx' with a new, custom id.
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'wswd')
+	..setString("utub", "Drops a Sentry Ward to spy upon an area for 300 seconds. |nContains 3 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'wshs')
+	..setString("utub", "Gives the player vision of a target unit until that unit is dispelled. |nContains 2 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'woms')
+	..setString("utub", "Steals mana from a target unit and gives it to the Hero. |nContains 2 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'wneu')
+	..setString("utub", "Hurls forth a stream of neutralizing magic that bounces up to 8 times, dispelling units in its wake. |nContains 4 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'wneg')
+	..setString("utub", "Dispels all magical effects in a target area. |nContains 3 charges. |n|cffffcc00Deals 200 damage to summoned units.|r")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'wlsd')
+	..setString("utub", "Allows the Hero to cast Lightning Shield on a target unit. Lightning Shield surrounds a unit with electricity, dealing 20 damage per second to nearby units. |nContains 3 charges. |nLasts 20 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'will')
+	..setString("utub", "Create an illusory double of the targeted unit when used. The illusory double deals no damage to enemy units, takes 2 times the damage from enemy attacks, and will disappear after 60 seconds or when its hit points reach zero. |nContains 3 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'wild')
+	..setString("utub", "Summons a Furbolg Warrior. The Furbolg lasts 180 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'whwd')
+	..setString("utub", "Drops a ward that heals nearby friendly units for 30 seconds. |nContains 3 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'wcyc')
+	..setString("utub", "Allows the Hero to cast Cyclone. Cyclone tosses a target enemy unit into the air, rendering it unable to attack, move or cast spells. |nContains 3 charges. |nLasts 20 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'ward')
+	..setString("utub", "Increases the attack damage of nearby friendly units by 10% when worn. |nDoes not stack with Command Aura.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'vamp')
+	..setString("utub", "Adds 12 bonus damage and a life-stealing attack to the Hero. |nLasts 20 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'tstr')
+	..setString("utub", "Permanently increases the Strength of the Hero by 1 when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'totw')
+	..setString("utub", "This mystic stone summons a Furbolg to fight for you. |nContains 3 charges. |nLasts 180 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'tmsc')
+	..setString("utub", "|cff8b00ffUnique|r|nGrants the ability to sacrifice a friendly non-Hero unit to restore hit points. Also increases the Hero's mana by 100 while equipped.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'tkno')
+	..setString("utub", "Increases the level of the Hero by 1 when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'tint')
+	..setString("utub", "Permanently increases the Intelligence of the Hero by 1 when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'tgxp')
+	..setString("utub", "Gives the Hero 500 bonus experience points when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'texp')
+	..setString("utub", "Gives 100 experience to the Hero when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'tdex')
+	..setString("utub", "Permanently increases the Agility of the Hero by 1 when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'stwa')
+	..setString("utub", "Increases the attack damage of the Hero by 5 when carried.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'stre')
+	..setString("utub", "Animates a nearby corpse to fight your enemies. Lasts 60 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'ssan')
+	..setString("utub", "Teleports a target unit to your highest level town hall, stunning the unit and regenerating 15 hit points per second. Lasts until the unit is fully healed.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'srtl')
+	..setString("utub", "|cffff8c00Artifact|r|nIncreases the attack rate of the Hero by 0% and attack damage by 15.|n|cffffcc00History|r|n|cffffdeadThis weapon was crafted on Draenor for Kash'drakor and used in the Blood River war that ended with the annihilation of the Dark Scar clan. Nazgrel is the last living relative of Kash'drakor.|r")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'srrc')
+	..setString("utub", "Brings 6 of your nearby dead units back to life.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'sror')
+	..setString("utub", "Gives friendly nearby units a 25% bonus to damage for 45 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'sres')
+	..setString("utub", "Restores 300 hit points and 150 mana of friendly non-mechanical units in an area around your Hero.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'sreg')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRegenerates the hit points of all friendly non-mechanical units in an area around your Hero by 225 over 45 seconds when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'srbd')
+	..setString("utub", "Adds 10 bonus fire damage to the attack of a Hero when carried. The Hero's attacks also do splash damage to nearby enemy units, and have a 20% chance to deal 2 times their normal damage.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'spsh')
+	..setString("utub", "Blocks a negative spell that an enemy casts on the Hero once every 40 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'spro')
+	..setString("utub", "Increases the armor of all friendly units in an area around your Hero by 2 for 30 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'sneg')
+	..setString("utub", "Dispels all magical effects in a target area. |n|cffffcc00Deals 200 damage to summoned units.|r")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'sman')
+	..setString("utub", "Restores 100 mana to all friendly units in an area around your Hero.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'silk')
+	..setString("utub", "Binds a target enemy air unit in webbing, forcing the target to the ground. Webbed units can be hit as though they were land units. |nContains 4 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'shrs')
+	..setString("utub", "A tasty roast with a shimmerweed base. Heals 50 hit points when eaten. |nContains 6 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'shhn')
+	..setString("utub", "|cff8b00ffUnique|r|nGrants nearby friendly units a 10% bonus to attack damage. Also increases the armor of the Hero by 8 when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'shen')
+	..setString("utub", "Increases the Hero's armor by 2 and hit points by 50 when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'shea')
+	..setString("utub", "Heals 150 hit points to all friendly non-mechanical units around the Hero when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'shdt')
+	..setString("utub", "|cffff8c00Artifact|r|nEngulfs the Hero in fire which deals 10 damage per second to nearby enemy land units. Also increases the Hero's armor by 10, hit points by 150, and mana by 100 when worn. |n|cffffcc00History|r|n|cffffdeadWhen Arthas took up the sword against his own people in Stratholme, the Deathlords committed the same heinous act in many other cities across Lordaeron.|r")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'shcw')
+	..setString("utub", "|cff8b00ffUnique|r|nThese are given to shaman upon the completion of their training. Increases attack damage by 12. The Hero's attacks also have a chance to dispel magic and slow the movement speed of the enemy for 15 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'shas')
+	..setString("utub", "Increases the movement speed of the Hero and nearby allied units to the maximum movement speed. |nLasts 10 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'shar')
+	..setString("utub", "Summons an Ice Revenant. The Ice Revenant lasts 180 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'sfog')
+	..setString("utub", "Allows the Hero to channel the Cloud ability, which stops an area of enemy towers from attacking for 30 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'scul')
+	..setString("utub", "Animates 6 nearby corpses to fight for you. Lasts 40 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'schl')
+	..setString("utub", "Grants the ability to heal a friendly unit. Also grants the Hero and friendly nearby units 2% increased hit point regeneration.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'sbch')
+	..setString("utub", "Grants a melee Hero and friendly nearby melee units life stealing attacks which take 15% of the damage they deal and convert it into life. |nDoes not stack with Vampiric Aura.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'sand')
+	..setString("utub", "Raises 6 nearby dead units to fight for 40 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rwiz')
+	..setString("utub", "Increases the Hero's rate of mana regeneration by 50% when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rump')
+	..setString("utub", "This heavy pick can be swung with force. Increases the Hero's attack damage by 0 and gives a 15% chance to stun the enemy.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rspl')
+	..setString("utub", "Links nearby units' spirits together, causing 50% of the damage taken by one to be distributed across all spirit linked units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rspd')
+	..setString("utub", "Increases the movement speed of all nearby allied units to the maximum movement speed. |nLasts 60 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rres')
+	..setString("utub", "Restores 300 hit points and 150 mana of friendly non-mechanical units in an area around your Hero.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rre2')
+	..setString("utub", "Brings 3 of your nearby dead units back to life.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rre1')
+	..setString("utub", "Brings 1 of your nearby dead units back to life.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rots')
+	..setString("utub", "|cff87ceebUnique Consumable|r|nSummons 2 Murlocs to fight for you. Also increases the Hero's strength, agility, and intelligence by 2. |nContains 5 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rnec')
+	..setString("utub", "Creates two Skeleton Warriors from a corpse. |nContains 4 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rman')
+	..setString("utub", "Restores 125 mana to all nearby friendly units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rma2')
+	..setString("utub", "Restores 300 mana to all nearby friendly units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rlif')
+	..setString("utub", "Increases the Hero's hit point regeneration by 2 hit points per second.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rhth')
+	..setString("utub", "Increases the hit points of the Hero by 300 when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rhe3')
+	..setString("utub", "Heals 400 hit points to all nearby friendly non-mechanical units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rhe2')
+	..setString("utub", "Heals 250 hit points to all nearby friendly non-mechanical units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rhe1')
+	..setString("utub", "Heals 125 hit points to all nearby friendly non-mechanical units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rej6')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRegenerates 450 hit points and 150 mana of the Hero and nearby friendly units over 45 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rej5')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRegenerates 250 hit points and 100 mana of the Hero and nearby friendly units over 45 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rej4')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRegenerates 400 hit points and 125 mana of the Hero over 30 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rej3')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRegenerates 200 hit points and 75 mana of the Hero over 30 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rej2')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRegenerates 150 hit points and 50 mana of the Hero over 30 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rej1')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRegenerates 100 hit points and 25 mana of the Hero over 30 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'rdis')
+	..setString("utub", "Dispels all nearby magic effects. |n|cffffcc00Deals 250 damage to summoned units.|r")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pspd')
+	..setString("utub", "Increases the movement speed of the Hero by 60% for 45 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'prvt')
+	..setString("utub", "Increases the hit points of the Hero by 150 when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pres')
+	..setString("utub", "Restores 500 hit points and 200 mana of the Hero when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pomn')
+	..setString("utub", "Reveals the entire map for 5 seconds when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pnvu')
+	..setString("utub", "Makes the Hero invulnerable to damage for 15 seconds when used. An invulnerable Hero may not be the target of spells or effects.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pnvl')
+	..setString("utub", "Makes the Hero invulnerable to damage for 7 seconds when used. An invulnerable Hero may not be the target of spells or effects.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pmna')
+	..setString("utub", "Increases the mana capacity of the Hero by 250 when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pman')
+	..setString("utub", "Restores 150 mana when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'plcl')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRegenerates the Hero's mana by 100 over 30 seconds when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pinv')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRenders the Hero invisible for 120 seconds when used. An invisible Hero is untargetable by the enemy unless detected. If the Hero attacks, uses an ability, or casts a spell, the invisibility effect is lost.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'phea')
+	..setString("utub", "Heals 250 hit points when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pgma')
+	..setString("utub", "Restores 300 mana when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pgin')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRenders the Hero invisible for 180 seconds when used. An invisible Hero is untargetable by the enemy unless detected. If the Hero attacks, uses an ability, or casts a spell, the invisibility effect is lost.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pghe')
+	..setString("utub", "Heals 500 hit points when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'penr')
+	..setString("utub", "Increases the mana capacity of the Hero by 150 when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pdiv')
+	..setString("utub", "Turns the Hero invulnerable for 25 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pclr')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRegenerates the Hero's mana by 200 over 45 seconds when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'pams')
+	..setString("utub", "Gives the Hero immunity to magical spells for 15 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'oven')
+	..setString("utub", "Adds 5 bonus damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air and poison enemy units for 6 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'oslo')
+	..setString("utub", "Adds 6 bonus damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air, and have a chance to slow a target enemy unit's movement speed by 60% and attack rate by 25% for 60 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'olig')
+	..setString("utub", "Adds 6 bonus damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air, dispel magic and slow the movement speed of the enemy for 3 seconds. |n|cffffcc00Deals 35 bonus damage to summoned units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'oli2')
+	..setString("utub", "Adds 5 bonus damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air, and have a chance to dispel magic and slow the movement speed of the enemy for 3 seconds. |n|cffffcc00Deals 150 bonus damage to summoned units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'ofro')
+	..setString("utub", "Adds 6 bonus cold damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air and slow the movement speed and attack rate of the enemy for 3 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'ofir')
+	..setString("utub", "Adds 5 bonus fire damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air and do splash damage to nearby enemy units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'odef')
+	..setString("utub", "Adds 6 bonus damage to the attack of a Hero when carried. The Hero's attack also becomes ranged when attacking air and will create a Dark Minion when it is the killing blow on an enemy unit. The Dark Minion lasts 80 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'ocor')
+	..setString("utub", "Adds 5 bonus damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air and reduce the armor of enemy units for 5 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'moon')
+	..setString("utub", "Causes an eclipse that blocks out the sun and creates an artificial night. |nLasts 30 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'modt')
+	..setString("utub", "While wearing this mask, a Hero will recover hit points equal to 50% of the attack damage dealt to an enemy unit.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'mnst')
+	..setString("utub", "Increases the mana regeneration rate of the Hero by 25% when worn. Can be consumed for 300 mana.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'mnsf')
+	..setString("utub", "Increases the mana of the Hero by 200. Also grants the Hero and friendly nearby units a bonus to mana regeneration.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'manh')
+	..setString("utub", "Permanently increases the hit points of the Hero by 50 when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'lmbr')
+	..setString("utub", "Gives 250 lumber to the player when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'lhst')
+	..setString("utub", "Grants the Hero and friendly nearby units 1 bonus armor. |nDoes not stack with Devotion Aura.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'klmm')
+	..setString("utub", "|cffff8c00Artifact|r|nIncreases the attack damage of the Hero by 20 when carried. Also causes the Hero's attacks to steal life.|n|cffffcc00History|r|n|cffffdeadWhen Dethorin found his lady, Allurana, in the arms of another, he went to the Barrens and cried out. An axe burst forth from the sands as if in answer. Dethorin slew Allurana and her lover, then hurled the axe with all his might into the deep dark sea.|r")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'infs')
+	..setString("utub", "Calls an Infernal down from the sky, dealing 50 damage and stunning enemy land units for 4 seconds in an area. The Infernal lasts 180 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'hslv')
+	..setString("utub", "|cff87ceebNon-Combat Consumable|r|nRegenerates a target unit's hit points by 400 over 45 seconds when used. |nContains 3 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'hlst')
+	..setString("utub", "Increases the life regeneration rate of the Hero by 1 hit points per second when worn. Can be consumed for 500 health.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'hbth')
+	..setString("utub", "|cff8b00ffUnique|r|nGrants the ability to go Berserk, causing the Hero to attack 50% faster but take 50% more damage. Also increases strength and agility by 4 when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'gvsm')
+	..setString("utub", "|cff8b00ffUnique|r|nGrants the ability to control summoned units. Also increases the intelligence of the Hero by 6 when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'grsl')
+	..setString("utub", "|cff87ceebUnique Consumable|r|nThis powerful book permanently increases the hit points of the Hero by 20 each time it is used. |nContains 10 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'gomn')
+	..setString("utub", "Reveals the entire map for 5 seconds when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'gold')
+	..setString("utub", "Gives 250 gold to the player when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'gobm')
+	..setString("utub", "Places a hidden land mine at a target point. Enemy units that move near the land mine will activate the mine, destroying the mine and causing area of effect damage to nearby units. |nContains 3 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'gldo')
+	..setString("utub", "Adds 6 bonus fire damage to the attack of a Hero when carried. The Hero's attacks also become ranged when attacking air and do splash damage to nearby enemy units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'gcel')
+	..setString("utub", "Increases the attack speed of the Hero by 0% when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'fwss')
+	..setString("utub", "This ancient Frost Wyrm skull has been equipped with handles, turning it into a powerful shield. Increases armor by 2 when worn and reduces Magic damage dealt to the Hero by 33%.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'frhg')
+	..setString("utub", "Increases armor by 5 and attack rate by 20% when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'frgd')
+	..setString("utub", "Adds 5 bonus cold damage to the attack of a Hero and 5 bonus armor when carried. The Hero's attacks also slow the movement speed and attack rate of the enemy.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'fgun')
+	..setString("utub", "Reveals a target area on the map. |nContains 3 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'fgsk')
+	..setString("utub", "Summons 4 Skeleton Warriors and 4 Skeleton Archers to fight for you. |nLasts 120 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'fgrg')
+	..setString("utub", "Summons a Rock Golem to fight for you. |nLasts 180 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'fgrd')
+	..setString("utub", "Summons a Red Drake to fight for you. |nLasts 180 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'fgfh')
+	..setString("utub", "Summons a Fel Stalker to fight for you. |nLasts 180 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'fgdg')
+	..setString("utub", "Summons a Doom Guard to fight for you. |nLasts 180 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'evtl')
+	..setString("utub", "Causes attacks against the wearer to miss 15% of the time. |nDoes not stack with Evasion or Drunken Brawler.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'envl')
+	..setString("utub", "Regenerates 200 hit points and 75 mana of the Hero over 30 seconds. |nContains 5 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'dust')
+	..setString("utub", "Reveals enemy invisible units in an area around the Hero. |nContains 2 charges. |nLasts 20 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'dtsb')
+	..setString("utub", "|cffff8c00Artifact|r|nGrants the ability to portal to your home town. Also reduces spell damage by 33% and increases the Hero's mana by 75 while equipped.|n|cffffcc00History|r|n|cffffdeadDrek'Thar's old spellbook is filled with pages stolen from Kirin Tor mages that were slain in battle.|r")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'dsum')
+	..setString("utub", "Teleports 12 of the player's units within the targeted area to the location of the Hero when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'crys')
+	..setString("utub", "Reveals a targeted area. Invisible units are also revealed by the Crystal Ball's effect. |nLasts 10 seconds.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'crdt')
+	..setString("utub", "|cffff8c00Artifact|r|nGrants the ability to fire bolts of pain that deal 250 damage. Also increases the Hero's hit points by 150 and mana by 100 when worn.|n|cffffcc00History|r|n|cffffdeadThe Deathlords are rumored to have been mighty Paladins once. One of their order turned from the light when he slaughtered his own family, believing they were impure.|r")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'cosl')
+	..setString("utub", "|cffff8c00Artifact|r|nBrings 6 of your nearby dead units back to life. |n|cffffcc00History|r|n|cffffdeadCrafted by the Titans as gifts to their favored creations, the Celestial Orb of Souls channels the powers of the light to bring back to life those who have recently fallen.|r")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'cnhn')
+	..setString("utub", "This ancient relic of the Night Elves is said to hold the power to call the spirits of all Night Elves. It imbues its owner with 200 hit points, and a 2 hit point per second regeneration bonus.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'clfm')
+	..setString("utub", "Engulfs the Hero in fire which deals 10 damage per second to nearby enemy land units. |nDoes not stack with Immolation.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'ccmd')
+	..setString("utub", "Transfers control of the targeted non-Hero unit to the player who uses the Scepter. The transfer of control is permanent. |nCannot be used on Heroes or on creeps higher than level 5. |nContains 3 charges.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'brac')
+	..setString("utub", "Reduces Magic damage dealt to the Hero by 33%.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'blba')
+	..setString("utub", "Grants nearby units 1 bonus defense. Enhances the Hero's armor by 7.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'bfhr')
+	..setString("utub", "|cff8b00ffUnique|r|nIncreases the Hero's agility by 10 when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'axas')
+	..setString("utub", "|cffff8c00Artifact|r|nSummons 2 Troll Berserkers to fight for you. Also grants the Hero and friendly nearby units increased attack rate and movement speed.|n|cffffcc00History|r|n|cffffdeadNames of generations of Witch Doctors are carved into this staff. The wielder can call upon them for wisdom and guidance in times of peril.|r")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'asbl')
+	..setString("utub", "Adds 5 bonus damage to the attack of the Hero when carried. The Hero's attacks also deal 4 damage per second, and slow the movement speed and attack rate of the enemy.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'arsh')
+	..setString("utub", "Reduces damage from ranged attacks to 70%. Also increases the Hero's armor by 5 when worn.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'arsc')
+	..setString("utub", "A powerful scroll that restores 150 hit points, 100 mana, and grants 2 bonus armor to nearby friendly units.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'ankh')
+	..setString("utub", "Automatically brings the Hero back to life with 500 hit points when the Hero wearing the Ankh dies.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'amrc')
+	..setString("utub", "Teleports 12 of the player's units within the targeted area to the location of the Hero when used.")
+
+
+@compiletime function create_w3t_xxxx()
+	let def = createObjectDefinition("w3t", 'xxxx', 'afac')
+	..setString("utub", "Increases nearby ranged units' damage by 10%. |nDoes not stack with Trueshot Aura.")
+
+

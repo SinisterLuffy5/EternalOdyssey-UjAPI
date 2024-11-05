@@ -1,0 +1,121 @@
+package AcheronD
+
+import RegisterEvents
+import RVEC_Core
+import PreloaderEx
+
+function acheronD()
+    let tmr = GetExpiredTimer()
+    let hid = GetHandleId(tmr)
+    let u = LoadUnitHandle(GameHT, hid, 'cstr')
+    let t = LoadUnitHandle(GameHT, hid, 'trgt')
+    int count = LoadInteger(GameHT, hid, 'coun')
+    let a = Angle(GetUnitX(u), GetUnitY(u), GetUnitX(t), GetUnitY(t))
+    //real dist = Distance(GetUnitX(u), GetUnitY(u), GetUnitX(t), GetUnitY(t))
+    real a2 //= .0
+    real x //= .0
+    real y //= .0
+    effect e
+
+    count++
+    SaveInteger(GameHT, hid, 'coun', count)
+    SetPauseUnit(u, true)
+    SetInvulUnit(u, true)
+    SetPauseUnit(t, true)
+    SetInvulUnit(t, true)
+
+    if (count == 1)
+        SoundStart("AcheronD.mp3")
+        visionArea(GetOwningPlayer(u), 1500, 5, GetUnitX(u), GetUnitY(u))
+        UnitHilang(u, true)
+        x = PolarX(GetUnitX(t), -800, a)
+        y = PolarY(GetUnitY(t), -800, a)
+        Effect("Acheronred.mdx", x, y, 0, a, 0, 0, 1, 5.6, 255, 255, 255, 255)
+        SetSpecialEffectAnimationByIndex(dummy_effect, 24)
+        SaveEffectHandle(GameHT, hid, 0, dummy_effect)
+        Effect("Black.mdx", x, y, 0, a, 0, 0, 2, 5.6, 255, 255, 255, PercentTo255(60))
+        TimeScaleEffect(dummy_effect, 0, 0.4)
+        Effect("Gojosfx8.mdx", x, y, 100, a, 0, 0, 5, 4, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.5)
+
+    if (count <= 200)
+        if (count % 4 == 0)
+            e = LoadEffectHandle(GameHT, hid, 0)
+            a2 = randomAngle()
+            x = PolarX(GetSpecialEffectX(e), GetRandomReal(100, 300), a2)
+            y = PolarY(GetSpecialEffectY(e), GetRandomReal(100, 300), a2)
+            Effect("Alphasfx17.mdx", x, y, GetRandomReal(100, 150), a2, 0, 0, GetRandomReal(2.5, 3.5), 1.5, 255, 255, 255, 255)
+            SetSpecialEffectTimeScale(dummy_effect, GetRandomReal(0.75, 1))
+            a2 = randomAngle()
+            x = PolarX(GetSpecialEffectX(e), GetRandomReal(200, 600), a2)
+            y = PolarY(GetSpecialEffectY(e), GetRandomReal(200, 600), a2)
+            Effect("Acheronsfx21.mdx", x, y, 0, a2, 0, 0, GetRandomReal(0.8, 1.2), 1, 255, 255, 255, 255)
+            SetSpecialEffectTimeScale(dummy_effect, GetRandomReal(0.75, 1))
+            Effect("Gojosfx9.mdx", x, y, 50, a2, 0, 0, GetRandomReal(1.5, 2.5), 1, 255, 255, 255, 255)
+            Effect("Gojosfx11.mdx", x, y, 50, a2, 0, 0, GetRandomReal(0.3, 0.6), 1.5, 255, 255, 255, 255)
+            SetSpecialEffectTimeScale(dummy_effect, GetRandomReal(0.75, 1.25))
+
+    if (count == 200)
+        e = LoadEffectHandle(GameHT, hid, 0)
+        SetSpecialEffectAnimationByIndex(e, 7)
+        SetSpecialEffectTimeScale(e, 0.8)
+
+    if (count >= 220 and count <= 240)
+        e = LoadEffectHandle(GameHT, hid, 0)
+        SaveReal(GameHT, hid, 0, LoadReal(GameHT, hid, 0) + 30)
+        if (count % 3 == 0)
+            x = PolarX(GetSpecialEffectX(e), 50 + LoadReal(GameHT, hid, 1), a)
+            y = PolarY(GetSpecialEffectY(e), 50 + LoadReal(GameHT, hid, 1), a)
+            Effect("Acheronsfx22.mdx", x, y, 0, a, 0, 0, 0.6 + (count-220) * 0.02, 2 - (count-220) * 0.02, 255, 255, 255, 255)
+            TimeScaleEffect(dummy_effect, 0.2, 0.2)
+
+    if (count == 240)
+        SoundStart("AcheronSE6.mp3")
+        visionArea(GetOwningPlayer(u), 1200, 3, GetUnitX(t), GetUnitY(t))
+        Effect("Saltersfx38.mdx", GetUnitX(t), GetUnitY(t), 0, a, 0, 0, 1, 1, 255, 255, 255, 255)
+        Effect("Acheronsfx19.mdx", GetUnitX(t), GetUnitY(t), 0, a, 0, 0, 1.5, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.8)
+
+    if (count == 260)
+        Effect("Jellalsfx23.mdx", GetUnitX(t), GetUnitY(t), 0, a, 0, 0, 1, 3, 255, 255, 255, 255)
+        SetSpecialEffectAnimation(dummy_effect, "death")
+
+    if (count == 275)
+        UnitHilang(u, false)
+        SetUnitTimeScale(u, 1)
+        SetPauseUnit(u, false)
+        SetPauseUnit(t, false)
+        SetInvulUnit(u, false)
+        SetInvulUnit(t, false)
+        u.damageTarget(t, 8. * GetHeroAgi(u, true))
+        IssueTargetOrderById(u, 851983, t)
+        StopUnitTimed(t, 0.2)
+        FlushChildHashtable(GameHT, hid)
+        PauseTimer(tmr)
+        DestroyTimer(tmr)
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT) ->
+        if (EventData.getSpellAbilityId() == 'A08M')
+            let u = EventData.getTriggerUnit()
+            let t = EventData.getSpellTargetUnit()
+            SetPauseUnit(u, true)
+            SetInvulUnit(u, true)
+            SetPauseUnit(t, true)
+            SetInvulUnit(t, true)
+
+            let tmr = CreateTimer()
+            let hid = GetHandleId(tmr)
+            SaveUnitHandle(GameHT, hid, 'cstr', u)
+            SaveUnitHandle(GameHT, hid, 'trgt', t)
+            TimerStart(tmr, 0.02, true, function acheronD)
+
+    preloadSound("AcheronD.mp3")
+    preloadEffect("Black.mdx")
+    preloadEffect("Gojosfx8.mdx")
+    preloadEffect("Gojosfx9.mdx")
+    preloadEffect("Gojosfx11.mdx")
+    preloadEffect("Alphasfx17.mdx")
+    preloadEffect("Acheronsfx21.mdx")
+    preloadEffect("Acheronsfx22.mdx")
+    preloadEffect("Jellalsfx23.mdx")

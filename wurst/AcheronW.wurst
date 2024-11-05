@@ -1,0 +1,113 @@
+package AcheronW
+
+//import Acheron
+import RVEC_Core
+import RegisterEvents
+import PreloaderEx
+
+function acheronW()
+    let tmr = GetExpiredTimer()
+    let hid = GetHandleId(tmr)
+    let u = LoadUnitHandle(GameHT, hid, 'cstr')
+    let t = LoadUnitHandle(GameHT, hid, 'trgt')
+    int count = LoadInteger(GameHT, hid, 'coun')
+    real a = Angle(GetUnitX(u), GetUnitY(u), GetUnitX(t), GetUnitY(t))
+    real dist
+    real x
+    real y
+
+    count++
+    SaveInteger(GameHT, hid, 'coun', count)
+    SetPauseUnit(u, true)
+    SetInvulUnit(u, true)
+    SetPauseUnit(t, true)
+    SetInvulUnit(t, true)
+
+    if (count == 1)
+        SoundStart("AcheronW.mp3")
+        SoundStart("AliceSE4.mp3")
+        SoundStart("AcheronSE2.mp3")
+        x = PolarX(GetUnitX(t), -600, a)
+        y = PolarY(GetUnitY(t), -600, a)
+        SetUnitXY(u, x, y, 0)
+        visionArea(GetOwningPlayer(u), 1200, 3, GetUnitX(u), GetUnitY(u))
+        a = Angle(GetUnitX(u), GetUnitY(u), GetUnitX(t), GetUnitY(t))
+        SetUnitFacingEx(u, a, true)
+        SetUnitAnimationByIndex(u, 6)
+        SetUnitTimeScale(u, 0.85)
+        Effect("Acheronsfx3.mdx", GetUnitX(u), GetUnitY(u), 0, a, 0, 0, 1.5, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.9)
+        Effect("Acheronsfx4.mdx", GetUnitX(u), GetUnitY(u), 100, a, 0, 0, 0.8, 1.5, 255, 255, 255, 255)
+        Effect("Alphasfx1.mdx", GetUnitX(u), GetUnitY(u), 50, a, 0, 0, 1, 1, 255, 255, 255, 255)
+
+    if (count == 3 or count == 6 or count == 9 or count == 12)
+        Effect("Alphasfx5.mdx", GetUnitX(u), GetUnitY(u), 0, a, 0, 0, 1.5, 1, 255, 255, 255, 255)
+        Effect("Alphasfx9.mdx", GetUnitX(u), GetUnitY(u), 0, a, 0, 0, 0.6, 1, 255, 255, 255, 255)
+
+    if (count <= 25)
+        dist = Distance(GetUnitX(u), GetUnitY(u), GetUnitX(t), GetUnitY(t))
+        if (dist > 140)
+            x = PolarX(GetUnitX(u), dist / 15, a)
+            y = PolarY(GetUnitY(u), dist / 15, a)
+            SetUnitXY(u, x, y, 0)
+        else
+            x = PolarX(GetUnitX(t), -120, a)
+            y = PolarY(GetUnitY(t), -120, a)
+            SetUnitXY(u, x, y, 0)
+
+    if (count == 25)
+        SoundStart("AcheronSE3.mp3")
+        visionArea(GetOwningPlayer(u), 1200, 3, GetUnitX(t), GetUnitY(t))
+        Effect("Acheronsfx1.mdx", GetUnitX(t), GetUnitY(t), 150, a, 0, 0, 5, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.85)
+        Effect("Acheronsfx2.mdx", GetUnitX(t), GetUnitY(t), 100, a, 0, 0, 1.8, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.6)
+        Effect("Acheronsfx2.mdx", GetUnitX(t), GetUnitY(t), 100, a + 180., 0, 0, 1.8, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.6)
+        Effect("Acheronsfx2.mdx", GetUnitX(t), GetUnitY(t), 100, a + 90., -45, 0, 1.5, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.6)
+        Effect("Acheronsfx2.mdx", GetUnitX(t), GetUnitY(t), 100, a + 90., 45, 0, 1.5, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.6)
+        Effect("Alphasfx16.mdx", GetUnitX(t), GetUnitY(t), 0, a, 0, 0, 1.5, 2, 126, 28, 182, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.75)
+        Effect("Yomisfx17.mdx", GetUnitX(t), GetUnitY(t), 50, a, 0, 0, 2, 1.5, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.6)
+
+    if (count == 30)
+        SetUnitTimeScale(u, 1)
+        SetPauseUnit(u, false)
+        SetPauseUnit(t, false)
+        SetInvulUnit(u, false)
+        SetInvulUnit(t, false)
+        u.damageTarget(t, (1. + GetUnitAbilityLevel(u, 'A08H')) * GetHeroAgi(u, true))
+        IssueTargetOrderById(u, 851983, t)
+        StopUnitTimed(t, 0.2)
+        FlushChildHashtable(GameHT, hid)
+        PauseTimer(tmr)
+        DestroyTimer(tmr)
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT) ->
+        if EventData.getSpellAbilityId() == 'A08H'
+            let u = EventData.getTriggerUnit()
+            let t = EventData.getSpellTargetUnit()
+            SetPauseUnit(u, true)
+            SetInvulUnit(u, true)
+            SetPauseUnit(t, true)
+            SetInvulUnit(t, true)
+
+            let tmr = CreateTimer()
+            let hid = GetHandleId(tmr)
+            SaveUnitHandle(GameHT, hid, 'cstr', u)
+            SaveUnitHandle(GameHT, hid, 'trgt', t)
+            TimerStart(tmr, 0.02, true, function acheronW)
+
+    preloadSound("AcheronW.mp3")
+    preloadSound("AliceSE4.mp3")
+    preloadEffect("Acheronsfx3.mdx")
+    preloadEffect("Acheronsfx4.mdx")
+    preloadEffect("Alphasfx1.mdx")
+    preloadEffect("Alphasfx5.mdx")
+    preloadEffect("Alphasfx9.mdx")
+    preloadEffect("Alphasfx16.mdx")
+    preloadEffect("Yomisfx17.mdx")

@@ -1,0 +1,57 @@
+package WurstExportedObjects_w3q
+import ObjEditingNatives
+
+// Modified Table (contains all custom objects)
+
+// Original Table (contains all modified default objects)
+// Wurst does not support modifying default objects
+// but you can copy these functions and replace 'xxxx' with a new, custom id.
+
+@compiletime function create_w3q_xxxx()
+	let def = createObjectDefinition("w3q", 'xxxx', 'Rusl')
+	..setLvlDataString("gub1", 1, 0, "Increases the duration of raised Skeleton Warriors and Skeletal Mages by 15 seconds.")
+
+
+@compiletime function create_w3q_xxxx()
+	let def = createObjectDefinition("w3q", 'xxxx', 'Rupc')
+	..setLvlDataString("gub1", 1, 0, "Gives Abominations a Disease Cloud aura that deals 1 damage per second for 120 seconds to nearby enemy units. Meat Wagons will cause Disease Clouds wherever they attack that deal 1 damage per second for 120 seconds to nearby enemy units. |nUndead are immune to Disease Cloud.")
+
+
+@compiletime function create_w3q_xxxx()
+	let def = createObjectDefinition("w3q", 'xxxx', 'Rugf')
+	..setLvlDataString("gub1", 1, 0, "Increases the attack rate of Ghouls by 25%, and increases their movement speed.")
+
+
+@compiletime function create_w3q_xxxx()
+	let def = createObjectDefinition("w3q", 'xxxx', 'Rosp')
+	..setLvlDataString("gub1", 1, 0, "Surrounds Orc buildings with spikes that damage enemy melee attackers. Deals 4 damage per attack.")
+	..setLvlDataString("gub1", 2, 0, "Increases the amount of damage inflicted on melee attackers by 6.")
+	..setLvlDataString("gub1", 3, 0, "Further increases the amount of damage inflicted on melee attackers by 6.")
+
+
+@compiletime function create_w3q_xxxx()
+	let def = createObjectDefinition("w3q", 'xxxx', 'Robs')
+	..setLvlDataString("gub1", 1, 0, "Improves the fighting capabilities of Grunts with a 100 hit point increase, and 3 bonus attack damage.")
+
+
+@compiletime function create_w3q_xxxx()
+	let def = createObjectDefinition("w3q", 'xxxx', 'Rhlh')
+	..setLvlDataString("gub1", 1, 0, "Increases the amount of lumber that Peasants can carry by 5.")
+	..setLvlDataString("gub1", 2, 0, "Further increases the amount of lumber that Peasants can carry by 5.")
+
+
+@compiletime function create_w3q_xxxx()
+	let def = createObjectDefinition("w3q", 'xxxx', 'Rhan')
+	..setLvlDataString("gub1", 1, 0, "Increases the maximum hit points of Knights, Dragonhawk Riders, and Gryphon Riders by 150.")
+
+
+@compiletime function create_w3q_xxxx()
+	let def = createObjectDefinition("w3q", 'xxxx', 'Rews')
+	..setLvlDataString("gub1", 1, 0, "Increases the amount of mana that can be stored in Moon Wells by 200, and their rate of mana regeneration by 83%.")
+
+
+@compiletime function create_w3q_xxxx()
+	let def = createObjectDefinition("w3q", 'xxxx', 'Remk')
+	..setLvlDataString("gub1", 1, 0, "Increases damage of Archers and Hippogryph Riders by 3.")
+
+
