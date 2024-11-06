@@ -1,0 +1,109 @@
+package Handle_Clear initializer InitTrig_Handle_Clear
+
+import ACG_Package
+
+//===========================================================================
+// Trigger: Handle_Clear
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_Handle_ClearActions takes nothing returns nothing
+ local group ydl_group
+ local unit ydl_unit
+ local integer ydul_int
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA, udg_Rush_Unit)
+	if ( ( IsUnitAliveBJ(LoadUnitHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x2F09B339)) == true ) ) then
+		call UnitApplyTimedLife(LoadUnitHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x2F09B339), 'BHwe', 10.00)
+	else
+	endif
+	if ( ( LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB6A6EBAA)), 0x70109FE0) == 1 ) ) then
+		call PauseUnit(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA), false)
+	else
+	endif
+	if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA), DUMMY_A005) == 1 ) ) then
+		call KillUnit(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA))
+	else
+	endif
+	call UnitRemoveAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA), DUMMY_ACG_A01H)
+	call IssueImmediateOrder(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA), "stop")
+	call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB2CB6B32, 0)
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBA15D64D, LoadReal(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x5AEEFA2E))
+	call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x2F8739A8, GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)))
+	set ydl_group=CreateGroup()
+	call GroupEnumUnitsInRange(ydl_group, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xBA15D64D), null)
+	loop
+		set ydl_unit=FirstOfGroup(ydl_group)
+		exitwhen ydl_unit == null
+		call GroupRemoveUnit(ydl_group, ydl_unit)
+		call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0, ydl_unit)
+		if ( ( ( ( GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0)) + LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0)), 0x122FAC2A) ) + GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0), 'A00J') ) >= GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)) ) and ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0), 'A00K') == 0 ) and ( IsUnitEnemy(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0), GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA))) == true ) and ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0)) == true ) ) then
+			call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB2CB6B32, - 1)
+		else
+		endif
+	endloop
+	call DestroyGroup(ydl_group)
+	if ( ( LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB2CB6B32) == - 1 ) ) then
+		call RemoveSavedInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x2F8739A8)
+	else
+	endif
+	call SetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA), 0)
+	call GroupRemoveUnit(udg_Rush_Group, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA))
+	call DestroyEffect(LoadEffectHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x61DFECFE))
+	call RemoveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x61DFECFE)
+	call RemoveSavedString(YDHT, GetHandleId(udg_Rush_Unit), 0xB52AE294)
+	call RemoveSavedString(YDHT, GetHandleId(udg_Rush_Unit), 0x7C0134F9)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0x9715AC10)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xAC61EB61)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xFFC1F810)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xB47CE887)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0x1CEECBD6)
+	call RemoveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x805D0E88)
+	call RemoveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x124F62F3)
+	call RemoveSavedString(YDHT, GetHandleId(udg_Rush_Unit), 0x8B214E81)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0x69C14600)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0x4FF2E93D)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xDE937C3B)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0x93454044)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xA2E2E751)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xE0D3A756)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xEA9537FF)
+	call RemoveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xE943C5B2)
+	call RemoveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xFEE1B1B7)
+	call RemoveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x962ECFA8)
+	call RemoveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x49277449)
+	call RemoveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD)
+	call RemoveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x70109FE0)
+	call RemoveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x1CAF462C)
+	call RemoveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x0F2A5741)
+	call RemoveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x07248B74)
+	call RemoveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xC02303AB)
+	call DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x37C5AF05))
+	call DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x3C023DF4))
+	set ydul_int=1
+	loop
+		exitwhen ydul_int > 5
+		call UnitRemoveAbility(udg_Rush_Unit, udg_Condition_Skill[ydul_int])
+		set ydul_int=ydul_int + 1
+	endloop
+	call RemoveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x37C5AF05)
+	call RemoveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x3C023DF4)
+	call RemoveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xAEEA1156)
+	call RemoveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x79E95DE3)
+	call UnitRemoveAbility(udg_Rush_Unit, 'A059')
+	call UnitRemoveAbility(udg_Rush_Unit, 'A07O')
+	call UnitRemoveAbility(udg_Rush_Unit, DUMMY_A07T)
+	set udg_Rush_Unit=null
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_group=null
+	set ydl_unit=null
+endfunction
+//===========================================================================
+function InitTrig_Handle_Clear takes nothing returns nothing
+	set gg_trg_Handle_Clear=CreateTrigger()
+	call TriggerAddAction(gg_trg_Handle_Clear, function Trig_Handle_ClearActions)
+endfunction

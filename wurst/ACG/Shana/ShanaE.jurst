@@ -1,0 +1,169 @@
+package ShanaE initializer InitTrig_XN_E
+
+import ACG_Package
+
+//===========================================================================
+// Trigger: XN_E
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_XN_E_3930694432 takes nothing returns nothing
+	call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 10)
+	call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+	call DestroyTimer(GetExpiredTimer())
+endfunction
+function Trig_XN_E_3930878432 takes nothing returns nothing
+	call SetUnitAnimation(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), "attack")
+	call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+	call DestroyTimer(GetExpiredTimer())
+endfunction
+function Trig_XN_E_3931005732 takes nothing returns nothing
+	call PauseUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), false)
+	call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+	call DestroyTimer(GetExpiredTimer())
+endfunction
+function Trig_XN_E_3930914432 takes nothing returns nothing
+ local timer ydl_timer
+	call SetUnitTimeScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 1.00)
+	if ( true ) then
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x3B60835B, 0.00)
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)))
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)))
+		if ( true ) then
+			call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), udg_DummyType, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C)))
+			call SetUnitScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 0.80, 1, 1)
+			call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), R2I(0.695 * 90))
+			call SetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 120.00, 0.00)
+			call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Other\\Doom\\DoomDeath.mdl", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), "origin"))
+			call UnitApplyTimedLife(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 'BHwe', 0.50)
+		else
+		endif
+	else
+	endif
+	if ( ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) == true ) ) then
+		set ydl_timer=CreateTimer()
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+		call TimerStart(ydl_timer, 0.30, false, function Trig_XN_E_3931005732)
+		set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+		set udg_Rush_Ang=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C)
+		set udg_Rush_Unit=CBul(udg_temp_u , 1.2 , 1 , udg_Rush_Ang)
+		call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xABF3773E, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+		call SetUnitFlyHeight(udg_Rush_Unit, 160.00, 0.00)
+		set udg_Rush_Target=null
+		call SaveEffectHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x61DFECFE, AddSpecialEffectTarget("war3mapImported\\shinkuok.mdx", udg_Rush_Unit, "origin"))
+		call SaveEffectHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x688BA735, AddSpecialEffectTarget("war3mapImported\\shanafire.mdx", udg_Rush_Unit, "origin"))
+		call UnitAddAbility(udg_Rush_Unit, DUMMY_A005)
+		call UnitAddAbility(udg_Rush_Unit, DUMMY_A00H)
+		set udg_Rush_Damage=( 23.00 * I2R(GetHeroAgi(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), true)) )
+		call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0x93454044, 1700.00)
+		//设置之后，无伤害一次的设定
+		//↑伤害↑
+		set udg_Rush_DmR=250.00
+		//↑检测范围↑
+		set udg_Rush_Aa=0.00
+		set udg_Rush_Atime=0.00
+		//↑加速时间，和Aa同时不为0的时候，单位会进行从0开始加速移动到正确的移动速度。
+		set udg_Rush_Va=30.00
+		//↑速度因子，每0.02秒移动移动速度*该值↑
+		set udg_Rush_TB=0
+		//↑目标丢失判定↑=0时，不进行丢失判定，=1时，目标死亡，隐身，闪到自己背后，都会丢失目标。
+		set udg_Rush_Stop_Type=0
+		//↑技能被中断判定↑
+		//↑0:无被中断设定
+		//↑1:被晕眩
+		set udg_Rush_AB=0
+		//↑是否根据面向角度移动，=0时，不会按照面向角度冲锋，=1时，按照面向角度冲锋。
+		set udg_Rush_Type=2
+		//↑如果是晕眩的话，直接记录就行。
+		//★其他特殊buff，记录Rush_S_Order马甲技能命令id，Rush_S_Abi技能整数
+		//↑Rush_Type=1时奏效
+		//↑检测方式，=0就行，以后可能加入新的检测方式。
+		//=0，并且有target则只会对目标造成伤害。会越过其他单位。
+		//=1，会对一线上的敌人造成伤害。
+		//=2，会对第一个触碰的敌人造成伤害。
+		set udg_Rush_Tri=gg_trg_XN_E_Get
+		//抵消带效果待补充
+		//↑结局触发。如果不填，默认Rush_Damage
+		set udg_Rush_Time=2.00
+		//↑最大移动时间
+		call SetUnitUserDataEx(udg_Rush_Unit, 3)
+		//↑冲锋等级
+		call TriggerExecute(gg_trg_Rush_Pak)
+	else
+	endif
+	call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+	call DestroyTimer(GetExpiredTimer())
+	set ydl_timer=null
+endfunction
+function Trig_XN_E_Conditions takes nothing returns boolean
+	if ( not ( GetSpellAbilityId() == SHANA_E ) ) then
+	return false
+	endif
+	return true
+endfunction
+function Trig_XN_EActions takes nothing returns nothing
+ local timer ydl_timer
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	if ( true ) then
+		set udg_temp_u=GetTriggerUnit()
+		set udg_temp_goal=GetSpellTargetUnit()
+		call ConditionalTriggerExecute(gg_trg____________________002)
+		if ( ( udg_temp_int != 0 ) ) then
+							call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_timer=null
+return
+		else
+		endif
+	else
+	endif
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D, GetTriggerUnit())
+	call SaveLocationHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8, GetSpellTargetLoc())
+	if ( ( GetUnitTypeId(GetTriggerUnit()) == udg_XiaNaExType ) ) then
+		call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x24181F82, 1)
+	else
+	endif
+	if ( ( LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0x24181F82) == 0 ) ) then
+		call ASound("war3mapImported\\XN-E.mp3")
+		call SetSoundVolume(udg_Last_ASound, 127)
+		set ydl_timer=CreateTimer()
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D))
+		call TimerStart(ydl_timer, 0.00, false, function Trig_XN_E_3930878432)
+	else
+		call ASound("war3mapImported\\shanaNew-F1.mp3")
+		call SetSoundVolume(udg_Last_ASound, 127)
+		call ASound("war3mapImported\\shanaNew-Se1.mp3")
+		call SetSoundVolume(udg_Last_ASound, 80)
+		set ydl_timer=CreateTimer()
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D))
+		call TimerStart(ydl_timer, 0.00, false, function Trig_XN_E_3930694432)
+	endif
+	if ( true ) then
+		call SaveLocationHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2FFA023A, GetUnitLoc(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)))
+		call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC1B0964C, ( AngleBetweenPoints(LoadLocationHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2FFA023A), LoadLocationHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8)) ))
+		call RemoveLocation(LoadLocationHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2FFA023A))
+		call SetUnitFacing(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D), LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC1B0964C))
+		set ydl_timer=CreateTimer()
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xC1B0964C, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC1B0964C))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xC1B0964C, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC1B0964C))
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x2B0A6845, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xA99320FA, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xFDF65382, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382))
+		call TimerStart(ydl_timer, 0.10, false, function Trig_XN_E_3930914432)
+	else
+	endif
+	call RemoveLocation(LoadLocationHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x32A9E4C8))
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_timer=null
+endfunction
+//===========================================================================
+function InitTrig_XN_E takes nothing returns nothing
+	set gg_trg_XN_E=CreateTrigger()
+	call TriggerRegisterAnyUnitEventBJ(gg_trg_XN_E, EVENT_PLAYER_UNIT_SPELL_EFFECT)
+	call TriggerAddCondition(gg_trg_XN_E, Condition(function Trig_XN_E_Conditions))
+	call TriggerAddAction(gg_trg_XN_E, function Trig_XN_EActions)
+endfunction

@@ -1,0 +1,541 @@
+package ShanaNewF initializer InitTrig_XN_NewF
+
+import ACG_Package
+import YDWE_Package
+
+
+//===========================================================================
+// Trigger: XN_NewF
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_XN_NewF_3924641132 takes nothing returns nothing
+	if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x33618840) <= 0.36 ) ) then
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x33618840, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x33618840) + 0.03 ))
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) + 8.00 ))
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFEF64045, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFEF64045) - 8.00 ))
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, ( GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * CosBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFEF64045)) ) ))
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, ( GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * SinBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFEF64045)) ) ))
+		call SetUnitPosition(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382))
+		call DestroyEffect(AddSpecialEffectTarget("Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), "origin"))
+	else
+		call KillUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845))
+		call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+		call DestroyTimer(GetExpiredTimer())
+	endif
+endfunction
+function Trig_XN_NewF_3926514832 takes nothing returns nothing
+	call PauseUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), false)
+	call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+	call DestroyTimer(GetExpiredTimer())
+endfunction
+function Trig_XN_NewF_3925699832 takes nothing returns nothing
+ local group ydl_group
+ local timer ydl_timer
+ local unit ydl_unit
+	call PauseUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), true)
+	call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) + 0.02 ))
+	if ( true ) then
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C))
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415, 80.00)
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, ( GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * CosBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, ( GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * SinBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+	else
+	endif
+	if ( ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) == true ) and ( UnitHasBuffBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 'BPSE') == false ) and ( UnitHasBuffBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 'BSTN') == false ) and ( IsUnitHiddenBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) == false ) ) then
+		if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.02 ) ) then
+			call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 13)
+			set udg_temp_u2=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+			call JumpSys(udg_temp_u2 , 40 , 0.4 , 0)
+			call SetUnitTimeScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 1.40)
+			call ASound("war3mapImported\\shanaNew-FF0.mp3")
+			call SetSoundVolume(udg_Last_ASound, 100)
+		else
+		endif
+		if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.50 ) ) then
+			call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x25DAB820, 0)
+			set udg_temp_u2=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+			call JumpSys(udg_temp_u2 , - 50 , 1 , 0)
+			call ASound("war3mapImported\\shanaNew-Se1.mp3")
+		else
+		endif
+		if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) > 0.50 ) and ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) <= 0.70 ) ) then
+			if ( true ) then
+				call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C, ( GetUnitFacing(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) ))
+				call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), udg_DummyType, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382), ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C) ) + ( ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x25DAB820) ) * ( 36.00 ) ) ) )))
+				call SetUnitScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 1.00, 1, 1)
+				call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 0)
+				call SetUnitBlendTime(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 0.00)
+				call UnitApplyTimedLife(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 'BHwe', 0.30)
+				call DestroyEffect(AddSpecialEffectTarget("Abilities\\Weapons\\PhoenixMissile\\Phoenix_Missile.mdl", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), "origin"))
+				call SetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), ( 1000.00 - ( 90.00 * I2R(LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x25DAB820)) ) ), 0.00)
+				call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x25DAB820, ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x25DAB820) + 1 ))
+			else
+			endif
+			call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x25DAB820, ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x25DAB820) + 1 ))
+		else
+		endif
+		if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.70 ) ) then
+			if ( true ) then
+				call DestroyEffect(AddSpecialEffect("war3mapImported\\fire1.mdx", LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382)))
+				call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), udg_DummyType, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C)))
+				call SetUnitScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 2.20, 1, 1)
+				call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 0)
+				call SetUnitBlendTime(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 0.00)
+				call UnitApplyTimedLife(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 'BHwe', 1.00)
+				call DestroyEffect(AddSpecialEffectTarget("Abilities\\Spells\\Orc\\WarStomp\\WarStompCaster.mdl", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), "origin"))
+				call DestroyEffect(AddSpecialEffectTarget("war3mapImported\\explosionB.mdx", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), "origin"))
+				call SetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 0.00, 0.00)
+				if ( true ) then
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845)))
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845)))
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC12760D7, 0.00)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415, 300.00)
+					set bj_forLoopAIndex=1
+					set bj_forLoopAIndexEnd=12
+					loop
+						exitwhen bj_forLoopAIndex > bj_forLoopAIndexEnd
+						call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC12760D7, ( 30.00 * I2R(bj_forLoopAIndex) ))
+						call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x1ADEDE7B, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * CosBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC12760D7)) ) ))
+						call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x8CD20710, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * SinBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC12760D7)) ) ))
+						if ( true ) then
+							call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x0B8B3F52, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845)), udg_DummyType, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x1ADEDE7B), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x8CD20710), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC12760D7)))
+							call SetUnitScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x0B8B3F52), 2.00, 1, 1)
+							call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x0B8B3F52), R2I(( 60.00 * 0.69 )))
+							call SetUnitBlendTime(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x0B8B3F52), 0.00)
+							call UnitApplyTimedLife(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x0B8B3F52), 'BHwe', 1.00)
+							call SetUnitPathing(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x0B8B3F52), false)
+							call SetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x0B8B3F52), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x1ADEDE7B))
+							call SetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x0B8B3F52), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x8CD20710))
+							call YDWETimerDestroyEffect(1.00 , AddSpecialEffectTarget("war3mapImported\\shanafire.mdx", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x0B8B3F52), "origin"))
+						else
+						endif
+						set bj_forLoopAIndex=bj_forLoopAIndex + 1
+					endloop
+				else
+				endif
+			else
+			endif
+			if ( true ) then
+				set udg_Rush_DmR=400.00
+				set ydl_group=CreateGroup()
+				call GroupEnumUnitsInRange(ydl_group, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382), udg_Rush_DmR, null)
+				loop
+					set ydl_unit=FirstOfGroup(ydl_group)
+					exitwhen ydl_unit == null
+					call GroupRemoveUnit(ydl_group, ydl_unit)
+					call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0, ydl_unit)
+					set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)
+					if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), DUMMY_A00K) == 0 ) and ( GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) <= 2 ) and ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) == true ) and ( IsUnitEnemy(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))) == true ) ) then
+						call SetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), 0)
+						if ( ( IsUnitInGroup(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), udg_Rush_Group) == true ) ) then
+							call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)), 0xA5F6D6AD, - 1)
+						else
+						endif
+						if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), 'Aloc') == 0 ) ) then
+							if ( true ) then
+								set udg_repel_Unit=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)
+								set udg_repel_Dis=40.00
+								set udg_repel_Ang=( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C) )
+								set udg_repel_Time=0.40
+								call ConditionalTriggerExecute(gg_trg_heroRepel)
+							else
+							endif
+							call UnitDamageTarget(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8) * 6.00 ), false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+							call IssueTargetOrder(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x96DC5279), "thunderbolt", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0))
+							call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x4368DDEF, 1)
+							call DestroyEffect(AddSpecialEffectTarget("Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), "chest"))
+						else
+						endif
+					else
+					endif
+				endloop
+				call DestroyGroup(ydl_group)
+			else
+			endif
+			call QueueUnitAnimation(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), "Spell six")
+			call QueueUnitAnimation(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), "stand ready")
+		else
+		endif
+		if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) >= 0.80 ) ) then
+			call SetUnitTimeScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 1.00)
+			set ydl_timer=CreateTimer()
+			call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+			call TimerStart(ydl_timer, 0.30, false, function Trig_XN_NewF_3926514832)
+			call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+			call DestroyTimer(GetExpiredTimer())
+		else
+		endif
+	else
+		set udg_temp_u2=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+		call JumpSys(udg_temp_u2 , - 10 , 0.5 , 0)
+		call PauseUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), false)
+		call SetUnitBlendTime(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 0.15)
+		call SetUnitTimeScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 1.00)
+		call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+		call DestroyTimer(GetExpiredTimer())
+	endif
+	set ydl_group=null
+	set ydl_timer=null
+	set ydl_unit=null
+endfunction
+function Trig_XN_NewF_3924416632 takes nothing returns nothing
+ local group ydl_group
+ local timer ydl_timer
+ local unit ydl_unit
+	if ( ( IsUnitInGroup(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), udg_Time_FreezeGroup) == false ) ) then
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) + 0.02 ))
+		if ( ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) == true ) and ( UnitHasBuffBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 'BPSE') == false ) and ( UnitHasBuffBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 'BSTN') == false ) and ( IsUnitHiddenBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) == false ) ) then
+			call PauseUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), true)
+			call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0xC18F437A, 0)
+			if ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x642F4BA8) == 3 ) and ( LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xF2642399)), 0xB1F5C7F9) == 1 ) ) then
+				call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0xDDAF06B9, 2)
+			else
+			endif
+			if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.10 ) ) then
+				call ASound("war3mapImported\\shanaNew-F0.mp3")
+				call SetSoundVolume(udg_Last_ASound, 127)
+				call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x642F4BA8, ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x642F4BA8) + 1 ))
+				call DestroyEffect(AddSpecialEffectTarget("war3mapImported\\fireslash.mdx", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), "origin"))
+				call ASound("war3mapImported\\shanaNew-Se0.mp3")
+				call SetSoundVolume(udg_Last_ASound, 80)
+				if ( true ) then
+					call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), udg_DummyType, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), ( ( GetUnitFacing(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) ) + ( 30.00 ) )))
+					call SetUnitScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 1.50, 1, 1)
+					call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 0)
+					call SetUnitBlendTime(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 0.00)
+					call UnitApplyTimedLife(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 'BHwe', 1.00)
+					call DestroyEffect(AddSpecialEffectTarget("war3mapImported\\orboffire.mdx", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), "origin"))
+					call SetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 0.00, 0.00)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x33618840, 0.00)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFEF64045, ( ( GetUnitFacing(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) ) + 75.00 ))
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415, 100.00)
+					set udg_temp_u2=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845)
+					call JumpSys(udg_temp_u2 , 76 , 0.5 , 0)
+					set ydl_timer=CreateTimer()
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x33618840, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x33618840))
+					call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x2B0A6845, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845))
+					call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xFEF64045, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFEF64045))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x2FC9F415, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xFEF64045, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFEF64045))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xA99320FA, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xFDF65382, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382))
+					call TimerStart(ydl_timer, 0.03, true, function Trig_XN_NewF_3924641132)
+				else
+				endif
+				call SetUnitTimeScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 0.80)
+				set udg_temp_u2=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+				call JumpSys(udg_temp_u2 , 64 , 0.5 , 0)
+				set udg_temp_real=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C)
+				set udg_Rush_DmR=300.00
+				set ydl_group=CreateGroup()
+				call GroupEnumUnitsInRange(ydl_group, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), udg_Rush_DmR, null)
+				loop
+					set ydl_unit=FirstOfGroup(ydl_group)
+					exitwhen ydl_unit == null
+					call GroupRemoveUnit(ydl_group, ydl_unit)
+					call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0, ydl_unit)
+					set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)
+					if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), DUMMY_A00K) == 0 ) and ( ( ZInShanXing(udg_temp_u , udg_temp_u2 , 110) ) ) and ( GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) <= 2 ) and ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) == true ) and ( IsUnitEnemy(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))) == true ) and ( ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) >= ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) + - 200.00 ) and GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) <= ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) + 200.00 ) ) ) ) then
+						call SetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), 0)
+						if ( ( IsUnitInGroup(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), udg_Rush_Group) == false ) ) then
+							if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), 'Aloc') == 0 ) ) then
+								if ( true ) then
+									set udg_repel_Unit=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)
+									call JumpSys(udg_repel_Unit , 30 , 0.5 , 0)
+									set udg_repel_Dis=100.00
+									set udg_repel_Ang=( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C) )
+									set udg_repel_Time=0.60
+									call ConditionalTriggerExecute(gg_trg_heroRepel)
+								else
+								endif
+								call UnitDamageTarget(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8), false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+								call IssueTargetOrder(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x96DC5279), "thunderbolt", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0))
+								call SetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + 60.00 ), 0.00)
+								call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x4368DDEF, 1)
+								call DestroyEffect(AddSpecialEffectTarget("war3mapImported\\QQQQQR.mdx", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), "chest"))
+								call DestroyEffect(AddSpecialEffectTarget("Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), "chest"))
+							else
+							endif
+						else
+							call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)), 0xA5F6D6AD, - 1)
+						endif
+					else
+					endif
+				endloop
+				call DestroyGroup(ydl_group)
+			else
+			endif
+			if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.14 ) ) then
+				call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x642F4BA8, ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x642F4BA8) + 1 ))
+				set udg_temp_u2=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+				set udg_temp_real=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C)
+				call Rush(udg_temp_u2 , udg_temp_real , 60 , 0.02 , 0.8)
+				set udg_Rush_DmR=300.00
+				set ydl_group=CreateGroup()
+				call GroupEnumUnitsInRange(ydl_group, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), udg_Rush_DmR, null)
+				loop
+					set ydl_unit=FirstOfGroup(ydl_group)
+					exitwhen ydl_unit == null
+					call GroupRemoveUnit(ydl_group, ydl_unit)
+					call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0, ydl_unit)
+					set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)
+					if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), DUMMY_A00K) == 0 ) and ( ( ZInShanXing(udg_temp_u , udg_temp_u2 , 110) ) ) and ( GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) <= 2 ) and ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) == true ) and ( IsUnitEnemy(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))) == true ) and ( ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) >= ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) + - 200.00 ) and GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) <= ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) + 200.00 ) ) ) ) then
+						call SetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), 0)
+						if ( ( IsUnitInGroup(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), udg_Rush_Group) == false ) ) then
+							if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), 'Aloc') == 0 ) ) then
+								if ( true ) then
+									set udg_repel_Unit=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)
+									call JumpSys(udg_repel_Unit , 30 , 0.5 , 0)
+									set udg_repel_Dis=40.00
+									set udg_repel_Ang=( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C) )
+									set udg_repel_Time=0.40
+									call ConditionalTriggerExecute(gg_trg_heroRepel)
+								else
+								endif
+								call UnitDamageTarget(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8), false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+								call IssueTargetOrder(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x96DC5279), "thunderbolt", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0))
+								call SetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + 60.00 ), 0.00)
+								call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x4368DDEF, 1)
+								call DestroyEffect(AddSpecialEffectTarget("war3mapImported\\QQQQQR.mdx", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), "chest"))
+								call DestroyEffect(AddSpecialEffectTarget("Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), "chest"))
+							else
+							endif
+						else
+							call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)), 0xA5F6D6AD, - 1)
+						endif
+					else
+					endif
+				endloop
+				call DestroyGroup(ydl_group)
+			else
+			endif
+			if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.30 ) ) then
+				call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x642F4BA8, ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x642F4BA8) + 1 ))
+				set udg_temp_u2=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+				set udg_temp_real=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C)
+				call Rush(udg_temp_u2 , udg_temp_real , 60 , 0.02 , 0.8)
+				set udg_Rush_DmR=300.00
+				set ydl_group=CreateGroup()
+				call GroupEnumUnitsInRange(ydl_group, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), udg_Rush_DmR, null)
+				loop
+					set ydl_unit=FirstOfGroup(ydl_group)
+					exitwhen ydl_unit == null
+					call GroupRemoveUnit(ydl_group, ydl_unit)
+					call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0, ydl_unit)
+					set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)
+					if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), DUMMY_A00K) == 0 ) and ( ( ZInShanXing(udg_temp_u , udg_temp_u2 , 110) ) ) and ( GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) <= 2 ) and ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) == true ) and ( IsUnitEnemy(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))) == true ) and ( ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) >= ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) + - 200.00 ) and GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) <= ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) + 200.00 ) ) ) ) then
+						call SetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), 0)
+						if ( ( IsUnitInGroup(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), udg_Rush_Group) == false ) ) then
+							if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), 'Aloc') == 0 ) ) then
+								if ( true ) then
+									set udg_repel_Unit=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)
+									call JumpSys(udg_repel_Unit , 30 , 0.5 , 0)
+									set udg_repel_Dis=40.00
+									set udg_repel_Ang=( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C) )
+									set udg_repel_Time=0.40
+									call ConditionalTriggerExecute(gg_trg_heroRepel)
+								else
+								endif
+								call UnitDamageTarget(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8), false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+								call IssueTargetOrder(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x96DC5279), "thunderbolt", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0))
+								call SetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + 60.00 ), 0.00)
+								call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x4368DDEF, 1)
+								call DestroyEffect(AddSpecialEffectTarget("war3mapImported\\QQQQQR.mdx", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), "chest"))
+								call DestroyEffect(AddSpecialEffectTarget("Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), "chest"))
+							else
+							endif
+						else
+							call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)), 0xA5F6D6AD, - 1)
+						endif
+					else
+					endif
+				endloop
+				call DestroyGroup(ydl_group)
+			else
+			endif
+			if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.40 ) ) then
+				call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x642F4BA8, ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x642F4BA8) + 1 ))
+				set udg_temp_real=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C)
+				set udg_Rush_DmR=300.00
+				set ydl_group=CreateGroup()
+				call GroupEnumUnitsInRange(ydl_group, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), udg_Rush_DmR, null)
+				loop
+					set ydl_unit=FirstOfGroup(ydl_group)
+					exitwhen ydl_unit == null
+					call GroupRemoveUnit(ydl_group, ydl_unit)
+					call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0, ydl_unit)
+					set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)
+					if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), DUMMY_A00K) == 0 ) and ( ( ZInShanXing(udg_temp_u , udg_temp_u2 , 110) ) ) and ( GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) <= 2 ) and ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) == true ) and ( IsUnitEnemy(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))) == true ) and ( ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) >= ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) + - 200.00 ) and GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) <= ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)) + 200.00 ) ) ) ) then
+						call SetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), 0)
+						if ( ( IsUnitInGroup(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), udg_Rush_Group) == false ) ) then
+							if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), 'Aloc') == 0 ) ) then
+								set udg_repel_Unit=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)
+								call JumpSys(udg_repel_Unit , 30 , 0.5 , 0)
+								call UnitDamageTarget(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8), false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+								call IssueTargetOrder(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x96DC5279), "thunderbolt", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0))
+								call SetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), ( GetUnitFlyHeight(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + 60.00 ), 0.00)
+								call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x4368DDEF, 1)
+								call DestroyEffect(AddSpecialEffectTarget("war3mapImported\\QQQQQR.mdx", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), "chest"))
+								call DestroyEffect(AddSpecialEffectTarget("Abilities\\Weapons\\RedDragonBreath\\RedDragonMissile.mdl", LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0), "chest"))
+							else
+							endif
+						else
+							call SaveInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0)), 0xA5F6D6AD, - 1)
+						endif
+					else
+					endif
+				endloop
+				call DestroyGroup(ydl_group)
+			else
+			endif
+			if ( ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0xDDAF06B9) != 0 ) or ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) > 0.90 ) ) ) then
+				if ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0xDDAF06B9) == 2 ) ) then
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545, 0.00)
+					call SaveInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x25DAB820, 0)
+					set ydl_timer=CreateTimer()
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x6B54C545, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545))
+					call SaveInteger(YDLOC, GetHandleId(ydl_timer), 0x25DAB820, LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x25DAB820))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xC1B0964C, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xC12760D7, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC12760D7))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x9966AD24, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x7B0498D8, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xC1B0964C, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xC1B0964C))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x25DAB820, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x25DAB820))
+					call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x0B8B3F52, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x0B8B3F52))
+					call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x2B0A6845, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845))
+					call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x96DC5279, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x96DC5279))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x2FC9F415, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415))
+					call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x874856C0, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x874856C0))
+					call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xA99320FA, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x1ADEDE7B, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x1ADEDE7B))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xFDF65382, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382))
+					call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x8CD20710, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x8CD20710))
+					call TimerStart(ydl_timer, 0.02, true, function Trig_XN_NewF_3925699832)
+				else
+					call QueueUnitAnimation(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), "Spell six")
+					call QueueUnitAnimation(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), "stand ready")
+				endif
+				call PauseUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), false)
+				call SetUnitBlendTime(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 0.15)
+				call SetUnitTimeScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 1.00)
+				call SelectUnitForPlayerSingle(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)))
+				call KillUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xF2642399))
+				call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+				call DestroyTimer(GetExpiredTimer())
+			else
+			endif
+		else
+			call SetUnitBlendTime(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 0.15)
+			call KillUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xF2642399))
+			call SelectUnitForPlayerSingle(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)))
+			call SetUnitTimeScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 1.00)
+			call SetUnitTimeScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x214C62CC), 1.00)
+			call PauseUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x214C62CC), false)
+			call PauseUnit(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), false)
+			call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+			call DestroyTimer(GetExpiredTimer())
+		endif
+	else
+	endif
+	set ydl_group=null
+	set ydl_timer=null
+	set ydl_unit=null
+endfunction
+function Trig_XN_NewF_Conditions takes nothing returns boolean
+	if ( not ( GetSpellAbilityId() == SHANA_NEWF ) ) then
+	return false
+	endif
+	return true
+endfunction
+function Trig_XN_NewFActions takes nothing returns nothing
+ local group ydl_group
+ local timer ydl_timer
+ local unit ydl_unit
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	if ( true ) then
+		set udg_temp_u=GetTriggerUnit()
+		set udg_temp_goal=GetSpellTargetUnit()
+		call ConditionalTriggerExecute(gg_trg____________________002)
+		if ( ( udg_temp_int != 0 ) ) then
+							call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_group=null
+	set ydl_timer=null
+	set ydl_unit=null
+return
+		else
+		endif
+	else
+	endif
+	if ( ( IsUnitType(GetTriggerUnit(), UNIT_TYPE_HERO) == true ) ) then
+		call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D, GetTriggerUnit())
+		call PauseUnit(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D), true)
+		call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D), 12)
+		call SetUnitTimeScale(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D), 2.00)
+		call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC1B0964C, ( GetUnitFacing(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)) ))
+		if ( true ) then
+			set udg_temp_hero=LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)
+			call ConditionalTriggerExecute(gg_trg_ControlUnitGet)
+			call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF2642399, udg__temp_controller)
+			if ( ( GetUnitLifePercent(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)) <= 50.00 ) ) then
+				call UnitAddAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF2642399), GetSpellAbilityId())
+			else
+			endif
+			call UnitRemoveAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF2642399), DUMMY_A0GC)
+		else
+		endif
+		call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xDDAF06B9, 0)
+		if ( true ) then
+			call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x96DC5279, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)), udg_StunType, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)), 0.00))
+			call UnitAddAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x96DC5279), DUMMY_A001)
+			call SetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x96DC5279), DUMMY_A001, 10)
+			call UnitApplyTimedLife(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x96DC5279), 'BHwe', 3.00)
+		else
+		endif
+		set udg_Rush_Damage=( I2R(GetHeroAgi(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D), true)) * 4.00 )
+		call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7B0498D8, udg_Rush_Damage)
+		set ydl_timer=CreateTimer()
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x6B54C545, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6B54C545))
+		call SaveInteger(YDLOC, GetHandleId(ydl_timer), 0x642F4BA8, LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x642F4BA8))
+		call SaveInteger(YDLOC, GetHandleId(ydl_timer), 0xDDAF06B9, LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xDDAF06B9))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x7B0498D8, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7B0498D8))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xC1B0964C, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC1B0964C))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xC12760D7, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC12760D7))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x9966AD24, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9966AD24))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xC1B0964C, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC1B0964C))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xFEF64045, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFEF64045))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x25DAB820, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x25DAB820))
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x0B8B3F52, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x0B8B3F52))
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x214C62CC, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x214C62CC))
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x2B0A6845, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845))
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x96DC5279, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x96DC5279))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x2FC9F415, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2FC9F415))
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x874856C0, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x874856C0))
+		call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xF2642399, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xF2642399))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xA99320FA, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x1ADEDE7B, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x1ADEDE7B))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xFDF65382, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382))
+		call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x8CD20710, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8CD20710))
+		call TimerStart(ydl_timer, 0.02, true, function Trig_XN_NewF_3924416632)
+	else
+		call SaveInteger(YDHT, GetHandleId(GetTriggerUnit()), 0xB1F5C7F9, 1)
+	endif
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_group=null
+	set ydl_timer=null
+	set ydl_unit=null
+endfunction
+//===========================================================================
+function InitTrig_XN_NewF takes nothing returns nothing
+	set gg_trg_XN_NewF=CreateTrigger()
+	call TriggerRegisterAnyUnitEventBJ(gg_trg_XN_NewF, EVENT_PLAYER_UNIT_SPELL_EFFECT)
+	call TriggerAddCondition(gg_trg_XN_NewF, Condition(function Trig_XN_NewF_Conditions))
+	call TriggerAddAction(gg_trg_XN_NewF, function Trig_XN_NewFActions)
+endfunction

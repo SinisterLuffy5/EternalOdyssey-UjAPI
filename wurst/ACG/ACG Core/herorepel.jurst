@@ -1,0 +1,94 @@
+package herorepel initializer InitTrig_heroRepel
+
+import ACG_Package
+import MapBounds
+
+//===========================================================================
+// Trigger: heroRepel
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_heroRepel_58456536 takes nothing returns nothing
+	call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) - 0.02 ))
+	call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xB4327A06, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xB4327A06) + 0.02 ))
+	call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x38344552, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xEF55A9DE) - LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6E0E430F) ))
+	call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xEF55A9DE, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x38344552))
+	call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x5FCC4134, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x5FCC4134) - LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x38344552) ))
+	call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9709E2C2, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9709E2C2) + LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x38344552) ))
+	if ( ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xE0DD2139)) == true ) and ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) > 0.00 ) and ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x5FCC4134) > 0.00 ) ) then
+		call SaveRectHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x9F6215B3, playableMapRect)
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, ( GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xE0DD2139)) + ( CosBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) * LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x38344552) ) ))
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, ( GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xE0DD2139)) + ( SinBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) * LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x38344552) ) ))
+		if ( ( IsTerrainPathable(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382), PATHING_TYPE_WALKABILITY) == false ) and ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA) < GetRectMaxX(LoadRectHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x9F6215B3)) ) and ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA) > GetRectMinX(LoadRectHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x9F6215B3)) ) and ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382) < GetRectMaxY(LoadRectHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x9F6215B3)) ) and ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382) > GetRectMinY(LoadRectHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x9F6215B3)) ) ) then
+			call SetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xE0DD2139), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA))
+			call SetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xE0DD2139), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382))
+		else
+		endif
+	else
+		call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+		call DestroyTimer(GetExpiredTimer())
+	endif
+endfunction
+function Trig_heroRepel_Conditions takes nothing returns boolean
+	if ( not ( udg_repel_Dis != 0.00 ) ) then
+	return false
+	endif
+	return true
+endfunction
+function Trig_heroRepelActions takes nothing returns nothing
+ local timer ydl_timer
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE0DD2139, udg_repel_Unit)
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FCC4134, ( udg_repel_Dis * 1.05 ))
+	if ( ( udg_repel_Dis < 0.00 ) ) then
+		call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9966AD24, ( ( udg_repel_Ang + 180.00 ) ))
+		call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FCC4134, ( RAbsBJ(LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FCC4134)) * 4.00 ))
+	else
+		call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9966AD24, ( udg_repel_Ang ))
+		call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FCC4134, ( LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FCC4134) * 4.00 ))
+	endif
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6B54C545, udg_repel_Time)
+	if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE0DD2139), 'A023') >= 1 ) ) then
+		if ( ( LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xE0DD2139)), 0xEBEA821E) == 1 ) ) then
+			call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6B54C545, ( LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x78E73029) / 2.00 ))
+			call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FCC4134, ( LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FCC4134) / 2.00 ))
+			call RemoveSavedInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE0DD2139)), 0xEBEA821E)
+		else
+							call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_timer=null
+return
+		endif
+	else
+	endif
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD78B487D, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6B54C545))
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x4F907964, 100.00)
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEF55A9DE, ( LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FCC4134) / ( LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x4F907964) * LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD78B487D) ) ))
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9E4A4C40, ( 0.02 / LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xD78B487D) ))
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6E0E430F, ( LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEF55A9DE) * LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9E4A4C40) ))
+	set ydl_timer=CreateTimer()
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x5FCC4134, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x5FCC4134))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x9966AD24, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9966AD24))
+	call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xE0DD2139, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE0DD2139))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x9709E2C2, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9709E2C2))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x6B54C545, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6B54C545))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xB4327A06, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB4327A06))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x38344552, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x38344552))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xEF55A9DE, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEF55A9DE))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x6E0E430F, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6E0E430F))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xA99320FA, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xFDF65382, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382))
+	call SaveRectHandle(YDLOC, GetHandleId(ydl_timer), 0x9F6215B3, LoadRectHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9F6215B3))
+	call TimerStart(ydl_timer, 0.02, true, function Trig_heroRepel_58456536)
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_timer=null
+endfunction
+//===========================================================================
+function InitTrig_heroRepel takes nothing returns nothing
+	set gg_trg_heroRepel=CreateTrigger()
+	call TriggerAddCondition(gg_trg_heroRepel, Condition(function Trig_heroRepel_Conditions))
+	call TriggerAddAction(gg_trg_heroRepel, function Trig_heroRepelActions)
+endfunction

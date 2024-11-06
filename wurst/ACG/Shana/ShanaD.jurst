@@ -1,0 +1,60 @@
+package ShanaD initializer InitTrig_XN_D
+
+import ACG_Package
+import YDWE_Package
+
+//===========================================================================
+// Trigger: XN_D
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_XN_D_3937082132 takes nothing returns nothing
+	call UnitRemoveAbility(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), DUMMY_A06X)
+	call h__SetUnitMoveSpeed(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), GetUnitDefaultMoveSpeed(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)))
+	call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+	call DestroyTimer(GetExpiredTimer())
+endfunction
+function Trig_XN_D_Conditions takes nothing returns boolean
+	if ( not ( GetSpellAbilityId() == SHANA_D ) ) then
+	return false
+	endif
+	return true
+endfunction
+function Trig_XN_DActions takes nothing returns nothing
+ local timer ydl_timer
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	if ( true ) then
+		set udg_temp_u=GetTriggerUnit()
+		set udg_temp_goal=GetSpellTargetUnit()
+		call ConditionalTriggerExecute(gg_trg____________________002)
+		if ( ( udg_temp_int != 0 ) ) then
+							call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_timer=null
+return
+		else
+		endif
+	else
+	endif
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D, GetTriggerUnit())
+	call h__SetUnitMoveSpeed(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D), 800.00)
+	call UnitAddAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D), DUMMY_A06X)
+	call YDWETimerPatternRushSlide(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D) , GetUnitFacing(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)) , 400.00 , 0.60 , 0.02 , 0 , false , true , false , "origin" , "" , "")
+	call ASound("war3mapImported\\XN-D.mp3")
+	call SetSoundVolume(udg_Last_ASound, 127)
+	set ydl_timer=CreateTimer()
+	call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D))
+	call TimerStart(ydl_timer, 3.00, false, function Trig_XN_D_3937082132)
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_timer=null
+endfunction
+//===========================================================================
+function InitTrig_XN_D takes nothing returns nothing
+	set gg_trg_XN_D=CreateTrigger()
+	call TriggerRegisterAnyUnitEventBJ(gg_trg_XN_D, EVENT_PLAYER_UNIT_SPELL_EFFECT)
+	call TriggerAddCondition(gg_trg_XN_D, Condition(function Trig_XN_D_Conditions))
+	call TriggerAddAction(gg_trg_XN_D, function Trig_XN_DActions)
+endfunction

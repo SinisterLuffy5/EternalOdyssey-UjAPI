@@ -1,0 +1,28 @@
+package HitCounter initializer Trig_Hit_Counter_InitActions
+
+import ACG_Package
+
+//===========================================================================
+// Trigger: Hit_Counter_Init
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_Hit_Counter_InitActions takes nothing returns nothing
+	//set udg_Hit_Counter=gg_unit_hpea_0071
+	//call PauseUnit(udg_Hit_Counter, true)
+	set udg_Special_Dummy='e002'
+	set udg_DummyType4='e01R'
+	set udg_DummyType=DUMMY_E000
+	set ACG_DUMMY = DUMMY_E000 // Added
+	set ACG_DUMMY_2 = DUMMY_E001 // Added
+	set udg_StunType=DUMMY_E003	// Added
+	//call SetUnitVertexColor(udg_Hit_Counter, 255, 255, 255, 0)
+	//call SetUnitOwner(udg_Hit_Counter, Player(PLAYER_NEUTRAL_PASSIVE), true)
+	//call UnitAddAbility(udg_Hit_Counter, 'A00K')
+endfunction
+//===========================================================================
+// function InitTrig_Hit_Counter_Init takes nothing returns nothing
+// 	set gg_trg_Hit_Counter_Init=CreateTrigger()
+// 	call TriggerAddAction(gg_trg_Hit_Counter_Init, function Trig_Hit_Counter_InitActions)
+// endfunction

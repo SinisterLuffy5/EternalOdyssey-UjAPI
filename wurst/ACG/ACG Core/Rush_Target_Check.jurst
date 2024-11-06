@@ -1,0 +1,69 @@
+package Rush_Target_Check initializer InitTrig_Rush_Target_Check
+
+import YDWE_Package
+import ACG_Package
+
+//===========================================================================
+// Trigger: Rush_Target_Check
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_Rush_Target_CheckActions takes nothing returns nothing
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	set udg_Rush_DmR=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x5AEEFA2E)
+	set udg_Rush_Type=LoadInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x962ECFA8)
+	set udg_Rush_End=LoadInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD)
+	if ( ( HaveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xFFC1F810) == true ) ) then
+		set udg_temp_real3=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0xFFC1F810)
+		if ( ( udg_temp_real3 <= 0.00 ) ) then
+			call YDWESetUnitFacingToFaceUnitTimedNull(udg_Rush_Unit , udg_Rush_Target , 0)
+		else
+			call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xFFC1F810, ( udg_temp_real3 - 0.02 ))
+		endif
+	else
+		if ( ( GetUnitAbilityLevel(udg_Rush_Unit, 'A059') == 0 ) ) then
+			call YDWESetUnitFacingToFaceUnitTimedNull(udg_Rush_Unit , udg_Rush_Target , 0)
+		else
+		endif
+	endif
+	if ( ( udg_Rush_TB > 0 ) and ( ( GetUnitAbilityLevel(udg_Rush_Target, DUMMY_A00K) == 1 ) or ( IsUnitAliveBJ(udg_Rush_Target) == false ) or ( IsUnitInvisible(udg_Rush_Target, GetOwningPlayer(udg_Rush_Unit)) == true ) or ( ( udg_temp_real3 <= 0.00 ) and ( ( ZInShanXing(udg_Rush_Target , udg_Rush_Unit , 40) == false ) ) and ( YDWEDistanceBetweenUnits(udg_Rush_Unit , udg_Rush_Target) <= ( 200.00 + ( udg_Rush_DmR * 2.00 ) ) ) ) ) ) then
+		if ( true ) then
+			set udg_Rush_Target=null
+			set udg_Rush_TB=0
+			call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x07248B74, udg_Rush_Target)
+			call RemoveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x07248B74)
+			call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x49277449, udg_Rush_TB)
+		else
+		endif
+	else
+	endif
+	if ( ( IsUnitAliveBJ(udg_Rush_Unit) == true ) and ( IsUnitAliveBJ(udg_Rush_Target) == true ) and ( udg_Rush_End == 0 ) and ( YDWEDistanceBetweenUnits(udg_Rush_Unit , udg_Rush_Target) <= udg_Rush_DmR ) ) then
+		if ( ( GetUnitUserDataEx(udg_Rush_Unit) > GetUnitUserDataEx(udg_Rush_Target) ) ) then
+			set udg_Rush_End=1
+			call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+		else
+			set udg_Rush_End=- 1
+			call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+		endif
+		if ( ( GetUnitUserDataEx(udg_Rush_Unit) > GetUnitUserDataEx(udg_Rush_Target) ) and ( IsUnitEnemy(udg_Rush_Target, GetOwningPlayer(udg_Rush_Unit)) == true ) and ( udg_Rush_Type == 1 ) ) then
+			set udg_Rush_Damage=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x2FA5B606)
+			call UnitDamageTarget(udg_Rush_Unit, udg_Rush_Target, udg_Rush_Damage, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_FIRE, WEAPON_TYPE_WHOKNOWS)
+		else
+		endif
+	else
+		if ( ( udg_Rush_Target != null ) and ( IsUnitAliveBJ(udg_Rush_Target) == false ) and ( YDWEDistanceBetweenUnits(udg_Rush_Unit , udg_Rush_Target) <= udg_Rush_DmR ) ) then
+			call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, - 1)
+		else
+		endif
+	endif
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+endfunction
+//===========================================================================
+function InitTrig_Rush_Target_Check takes nothing returns nothing
+	set gg_trg_Rush_Target_Check=CreateTrigger()
+	call TriggerAddAction(gg_trg_Rush_Target_Check, function Trig_Rush_Target_CheckActions)
+endfunction

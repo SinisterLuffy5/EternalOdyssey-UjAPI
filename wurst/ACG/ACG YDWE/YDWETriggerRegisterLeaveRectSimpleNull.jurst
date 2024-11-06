@@ -1,0 +1,14 @@
+package YDWETriggerRegisterLeaveRectSimpleNull
+
+import ACG_Package
+
+//library YDWETriggerRegisterLeaveRectSimpleNull:
+public function YDWETriggerRegisterLeaveRectSimpleNull takes trigger trig,rect r returns event
+    local region rectRegion= CreateRegion()
+    call RegionAddRect(rectRegion, r)
+    set yd_NullTempRegion=rectRegion
+    set rectRegion=null
+    return TriggerRegisterLeaveRegion(trig, yd_NullTempRegion, null)
+endfunction
+
+//library YDWETriggerRegisterLeaveRectSimpleNull ends

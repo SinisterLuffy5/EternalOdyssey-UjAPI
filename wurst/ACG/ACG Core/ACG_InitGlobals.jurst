@@ -1,0 +1,256 @@
+package ACG_InitGlobals initializer InitGlobals2
+
+import ACG_Globals
+
+function InitGlobals2 takes nothing returns nothing
+    local integer i= 0
+	set udg_Rush_Group=CreateGroup()
+	set udg_Rush_Va=0
+	set udg_Rush_Aa=0
+	set udg_Rush_Atime=0
+	set udg_Rush_Ang=0
+	set udg_Rush_AB=0
+	set udg_Rush_Time=0
+	set udg_Rush_Type=0
+	set udg_Rush_TB=0
+	set udg_Rush_End=0
+	set udg_Time_FreezeGroup=CreateGroup()
+	set udg_Ex_Skill_Group=CreateGroup()
+	set udg_Rush_Damage=0
+	set udg_Rush_DmR=0
+	set udg_temp_x=0
+	set udg_temp_y=0
+	set udg_Rush_V=0
+	set udg_Rush_HasD_Group=CreateGroup()
+	set udg_Rush_FTA=0
+	set udg_Rush_FT_int=0
+	set udg_Rush_FTR=0
+	set udg_Rush_FTL=0
+	set udg_temp_boolean=false
+	set udg_Ex_Group=CreateGroup()
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_GloveOfSpeed[i]=0
+		set i=i + 1
+	endloop
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_ShoesOfSpeed[i]=0
+		set i=i + 1
+	endloop
+	set udg_Glove_Group=CreateGroup()
+	set udg_Shoes_Group=CreateGroup()
+	set udg_int=0
+	set udg_temp_mv=0
+	set udg_temp_string=""
+	set udg_temp_int=0
+	set udg_temp_real=0
+	set udg_Rush_SPR=0
+	set udg_Rush_SPGroup=CreateGroup()
+	set udg_temp_real2=0
+	set udg_Rush_Stop_Type=0
+	set udg_Rush_SPL=0
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_temp_Lv[i]=0
+		set i=i + 1
+	endloop
+	set udg_temp_boolean2=false
+	set udg_temp_boolean1=false
+	set udg_Rush_Boolean=false
+	set udg_Bug_boolean=false
+	set udg_TNycpat=0
+	set udg_bgmReal=0
+	set udg_Jump_Group=CreateGroup()
+	set udg_Gravity=0
+	set udg_Game_Film_Cam_Boo=false
+	set udg_Lsw_E_Cam_Group=CreateGroup()
+	set udg_temp_Dam_Boo=false
+	set udg_temp_Has_Boo=false
+	set udg_temp_real3=0
+	set udg_mugen_03=CreateForce()
+	set udg_Group_Volume=CreateGroup()
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_YS[i]=""
+		set i=i + 1
+	endloop
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_xuanxiang_01[i]=0
+		set i=i + 1
+	endloop
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_zhuanshu_01[i]=0
+		set i=i + 1
+	endloop
+	set udg_Movieing=false
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_K_Animotion[i]=0
+		set i=i + 1
+	endloop
+	set udg_FighterGroup=CreateGroup()
+	set udg_temp_group=CreateGroup()
+	set udg_Hero_Death_Group=CreateGroup()
+	set udg_Model_Relife_On=false
+	set udg_Game_Over=false
+	set udg_Player_Num=0
+	set udg_Rush_Group_Other=CreateGroup()
+	set udg_Round_Over=false
+	set udg_Round_Result=0
+	set udg_Skill_CD_Group=CreateGroup()
+	set udg_temp_timer=CreateTimer()
+	set udg_tempR=0
+	set udg_tempX=0
+	set udg_tempY=0
+	set udg_tempZ=0
+	set udg_Round_Clear_Group=CreateGroup()
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_Challenge_Name[i]=0
+		set i=i + 1
+	endloop
+	set udg_AI_Player_Group=CreateForce()
+	set udg_x=0
+	set udg_y=0
+	set udg_Rush_VS_Type=0
+	set udg_Controller_Player_Group=CreateForce()
+	set udg_temp_angle=0
+	set udg_temp_damage=0
+	set udg_Referee_Group=CreateForce()
+	set udg_Leave_Player_Group=CreateForce()
+	set udg_GostGroup=CreateGroup()
+	set udg_DeadClear_Group=CreateGroup()
+	set udg_ghostSys_fresh_Boolean=false
+	set udg_AI_ZS_Back_Group=CreateForce()
+	set udg_PlayerGroupB=CreateForce()
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_temp_Int_Arr[i]=0
+		set i=i + 1
+	endloop
+	set udg_Game_B1_Mode_WinCount=0
+	set udg_Game_B3_Mode_WinScore=0
+	set udg_Game_B4_Mode_WinScore=0
+	set udg_Win_Team_Int_Game=0
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_Player_Game_B1_Mode_WinCount[i]=0
+		set i=i + 1
+	endloop
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_Player_Game_B2_Mode_WinRound[i]=0
+		set i=i + 1
+	endloop
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_Player_Game_B34567_Mode_Score[i]=0
+		set i=i + 1
+	endloop
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_Game_B3_4_Mode_Data_Int_Arr[i]=0
+		set i=i + 1
+	endloop
+	set udg_Win_Team_Int_Round=0
+	set udg_Game_Double_Hero_Boo=false
+	set udg_Game_State=0
+	set udg_soundString=""
+	set udg_Game_B567_Mode_WinScore=0
+	set udg_temp_score=0
+	set udg_Game_Match_Boo=false
+	set udg_Shenrou=false
+	set udg_IsTianTi=false
+	set udg_TT_AllPlayerGroup=CreateForce()
+	set udg_TT_StopAutoCommitData=false
+	set udg_TT_OtherDataCommitType=0
+	set udg_temp_Damage=0
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_TT_2V4_Int[i]=0
+		set i=i + 1
+	endloop
+	set udg_Life_Lock_Group=CreateGroup()
+	set udg_Hero_Weak_Group=CreateGroup()
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_BaShenAniArray[i]=0
+		set i=i + 1
+	endloop
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_Game_Number[i]=0
+		set i=i + 1
+	endloop
+	set udg_Game_Ban_Hero_B1=false
+	set udg_PlayerGroupA=CreateForce()
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_Shiki_Animation[i]=0
+		set i=i + 1
+	endloop
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_BGM_Bloo[i]=false
+		set i=i + 1
+	endloop
+	set udg_Sys_PauseGroup=CreateGroup()
+	set udg_Sys_ClearPauseGroup=CreateGroup()
+	set udg_temp_boolean_int=0
+	set udg_Game_Inte=0
+	set udg_string=""
+	set udg_Damage_real=0
+	set udg_Kill_Int=0
+	set udg_Hero_Group=CreateGroup()
+	set udg_Game_Ban_Hero=false
+	set udg_Cam_Player_Group=CreateForce()
+	set udg_bgmTime=0
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_anmslwsnd[i]=""
+		set i=i + 1
+	endloop
+	set udg_mugen_Hero=0
+	set udg_Game_Mode_Type=0
+	set udg_temp_Real=0
+	set udg_PlayerGroupAll=CreateForce()
+	set udg_Game_Mode_C=0
+	set udg_Game_Mode_Select=DialogCreate()
+	set udg_Game_B2_Mode_WinRound=0
+	set udg_realHoemoptysis=0
+	set udg_shiye_group=CreateGroup()
+	set udg_repel_Dis=0
+	set udg_repel_Ang=0
+	set udg_repel_Time=0
+	set udg_temp_dam_real=0
+	set udg_buff_Real=0
+	set udg_playerNum=0
+	set i=0
+	loop
+		exitwhen ( i > 1 )
+		set udg_Clock_Timing[i]=0
+		set i=i + 1
+	endloop
+endfunction

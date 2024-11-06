@@ -1,0 +1,711 @@
+package Table2
+
+import ACG_Package
+
+//library Table:
+    
+    
+    function s__Table__dex__get_size takes nothing returns integer
+        return Table__sizeK
+    endfunction
+    function s__Table__dex__get_list takes nothing returns integer
+        return Table__listK
+    endfunction
+    
+    function s__Table__handles_has takes integer self,integer key returns boolean
+        return HaveSavedHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__handles_remove takes integer self,integer key returns nothing
+        call RemoveSavedHandle(Table__ht, self, key)
+    endfunction
+    
+    function s__Table__agents__setindex takes integer self,integer key,agent value returns nothing
+        call SaveAgentHandle(Table__ht, self, key, value)
+    endfunction
+    
+    
+    
+//Run these textmacros to include the entire hashtable API as wrappers.
+//Don't be intimidated by the number of macros - Vexorian's map optimizer is
+//supposed to kill functions which inline (all of these functions inline).
+//textmacro instance: NEW_ARRAY_BASIC("Real", "Real", "real")
+    function s__Table__reals__getindex takes integer self,integer key returns real
+        return LoadReal(Table__ht, self, key)
+    endfunction
+    function s__Table__reals__setindex takes integer self,integer key,real value returns nothing
+        call SaveReal(Table__ht, self, key, value)
+    endfunction
+    function s__Table__reals_has takes integer self,integer key returns boolean
+        return HaveSavedReal(Table__ht, self, key)
+    endfunction
+    function s__Table__reals_remove takes integer self,integer key returns nothing
+        call RemoveSavedReal(Table__ht, self, key)
+    endfunction
+//end of: NEW_ARRAY_BASIC("Real", "Real", "real")
+//textmacro instance: NEW_ARRAY_BASIC("Boolean", "Boolean", "boolean")
+    function s__Table__booleans__getindex takes integer self,integer key returns boolean
+        return LoadBoolean(Table__ht, self, key)
+    endfunction
+    function s__Table__booleans__setindex takes integer self,integer key,boolean value returns nothing
+        call SaveBoolean(Table__ht, self, key, value)
+    endfunction
+    function s__Table__booleans_has takes integer self,integer key returns boolean
+        return HaveSavedBoolean(Table__ht, self, key)
+    endfunction
+    function s__Table__booleans_remove takes integer self,integer key returns nothing
+        call RemoveSavedBoolean(Table__ht, self, key)
+    endfunction
+//end of: NEW_ARRAY_BASIC("Boolean", "Boolean", "boolean")
+//textmacro instance: NEW_ARRAY_BASIC("String", "Str", "string")
+    function s__Table__strings__getindex takes integer self,integer key returns string
+        return LoadStr(Table__ht, self, key)
+    endfunction
+    function s__Table__strings__setindex takes integer self,integer key,string value returns nothing
+        call SaveStr(Table__ht, self, key, value)
+    endfunction
+    function s__Table__strings_has takes integer self,integer key returns boolean
+        return HaveSavedString(Table__ht, self, key)
+    endfunction
+    function s__Table__strings_remove takes integer self,integer key returns nothing
+        call RemoveSavedString(Table__ht, self, key)
+    endfunction
+//end of: NEW_ARRAY_BASIC("String", "Str", "string")
+    
+//textmacro instance: NEW_ARRAY("Player", "player")
+    function s__Table__players__getindex takes integer self,integer key returns player
+        return LoadPlayerHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__players__setindex takes integer self,integer key,player value returns nothing
+        call SavePlayerHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Player", "player")
+//textmacro instance: NEW_ARRAY("Widget", "widget")
+    function s__Table__widgets__getindex takes integer self,integer key returns widget
+        return LoadWidgetHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__widgets__setindex takes integer self,integer key,widget value returns nothing
+        call SaveWidgetHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Widget", "widget")
+//textmacro instance: NEW_ARRAY("Destructable", "destructable")
+    function s__Table__destructables__getindex takes integer self,integer key returns destructable
+        return LoadDestructableHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__destructables__setindex takes integer self,integer key,destructable value returns nothing
+        call SaveDestructableHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Destructable", "destructable")
+//textmacro instance: NEW_ARRAY("Item", "item")
+    function s__Table__items__getindex takes integer self,integer key returns item
+        return LoadItemHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__items__setindex takes integer self,integer key,item value returns nothing
+        call SaveItemHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Item", "item")
+//textmacro instance: NEW_ARRAY("Unit", "unit")
+    function s__Table__units__getindex takes integer self,integer key returns unit
+        return LoadUnitHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__units__setindex takes integer self,integer key,unit value returns nothing
+        call SaveUnitHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Unit", "unit")
+//textmacro instance: NEW_ARRAY("Ability", "ability")
+    function s__Table__abilitys__getindex takes integer self,integer key returns ability
+        return LoadAbilityHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__abilitys__setindex takes integer self,integer key,ability value returns nothing
+        call SaveAbilityHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Ability", "ability")
+//textmacro instance: NEW_ARRAY("Timer", "timer")
+    function s__Table__timers__getindex takes integer self,integer key returns timer
+        return LoadTimerHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__timers__setindex takes integer self,integer key,timer value returns nothing
+        call SaveTimerHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Timer", "timer")
+//textmacro instance: NEW_ARRAY("Trigger", "trigger")
+    function s__Table__triggers__getindex takes integer self,integer key returns trigger
+        return LoadTriggerHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__triggers__setindex takes integer self,integer key,trigger value returns nothing
+        call SaveTriggerHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Trigger", "trigger")
+//textmacro instance: NEW_ARRAY("TriggerCondition", "triggercondition")
+    function s__Table__triggerconditions__getindex takes integer self,integer key returns triggercondition
+        return LoadTriggerConditionHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__triggerconditions__setindex takes integer self,integer key,triggercondition value returns nothing
+        call SaveTriggerConditionHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("TriggerCondition", "triggercondition")
+//textmacro instance: NEW_ARRAY("TriggerAction", "triggeraction")
+    function s__Table__triggeractions__getindex takes integer self,integer key returns triggeraction
+        return LoadTriggerActionHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__triggeractions__setindex takes integer self,integer key,triggeraction value returns nothing
+        call SaveTriggerActionHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("TriggerAction", "triggeraction")
+//textmacro instance: NEW_ARRAY("TriggerEvent", "event")
+    function s__Table__events__getindex takes integer self,integer key returns event
+        return LoadTriggerEventHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__events__setindex takes integer self,integer key,event value returns nothing
+        call SaveTriggerEventHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("TriggerEvent", "event")
+//textmacro instance: NEW_ARRAY("Force", "force")
+    function s__Table__forces__getindex takes integer self,integer key returns force
+        return LoadForceHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__forces__setindex takes integer self,integer key,force value returns nothing
+        call SaveForceHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Force", "force")
+//textmacro instance: NEW_ARRAY("Group", "group")
+    function s__Table__groups__getindex takes integer self,integer key returns group
+        return LoadGroupHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__groups__setindex takes integer self,integer key,group value returns nothing
+        call SaveGroupHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Group", "group")
+//textmacro instance: NEW_ARRAY("Location", "location")
+    function s__Table__locations__getindex takes integer self,integer key returns location
+        return LoadLocationHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__locations__setindex takes integer self,integer key,location value returns nothing
+        call SaveLocationHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Location", "location")
+//textmacro instance: NEW_ARRAY("Rect", "rect")
+    function s__Table__rects__getindex takes integer self,integer key returns rect
+        return LoadRectHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__rects__setindex takes integer self,integer key,rect value returns nothing
+        call SaveRectHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Rect", "rect")
+//textmacro instance: NEW_ARRAY("BooleanExpr", "boolexpr")
+    function s__Table__boolexprs__getindex takes integer self,integer key returns boolexpr
+        return LoadBooleanExprHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__boolexprs__setindex takes integer self,integer key,boolexpr value returns nothing
+        call SaveBooleanExprHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("BooleanExpr", "boolexpr")
+//textmacro instance: NEW_ARRAY("Sound", "sound")
+    function s__Table__sounds__getindex takes integer self,integer key returns sound
+        return LoadSoundHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__sounds__setindex takes integer self,integer key,sound value returns nothing
+        call SaveSoundHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Sound", "sound")
+//textmacro instance: NEW_ARRAY("Effect", "effect")
+    function s__Table__effects__getindex takes integer self,integer key returns effect
+        return LoadEffectHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__effects__setindex takes integer self,integer key,effect value returns nothing
+        call SaveEffectHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Effect", "effect")
+//textmacro instance: NEW_ARRAY("UnitPool", "unitpool")
+    function s__Table__unitpools__getindex takes integer self,integer key returns unitpool
+        return LoadUnitPoolHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__unitpools__setindex takes integer self,integer key,unitpool value returns nothing
+        call SaveUnitPoolHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("UnitPool", "unitpool")
+//textmacro instance: NEW_ARRAY("ItemPool", "itempool")
+    function s__Table__itempools__getindex takes integer self,integer key returns itempool
+        return LoadItemPoolHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__itempools__setindex takes integer self,integer key,itempool value returns nothing
+        call SaveItemPoolHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("ItemPool", "itempool")
+//textmacro instance: NEW_ARRAY("Quest", "quest")
+    function s__Table__quests__getindex takes integer self,integer key returns quest
+        return LoadQuestHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__quests__setindex takes integer self,integer key,quest value returns nothing
+        call SaveQuestHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Quest", "quest")
+//textmacro instance: NEW_ARRAY("QuestItem", "questitem")
+    function s__Table__questitems__getindex takes integer self,integer key returns questitem
+        return LoadQuestItemHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__questitems__setindex takes integer self,integer key,questitem value returns nothing
+        call SaveQuestItemHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("QuestItem", "questitem")
+//textmacro instance: NEW_ARRAY("DefeatCondition", "defeatcondition")
+    function s__Table__defeatconditions__getindex takes integer self,integer key returns defeatcondition
+        return LoadDefeatConditionHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__defeatconditions__setindex takes integer self,integer key,defeatcondition value returns nothing
+        call SaveDefeatConditionHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("DefeatCondition", "defeatcondition")
+//textmacro instance: NEW_ARRAY("TimerDialog", "timerdialog")
+    function s__Table__timerdialogs__getindex takes integer self,integer key returns timerdialog
+        return LoadTimerDialogHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__timerdialogs__setindex takes integer self,integer key,timerdialog value returns nothing
+        call SaveTimerDialogHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("TimerDialog", "timerdialog")
+//textmacro instance: NEW_ARRAY("Leaderboard", "leaderboard")
+    function s__Table__leaderboards__getindex takes integer self,integer key returns leaderboard
+        return LoadLeaderboardHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__leaderboards__setindex takes integer self,integer key,leaderboard value returns nothing
+        call SaveLeaderboardHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Leaderboard", "leaderboard")
+//textmacro instance: NEW_ARRAY("Multiboard", "multiboard")
+    function s__Table__multiboards__getindex takes integer self,integer key returns multiboard
+        return LoadMultiboardHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__multiboards__setindex takes integer self,integer key,multiboard value returns nothing
+        call SaveMultiboardHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Multiboard", "multiboard")
+//textmacro instance: NEW_ARRAY("MultiboardItem", "multiboarditem")
+    function s__Table__multiboarditems__getindex takes integer self,integer key returns multiboarditem
+        return LoadMultiboardItemHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__multiboarditems__setindex takes integer self,integer key,multiboarditem value returns nothing
+        call SaveMultiboardItemHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("MultiboardItem", "multiboarditem")
+//textmacro instance: NEW_ARRAY("Trackable", "trackable")
+    function s__Table__trackables__getindex takes integer self,integer key returns trackable
+        return LoadTrackableHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__trackables__setindex takes integer self,integer key,trackable value returns nothing
+        call SaveTrackableHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Trackable", "trackable")
+//textmacro instance: NEW_ARRAY("Dialog", "dialog")
+    function s__Table__dialogs__getindex takes integer self,integer key returns dialog
+        return LoadDialogHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__dialogs__setindex takes integer self,integer key,dialog value returns nothing
+        call SaveDialogHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Dialog", "dialog")
+//textmacro instance: NEW_ARRAY("Button", "button")
+    function s__Table__buttons__getindex takes integer self,integer key returns button
+        return LoadButtonHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__buttons__setindex takes integer self,integer key,button value returns nothing
+        call SaveButtonHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Button", "button")
+//textmacro instance: NEW_ARRAY("TextTag", "texttag")
+    function s__Table__texttags__getindex takes integer self,integer key returns texttag
+        return LoadTextTagHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__texttags__setindex takes integer self,integer key,texttag value returns nothing
+        call SaveTextTagHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("TextTag", "texttag")
+//textmacro instance: NEW_ARRAY("Lightning", "lightning")
+    function s__Table__lightnings__getindex takes integer self,integer key returns lightning
+        return LoadLightningHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__lightnings__setindex takes integer self,integer key,lightning value returns nothing
+        call SaveLightningHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Lightning", "lightning")
+//textmacro instance: NEW_ARRAY("Image", "image")
+    function s__Table__images__getindex takes integer self,integer key returns image
+        return LoadImageHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__images__setindex takes integer self,integer key,image value returns nothing
+        call SaveImageHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Image", "image")
+//textmacro instance: NEW_ARRAY("Ubersplat", "ubersplat")
+    function s__Table__ubersplats__getindex takes integer self,integer key returns ubersplat
+        return LoadUbersplatHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__ubersplats__setindex takes integer self,integer key,ubersplat value returns nothing
+        call SaveUbersplatHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Ubersplat", "ubersplat")
+//textmacro instance: NEW_ARRAY("Region", "region")
+    function s__Table__regions__getindex takes integer self,integer key returns region
+        return LoadRegionHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__regions__setindex takes integer self,integer key,region value returns nothing
+        call SaveRegionHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Region", "region")
+//textmacro instance: NEW_ARRAY("FogState", "fogstate")
+    function s__Table__fogstates__getindex takes integer self,integer key returns fogstate
+        return LoadFogStateHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__fogstates__setindex takes integer self,integer key,fogstate value returns nothing
+        call SaveFogStateHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("FogState", "fogstate")
+//textmacro instance: NEW_ARRAY("FogModifier", "fogmodifier")
+    function s__Table__fogmodifiers__getindex takes integer self,integer key returns fogmodifier
+        return LoadFogModifierHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__fogmodifiers__setindex takes integer self,integer key,fogmodifier value returns nothing
+        call SaveFogModifierHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("FogModifier", "fogmodifier")
+//textmacro instance: NEW_ARRAY("Hashtable", "hashtable")
+    function s__Table__hashtables__getindex takes integer self,integer key returns hashtable
+        return LoadHashtableHandle(Table__ht, self, key)
+    endfunction
+    function s__Table__hashtables__setindex takes integer self,integer key,hashtable value returns nothing
+        call SaveHashtableHandle(Table__ht, self, key, value)
+    endfunction
+//end of: NEW_ARRAY("Hashtable", "hashtable")
+    
+    
+    // Implement modules for intuitive syntax (tb.handle; tb.unit; etc.)
+//Implemented from module Table__realm:
+    function s__Table__get_real takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__booleanm:
+    function s__Table__get_boolean takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__stringm:
+    function s__Table__get_string takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__playerm:
+    function s__Table__get_player takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__widgetm:
+    function s__Table__get_widget takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__destructablem:
+    function s__Table__get_destructable takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__itemm:
+    function s__Table__get_item takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__unitm:
+    function s__Table__get_unit takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__abilitym:
+    function s__Table__get_ability takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__timerm:
+    function s__Table__get_timer takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__triggerm:
+    function s__Table__get_trigger takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__triggerconditionm:
+    function s__Table__get_triggercondition takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__triggeractionm:
+    function s__Table__get_triggeraction takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__eventm:
+    function s__Table__get_event takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__forcem:
+    function s__Table__get_force takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__groupm:
+    function s__Table__get_group takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__locationm:
+    function s__Table__get_location takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__rectm:
+    function s__Table__get_rect takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__boolexprm:
+    function s__Table__get_boolexpr takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__soundm:
+    function s__Table__get_sound takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__effectm:
+    function s__Table__get_effect takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__unitpoolm:
+    function s__Table__get_unitpool takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__itempoolm:
+    function s__Table__get_itempool takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__questm:
+    function s__Table__get_quest takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__questitemm:
+    function s__Table__get_questitem takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__defeatconditionm:
+    function s__Table__get_defeatcondition takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__timerdialogm:
+    function s__Table__get_timerdialog takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__leaderboardm:
+    function s__Table__get_leaderboard takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__multiboardm:
+    function s__Table__get_multiboard takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__multiboarditemm:
+    function s__Table__get_multiboarditem takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__trackablem:
+    function s__Table__get_trackable takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__dialogm:
+    function s__Table__get_dialog takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__buttonm:
+    function s__Table__get_button takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__texttagm:
+    function s__Table__get_texttag takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__lightningm:
+    function s__Table__get_lightning takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__imagem:
+    function s__Table__get_image takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__ubersplatm:
+    function s__Table__get_ubersplat takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__regionm:
+    function s__Table__get_region takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__fogstatem:
+    function s__Table__get_fogstate takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__fogmodifierm:
+    function s__Table__get_fogmodifier takes integer self returns integer
+        return self
+    endfunction
+//Implemented from module Table__hashtablem:
+    function s__Table__get_hashtable takes integer self returns integer
+        return self
+    endfunction
+    
+    function s__Table__get_handle takes integer self returns integer
+        return self
+    endfunction
+    
+    function s__Table__get_agent takes integer self returns integer
+        return self
+    endfunction
+    
+    //set self = tb[GetSpellAbilityId()]
+    function s__Table__getindex takes integer self,integer key returns integer
+        return LoadInteger(Table__ht, self, key)
+    endfunction
+    
+    //set tb[389034] = 8192
+    function s__Table__setindex takes integer self,integer key,integer tb returns nothing
+        call SaveInteger(Table__ht, self, key, tb)
+    endfunction
+    
+    //set b = tb.has(2493223)
+    function s__Table_has takes integer self,integer key returns boolean
+        return HaveSavedInteger(Table__ht, self, key)
+    endfunction
+    
+    //call tb.remove(294080)
+    function s__Table_remove takes integer self,integer key returns nothing
+        call RemoveSavedInteger(Table__ht, self, key)
+    endfunction
+    
+    //Remove all data from a Table instance
+    function s__Table_flush takes integer self returns nothing
+        call FlushChildHashtable(Table__ht, self)
+    endfunction
+    
+    //local Table tb = Table.create()
+    public function s__Table_create takes nothing returns integer
+        local integer self= (LoadInteger(Table__ht, ((Table__listK)), (0))) // INLINED!!
+        
+        if self == 0 then
+            set self=Table__more + 1
+            set Table__more=self
+        else
+            call SaveInteger(Table__ht, ((Table__listK)), (0), ( (LoadInteger(Table__ht, ((Table__listK)), (self))))) // INLINED!!
+            call RemoveSavedInteger(Table__ht, ((Table__listK)), (self)) //Clear hashed memory // INLINED!!
+endif
+        
+        return self
+    endfunction
+    
+    // Removes all data from a Table instance and recycles its index.
+    //
+    //     call tb.destroy()
+    //
+    function s__Table_destroy takes integer self returns nothing
+        
+        call FlushChildHashtable(Table__ht, (self)) // INLINED!!
+        
+        call SaveInteger(Table__ht, ((Table__listK)), (self), ( (LoadInteger(Table__ht, ((Table__listK)), (0))))) // INLINED!!
+        call SaveInteger(Table__ht, ((Table__listK)), (0), ( self)) // INLINED!!
+    endfunction
+    
+//ignored textmacro command: TABLE_BC_METHODS()
+    
+//ignored textmacro command: TABLE_BC_STRUCTS()
+    
+    
+    //Returns a new TableArray to do your bidding. Simply use:
+    //
+    //    local TableArray ta = TableArray[array_size]
+    //
+    function s__TableArray__staticgetindex takes integer array_size returns integer
+        local integer tb= (LoadInteger(Table__ht, ((Table__sizeK)), (array_size))) // INLINED!!
+local integer self= (LoadInteger(Table__ht, (tb), (0))) // INLINED!!
+
+        
+        if self == 0 then
+            set self=Table__less - array_size
+            set Table__less=self
+        else
+            call SaveInteger(Table__ht, (tb), (0), ( (LoadInteger(Table__ht, (tb), (self))))) //Set the last destroyed to the last-last destroyed // INLINED!!
+call RemoveSavedInteger(Table__ht, (tb), (self)) //Clear hashed memory // INLINED!!
+endif
+        
+        call SaveInteger(Table__ht, ((Table__sizeK)), (self), ( array_size)) //This remembers the array size // INLINED!!
+return self
+    endfunction
+    
+    //Returns the size of the TableArray
+    function s__TableArray__get_size takes integer self returns integer
+        return (LoadInteger(Table__ht, ((Table__sizeK)), (self))) // INLINED!!
+    endfunction
+    
+    //This magic method enables two-dimensional[array][syntax] for Tables,
+    //similar to the two-dimensional utility provided by hashtables them-
+    //selves.
+    //
+    //ta[integer a].unit[integer b] = unit u
+    //ta[integer a][integer c] = integer d
+    //
+    //Inline-friendly when not running in debug mode
+    //
+    function s__TableArray__getindex takes integer self,integer key returns integer
+
+
+
+
+
+
+
+
+
+
+        return self + key
+    endfunction
+    
+    //Destroys a TableArray without flushing it; I assume you call .flush()
+    //if you want it flushed too. This is a public method so that you don't
+    //have to loop through all TableArray indices to flush them if you don't
+    //need to (ie. if you were flushing all child-keys as you used them).
+    //
+    function s__TableArray_destroy takes integer self returns nothing
+        local integer tb= (LoadInteger(Table__ht, ((Table__sizeK)), ((LoadInteger(Table__ht, ((Table__sizeK)), ((self))))))) // INLINED!!
+        
+        
+        if tb == 0 then
+            //Create a Table to index recycled instances with their array size
+            set tb=s__Table_create()
+            call SaveInteger(Table__ht, ((Table__sizeK)), ((LoadInteger(Table__ht, ((Table__sizeK)), ((self))))), ( tb)) // INLINED!!
+        endif
+        
+        call RemoveSavedInteger(Table__ht, ((Table__sizeK)), (self)) //Clear the array size from hash memory // INLINED!!
+
+        call SaveInteger(Table__ht, (tb), (self), ( (LoadInteger(Table__ht, (tb), (0))))) // INLINED!!
+        call SaveInteger(Table__ht, (tb), (0), ( self)) // INLINED!!
+    endfunction
+    
+    
+    //Avoids hitting the op limit
+    function s__TableArray_clean takes nothing returns nothing
+        local integer tb= s__TableArray_tempTable
+        local integer end= tb + 0x1000
+        if end < s__TableArray_tempEnd then
+            set s__TableArray_tempTable=end
+            call ForForce(bj_FORCE_PLAYER[0], function s__TableArray_clean)
+        else
+            set end=s__TableArray_tempEnd
+        endif
+        loop
+            call FlushChildHashtable(Table__ht, (tb)) // INLINED!!
+            set tb=tb + 1
+            exitwhen tb == end
+        endloop
+    endfunction
+    
+    //Flushes the TableArray and also destroys it. Doesn't get any more
+    //similar to the FlushParentHashtable native than self.
+    //
+    function s__TableArray_flush takes integer self returns nothing
+        set s__TableArray_tempTable=self
+        set s__TableArray_tempEnd=self + (LoadInteger(Table__ht, ((Table__sizeK)), ((self)))) // INLINED!!
+        call ForForce(bj_FORCE_PLAYER[0], function s__TableArray_clean)
+        call s__TableArray_destroy(self)
+    endfunction
+    
+    
+
+//library Table ends

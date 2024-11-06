@@ -1,0 +1,10 @@
+//package ShanaW_MissileDeath
+
+//import ClosureEvents
+//import ACG_Unit_Gen
+//import EffectUtils
+
+//init
+    //EventListener.add(EVENT_PLAYER_UNIT_DEATH) ->
+        //if EventData.getTriggerUnit().getTypeId() == DUMMY_E001
+            //addEffect("war3mapImported\\explosionB.mdx", EventData.getTriggerUnit().getPos()).destrAfter(3) 

@@ -1,0 +1,87 @@
+package ShanaWDamage initializer InitTrig_XN_W_Damage
+
+import ACG_Package
+import ObjectIds // TEST
+//import YDWE_Package
+
+//===========================================================================
+// Trigger: XN_W_Damage
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_XN_W_DamageActions takes nothing returns nothing
+ local group ydl_group
+ local unit ydl_unit
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D, udg_Rush_Unit)
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABF3773E, LoadUnitHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)), 0xABF3773E))
+	set udg_Rush_DmR=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x5AEEFA2E)
+	set udg_Rush_DmR=250.00
+	set udg_Rush_Damage=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x2FA5B606)
+	if ( true ) then
+		call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845, CreateUnit(GetOwningPlayer(udg_Rush_Unit), udg_DummyType, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit), GetUnitFacing(udg_Rush_Unit)))
+		call SetUnitScale(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845), 1.00, 1, 1)
+		call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845), 0)
+		call SetUnitBlendTime(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845), 0.00)
+		call UnitApplyTimedLife(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845), 'BHwe', 1.00)
+		call DestroyEffect(AddSpecialEffectTarget("war3mapImported\\explosionB.mdx", LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845), "origin"))
+	else
+	endif
+	if ( ( IsUnitAliveBJ(LoadUnitHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABF3773E)), 0xE7C7D921)) == false ) ) then
+		call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA9CA4AD9, DUMMY_A071)
+		call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABF3773E)), udg_StunType, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABF3773E)), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABF3773E)), 0))
+		call SaveUnitHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABF3773E)), 0xE7C7D921, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921))
+		call UnitAddAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA9CA4AD9))
+	else
+		call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921, LoadUnitHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABF3773E)), 0xE7C7D921))
+		call SetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABF3773E)))
+		call SetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xABF3773E)))
+	endif
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6DA9D6A9, LoadUnitHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)), 0xFA3E491F))
+	call SaveGroupHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2E232DB0, LoadGroupHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6DA9D6A9)), 0xE48CA93E))
+	set ydl_group=CreateGroup()
+	call GroupEnumUnitsInRange(ydl_group, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit), udg_Rush_DmR, null)
+	loop
+		set ydl_unit=FirstOfGroup(ydl_group)
+		exitwhen ydl_unit == null
+		call GroupRemoveUnit(ydl_group, ydl_unit)
+		call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE0DD2139, ydl_unit)
+		if ( ( GetUnitAbilityLevel(ydl_unit, DUMMY_A00K) == 0 ) /* and ( GetUnitUserDataEx(udg_Rush_Unit) > GetUnitUserDataEx(ydl_unit) ) */ and ( IsUnitAliveBJ(ydl_unit) == true ) and ( IsUnitEnemy(ydl_unit, GetOwningPlayer(udg_Rush_Unit)) == true ) ) then
+			call SetUnitUserDataEx(ydl_unit, 0)
+			if ( ( IsUnitInGroup(ydl_unit, udg_Rush_Group) == true ) ) then
+				call SaveInteger(YDHT, GetHandleId(ydl_unit), 0xA5F6D6AD, - 1)
+			else
+			endif
+			if ( ( GetUnitAbilityLevel(ydl_unit, 'Aloc') == 0 ) ) then
+				if ( ( IsUnitInGroup(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE0DD2139), LoadGroupHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2E232DB0)) == false ) ) then
+					call GroupAddUnit(LoadGroupHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2E232DB0), LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE0DD2139))
+					call UnitDamageTarget(udg_Rush_Unit, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE0DD2139), udg_Rush_Damage, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+				else
+					call UnitDamageTarget(udg_Rush_Unit, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE0DD2139), ( udg_Rush_Damage * 0.25 ), false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+				endif
+				call IssueTargetOrder(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), "shadowstrike", ydl_unit)
+			else
+			endif
+		else
+		endif
+	endloop
+	call DestroyGroup(ydl_group)
+	call UnitRemoveAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), udg_temp_Skill)
+	//print("udg_temp_Skill: " + udg_temp_Skill.toRawCode()) // TEST
+	if ( ( GetUnitAbilityLevel(udg_Rush_Unit, DUMMY_A005) == 1 ) ) then
+		call KillUnit(udg_Rush_Unit)
+	else
+	endif
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_group=null
+	set ydl_unit=null
+endfunction
+//===========================================================================
+function InitTrig_XN_W_Damage takes nothing returns nothing
+	set gg_trg_XN_W_Damage=CreateTrigger()
+	call TriggerAddAction(gg_trg_XN_W_Damage, function Trig_XN_W_DamageActions)
+endfunction

@@ -1,0 +1,14 @@
+package YDWETriggerRegisterEnterRectSimpleNull
+
+import ACG_Package
+
+//library YDWETriggerRegisterEnterRectSimpleNull:
+public function YDWETriggerRegisterEnterRectSimpleNull takes trigger trig,rect r returns event
+    local region rectRegion= CreateRegion()
+    call RegionAddRect(rectRegion, r)
+    set yd_NullTempRegion=rectRegion
+    set rectRegion=null
+    return TriggerRegisterEnterRegion(trig, yd_NullTempRegion, null)
+endfunction
+
+//library YDWETriggerRegisterEnterRectSimpleNull ends

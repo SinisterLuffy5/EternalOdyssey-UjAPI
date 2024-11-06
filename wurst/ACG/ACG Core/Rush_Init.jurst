@@ -1,0 +1,80 @@
+package Rush_Init initializer InitTrig_Rush_Init
+
+import ACG_Package
+import YDWE_Package
+
+//===========================================================================
+// Trigger: Rush_Init
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_Rush_Init_2523450632 takes nothing returns nothing
+	if ( ( IsUnitInGroup(GetTriggerUnit(), udg_Rush_Group) == true ) and ( GetUnitAbilityLevel(GetTriggerUnit(), 'A027') == 0 ) ) then
+		if ( ( LoadInteger(YDHT, GetHandleId(GetTriggerUnit()), 0xA5F6D6AD) != - 1 ) and ( LoadInteger(YDHT, GetHandleId(GetTriggerUnit()), 0xA5F6D6AD) != 1 ) ) then
+			call SaveInteger(YDHT, GetHandleId(GetTriggerUnit()), 0xA5F6D6AD, 1)
+			if ( ( HaveSavedHandle(YDHT, GetHandleId(GetTriggerUnit()), 0xAEEA1156) == true ) ) then
+				set udg_Rush_Tri=LoadTriggerHandle(YDHT, GetHandleId(GetTriggerUnit()), 0xAEEA1156)
+			else
+				set udg_Rush_Tri=gg_trg_Rush_Damage
+			endif
+			call TriggerExecute(udg_Rush_Tri)
+		else
+		endif
+	else
+	endif
+endfunction
+
+function MapInit takes nothing returns nothing
+    set MapMaxX=GetRectMaxX(GetPlayableMapRect())
+    set MapMinX=GetRectMinX(GetPlayableMapRect())
+    set MapMaxY=GetRectMaxY(GetPlayableMapRect())
+    set MapMinY=GetRectMinY(GetPlayableMapRect())
+endfunction
+
+function Trig_Rush_InitActions takes nothing returns nothing
+ local trigger ydl_trigger
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	call MapInit()
+	set udg_Rush_Bullet=DUMMY_E001
+	//★关于弹幕单位，移动设置成没有，类型设定成守卫，然后加上蝗虫技能，加上一个弹幕标记的技能。
+	//★默认的这个弹幕单位为dummy模型，移动速度100。生命100
+	set udg_Ex_Skill_Group=CreateGroup()
+	set udg_Rush_Group=CreateGroup()
+	set udg_Rush_Group_Other=CreateGroup()
+	set udg_DeadClear_Group=CreateGroup()
+	//↓初始默认
+	set udg_Rush_Tri=gg_trg_Rush_Damage
+	//↓测试反弹设置
+	//魔法护盾特效
+	//↑反弹的特效的字符串↑前面3个数字是反弹效果马甲的动画序号。第4-5位是特效体积。6-8位是特效的角度偏移补充
+	//↑上面这个是，0动画序号，1倍体积，魔法护盾特效
+	//↓测试特殊范围效果
+	//↑存在这个单位组时，特殊效果对每个敌人只会作用一次。
+	//↑测试效果:靠近500范围的弹幕会被燃烧，0.5秒后烧尽弹幕
+	//↑特殊效果作用范围
+	//↑对于这些特殊单位，不要直接删除，必须先运行Handle_Clear之后再删除，不然会泄漏
+	//↑一般情况直接把单位丢到单位组中。设置下生命周期就行。
+	if ( true ) then
+		set udg_Condition_Skill[1]=DUMMY_A00G
+		set udg_Condition_Skill[2]=DUMMY_A00H
+		set udg_Condition_Skill[3]=DUMMY_A00I
+		set udg_Condition_Skill[4]=DUMMY_A005
+		set udg_Condition_Skill[5]=DUMMY_ACG_A00J
+	else
+	endif
+	set ydl_trigger=CreateTrigger()
+	call YDWETriggerRegisterLeaveRectSimpleNull(ydl_trigger , gg_rct_Zone_Shanghai)
+	call TriggerAddCondition(ydl_trigger, Condition(function Trig_Rush_Init_2523450632))
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_trigger=null
+endfunction
+//===========================================================================
+function InitTrig_Rush_Init takes nothing returns nothing
+	set gg_trg_Rush_Init=CreateTrigger()
+	call TriggerRegisterTimerEventSingle(gg_trg_Rush_Init, 0.00)
+	call TriggerAddAction(gg_trg_Rush_Init, function Trig_Rush_InitActions)
+endfunction

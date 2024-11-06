@@ -1,0 +1,599 @@
+package Rush_Check initializer InitTrig_Rush_Check
+
+import YDWE_Package
+import ACG_Package
+
+//===========================================================================
+// Trigger: Rush_Check
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_Rush_CheckActions takes nothing returns nothing
+ local group ydl_group
+ local unit ydl_unit
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA, udg_Rush_Unit)
+	set udg_temp_goal=null
+	set udg_Rush_Type=LoadInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x962ECFA8)
+	set udg_Rush_Damage=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x2FA5B606)
+	set udg_Rush_DmR=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x5AEEFA2E)
+	set udg_Rush_HasD_Group=LoadGroupHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x37C5AF05)
+	set udg_Rush_FT_int=0
+	//检测圆形反弹+特殊效果判断
+	set ydl_group=CreateGroup()
+	call GroupEnumUnitsInRange(ydl_group, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit), 1000.00, null)
+	loop
+		set ydl_unit=FirstOfGroup(ydl_group)
+		exitwhen ydl_unit == null
+		call GroupRemoveUnit(ydl_group, ydl_unit)
+		if ( ( GetUnitAbilityLevel(ydl_unit, DUMMY_ACG_A00J) == 1 ) and ( HaveSavedReal(YDHT, GetHandleId(ydl_unit), 0x837C0C55) == true ) and ( HaveSavedReal(YDHT, GetHandleId(ydl_unit), 0x8579F32C) == false ) ) then
+			set udg_temp_u=ydl_unit
+			set udg_Rush_SPR=LoadReal(YDHT, GetHandleId(udg_temp_u), 0x837C0C55)
+			if ( ( HaveSavedHandle(YDHT, GetHandleId(udg_temp_u), 0x3C023DF4) == true ) ) then
+				set udg_Rush_SPGroup=LoadGroupHandle(YDHT, GetHandleId(udg_temp_u), 0x3C023DF4)
+				if ( ( IsUnitInGroup(udg_Rush_Unit, udg_Rush_SPGroup) == false ) and ( HaveSavedHandle(YDHT, GetHandleId(udg_temp_u), 0xAA3FF014) == true ) and ( YDWEDistanceBetweenUnits(udg_Rush_Unit , udg_temp_u) <= udg_Rush_SPR ) ) then
+					call GroupAddUnit(udg_Rush_SPGroup, udg_Rush_Unit)
+					set udg_Rush_SPTri=LoadTriggerHandle(YDHT, GetHandleId(udg_temp_u), 0xAA3FF014)
+					call TriggerExecute(udg_Rush_SPTri)
+				else
+				endif
+			else
+				if ( ( HaveSavedHandle(YDHT, GetHandleId(udg_temp_u), 0xAA3FF014) == true ) and ( YDWEDistanceBetweenUnits(udg_Rush_Unit , udg_temp_u) <= udg_Rush_SPR ) ) then
+					set udg_Rush_SPTri=LoadTriggerHandle(YDHT, GetHandleId(udg_temp_u), 0xAA3FF014)
+					call TriggerExecute(udg_Rush_SPTri)
+				else
+				endif
+			endif
+		else
+		endif
+		//↑对冲锋/弹幕特殊影响
+		if ( ( GetUnitAbilityLevel(ydl_unit, DUMMY_ACG_A00J) == 1 ) and ( HaveSavedReal(YDHT, GetHandleId(ydl_unit), 0xE6794F91) == true ) and ( HaveSavedReal(YDHT, GetHandleId(ydl_unit), 0x2A79CCAE) == false ) ) then
+			set udg_Rush_FTR=LoadReal(YDHT, GetHandleId(ydl_unit), 0xE6794F91)
+			set udg_temp_u=ydl_unit
+			//---------------------------------------------------------
+			if ( ( GetUnitUserDataEx(udg_Rush_Unit) <= GetUnitUserDataEx(udg_temp_u) ) and ( YDWEDistanceBetweenUnits(udg_Rush_Unit , udg_temp_u) <= udg_Rush_FTR ) and ( IsUnitAliveBJ(udg_temp_u) == true ) and ( IsUnitEnemy(udg_temp_u, GetOwningPlayer(udg_Rush_Unit)) == true ) and ( LoadInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x0F2A5741) == 0 ) ) then
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, - 2)
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x49277449, 0)
+				call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xA2E2E751, 0.00)
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x0F2A5741, 5)
+				set udg_Rush_Ang=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0xE0D3A756)
+				set udg_Rush_Ang=AngFt(udg_temp_u , udg_Rush_Unit , udg_Rush_Ang)
+				if ( ( GetUnitTypeId(udg_Rush_Unit) == udg_Rush_Bullet ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'A005') == 1 ) ) then
+					call TriggerExecute(gg_trg_Bullet_Ang_Change)
+				else
+				endif
+				if ( ( HaveSavedString(YDHT, GetHandleId(udg_temp_u), 0x96B3E182) == true ) ) then
+					if ( ( HaveSavedString(YDHT, GetHandleId(udg_temp_u), 0xA354B07F) == true ) ) then
+						set udg_temp_string=LoadStr(YDHT, GetHandleId(udg_temp_u), 0xA354B07F)
+						set udg_temp_int=S2I(SubString(udg_temp_string, 0, 3))
+						set udg_temp_mv=S2R(SubString(udg_temp_string, 3, 5))
+						set udg_temp_string=LoadStr(YDHT, GetHandleId(udg_temp_u), 0x96B3E182)
+						call Dummy_Effect(udg_temp_u , udg_DummyType , udg_temp_mv , udg_temp_string , udg_temp_int.toReal() , 0.5 , GetUnitX(udg_Rush_Unit) , GetUnitY(udg_Rush_Unit) , udg_Rush_Ang)
+					else
+						set udg_temp_string=LoadStr(YDHT, GetHandleId(udg_temp_u), 0x96B3E182)
+						call DestroyEffect(AddSpecialEffect(udg_temp_string, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit)))
+					endif
+				else
+				endif
+				call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xE0D3A756, udg_Rush_Ang)
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xFEE1B1B7, 0)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x07248B74, null)
+				call RemoveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x07248B74)
+				if ( ( GetUnitAbilityLevel(udg_Rush_Unit, DUMMY_A005) >= 1 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'A03K') == 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'Aloc') == 1 ) ) then
+					call SetUnitOwner(udg_Rush_Unit, GetOwningPlayer(ydl_unit), true)
+				else
+				endif
+				set udg_Rush_FT_int=1
+			else
+			endif
+		else
+		endif
+	endloop
+	call DestroyGroup(ydl_group)
+	//检测墙壁反弹
+	set ydl_group=CreateGroup()
+	call GroupEnumUnitsInRange(ydl_group, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit), 1000.00, null)
+	loop
+		set ydl_unit=FirstOfGroup(ydl_group)
+		exitwhen ydl_unit == null
+		call GroupRemoveUnit(ydl_group, ydl_unit)
+		if ( ( GetUnitAbilityLevel(ydl_unit, DUMMY_ACG_A00J) == 1 ) and ( HaveSavedReal(YDHT, GetHandleId(ydl_unit), 0x837C0C55) == true ) and ( HaveSavedReal(YDHT, GetHandleId(ydl_unit), 0x8579F32C) == true ) ) then
+			set udg_temp_u=ydl_unit
+			set udg_Rush_SPR=LoadReal(YDHT, GetHandleId(udg_temp_u), 0x837C0C55)
+			set udg_Rush_SPL=LoadReal(YDHT, GetHandleId(udg_temp_u), 0x8579F32C)
+			if ( ( HaveSavedHandle(YDHT, GetHandleId(udg_temp_u), 0x3C023DF4) == true ) ) then
+				set udg_Rush_SPGroup=LoadGroupHandle(YDHT, GetHandleId(udg_temp_u), 0x3C023DF4)
+				if ( ( IsUnitInGroup(udg_Rush_Unit, udg_Rush_SPGroup) == false ) and ( HaveSavedHandle(YDHT, GetHandleId(udg_temp_u), 0xAA3FF014) == true ) and ( ( UnitInLineL(GetUnitX(udg_temp_u) , GetUnitY(udg_temp_u) , GetUnitFacing(udg_temp_u) , udg_Rush_SPR , udg_Rush_SPL , udg_Rush_Unit) ) ) ) then
+					call GroupAddUnit(udg_Rush_SPGroup, udg_Rush_Unit)
+					set udg_Rush_SPTri=LoadTriggerHandle(YDHT, GetHandleId(udg_temp_u), 0xAA3FF014)
+					call TriggerExecute(udg_Rush_SPTri)
+				else
+				endif
+			else
+				if ( ( HaveSavedHandle(YDHT, GetHandleId(udg_temp_u), 0xAA3FF014) == true ) and ( ( UnitInLineL(GetUnitX(udg_temp_u) , GetUnitY(udg_temp_u) , GetUnitFacing(udg_temp_u) , udg_Rush_SPR , udg_Rush_SPL , udg_Rush_Unit) ) ) ) then
+					set udg_Rush_SPTri=LoadTriggerHandle(YDHT, GetHandleId(udg_temp_u), 0xAA3FF014)
+					call TriggerExecute(udg_Rush_SPTri)
+				else
+				endif
+			endif
+		else
+		endif
+		if ( ( GetUnitAbilityLevel(ydl_unit, DUMMY_ACG_A00J) == 1 ) and ( HaveSavedReal(YDHT, GetHandleId(ydl_unit), 0xE6794F91) == true ) and ( HaveSavedReal(YDHT, GetHandleId(ydl_unit), 0x2A79CCAE) == true ) ) then
+			set udg_Rush_FTR=LoadReal(YDHT, GetHandleId(ydl_unit), 0xE6794F91)
+			set udg_Rush_FTL=LoadReal(YDHT, GetHandleId(ydl_unit), 0x2A79CCAE)
+			//自定义代码内长，宽
+			set udg_temp_u=ydl_unit
+			//---------------------------------------------------------
+			if ( ( GetUnitUserDataEx(udg_Rush_Unit) <= GetUnitUserDataEx(udg_temp_u) ) and ( ( UnitInLineL(GetUnitX(udg_temp_u) , GetUnitY(udg_temp_u) , GetUnitFacing(udg_temp_u) , udg_Rush_FTR , udg_Rush_FTL , udg_Rush_Unit) ) ) and ( IsUnitAliveBJ(udg_temp_u) == true ) and ( IsUnitEnemy(udg_temp_u, GetOwningPlayer(udg_Rush_Unit)) == true ) and ( LoadInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x0F2A5741) == 0 ) ) then
+				if ( ( HaveSavedString(YDHT, GetHandleId(udg_temp_u), 0x96B3E182) == true ) ) then
+					if ( ( HaveSavedString(YDHT, GetHandleId(udg_temp_u), 0xA354B07F) == true ) ) then
+						set udg_temp_string=LoadStr(YDHT, GetHandleId(udg_temp_u), 0xA354B07F)
+						set udg_temp_int=S2I(SubString(udg_temp_string, 0, 3))
+						set udg_temp_mv=S2R(SubString(udg_temp_string, 3, 5))
+						set udg_temp_real=S2R(SubString(udg_temp_string, 5, 8))
+						set udg_temp_string=LoadStr(YDHT, GetHandleId(udg_temp_u), 0x96B3E182)
+						if ( ( ( ZAngles_GetAngleDifference(udg_Rush_Ang + 180 , GetUnitFacing(udg_temp_u)) > 90 ) ) ) then
+							set udg_temp_real=( udg_temp_real + 180.00 )
+						else
+						endif
+						set udg_Rush_Ang=( ( ( GetUnitFacing(udg_temp_u) ) + ( ( udg_temp_real ) ) ) )
+						call Dummy_Effect(udg_temp_u , udg_DummyType , udg_temp_mv , udg_temp_string , udg_temp_int.toReal(), 0.5 , GetUnitX(udg_Rush_Unit) , GetUnitY(udg_Rush_Unit) , udg_Rush_Ang)
+					else
+					endif
+				else
+					set udg_temp_string=LoadStr(YDHT, GetHandleId(udg_temp_u), 0x96B3E182)
+					call DestroyEffect(AddSpecialEffect(udg_temp_string, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit)))
+				endif
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, - 2)
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x0F2A5741, 5)
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x49277449, 0)
+				call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xA2E2E751, 0.00)
+				set udg_Rush_Ang=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0xE0D3A756)
+				set udg_Rush_Ang=AngFtL(udg_temp_u , udg_Rush_Unit , udg_Rush_Ang)
+				if ( ( GetUnitTypeId(udg_Rush_Unit) == udg_Rush_Bullet ) and ( GetUnitAbilityLevel(udg_Rush_Unit, DUMMY_A005) == 1 ) ) then
+					call TriggerExecute(gg_trg_Bullet_Ang_Change)
+				else
+				endif
+				call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xE0D3A756, udg_Rush_Ang)
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xFEE1B1B7, 0)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x07248B74, null)
+				call RemoveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x07248B74)
+				if ( ( GetUnitAbilityLevel(udg_Rush_Unit, 'Aloc') == 1 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, DUMMY_A005) >= 1 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'A03K') == 0 ) ) then
+					call SetUnitOwner(udg_Rush_Unit, GetOwningPlayer(ydl_unit), true)
+				else
+				endif
+				set udg_Rush_FT_int=1
+			else
+			endif
+		else
+		endif
+	endloop
+	call DestroyGroup(ydl_group)
+	//检测技能碰撞，检测敌人，无反弹情况下才进行
+	if ( ( LoadInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD) != - 1 ) and ( udg_Rush_FT_int == 0 ) ) then
+		if ( ( udg_Rush_Type == 0 ) ) then
+			if ( ( HaveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0x1CEECBD6) == true ) ) then
+				set udg_temp_real3=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x1CEECBD6)
+			else
+				set udg_temp_real3=- 1.00
+			endif
+			set ydl_group=CreateGroup()
+			call GroupEnumUnitsInRange(ydl_group, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit), udg_Rush_DmR, null)
+			loop
+				set ydl_unit=FirstOfGroup(ydl_group)
+				exitwhen ydl_unit == null
+				call GroupRemoveUnit(ydl_group, ydl_unit)
+				set udg_temp_u=ydl_unit
+				if ( ( GetUnitAbilityLevel(udg_temp_u, DUMMY_A00K) == 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'A0B0') == 0 ) and ( IsUnitAliveBJ(udg_temp_u) == true ) and ( IsUnitEnemy(udg_temp_u, GetOwningPlayer(udg_Rush_Unit)) == true ) and ( ( ( ZInShanXing(udg_temp_u , udg_Rush_Unit , udg_temp_real3) ) ) or ( udg_temp_real3 <= 0.00 ) ) ) then
+					if ( ( IsUnitInGroup(udg_temp_u, udg_Rush_Group) == true ) ) then
+						//人物冲锋，技能等级较高
+						set udg_temp_int=1
+						call TriggerExecute(gg_trg_Skill_Data_Condition)
+						//---------------------------------------------------------
+						//↓比较冲锋等级，弱者End=-1↓
+						if ( ( ( ( GetUnitUserDataEx(udg_Rush_Unit) > GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+							if ( ( GetUnitAbilityLevel(udg_Rush_Unit, 'Aloc') == 0 ) and ( GetUnitAbilityLevel(udg_temp_u, 'Aloc') == 0 ) ) then
+								call YDWETimerPatternRushSlide(udg_temp_u , YDWEAngleBetweenUnits(udg_Rush_Unit , udg_temp_u) , ( ( 10.00 * udg_Rush_Va ) * GetUnitMoveSpeed(udg_Rush_Unit) ) , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+								if ( ( udg_Rush_Target == udg_temp_u ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'A07O') > 0 ) ) then
+									call CationWords(udg_Rush_Unit , 1 , "돌진 파괴 활성화" , 9 , 0.04 , 1)
+									//call DoNothing()
+									set udg_Rush_Damage=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x2FA5B606)
+									set udg_Rush_Damage=( udg_Rush_Damage * 1.50 )
+									call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0x2FA5B606, udg_Rush_Damage)
+									call UnitRemoveAbility(udg_Rush_Unit, 'A07O')
+								else
+								endif
+							else
+							endif
+							//物理弹飞判断
+							set udg_Rush_Boolean=true
+							set udg_Rush_End=- 1
+							call SaveInteger(YDHT, GetHandleId(udg_temp_u), 0xA5F6D6AD, udg_Rush_End)
+							if ( ( udg_Bug_boolean == false ) ) then
+								set udg_Rush_End=0
+							else
+								set udg_Rush_End=1
+							endif
+							call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+						else
+						endif
+						set udg_Rush_Boolean=false
+						if ( ( udg_Rush_Boolean == false ) ) then
+							set udg_temp_int=- 1
+							call TriggerExecute(gg_trg_Skill_Data_Condition)
+							if ( ( ( ( GetUnitUserDataEx(udg_Rush_Unit) < GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+								set udg_Rush_Boolean=true
+								set udg_Rush_End=- 1
+								call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+							else
+							endif
+						else
+						endif
+						if ( ( udg_Rush_Boolean == false ) ) then
+							set udg_temp_int=0
+							call TriggerExecute(gg_trg_Skill_Data_Condition)
+							if ( ( ( ( GetUnitUserDataEx(udg_Rush_Unit) == GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+								set udg_Rush_Boolean=true
+								set udg_Rush_End=- 1
+								call SaveInteger(YDHT, GetHandleId(udg_temp_u), 0xA5F6D6AD, udg_Rush_End)
+								call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+								if ( ( GetUnitAbilityLevel(udg_temp_u, 'Aloc') == 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'Aloc') == 0 ) ) then
+									set udg_Rush_VS_Type=0
+									if ( ( GetUnitAbilityLevel(udg_temp_u, DUMMY_A07T) > 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, DUMMY_A07T) > 0 ) ) then
+										call UnitRemoveAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D), DUMMY_A07T)
+										call UnitRemoveAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x214C62CC), DUMMY_A07T)
+										//--------------剑豪PK判定------------
+										set udg_Rush_VS_Type=1
+										call ConditionalTriggerExecute(gg_trg_Rush_Event)
+									else
+									endif
+									if ( ( udg_Rush_VS_Type == 0 ) ) then
+										call YDWETimerPatternRushSlide(udg_temp_u , YDWEAngleBetweenUnits(udg_Rush_Unit , udg_temp_u) , ( ( 10.00 * udg_Rush_Va ) * GetUnitMoveSpeed(udg_Rush_Unit) ) , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+										call YDWETimerPatternRushSlide(udg_Rush_Unit , YDWEAngleBetweenUnits(udg_temp_u , udg_Rush_Unit) , ( ( 10.00 * udg_Rush_Va ) * GetUnitMoveSpeed(udg_temp_u) ) , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+									else
+									endif
+								else
+								endif
+							else
+							endif
+						else
+						endif
+					else
+					endif
+				else
+				endif
+			endloop
+			call DestroyGroup(ydl_group)
+							call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_group=null
+	set ydl_unit=null
+return
+		else
+		endif
+		if ( ( udg_Rush_Type == 1 ) ) then
+			if ( ( HaveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x805D0E88) == true ) and ( HaveSavedString(YDHT, GetHandleId(udg_Rush_Unit), 0x8B214E81) == true ) ) then
+				set udg_temp_string=LoadStr(YDHT, GetHandleId(udg_Rush_Unit), 0x8B214E81)
+				set udg_temp_int=LoadInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x805D0E88)
+				if ( true ) then
+					//temp_Skill
+					call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921, LoadUnitHandle(YDHT, GetHandleId(GetOwningPlayer(udg_Rush_Unit)), 0xE7C7D921))
+					call UnitAddAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), udg_temp_int)
+				else
+				endif
+				call SetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), GetUnitX(udg_Rush_Unit))
+				call SetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), GetUnitY(udg_Rush_Unit))
+			else
+			endif
+			if ( ( HaveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xB47CE887) == true ) ) then
+				set udg_temp_Has_Boo=true
+				if ( ( LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0xAC61EB61) > LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0xB47CE887) ) ) then
+					call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xAC61EB61, 0.02)
+					set udg_temp_Dam_Boo=true
+				else
+					set udg_temp_Dam_Boo=false
+					call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xAC61EB61, ( LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0xAC61EB61) + 0.02 ))
+				endif
+			else
+				set udg_temp_Dam_Boo=true
+				set udg_temp_Has_Boo=false
+			endif
+			if ( ( HaveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0x1CEECBD6) == true ) ) then
+				set udg_temp_real3=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x1CEECBD6)
+			else
+				set udg_temp_real3=- 1.00
+			endif
+			call SaveGroupHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xDFB448FB, LoadGroupHandle(YDHT, GetHandleId(LoadUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xFA3E491F)), 0xE48CA93E))
+			set ydl_group=CreateGroup()
+			call GroupEnumUnitsInRange(ydl_group, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit), udg_Rush_DmR, null)
+			loop
+				set ydl_unit=FirstOfGroup(ydl_group)
+				exitwhen ydl_unit == null
+				call GroupRemoveUnit(ydl_group, ydl_unit)
+				call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06, ydl_unit)
+				if ( ( ( ( ZInShanXing(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06) , udg_Rush_Unit , udg_temp_real3) ) ) or ( udg_temp_real3 <= 0.00 ) ) and ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06), 'A00K') == 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'A0B0') == 0 ) and ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06)) == true ) and ( IsUnitEnemy(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06), GetOwningPlayer(udg_Rush_Unit)) == true ) ) then
+					//伤害
+					//---------------------------------------------------------
+					set udg_temp_int=1
+					set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06)
+					call TriggerExecute(gg_trg_Skill_Data_Condition)
+					if ( ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06), 'Aloc') == 0 ) and ( ( ( GetUnitUserDataEx(udg_Rush_Unit) > GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xEEBCCB06)) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+						if ( ( GetUnitAbilityLevel(udg_Rush_Unit, DUMMY_ACG_A01H) == 1 ) ) then
+							//-------------------带动敌人------------
+							set udg_temp_x=( GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06)) + ( udg_Rush_V * CosBJ(( udg_Rush_Ang )) ) )
+							set udg_temp_y=( GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06)) + ( udg_Rush_V * SinBJ(( udg_Rush_Ang )) ) )
+							call SetUnitPosition(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06), udg_temp_x, udg_temp_y)
+						else
+						endif
+						if ( ( udg_temp_Dam_Boo == true ) ) then
+							if ( ( IsUnitInGroup(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06), udg_Rush_HasD_Group) == false ) ) then
+								call DestroyEffect(AddSpecialEffectTarget(LoadStr(YDHT, GetHandleId(udg_Rush_Unit), 0x7C0134F9), LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06), "chest"))
+								if ( ( IsUnitAliveBJ(LoadUnitHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x2F09B339)) == true ) ) then
+									call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2F09B339, LoadUnitHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x2F09B339))
+									if ( ( HaveSavedReal(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB6A6EBAA)), 0x9715AC10) == true ) ) then
+										call IssueTargetOrder(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2F09B339), "thunderbolt", LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06))
+									else
+									endif
+									if ( ( HaveSavedInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB6A6EBAA)), 0x805D0E88) == true ) and ( HaveSavedString(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB6A6EBAA)), 0x8B214E81) == true ) and ( GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06)) <= GetUnitUserDataEx(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)) ) ) then
+										call SaveStr(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xED96B976, LoadStr(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x8B214E81))
+										call IssueNeutralTargetOrderById(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2F09B339), String2OrderIdBJ(LoadStr(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xED96B976)), LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06))
+									else
+									endif
+								else
+								endif
+								if ( ( HaveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xFBE254B0) == true ) ) then
+									set udg_temp_Trigger=LoadTriggerHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xFBE254B0)
+									set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06)
+									call ConditionalTriggerExecute(udg_temp_Trigger)
+								else
+								endif
+								if ( ( udg_temp_Has_Boo == false ) and ( HaveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x37C5AF05) == true ) ) then
+									call GroupAddUnit(udg_Rush_HasD_Group, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06))
+								else
+								endif
+								if ( ( udg_Rush_Damage > 1.00 ) ) then
+									if ( ( HaveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0xE943C5B2) == true ) and ( LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0xE943C5B2) > 0.00 ) ) then
+										call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x68F5B2A1, LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0xE943C5B2))
+										call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x68F5B2A1, RMinBJ(LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x68F5B2A1), 1.00))
+										if ( ( IsUnitInGroup(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06), LoadGroupHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xDFB448FB)) == false ) ) then
+											call UnitDamageTarget(udg_Rush_Unit, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06), udg_Rush_Damage, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+											call GroupAddUnit(LoadGroupHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xDFB448FB), LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06))
+										else
+											call UnitDamageTarget(udg_Rush_Unit, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06), ( udg_Rush_Damage * LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x68F5B2A1) ), false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+										endif
+									else
+										call UnitDamageTarget(udg_Rush_Unit, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xEEBCCB06), udg_Rush_Damage, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_MAGIC, WEAPON_TYPE_WHOKNOWS)
+									endif
+								else
+								endif
+							else
+							endif
+						else
+						endif
+					else
+					endif
+					//技能冲突
+					if ( ( IsUnitInGroup(udg_temp_u, udg_Rush_Group) == true ) ) then
+						//人物冲锋，技能等级较高
+						set udg_temp_int=0
+						call TriggerExecute(gg_trg_Skill_Data_Condition)
+						if ( ( GetUnitAbilityLevel(udg_temp_u, 'Aloc') == 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'Aloc') == 0 ) and ( ( ( GetUnitUserDataEx(udg_Rush_Unit) == GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+							call SaveInteger(YDHT, GetHandleId(udg_temp_u), 0xA5F6D6AD, - 1)
+							call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, - 1)
+							if ( true ) then
+								//--------------剑豪PK判定------------
+								set udg_Rush_VS_Type=0
+								if ( ( GetUnitAbilityLevel(udg_temp_u, DUMMY_A07T) > 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, DUMMY_A07T) > 0 ) ) then
+									call UnitRemoveAbility(udg_temp_u, DUMMY_A07T)
+									call UnitRemoveAbility(udg_Rush_Unit, DUMMY_A07T)
+									//--------------剑豪PK判定------------
+									set udg_Rush_VS_Type=1
+									call ConditionalTriggerExecute(gg_trg_Rush_Event)
+								else
+								endif
+								if ( ( udg_Rush_VS_Type == 0 ) ) then
+									call YDWETimerPatternRushSlide(udg_temp_u , YDWEAngleBetweenUnits(udg_Rush_Unit , udg_temp_u) , 120.00 , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+									call YDWETimerPatternRushSlide(udg_Rush_Unit , YDWEAngleBetweenUnits(udg_temp_u , udg_Rush_Unit) , 120.00 , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+								else
+								endif
+							else
+							endif
+						else
+						endif
+						set udg_temp_int=1
+						call TriggerExecute(gg_trg_Skill_Data_Condition)
+						if ( ( GetUnitAbilityLevel(udg_temp_u, 'Aloc') == 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'Aloc') == 0 ) and ( ( ( GetUnitUserDataEx(udg_Rush_Unit) > GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+							if ( ( HaveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xAEEA1156) == false ) ) then
+								call YDWETimerPatternRushSlide(udg_temp_u , YDWEAngleBetweenUnits(udg_Rush_Unit , udg_temp_u) , ( ( 10.00 * udg_Rush_Va ) * GetUnitMoveSpeed(udg_Rush_Unit) ) , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+								call SaveInteger(YDHT, GetHandleId(udg_temp_u), 0xA5F6D6AD, - 1)
+							else
+							endif
+						else
+						endif
+						//↓比较冲锋等级，弱者End=-1↓
+						set udg_Rush_Boolean=false
+						if ( ( ( ( GetUnitUserDataEx(udg_Rush_Unit) > GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+							set udg_Rush_Boolean=true
+							set udg_Rush_End=- 1
+							call SaveInteger(YDHT, GetHandleId(udg_temp_u), 0xA5F6D6AD, udg_Rush_End)
+							if ( ( udg_Bug_boolean == false ) ) then
+								set udg_Rush_End=0
+							else
+								set udg_Rush_End=1
+							endif
+							call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+						else
+						endif
+						if ( ( udg_Rush_Boolean == false ) ) then
+							set udg_temp_int=- 1
+							call TriggerExecute(gg_trg_Skill_Data_Condition)
+							if ( ( ( ( GetUnitUserDataEx(udg_Rush_Unit) < GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+								set udg_Rush_End=- 1
+								set udg_Rush_Boolean=true
+								call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+								//call DoNothing()
+							else
+							endif
+						else
+						endif
+						if ( ( udg_Rush_Boolean == false ) ) then
+							set udg_temp_int=0
+							call TriggerExecute(gg_trg_Skill_Data_Condition)
+							if ( ( ( ( GetUnitUserDataEx(udg_Rush_Unit) == GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+								set udg_Rush_End=- 1
+								call SaveInteger(YDHT, GetHandleId(udg_temp_u), 0xA5F6D6AD, udg_Rush_End)
+								call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+								set udg_Rush_Boolean=true
+							else
+							endif
+						else
+						endif
+					else
+					endif
+				else
+				endif
+			endloop
+			call DestroyGroup(ydl_group)
+			if ( ( HaveSavedInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x805D0E88) == true ) and ( GetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), udg_temp_int) > 0 ) ) then
+				call UnitRemoveAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), udg_temp_int)
+				call SetUnitPositionLoc(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE7C7D921), udg_Help_UnitLoc)
+			else
+			endif
+							call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_group=null
+	set ydl_unit=null
+return
+		else
+		endif
+		if ( ( udg_Rush_Type == 2 ) ) then
+			//print("udg_RushType: " + udg_Rush_Type.toString()) // TEST
+			if ( ( HaveSavedReal(YDHT, GetHandleId(udg_Rush_Unit), 0x1CEECBD6) == true ) ) then
+				set udg_temp_real3=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x1CEECBD6)
+			else
+				set udg_temp_real3=- 1.00
+			endif
+			set ydl_group=CreateGroup()
+			call GroupEnumUnitsInRange(ydl_group, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit), udg_Rush_DmR, null)
+			loop
+				set ydl_unit=FirstOfGroup(ydl_group)
+				exitwhen ydl_unit == null
+				call GroupRemoveUnit(ydl_group, ydl_unit)
+				set udg_temp_u=ydl_unit
+				if ( ( ( ( ZInShanXing(udg_temp_u , udg_Rush_Unit , udg_temp_real3) ) ) or ( udg_temp_real3 <= 0.00 ) ) and ( GetUnitAbilityLevel(udg_temp_u, DUMMY_A00K) == 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'A0B0') == 0 ) and ( IsUnitAliveBJ(udg_temp_u) == true ) and ( IsUnitEnemy(udg_temp_u, GetOwningPlayer(udg_Rush_Unit)) == true ) ) then
+					//----
+					if ( ( GetUnitAbilityLevel(udg_temp_u, DUMMY_A005) == 0 ) and ( GetUnitAbilityLevel(udg_temp_u, 'Aloc') == 0 ) ) then
+						set udg_Rush_End=1
+						set udg_temp_goal=udg_temp_u
+						call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+					else
+						//没有满足就不用管，自动走
+					endif
+					//技能冲突
+					if ( ( IsUnitInGroup(udg_temp_u, udg_Rush_Group) == true ) ) then
+						//人物冲锋，技能等级较高
+						set udg_temp_int=0
+						call TriggerExecute(gg_trg_Skill_Data_Condition)
+						if ( ( GetUnitAbilityLevel(udg_temp_u, 'Aloc') == 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'Aloc') == 0 ) and ( ( ( GetUnitUserDataEx(udg_Rush_Unit) == GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+							if ( ( HaveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xAEEA1156) == false ) ) then
+								call YDWETimerPatternRushSlide(udg_temp_u , YDWEAngleBetweenUnits(udg_Rush_Unit , udg_temp_u) , ( ( 10.00 * udg_Rush_Va ) * GetUnitMoveSpeed(udg_Rush_Unit) ) , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+								call SaveInteger(YDHT, GetHandleId(udg_temp_u), 0xA5F6D6AD, - 1)
+							else
+							endif
+							if ( ( HaveSavedHandle(YDHT, GetHandleId(udg_temp_u), 0xAEEA1156) == false ) ) then
+								call YDWETimerPatternRushSlide(udg_Rush_Unit , YDWEAngleBetweenUnits(udg_temp_u , udg_Rush_Unit) , ( ( 10.00 * udg_Rush_Va ) * GetUnitMoveSpeed(udg_temp_u) ) , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+								call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, - 1)
+							else
+							endif
+						else
+						endif
+						set udg_temp_int=1
+						call TriggerExecute(gg_trg_Skill_Data_Condition)
+						//---------------------------------------------------------
+						if ( ( GetUnitAbilityLevel(udg_temp_u, 'Aloc') == 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'Aloc') == 0 ) and ( ( ( GetUnitUserDataEx(udg_Rush_Unit) > GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+							if ( ( HaveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xAEEA1156) == false ) ) then
+								call YDWETimerPatternRushSlide(udg_temp_u , YDWEAngleBetweenUnits(udg_Rush_Unit , udg_temp_u) , ( ( 10.00 * udg_Rush_Va ) * GetUnitMoveSpeed(udg_Rush_Unit) ) , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+								call SaveInteger(YDHT, GetHandleId(udg_temp_u), 0xA5F6D6AD, - 1)
+							else
+							endif
+						else
+						endif
+						//↓比较冲锋等级，弱者End=-1↓
+						set udg_Rush_Boolean=false
+						if ( ( ( ( GetUnitUserDataEx(udg_Rush_Unit) > GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+							set udg_Rush_End=- 1
+							call SaveInteger(YDHT, GetHandleId(udg_temp_u), 0xA5F6D6AD, udg_Rush_End)
+							if ( ( udg_Bug_boolean == false ) ) then
+								if ( ( GetUnitAbilityLevel(udg_temp_u, 'Aloc') == 0 ) ) then
+									set udg_Rush_End=1
+									set udg_temp_goal=udg_temp_u
+									call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+								else
+									set udg_Rush_End=0
+									call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+								endif
+							else
+								set udg_Rush_End=- 1
+								call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+							endif
+							set udg_Rush_Boolean=true
+						else
+						endif
+						if ( ( udg_Rush_Boolean == false ) ) then
+							set udg_temp_int=- 1
+							call TriggerExecute(gg_trg_Skill_Data_Condition)
+							if ( ( ( ( GetUnitUserDataEx(udg_Rush_Unit) < GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+								set udg_Rush_End=- 1
+								call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+								set udg_Rush_Boolean=true
+							else
+							endif
+						else
+						endif
+						if ( ( udg_Rush_Boolean == false ) ) then
+							set udg_temp_int=0
+							call TriggerExecute(gg_trg_Skill_Data_Condition)
+							if ( ( ( ( GetUnitUserDataEx(udg_Rush_Unit) == GetUnitUserDataEx(udg_temp_u) ) and ( udg_temp_boolean == false ) ) or ( udg_temp_boolean2 == true ) ) ) then
+								set udg_Rush_End=- 1
+								call SaveInteger(YDHT, GetHandleId(udg_temp_u), 0xA5F6D6AD, udg_Rush_End)
+								call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, udg_Rush_End)
+								set udg_Rush_Boolean=true
+								if ( ( GetUnitAbilityLevel(udg_temp_u, 'Aloc') == 0 ) and ( GetUnitAbilityLevel(udg_Rush_Unit, 'Aloc') == 0 ) ) then
+									call YDWETimerPatternRushSlide(udg_temp_u , YDWEAngleBetweenUnits(udg_Rush_Unit , udg_temp_u) , 120.00 , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+									call YDWETimerPatternRushSlide(udg_Rush_Unit , YDWEAngleBetweenUnits(udg_temp_u , udg_Rush_Unit) , 120.00 , 0.30 , 0.03 , 0 , false , true , false , "origin" , "Objects\\Spawnmodels\\Undead\\ImpaleTargetDust\\ImpaleTargetDust.mdl" , "")
+								else
+								endif
+								if ( true ) then
+									//--------------剑豪PK判定------------
+								else
+								endif
+							else
+							endif
+						else
+						endif
+					else
+					endif
+				else
+				endif
+			endloop
+			call DestroyGroup(ydl_group)
+							call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_group=null
+	set ydl_unit=null
+return
+		else
+		endif
+	else
+	endif
+	set udg_temp_u=null
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_group=null
+	set ydl_unit=null
+endfunction
+//===========================================================================
+function InitTrig_Rush_Check takes nothing returns nothing
+	set gg_trg_Rush_Check=CreateTrigger()
+	call TriggerAddAction(gg_trg_Rush_Check, function Trig_Rush_CheckActions)
+endfunction

@@ -1,0 +1,462 @@
+package ShanaW initializer InitTrig_XN_W
+
+import ACG_Package
+import YDWE_Package
+
+//===========================================================================
+// Trigger: XN_W
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_XN_W_3929603832 takes nothing returns nothing
+	if ( ( LoadInteger(YDLOC, GetHandleId(GetExpiredTimer()), 0x24181F82) == 1 ) ) then
+		call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 9)
+	else
+		call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), 4)
+	endif
+	call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+	call DestroyTimer(GetExpiredTimer())
+endfunction
+function Trig_XN_W_3929630532 takes nothing returns nothing
+	if ( ( IsUnitInGroup(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D), udg_Time_FreezeGroup) == false ) ) then
+		call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545, ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) + 0.02 ))
+		if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) <= 1.00 ) and ( IsUnitAliveBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) == true ) and ( IsUnitHiddenBJ(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) == false ) ) then
+			if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.20 ) ) then
+				if ( true ) then
+					call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), udg_DummyType, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)), 0.00))
+					call SetUnitScale(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 1.00, 1, 1)
+					call SetUnitAnimationByIndex(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 0)
+					call SetUnitBlendTime(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 0.00)
+					call UnitApplyTimedLife(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845), 'BHwe', 5.00)
+					call SaveUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x7BA66686, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x2B0A6845))
+					call SaveGroupHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x7BA66686)), 0xE48CA93E, CreateGroup())
+					call GroupAddUnit(udg_DeadClear_Group, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x7BA66686))
+				else
+				endif
+				set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+				set udg_Rush_Ang=( YDWEAngleBetweenUnits(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D) , LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x214C62CC)) )
+				set udg_Rush_Unit=CBul(udg_temp_u , 0.65 , 2.6 , udg_Rush_Ang - 140)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xFA3E491F, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x7BA66686))
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xABF3773E, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+				call SetUnitFlyHeight(udg_Rush_Unit, 150.00, 0.00)
+				call SetUnitTurnSpeed(udg_Rush_Unit, 0.10)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A005)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A00G)
+				call SaveEffectHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x61DFECFE, AddSpecialEffectTarget("war3mapImported\\orboffire.mdx", udg_Rush_Unit, "origin"))
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x124F62F3, 1)
+				//↑时间到，依旧发动成功结局
+				set udg_Rush_Target=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x214C62CC)
+				set udg_Rush_Damage=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8)
+				//↑伤害↑
+				set udg_Rush_DmR=150.00
+				//↑检测范围↑
+				set udg_Rush_Aa=0.00
+				set udg_Rush_Atime=0.30
+				//↑加速时间，和Aa同时不为0的时候，单位会进行从0开始加速移动到正确的移动速度。
+				set udg_Rush_Va=30.00
+				//↑速度因子，每0.02秒移动移动速度*该值↑
+				set udg_Rush_TB=1
+				call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xFFC1F810, 0.50)
+				//↑TBtime,冲锋进行该时间后，才会进行追踪
+				//↑目标丢失判定↑=0时，不进行丢失判定，=1时，目标死亡，隐身，闪到自己背后，都会丢失目标。
+				set udg_Rush_Stop_Type=0
+				//↑技能被中断判定↑
+				//↑0:无被中断设定
+				//↑1:被晕眩
+				set udg_Rush_AB=1
+				//↑是否根据面向角度移动，=0时，不会按照面向角度冲锋，=1时，按照面向角度冲锋。
+				set udg_Rush_Type=2
+				//↑如果是晕眩的话，直接记录就行。
+				//★其他特殊buff，记录Rush_S_Order马甲技能命令id，Rush_S_Abi技能整数
+				//↑Rush_Type=1时奏效
+				//↑检测方式，=0就行，以后可能加入新的检测方式。
+				//=0，并且有target则只会对目标造成伤害。会越过其他单位。
+				//=1，会对一线上的敌人造成伤害。
+				//=2，会对第一个触碰的敌人造成伤害。
+				set udg_Rush_Tri=gg_trg_XN_W_Damage
+				//↑结局触发。如果不填，默认Rush_Damage
+				set udg_Rush_Time=2.50
+				//↑最大移动时间
+				call SetUnitUserDataEx(udg_Rush_Unit, 1)
+				//↑冲锋等级
+				call TriggerExecute(gg_trg_Rush_Pak)
+				if ( true ) then
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24, udg_Rush_Ang)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415, 80.00)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, ( GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * CosBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, ( GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * SinBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SetUnitPosition(udg_Rush_Unit, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382))
+				else
+				endif
+			else
+			endif
+			if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.20 ) ) then
+				set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+				set udg_Rush_Ang=( YDWEAngleBetweenUnits(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D) , LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x214C62CC)) )
+				set udg_Rush_Unit=CBul(udg_temp_u , 0.65 , 2.6 , udg_Rush_Ang + 140)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xFA3E491F, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x7BA66686))
+				call SetUnitFlyHeight(udg_Rush_Unit, 150.00, 0.00)
+				call SetUnitTurnSpeed(udg_Rush_Unit, 0.10)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A005)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A00G)
+				call SaveEffectHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x61DFECFE, AddSpecialEffectTarget("war3mapImported\\orboffire.mdx", udg_Rush_Unit, "origin"))
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x124F62F3, 1)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xABF3773E, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+				//↑时间到，依旧发动成功结局
+				set udg_Rush_Target=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x214C62CC)
+				set udg_Rush_Damage=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8)
+				//↑伤害↑
+				set udg_Rush_DmR=150.00
+				//↑检测范围↑
+				set udg_Rush_Aa=0.00
+				set udg_Rush_Atime=0.30
+				//↑加速时间，和Aa同时不为0的时候，单位会进行从0开始加速移动到正确的移动速度。
+				set udg_Rush_Va=30.00
+				//↑速度因子，每0.02秒移动移动速度*该值↑
+				set udg_Rush_TB=1
+				call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xFFC1F810, 0.50)
+				//↑TBtime,冲锋进行该时间后，才会进行追踪
+				//↑目标丢失判定↑=0时，不进行丢失判定，=1时，目标死亡，隐身，闪到自己背后，都会丢失目标。
+				set udg_Rush_Stop_Type=0
+				//↑技能被中断判定↑
+				//↑0:无被中断设定
+				//↑1:被晕眩
+				set udg_Rush_AB=1
+				//↑是否根据面向角度移动，=0时，不会按照面向角度冲锋，=1时，按照面向角度冲锋。
+				set udg_Rush_Type=2
+				//↑如果是晕眩的话，直接记录就行。
+				//★其他特殊buff，记录Rush_S_Order马甲技能命令id，Rush_S_Abi技能整数
+				//↑Rush_Type=1时奏效
+				//↑检测方式，=0就行，以后可能加入新的检测方式。
+				//=0，并且有target则只会对目标造成伤害。会越过其他单位。
+				//=1，会对一线上的敌人造成伤害。
+				//=2，会对第一个触碰的敌人造成伤害。
+				set udg_Rush_Tri=gg_trg_XN_W_Damage
+				//↑结局触发。如果不填，默认Rush_Damage
+				set udg_Rush_Time=2.50
+				//↑最大移动时间
+				call SetUnitUserDataEx(udg_Rush_Unit, 1)
+				//↑冲锋等级
+				call TriggerExecute(gg_trg_Rush_Pak)
+				if ( true ) then
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24, udg_Rush_Ang)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415, 80.00)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, ( GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * CosBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, ( GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * SinBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SetUnitPosition(udg_Rush_Unit, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382))
+				else
+				endif
+			else
+			endif
+			if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.50 ) ) then
+				set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+				set udg_Rush_Ang=( GetUnitFacing(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) )
+				set udg_Rush_Unit=CBul(udg_temp_u , 0.65 , 2.6 , udg_Rush_Ang - 110)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xFA3E491F, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x7BA66686))
+				call SetUnitFlyHeight(udg_Rush_Unit, 150.00, 0.00)
+				call SetUnitTurnSpeed(udg_Rush_Unit, 0.10)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A005)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A00G)
+				call SaveEffectHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x61DFECFE, AddSpecialEffectTarget("war3mapImported\\orboffire.mdx", udg_Rush_Unit, "origin"))
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x124F62F3, 1)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xABF3773E, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+				//↑时间到，依旧发动成功结局
+				set udg_Rush_Target=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x214C62CC)
+				set udg_Rush_Damage=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8)
+				//↑伤害↑
+				set udg_Rush_DmR=150.00
+				//↑检测范围↑
+				set udg_Rush_Aa=0.00
+				set udg_Rush_Atime=0.30
+				//↑加速时间，和Aa同时不为0的时候，单位会进行从0开始加速移动到正确的移动速度。
+				set udg_Rush_Va=30.00
+				//↑速度因子，每0.02秒移动移动速度*该值↑
+				set udg_Rush_TB=1
+				call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xFFC1F810, 0.50)
+				//↑TBtime,冲锋进行该时间后，才会进行追踪
+				//↑目标丢失判定↑=0时，不进行丢失判定，=1时，目标死亡，隐身，闪到自己背后，都会丢失目标。
+				set udg_Rush_Stop_Type=0
+				//↑技能被中断判定↑
+				//↑0:无被中断设定
+				//↑1:被晕眩
+				set udg_Rush_AB=1
+				//↑是否根据面向角度移动，=0时，不会按照面向角度冲锋，=1时，按照面向角度冲锋。
+				set udg_Rush_Type=2
+				//↑如果是晕眩的话，直接记录就行。
+				//★其他特殊buff，记录Rush_S_Order马甲技能命令id，Rush_S_Abi技能整数
+				//↑Rush_Type=1时奏效
+				//↑检测方式，=0就行，以后可能加入新的检测方式。
+				//=0，并且有target则只会对目标造成伤害。会越过其他单位。
+				//=1，会对一线上的敌人造成伤害。
+				//=2，会对第一个触碰的敌人造成伤害。
+				set udg_Rush_Tri=gg_trg_XN_W_Damage
+				//↑结局触发。如果不填，默认Rush_Damage
+				set udg_Rush_Time=2.50
+				//↑最大移动时间
+				call SetUnitUserDataEx(udg_Rush_Unit, 1)
+				//↑冲锋等级
+				call TriggerExecute(gg_trg_Rush_Pak)
+				if ( true ) then
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24, udg_Rush_Ang)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415, 80.00)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, ( GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * CosBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, ( GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * SinBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SetUnitPosition(udg_Rush_Unit, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382))
+				else
+				endif
+			else
+			endif
+			if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.50 ) ) then
+				set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+				set udg_Rush_Ang=( GetUnitFacing(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) )
+				set udg_Rush_Unit=CBul(udg_temp_u , 0.65 , 2.6 , udg_Rush_Ang + 110)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xFA3E491F, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x7BA66686))
+				call SetUnitFlyHeight(udg_Rush_Unit, 150.00, 0.00)
+				call SetUnitTurnSpeed(udg_Rush_Unit, 0.10)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A005)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A00G)
+				call SaveEffectHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x61DFECFE, AddSpecialEffectTarget("war3mapImported\\orboffire.mdx", udg_Rush_Unit, "origin"))
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x124F62F3, 1)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xABF3773E, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+				//↑时间到，依旧发动成功结局
+				set udg_Rush_Target=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x214C62CC)
+				set udg_Rush_Damage=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8)
+				//↑伤害↑
+				set udg_Rush_DmR=150.00
+				//↑检测范围↑
+				set udg_Rush_Aa=0.00
+				set udg_Rush_Atime=0.30
+				//↑加速时间，和Aa同时不为0的时候，单位会进行从0开始加速移动到正确的移动速度。
+				set udg_Rush_Va=30.00
+				//↑速度因子，每0.02秒移动移动速度*该值↑
+				set udg_Rush_TB=1
+				call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xFFC1F810, 0.50)
+				//↑TBtime,冲锋进行该时间后，才会进行追踪
+				//↑目标丢失判定↑=0时，不进行丢失判定，=1时，目标死亡，隐身，闪到自己背后，都会丢失目标。
+				set udg_Rush_Stop_Type=0
+				//↑技能被中断判定↑
+				//↑0:无被中断设定
+				//↑1:被晕眩
+				set udg_Rush_AB=1
+				//↑是否根据面向角度移动，=0时，不会按照面向角度冲锋，=1时，按照面向角度冲锋。
+				set udg_Rush_Type=2
+				//↑如果是晕眩的话，直接记录就行。
+				//★其他特殊buff，记录Rush_S_Order马甲技能命令id，Rush_S_Abi技能整数
+				//↑Rush_Type=1时奏效
+				//↑检测方式，=0就行，以后可能加入新的检测方式。
+				//=0，并且有target则只会对目标造成伤害。会越过其他单位。
+				//=1，会对一线上的敌人造成伤害。
+				//=2，会对第一个触碰的敌人造成伤害。
+				set udg_Rush_Tri=gg_trg_XN_W_Damage
+				//↑结局触发。如果不填，默认Rush_Damage
+				set udg_Rush_Time=2.50
+				//↑最大移动时间
+				call SetUnitUserDataEx(udg_Rush_Unit, 1)
+				//↑冲锋等级
+				call TriggerExecute(gg_trg_Rush_Pak)
+				if ( true ) then
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24, udg_Rush_Ang)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415, 80.00)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, ( GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * CosBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, ( GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * SinBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SetUnitPosition(udg_Rush_Unit, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382))
+				else
+				endif
+			else
+			endif
+			if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.70 ) ) then
+				set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+				set udg_Rush_Ang=( GetUnitFacing(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) )
+				set udg_Rush_Unit=CBul(udg_temp_u , 0.65 , 2.6 , udg_Rush_Ang - 70)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xFA3E491F, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x7BA66686))
+				call SetUnitFlyHeight(udg_Rush_Unit, 150.00, 0.00)
+				call SetUnitTurnSpeed(udg_Rush_Unit, 0.10)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A005)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A00G)
+				call SaveEffectHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x61DFECFE, AddSpecialEffectTarget("war3mapImported\\orboffire.mdx", udg_Rush_Unit, "origin"))
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x124F62F3, 1)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xABF3773E, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+				//↑时间到，依旧发动成功结局
+				set udg_Rush_Target=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x214C62CC)
+				set udg_Rush_Damage=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8)
+				//↑伤害↑
+				set udg_Rush_DmR=150.00
+				//↑检测范围↑
+				set udg_Rush_Aa=0.00
+				set udg_Rush_Atime=0.30
+				//↑加速时间，和Aa同时不为0的时候，单位会进行从0开始加速移动到正确的移动速度。
+				set udg_Rush_Va=30.00
+				//↑速度因子，每0.02秒移动移动速度*该值↑
+				set udg_Rush_TB=1
+				call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xFFC1F810, 0.50)
+				//↑TBtime,冲锋进行该时间后，才会进行追踪
+				//↑目标丢失判定↑=0时，不进行丢失判定，=1时，目标死亡，隐身，闪到自己背后，都会丢失目标。
+				set udg_Rush_Stop_Type=0
+				//↑技能被中断判定↑
+				//↑0:无被中断设定
+				//↑1:被晕眩
+				set udg_Rush_AB=1
+				//↑是否根据面向角度移动，=0时，不会按照面向角度冲锋，=1时，按照面向角度冲锋。
+				set udg_Rush_Type=2
+				//↑如果是晕眩的话，直接记录就行。
+				//★其他特殊buff，记录Rush_S_Order马甲技能命令id，Rush_S_Abi技能整数
+				//↑Rush_Type=1时奏效
+				//↑检测方式，=0就行，以后可能加入新的检测方式。
+				//=0，并且有target则只会对目标造成伤害。会越过其他单位。
+				//=1，会对一线上的敌人造成伤害。
+				//=2，会对第一个触碰的敌人造成伤害。
+				set udg_Rush_Tri=gg_trg_XN_W_Damage
+				//↑结局触发。如果不填，默认Rush_Damage
+				set udg_Rush_Time=2.50
+				//↑最大移动时间
+				call SetUnitUserDataEx(udg_Rush_Unit, 1)
+				//↑冲锋等级
+				call TriggerExecute(gg_trg_Rush_Pak)
+				if ( true ) then
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24, udg_Rush_Ang)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415, 80.00)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, ( GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * CosBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, ( GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * SinBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SetUnitPosition(udg_Rush_Unit, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382))
+				else
+				endif
+			else
+			endif
+			if ( ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x6B54C545) == 0.70 ) ) then
+				set udg_temp_u=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)
+				set udg_Rush_Ang=( GetUnitFacing(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) )
+				set udg_Rush_Unit=CBul(udg_temp_u , 0.65 , 2.6 , udg_Rush_Ang + 70)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xFA3E491F, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x7BA66686))
+				call SetUnitFlyHeight(udg_Rush_Unit, 150.00, 0.00)
+				call SetUnitTurnSpeed(udg_Rush_Unit, 0.10)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A005)
+				call UnitAddAbility(udg_Rush_Unit, DUMMY_A00G)
+				call SaveEffectHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x61DFECFE, AddSpecialEffectTarget("war3mapImported\\orboffire.mdx", udg_Rush_Unit, "origin"))
+				call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x124F62F3, 1)
+				call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xABF3773E, LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D))
+				//↑时间到，依旧发动成功结局
+				set udg_Rush_Target=LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0x214C62CC)
+				set udg_Rush_Damage=LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x7B0498D8)
+				//↑伤害↑
+				set udg_Rush_DmR=150.00
+				//↑检测范围↑
+				set udg_Rush_Aa=0.00
+				set udg_Rush_Atime=0.30
+				//↑加速时间，和Aa同时不为0的时候，单位会进行从0开始加速移动到正确的移动速度。
+				set udg_Rush_Va=30.00
+				//↑速度因子，每0.02秒移动移动速度*该值↑
+				set udg_Rush_TB=1
+				call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xFFC1F810, 0.50)
+				//↑TBtime,冲锋进行该时间后，才会进行追踪
+				//↑目标丢失判定↑=0时，不进行丢失判定，=1时，目标死亡，隐身，闪到自己背后，都会丢失目标。
+				set udg_Rush_Stop_Type=0
+				//↑技能被中断判定↑
+				//↑0:无被中断设定
+				//↑1:被晕眩
+				set udg_Rush_AB=1
+				//↑是否根据面向角度移动，=0时，不会按照面向角度冲锋，=1时，按照面向角度冲锋。
+				set udg_Rush_Type=2
+				//↑如果是晕眩的话，直接记录就行。
+				//★其他特殊buff，记录Rush_S_Order马甲技能命令id，Rush_S_Abi技能整数
+				//↑Rush_Type=1时奏效
+				//↑检测方式，=0就行，以后可能加入新的检测方式。
+				//=0，并且有target则只会对目标造成伤害。会越过其他单位。
+				//=1，会对一线上的敌人造成伤害。
+				//=2，会对第一个触碰的敌人造成伤害。
+				set udg_Rush_Tri=gg_trg_XN_W_Damage
+				//↑结局触发。如果不填，默认Rush_Damage
+				set udg_Rush_Time=2.50
+				//↑最大移动时间
+				call SetUnitUserDataEx(udg_Rush_Unit, 1)
+				//↑冲锋等级
+				call TriggerExecute(gg_trg_Rush_Pak)
+				if ( true ) then
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24, udg_Rush_Ang)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415, 80.00)
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA, ( GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * CosBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SaveReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382, ( GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetExpiredTimer()), 0xC303079D)) + ( LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x2FC9F415) * SinBJ(LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0x9966AD24)) ) ))
+					call SetUnitPosition(udg_Rush_Unit, LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xA99320FA), LoadReal(YDLOC, GetHandleId(GetExpiredTimer()), 0xFDF65382))
+				else
+				endif
+			else
+			endif
+		else
+			call FlushChildHashtable(YDLOC, GetHandleId(GetExpiredTimer()))
+			call DestroyTimer(GetExpiredTimer())
+		endif
+	else
+	endif
+endfunction
+function Trig_XN_W_Conditions takes nothing returns boolean
+	if ( not ( GetSpellAbilityId() == SHANA_W) ) then
+	return false
+	endif
+	return true
+endfunction
+function Trig_XN_WActions takes nothing returns nothing
+ local timer ydl_timer
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	if ( true ) then
+		set udg_temp_u=GetTriggerUnit()
+		set udg_temp_goal=GetSpellTargetUnit()
+		call ConditionalTriggerExecute(gg_trg____________________002)
+		if ( ( udg_temp_int != 0 ) ) then
+							call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_timer=null
+return
+		else
+		endif
+	else
+	endif
+	if ( ( GetUnitTypeId(GetTriggerUnit()) == udg_XiaNaExType ) ) then
+		call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x24181F82, 1)
+	else
+	endif
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D, GetTriggerUnit())
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x214C62CC, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)), udg_DummyType, GetSpellTargetX(), GetSpellTargetY(), 0))
+	call UnitApplyTimedLife(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x214C62CC), 'BHwe', 5.00)
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)))
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382, GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)))
+	//获得虚作
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6B54C545, 0.00)
+	set udg_Rush_Damage=( I2R(GetHeroAgi(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D), true)) * 11.00 )
+	call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7B0498D8, udg_Rush_Damage)
+	if ( ( GetUnitTypeId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D)) == udg_XiaNaExType ) ) then
+		call ASound("war3mapImported\\shanaNew-W.mp3")
+		call SetSoundVolume(udg_Last_ASound, 127)
+		call ASound("war3mapImported\\shanaNew-Se0.mp3")
+		call SetSoundVolume(udg_Last_ASound, 80)
+	else
+		call ASound("war3mapImported\\XN-W.mp3")
+		call SetSoundVolume(udg_Last_ASound, 127)
+	endif
+	set ydl_timer=CreateTimer()
+	call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D))
+	call SaveInteger(YDLOC, GetHandleId(ydl_timer), 0x24181F82, LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x24181F82))
+	call TimerStart(ydl_timer, 0.00, false, function Trig_XN_W_3929603832)
+	set ydl_timer=CreateTimer()
+	call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0xC303079D, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xC303079D))
+	call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x214C62CC, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x214C62CC))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x6B54C545, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x6B54C545))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x7B0498D8, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7B0498D8))
+	call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x7BA66686, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x7BA66686))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x9966AD24, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x9966AD24))
+	call SaveUnitHandle(YDLOC, GetHandleId(ydl_timer), 0x2B0A6845, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0x2FC9F415, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2FC9F415))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xA99320FA, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA99320FA))
+	call SaveReal(YDLOC, GetHandleId(ydl_timer), 0xFDF65382, LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xFDF65382))
+	call TimerStart(ydl_timer, 0.02, true, function Trig_XN_W_3929630532)
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+	set ydl_timer=null
+endfunction
+//===========================================================================
+function InitTrig_XN_W takes nothing returns nothing
+	set gg_trg_XN_W=CreateTrigger()
+	call TriggerRegisterAnyUnitEventBJ(gg_trg_XN_W, EVENT_PLAYER_UNIT_SPELL_EFFECT)
+	call TriggerAddCondition(gg_trg_XN_W, Condition(function Trig_XN_W_Conditions))
+	call TriggerAddAction(gg_trg_XN_W, function Trig_XN_WActions)
+endfunction

@@ -1,0 +1,12 @@
+package YDWEGetUnitsInRangeOfLocMatchingNull
+
+import ACG_Globals
+
+public function YDWEGetUnitsInRangeOfLocMatchingNull takes real radius,location whichLocation,boolexpr filter returns group
+    local group g= CreateGroup()
+    call GroupEnumUnitsInRangeOfLoc(g, whichLocation, radius, filter)
+    call DestroyBoolExpr(filter)
+    set yd_NullTempGroup=g
+    set g=null
+    return yd_NullTempGroup
+endfunction

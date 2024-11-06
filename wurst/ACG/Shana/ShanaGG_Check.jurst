@@ -1,0 +1,31 @@
+package ShanaGG_Check initializer InitTrig_XN_GG_Check
+
+import ACG_Package
+
+//===========================================================================
+// Trigger: XN_GG_Check
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_XN_GG_CheckActions takes nothing returns nothing
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+ call SavePlayerHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xA59BB4C6, GetOwningPlayer(udg_temp_u))
+	set udg_temp_boolean=false
+	call SaveStr(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xED96B976, LoadStr(YDHT, GetHandleId(GetOwningPlayer(udg_temp_u)), 0xDF73D176))
+	if ( ( ( udg_anmslwsnd[GetConvertedPlayerId(GetOwningPlayer(udg_temp_u))] == ( udg_anmslwsnd[0] + ( "纳兹" + ( "" + ( "" ) ) ) ) ) or ( udg_anmslwsnd[GetConvertedPlayerId(GetOwningPlayer(udg_temp_u))] == ( udg_anmslwsnd[0] + ( "格雷萨尔" + ( "" + ( "" ) ) ) ) ) or ( udg_anmslwsnd[GetConvertedPlayerId(GetOwningPlayer(udg_temp_u))] == ( udg_anmslwsnd[0] + ( "拉克萨斯" + ( "" + ( "" ) ) ) ) ) ) and ( GetUnitTypeId(udg_temp_u) != udg_XiaNaExType ) and ( LoadInteger(YDHT, GetHandleId(LoadPlayerHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xA59BB4C6)), 0x88880000) == 1 )  ) then
+		set udg_temp_boolean=true
+		call ConditionalTriggerExecute(gg_trg_XN_GG)
+	else
+		set udg_temp_boolean=false
+	endif
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+endfunction
+//===========================================================================
+function InitTrig_XN_GG_Check takes nothing returns nothing
+	set gg_trg_XN_GG_Check=CreateTrigger()
+	call TriggerAddAction(gg_trg_XN_GG_Check, function Trig_XN_GG_CheckActions)
+endfunction

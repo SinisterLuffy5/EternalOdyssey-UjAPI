@@ -1,0 +1,39 @@
+package Rush_Damage initializer InitTrig_Rush_Damage
+
+import ACG_Package
+
+//===========================================================================
+// Trigger: Rush_Damage
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_Rush_DamageActions takes nothing returns nothing
+ local group ydl_group
+ local unit ydl_unit
+	set udg_Rush_DmR=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x5AEEFA2E)
+	set udg_Rush_Damage=LoadReal(YDHT, GetHandleId(udg_Rush_Unit), 0x2FA5B606)
+	set ydl_group=CreateGroup()
+	call GroupEnumUnitsInRange(ydl_group, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit), udg_Rush_DmR, null)
+	loop
+		set ydl_unit=FirstOfGroup(ydl_group)
+		exitwhen ydl_unit == null
+		call GroupRemoveUnit(ydl_group, ydl_unit)
+		if ( ( GetUnitUserDataEx(udg_Rush_Unit) > GetUnitUserDataEx(ydl_unit) ) and ( IsUnitAliveBJ(ydl_unit) == true ) and ( IsUnitEnemy(ydl_unit, GetOwningPlayer(udg_Rush_Unit)) == true ) ) then
+			call UnitDamageTarget(udg_Rush_Unit, ydl_unit, udg_Rush_Damage, false, false, ATTACK_TYPE_NORMAL, DAMAGE_TYPE_NORMAL, WEAPON_TYPE_WHOKNOWS)
+		else
+		endif
+	endloop
+	call DestroyGroup(ydl_group)
+	if ( ( GetUnitAbilityLevel(udg_Rush_Unit, DUMMY_A005) == 1 ) ) then
+		call KillUnit(udg_Rush_Unit)
+	else
+	endif
+	set ydl_group=null
+	set ydl_unit=null
+endfunction
+//===========================================================================
+function InitTrig_Rush_Damage takes nothing returns nothing
+	set gg_trg_Rush_Damage=CreateTrigger()
+	call TriggerAddAction(gg_trg_Rush_Damage, function Trig_Rush_DamageActions)
+endfunction

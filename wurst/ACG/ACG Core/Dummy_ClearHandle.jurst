@@ -1,0 +1,27 @@
+package Dummy_ClearHandle initializer InitTrig_Dummy_ClearHandle
+
+import ACG_Package
+
+//===========================================================================
+// Trigger: Dummy_ClearHandle
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_Dummy_ClearHandleActions takes nothing returns nothing
+	if ( ( GetUnitAbilityLevel(GetTriggerUnit(), DUMMY_A005) == 0 ) and ( IsUnitInGroup(GetTriggerUnit(), udg_DeadClear_Group) == true ) ) then
+		call GroupRemoveUnit(udg_DeadClear_Group, GetTriggerUnit())
+		if ( ( HaveSavedHandle(YDHT, GetHandleId(GetTriggerUnit()), 0xE48CA93E) == true ) ) then
+			call DestroyGroup(LoadGroupHandle(YDHT, GetHandleId(GetTriggerUnit()), 0xE48CA93E))
+		else
+		endif
+		call FlushChildHashtable(YDHT, GetHandleId(GetTriggerUnit()))
+	else
+	endif
+endfunction
+//===========================================================================
+function InitTrig_Dummy_ClearHandle takes nothing returns nothing
+	set gg_trg_Dummy_ClearHandle=CreateTrigger()
+	call TriggerRegisterAnyUnitEventBJ(gg_trg_Dummy_ClearHandle, EVENT_PLAYER_UNIT_DEATH)
+	call TriggerAddAction(gg_trg_Dummy_ClearHandle, function Trig_Dummy_ClearHandleActions)
+endfunction

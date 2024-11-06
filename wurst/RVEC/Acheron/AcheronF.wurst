@@ -1,0 +1,174 @@
+package AcheronF
+
+import RVEC_Core
+import RegisterEvents
+import PreloaderEx
+
+function acheronF()
+    let tmr = GetExpiredTimer()
+    let hid = GetHandleId(tmr)
+    let u = LoadUnitHandle(GameHT, hid, 'cstr')
+    int count = LoadInteger(GameHT, hid, 'coun')
+    let x = LoadReal(GameHT, hid, 'impX')
+    let y = LoadReal(GameHT, hid, 'impY')
+    let a = Angle(GetUnitX(u), GetUnitY(u), x, y)
+    //real dist = Distance(GetUnitX(u), GetUnitY(u), x, y)
+    real a2 //= .0
+    group g1
+    group g2
+    unit d
+    effect e
+    real x2 //= .0
+    real y2 //= .0
+
+    count++
+    SaveInteger(GameHT, hid, 'coun', count)
+    SetPauseUnit(u, true)
+    SetInvulUnit(u, true)
+
+    if (count == 1)
+        SoundStart("AcheronF.mp3")
+        visionArea(GetOwningPlayer(u), 1500, 12, x, y)
+        SetUnitVertexColor(u, 255, 255, 255, 0)
+        x2 = PolarX(x, -1000, a)
+        y2 = PolarY(y, -1000, a)
+        Effect("Acheronred.mdx", x2, y2, 0, a, 0, 0, 1, 10.5, 255, 255, 255, 255)
+        SetSpecialEffectAnimationByIndex(dummy_effect, 30)
+        SaveEffectHandle(GameHT, hid, 0, dummy_effect)
+        Effect("Acheronsfx10.mdx", x2, y2, 0, a, 0, 0, 1, 10.5, 255, 255, 255, 255)
+        SaveEffectHandle(GameHT, hid, 1, dummy_effect)
+        Effect("Gojosfx24.mdx", x2, y2, 0, a, 0, 0, 3.8, 10.5, 255, 0, 0, PercentTo255(40))
+        TimeScaleEffect(dummy_effect, 1, 9.5)
+        SaveEffectHandle(GameHT, hid, 2, dummy_effect)
+        Effect("Acheronsfx20.mdx", x2, y2, 10, randomAngle(), 0, 0, 2, 10, 255, 255, 255, 255)
+        SetSpecialEffectAnimation(dummy_effect, "stand")
+        SaveEffectHandle(GameHT, hid, 3, dummy_effect)
+        Effect("Acheronsfx20.mdx", x2, y2, 10, randomAngle(), 0, 0, 2, 10, 255, 255, 255, 255)
+        SetSpecialEffectAnimation(dummy_effect, "stand")
+        SaveEffectHandle(GameHT, hid, 4, dummy_effect)
+        g1 = CreateGroup()
+        g2 = CreateGroup()
+        GroupEnumUnitsInRange(g1, x, y, 700, null)
+        for i = 0 to GroupGetCount(g1) - 1
+            d = GroupGetUnitByIndex(g1, i)
+            if (FilterGeneric(u, d))
+                SetPauseUnit(d, true)
+                SetInvulUnit(d, true)
+                GroupAddUnit(g2, d)
+        DestroyGroup(g1)
+        SaveGroupHandle(GameHT, hid, 'grp+', g2)
+
+    if (count == 250)
+        SoundStart("AcheronSE5.mp3")
+
+    if (count <= 300)
+        e = LoadEffectHandle(GameHT, hid, 0)
+        x2 = PolarX(GetSpecialEffectX(e), 1000/300, a)
+        y2 = PolarY(GetSpecialEffectY(e), 1000/300, a)
+        SetEffectXY(e, x2, y2, 0)
+        SetSpecialEffectHeight(e, 0)
+        e = LoadEffectHandle(GameHT, hid, 1)
+        SetEffectXY(e, x2, y2, 0)
+        SetSpecialEffectHeight(e, 0)
+        SetSpecialEffectAnimationOffsetPercent(e, count * 0.003)
+        e = LoadEffectHandle(GameHT, hid, 2)
+        SetEffectXY(e, x2, y2, 0)
+        SetSpecialEffectHeight(e, 0)
+        SetSpecialEffectAnimationOffsetPercent(e, count * 0.002)
+        if (count == 300) 
+            SetSpecialEffectTimeScale(e, 0)
+        e = LoadEffectHandle(GameHT, hid, 3)
+        SetEffectXY(e, x2, y2, 0)
+        SetSpecialEffectHeight(e, 0)
+        e = LoadEffectHandle(GameHT, hid, 4)
+        SetEffectXY(e, x2, y2, 0)
+        SetSpecialEffectHeight(e, 0)
+
+    if (count == 300)
+        e = LoadEffectHandle(GameHT, hid, 0)
+        SetSpecialEffectAnimationByIndex(e, 11)
+        SetSpecialEffectTimeScale(e, 0.7)
+
+    if (count >= 300 and count <= 400)
+        if (count % 5 == 0)
+            a2 = randomAngle()
+            x2 = PolarX(x, GetRandomReal(200, 800), a2)
+            y2 = PolarY(y, GetRandomReal(200, 800), a2)
+            Effect("Acheronsfx14.mdx", x2, y2, 100, a2, 0, 0, GetRandomReal(0.5, 1), 4 - (count-300) * 0.02, 255, 255, 255, 255)
+            Effect("Acheronsfx12.mdx", x2, y2, 100, a2, 0, 0, GetRandomReal(1, 1.5), 4 - (count-300) * 0.02, 255, 255, 255, 255)
+            SetSpecialEffectTimeScale(dummy_effect, 0.9)
+            TimeScaleEffect(dummy_effect, 0, 0.4)
+
+    if (count == 430)
+        e = LoadEffectHandle(GameHT, hid, 0)
+        Effect("Acheronsfx18.mdx", GetSpecialEffectX(e), GetSpecialEffectY(e), 0, a, 0, 0, 2.5, 2, 255, 255, 255, 255)
+        AnimEffect2(dummy_effect, "death", 1.4)
+
+    if (count == 480)
+        e = LoadEffectHandle(GameHT, hid, 0)
+        Effect("Acheronsfx19.mdx", GetSpecialEffectX(e), GetSpecialEffectY(e), 0, a, 0, 0, 2, 2.5, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.75)
+
+    if (count == 490)
+        e = LoadEffectHandle(GameHT, hid, 0)
+        SoundStart("AcheronSE6.mp3")
+        visionArea(GetOwningPlayer(u), 1200, 3, GetSpecialEffectX(e), GetSpecialEffectY(e))
+        Effect("Yomisfx17.mdx", GetSpecialEffectX(e), GetSpecialEffectY(e), 50, a, 0, 0, 3, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.5)
+        Effect("Gojosfx18.mdx", GetSpecialEffectX(e), GetSpecialEffectY(e), 100, a, 0, 0, 15, 2, 255, 255, 255, 255)
+        SetSpecialEffectAnimation(dummy_effect, "death")
+        Effect("Saltersfx38.mdx", GetSpecialEffectX(e), GetSpecialEffectY(e), 0, a, 0, 0, 1, 1, 255, 255, 255, 255)
+        Effect("Gojosfx19.mdx", GetSpecialEffectX(e), GetSpecialEffectY(e), 10, a, 0, 0, 3, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.75)
+        Effect("Acheronsfx17.mdx", GetSpecialEffectX(e), GetSpecialEffectY(e), 0, a, 0, 0, 2.5, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.9)
+        Effect("Acheronsfx16.mdx", GetSpecialEffectX(e), GetSpecialEffectY(e), 10, a, 0, 0, 3, 2, 255, 255, 255, 255)
+        SetSpecialEffectTimeScale(dummy_effect, 0.75)
+
+    if (count == 500)
+        SetUnitXY(u, x, y, 1)
+        SetUnitVertexColor(u, 255, 255, 255, 255)
+        SetUnitTimeScale(u, 1)
+        SetPauseUnit(u, false)
+        SetInvulUnit(u, false)
+
+        g1 = LoadGroupHandle(GameHT, hid, 'grp+')
+        for i = 0 to GroupGetCount(g1) - 1
+            d = GroupGetUnitByIndex(g1, i)
+            SetPauseUnit(d, false)
+            SetInvulUnit(d, false)
+        DestroyGroup(g1)
+
+        g1 = CreateGroup()
+        GroupEnumUnitsInRange(g1, x, y, 700, null)
+        for i = 0 to GroupGetCount(g1) - 1
+            d = GroupGetUnitByIndex(g1, i)
+            if (FilterGeneric(u, d))
+                u.damageTarget(d, 11. * GetHeroAgi(u, true))
+                IssueImmediateOrderById(d, 851972)
+        DestroyGroup(g1)
+
+        FlushChildHashtable(GameHT, hid)
+        PauseTimer(tmr)
+        DestroyTimer(tmr)
+
+init
+    registerPlayerUnitEvent(EVENT_PLAYER_UNIT_SPELL_EFFECT) ->
+        if (EventData.getSpellAbilityId() == 'A08L')
+            let u = EventData.getTriggerUnit()
+            //let t = EventData.getSpellTargetUnit()
+            SetPauseUnit(u, true)
+            SetInvulUnit(u, true)
+            let x = EventData.getSpellTargetX()
+            let y = EventData.getSpellTargetY()
+
+            let tmr = CreateTimer()
+            let hid = GetHandleId(tmr)
+            SaveUnitHandle(GameHT, hid, 'cstr', u)
+            SaveReal(GameHT, hid, 'impX', x)
+            SaveReal(GameHT, hid, 'impY', y)
+            TimerStart(tmr, 0.02, true, function acheronF)
+    
+    preloadSound("AcheronF.mp3")
+    preloadSound("AcheronSE6.mp3")
+    preloadEffect("Acheronsfx20.mdx")

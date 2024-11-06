@@ -1,0 +1,1875 @@
+package ACG_Globals
+
+//globals from BzAPI:
+public constant boolean LIBRARY_BzAPI=true
+//endglobals from BzAPI
+//globals from DzAPI:
+public constant boolean LIBRARY_DzAPI=true
+//endglobals from DzAPI
+//globals from SLK:
+public constant boolean LIBRARY_SLK=true
+public hashtable SLK_ht=InitHashtable()
+//endglobals from SLK
+//globals from Table:
+public constant boolean LIBRARY_Table=true
+public integer Table__less= 0
+public integer Table__more= 8190
+//Configure it if you use more than 8190 "key" variables in your map (this will never happen though).
+ 
+public hashtable Table__ht= InitHashtable()
+public constant integer Table__sizeK=5
+public constant integer Table__listK=6
+//endglobals from Table
+//globals from YDTriggerSaveLoadSystem:
+public constant boolean LIBRARY_YDTriggerSaveLoadSystem=true
+public hashtable YDHT
+public hashtable YDLOC
+//endglobals from YDTriggerSaveLoadSystem
+//globals from YDWEAbilityState:
+public constant boolean LIBRARY_YDWEAbilityState=true
+public constant integer YDWEAbilityState__ABILITY_STATE_COOLDOWN= 1
+public constant integer YDWEAbilityState__ABILITY_DATA_TARGS= 100
+public constant integer YDWEAbilityState__ABILITY_DATA_CAST= 101
+public constant integer YDWEAbilityState__ABILITY_DATA_DUR= 102
+public constant integer YDWEAbilityState__ABILITY_DATA_HERODUR= 103
+public constant integer YDWEAbilityState__ABILITY_DATA_COST= 104
+public constant integer YDWEAbilityState__ABILITY_DATA_COOL= 105
+public constant integer YDWEAbilityState__ABILITY_DATA_AREA= 106
+public constant integer YDWEAbilityState__ABILITY_DATA_RNG= 107
+public constant integer YDWEAbilityState__ABILITY_DATA_DATA_A= 108
+public constant integer YDWEAbilityState__ABILITY_DATA_DATA_B= 109
+public constant integer YDWEAbilityState__ABILITY_DATA_DATA_C= 110
+public constant integer YDWEAbilityState__ABILITY_DATA_DATA_D= 111
+public constant integer YDWEAbilityState__ABILITY_DATA_DATA_E= 112
+public constant integer YDWEAbilityState__ABILITY_DATA_DATA_F= 113
+public constant integer YDWEAbilityState__ABILITY_DATA_DATA_G= 114
+public constant integer YDWEAbilityState__ABILITY_DATA_DATA_H= 115
+public constant integer YDWEAbilityState__ABILITY_DATA_DATA_I= 116
+public constant integer YDWEAbilityState__ABILITY_DATA_UNITID= 117
+ 
+public constant integer YDWEAbilityState__ABILITY_DATA_HOTKET= 200
+public constant integer YDWEAbilityState__ABILITY_DATA_UNHOTKET= 201
+public constant integer YDWEAbilityState__ABILITY_DATA_RESEARCH_HOTKEY= 202
+public constant integer YDWEAbilityState__ABILITY_DATA_NAME= 203
+public constant integer YDWEAbilityState__ABILITY_DATA_ART= 204
+public constant integer YDWEAbilityState__ABILITY_DATA_TARGET_ART= 205
+public constant integer YDWEAbilityState__ABILITY_DATA_CASTER_ART= 206
+public constant integer YDWEAbilityState__ABILITY_DATA_EFFECT_ART= 207
+public constant integer YDWEAbilityState__ABILITY_DATA_AREAEFFECT_ART= 208
+public constant integer YDWEAbilityState__ABILITY_DATA_MISSILE_ART= 209
+public constant integer YDWEAbilityState__ABILITY_DATA_SPECIAL_ART= 210
+public constant integer YDWEAbilityState__ABILITY_DATA_LIGHTNING_EFFECT= 211
+public constant integer YDWEAbilityState__ABILITY_DATA_BUFF_TIP= 212
+public constant integer YDWEAbilityState__ABILITY_DATA_BUFF_UBERTIP= 213
+public constant integer YDWEAbilityState__ABILITY_DATA_RESEARCH_TIP= 214
+public constant integer YDWEAbilityState__ABILITY_DATA_TIP= 215
+public constant integer YDWEAbilityState__ABILITY_DATA_UNTIP= 216
+public constant integer YDWEAbilityState__ABILITY_DATA_RESEARCH_UBERTIP= 217
+public constant integer YDWEAbilityState__ABILITY_DATA_UBERTIP= 218
+public constant integer YDWEAbilityState__ABILITY_DATA_UNUBERTIP= 219
+public constant integer YDWEAbilityState__ABILITY_DATA_UNART= 220
+//endglobals from YDWEAbilityState
+//globals from YDWEBase:
+public constant boolean LIBRARY_YDWEBase=true
+//ȫ�ֹ�ϣ�� 
+public string bj_AllString=".................................!.#$%&'()*+,-./0123456789:;<=>.@ABCDEFGHIJKLMNOPQRSTUVWXYZ[.]^_`abcdefghijklmnopqrstuvwxyz{|}~................................................................................................................................"
+//全局系统变量
+public unit bj_lastAbilityCastingUnit=null
+public unit bj_lastAbilityTargetUnit=null
+public unit bj_lastPoolAbstractedUnit=null
+public unitpool bj_lastCreatedUnitPool=null
+public item bj_lastPoolAbstractedItem=null
+public itempool bj_lastCreatedItemPool=null
+public attacktype bj_lastSetAttackType= ATTACK_TYPE_NORMAL
+public damagetype bj_lastSetDamageType= DAMAGE_TYPE_NORMAL
+public weapontype bj_lastSetWeaponType= WEAPON_TYPE_WHOKNOWS
+public real yd_MapMaxX= 0
+public real yd_MapMinX= 0
+public real yd_MapMaxY= 0
+public real yd_MapMinY= 0
+public string array YDWEBase__yd_PlayerColor
+public trigger array YDWEBase__AbilityCastingOverEventQueue
+public integer array YDWEBase__AbilityCastingOverEventType
+public integer YDWEBase__AbilityCastingOverEventNumber= 0
+//endglobals from YDWEBase
+//globals from YDWEEventDamageData:
+public constant boolean LIBRARY_YDWEEventDamageData=true
+public constant integer YDWEEventDamageData__EVENT_DAMAGE_DATA_VAILD= 0
+public constant integer YDWEEventDamageData__EVENT_DAMAGE_DATA_IS_PHYSICAL= 1
+public constant integer YDWEEventDamageData__EVENT_DAMAGE_DATA_IS_ATTACK= 2
+public constant integer YDWEEventDamageData__EVENT_DAMAGE_DATA_IS_RANGED= 3
+public constant integer YDWEEventDamageData__EVENT_DAMAGE_DATA_DAMAGE_TYPE= 4
+public constant integer YDWEEventDamageData__EVENT_DAMAGE_DATA_WEAPON_TYPE= 5
+public constant integer YDWEEventDamageData__EVENT_DAMAGE_DATA_ATTACK_TYPE= 6
+//endglobals from YDWEEventDamageData
+//globals from YDWEGeneralBounsSystem:
+public constant boolean LIBRARY_YDWEGeneralBounsSystem=true
+public integer array YDWEGeneralBounsSystem__ABILITY_COUNT
+public integer array YDWEGeneralBounsSystem__ABILITY_NUM
+public integer array YDWEGeneralBounsSystem__BonusAbilitys
+public integer array YDWEGeneralBounsSystem__PowersOf2
+public integer YDWEGeneralBounsSystem__PRELOAD_DUMMY_UNIT= 'hpea'
+public integer array YDWEGeneralBounsSystem__YDWEBONUS_MyChar
+public boolean YDWEGeneralBounsSystem__PRELOAD_ABILITYS= true
+public constant integer YDWEGeneralBounsSystem__BONUS_TYPES= 4
+public integer array YDWEGeneralBounsSystem__MaxBonus
+public integer array YDWEGeneralBounsSystem__MinBonus
+public unit array YDWEGeneralBounsSystem__Units
+public integer YDWEGeneralBounsSystem__UnitCount= 0
+//endglobals from YDWEGeneralBounsSystem
+//globals from YDWEGetForceOfPlayerNull:
+public constant boolean LIBRARY_YDWEGetForceOfPlayerNull=true
+public force yd_NullTempForce
+//endglobals from YDWEGetForceOfPlayerNull
+//globals from YDWEGetItemOfTypeFromUnitBJNull:
+public constant boolean LIBRARY_YDWEGetItemOfTypeFromUnitBJNull=true
+public item yd_NullTempItem
+//endglobals from YDWEGetItemOfTypeFromUnitBJNull
+//globals from YDWEGetPlayersAlliesNull:
+public constant boolean LIBRARY_YDWEGetPlayersAlliesNull=true
+//endglobals from YDWEGetPlayersAlliesNull
+//globals from YDWEGetUnitsInRangeOfLocMatchingNull:
+public constant boolean LIBRARY_YDWEGetUnitsInRangeOfLocMatchingNull=true
+//endglobals from YDWEGetUnitsInRangeOfLocMatchingNull
+//globals from YDWEGetUnitsInRectMatchingNull:
+public constant boolean LIBRARY_YDWEGetUnitsInRectMatchingNull=true
+public group yd_NullTempGroup
+//endglobals from YDWEGetUnitsInRectMatchingNull
+//globals from YDWEGetUnitsOfPlayerMatchingNull:
+public constant boolean LIBRARY_YDWEGetUnitsOfPlayerMatchingNull=true
+//endglobals from YDWEGetUnitsOfPlayerMatchingNull
+//globals from YDWEGetUnitsOfTypeIdAllNull:
+public constant boolean LIBRARY_YDWEGetUnitsOfTypeIdAllNull=true
+//endglobals from YDWEGetUnitsOfTypeIdAllNull
+//globals from YDWEJapiUnit:
+public constant boolean LIBRARY_YDWEJapiUnit=true
+//endglobals from YDWEJapiUnit
+//globals from YDWEPlaySoundNull:
+public constant boolean LIBRARY_YDWEPlaySoundNull=true
+//endglobals from YDWEPlaySoundNull
+//globals from YDWEPolledWaitNull:
+public constant boolean LIBRARY_YDWEPolledWaitNull=true
+//endglobals from YDWEPolledWaitNull
+//globals from YDWESetUnitFacingToFaceLocTimedNull:
+public constant boolean LIBRARY_YDWESetUnitFacingToFaceLocTimedNull=true
+//endglobals from YDWESetUnitFacingToFaceLocTimedNull
+//globals from YDWETriggerEvent:
+public constant boolean LIBRARY_YDWETriggerEvent=true
+public trigger yd_DamageEventTrigger= null
+public trigger array YDWETriggerEvent__DamageEventQueue
+public integer YDWETriggerEvent__DamageEventNumber= 0
+ 	
+public item bj_lastMovedItemInItemSlot= null
+ 	
+public trigger YDWETriggerEvent__MoveItemEventTrigger= null
+public trigger array YDWETriggerEvent__MoveItemEventQueue
+public integer YDWETriggerEvent__MoveItemEventNumber= 0
+//endglobals from YDWETriggerEvent
+//globals from YDWETriggerRegisterEnterRectSimpleNull:
+public constant boolean LIBRARY_YDWETriggerRegisterEnterRectSimpleNull=true
+//endglobals from YDWETriggerRegisterEnterRectSimpleNull
+//globals from YDWETriggerRegisterLeaveRectSimpleNull:
+public constant boolean LIBRARY_YDWETriggerRegisterLeaveRectSimpleNull=true
+public region yd_NullTempRegion
+//endglobals from YDWETriggerRegisterLeaveRectSimpleNull
+//globals from YDWEUnitHasItemOfTypeBJNull:
+public constant boolean LIBRARY_YDWEUnitHasItemOfTypeBJNull=true
+//endglobals from YDWEUnitHasItemOfTypeBJNull
+//globals from YDWEYDWEJapiOther:
+public constant boolean LIBRARY_YDWEYDWEJapiOther=true
+public constant integer YDWEYDWEJapiOther__CHAT_RECIPIENT_ALL= 0
+public constant integer YDWEYDWEJapiOther__CHAT_RECIPIENT_ALLIES= 1
+public constant integer YDWEYDWEJapiOther__CHAT_RECIPIENT_OBSERVERS= 2
+public constant integer YDWEYDWEJapiOther__CHAT_RECIPIENT_REFEREES= 2
+public constant integer YDWEYDWEJapiOther__CHAT_RECIPIENT_PRIVATE= 3
+//endglobals from YDWEYDWEJapiOther
+//globals from YDWEYDWEJapiScript:
+public constant boolean LIBRARY_YDWEYDWEJapiScript=true
+public constant integer YDWE_OBJECT_TYPE_ABILITY= 0
+public constant integer YDWE_OBJECT_TYPE_BUFF= 1
+public constant integer YDWE_OBJECT_TYPE_UNIT= 2
+public constant integer YDWE_OBJECT_TYPE_ITEM= 3
+public constant integer YDWE_OBJECT_TYPE_UPGRADE= 4
+public constant integer YDWE_OBJECT_TYPE_DOODAD= 5
+public constant integer YDWE_OBJECT_TYPE_DESTRUCTABLE= 6
+//endglobals from YDWEYDWEJapiScript
+//globals from YoooBugBase:
+public constant boolean LIBRARY_YoooBugBase=true
+public hashtable YoooBugBase__ht= InitHashtable()
+//endglobals from YoooBugBase
+//globals from Dummy:
+public constant boolean LIBRARY_Dummy=true
+//endglobals from Dummy
+//globals from MaxSpeed:
+public constant boolean LIBRARY_MaxSpeed=true
+public constant boolean MaxSpeed__USE_TABLE= true
+public constant boolean MaxSpeed__NEW_TABLE= true
+// Vexorian's Table or Bribe's (NEW)
+public constant boolean MaxSpeed__TEST_MODE= false
+public constant real MaxSpeed__PERIOD= 0.03125
+public constant real MaxSpeed__MAX_SPEED= 2088.0
+// 最大速度限定，超出视为传送。
+public constant real MaxSpeed__MIN_SPEED= 500.0
+// 判定的最小距离，此项过小或速度过大会使原地打转几率增加，超出则没有加速效果。
+// 测试最大为500刚出头，与522还有些差距      
+//endglobals from MaxSpeed
+//globals from YDWEAroundSystem:
+public constant boolean LIBRARY_YDWEAroundSystem=true
+public constant timer YDWEAroundSystem__AROUND_TIM= CreateTimer()
+public constant real YDWEAroundSystem__AROUND_INTER= 0.01
+//endglobals from YDWEAroundSystem
+//globals from YDWEGetUnitsInRectAllNull:
+public constant boolean LIBRARY_YDWEGetUnitsInRectAllNull=true
+//endglobals from YDWEGetUnitsInRectAllNull
+//globals from YDWEGetUnitsOfPlayerAllNull:
+public constant boolean LIBRARY_YDWEGetUnitsOfPlayerAllNull=true
+//endglobals from YDWEGetUnitsOfPlayerAllNull
+//globals from YDWEItemAbilitySystem:
+public constant boolean LIBRARY_YDWEItemAbilitySystem=true
+//endglobals from YDWEItemAbilitySystem
+//globals from YDWEJumpTimer:
+public constant boolean LIBRARY_YDWEJumpTimer=true
+//��Ծϵͳ���ȼ�
+public integer MoveMoreLevel_JumpTimer=3
+//endglobals from YDWEJumpTimer
+//globals from YDWESetUnitFacingToFaceUnitTimedNull:
+public constant boolean LIBRARY_YDWESetUnitFacingToFaceUnitTimedNull=true
+//endglobals from YDWESetUnitFacingToFaceUnitTimedNull
+//globals from YDWETimerPattern:
+public constant boolean LIBRARY_YDWETimerPattern=true
+public boolexpr YDWETimerPattern__Bexpr= null
+public rect YDWETimerPattern__Area= null
+public integer YDWETimerPattern__tmp_data
+public location YDWETimerPattern__yd_loc= Location(0.0, 0.0)
+//endglobals from YDWETimerPattern
+//globals from YDWETimerSystem:
+public constant boolean LIBRARY_YDWETimerSystem=true
+public integer YDWETimerSystem__CurrentTime
+public integer YDWETimerSystem__CurrentIndex
+public integer YDWETimerSystem__TaskListHead
+public integer YDWETimerSystem__TaskListIdleHead
+public integer YDWETimerSystem__TaskListIdleMax
+public integer array YDWETimerSystem__TaskListIdle
+public integer array YDWETimerSystem__TaskListNext
+public integer array YDWETimerSystem__TaskListTime
+public trigger array YDWETimerSystem__TaskListProc
+public trigger YDWETimerSystem__fnRemoveUnit
+public trigger YDWETimerSystem__fnDestroyTimer
+public trigger YDWETimerSystem__fnRemoveItem
+public trigger YDWETimerSystem__fnDestroyEffect
+public trigger YDWETimerSystem__fnDestroyLightning
+public trigger YDWETimerSystem__fnRunTrigger
+public timer YDWETimerSystem__Timer
+public integer YDWETimerSystem__TimerHandle
+public integer YDWETimerSystem__TimerSystem_RunIndex= 0
+//endglobals from YDWETimerSystem
+//globals from fuxiu:
+public constant boolean LIBRARY_fuxiu=true
+public unit vest= null
+public unit AcgRushUnit= null
+
+public location unit_point= null
+public location targer_point= null
+public sound Fx_Sound= null
+
+public real Fx_gravity= 250 * 0.02
+
+//endglobals from fuxiu
+//globals from Bezier:
+public constant boolean LIBRARY_Bezier=true
+public unit Bezier_uStart
+public unit Bezier_uLerp1
+public unit Bezier_uLerp2
+public unit Bezier_uTarget    
+public real Bezier_tempX
+public real Bezier_tempY
+public real Bezier_tempZ
+public boolean Bezier_isEnd= false   
+public unit array Bezier_CP_Unit_Array
+//endglobals from Bezier
+public rect gg_rct_Random_Hero_Area= null
+public rect gg_rct______________008= null
+public rect gg_rct_R_enter_Zone= null
+public rect gg_rct_L_enter_Zone= null
+public rect gg_rct_A_Right= null
+public rect gg_rct_Movie_YL_G_m= null
+public rect gg_rct_Help_UnitGroup_Zone= null
+public rect gg_rct_Camera_Zone= null
+public rect gg_rct_Center= null
+public rect gg_rct_WD_R= null
+public rect gg_rct______________025= null
+public rect gg_rct_A_Left= null
+public rect gg_rct_WD_L= null
+public rect gg_rct_StartCamZone= null
+public rect gg_rct______________005= null
+public rect gg_rct______________005_______u= null
+public rect gg_rct_Zone_Shanghai= null
+public rect gg_rct_Limit_Zone= null
+public rect gg_rct_Battle_Zone= null
+public camerasetup gg_cam_Hero_Selection= null
+public camerasetup gg_cam_StartGameCam= null
+public camerasetup gg_cam_RoundWin_Cam= null
+public camerasetup gg_cam_Camera_004= null
+public camerasetup gg_cam_XYL_C0= null
+public camerasetup gg_cam_Camera_006= null
+public camerasetup gg_cam_XYL_C2= null
+public camerasetup gg_cam_Camera_008= null
+public camerasetup gg_cam_StartMovieCam2= null
+public camerasetup gg_cam_StartMovieCam3= null
+public camerasetup gg_cam_StartMovieCam3_Last= null
+public camerasetup gg_cam_MLS_Camera= null
+public camerasetup gg_cam_StartMovieCam1= null
+public string gg_snd_MUGEN_1
+public sound gg_snd_MUGEN_2= null
+public string gg_snd_MUGEN_4
+public string gg_snd_BGM
+public sound gg_snd_LightningBolt1= null
+public sound gg_snd_RainAmbience_bug= null
+public sound gg_snd_FLBGM1= null
+public group udg_Rush_Group= null
+public real udg_Rush_Va= 0
+public real udg_Rush_Aa= 0
+public real udg_Rush_Atime= 0
+public real udg_Rush_Ang= 0
+public integer udg_Rush_AB= 0
+public real udg_Rush_Time= 0
+public integer udg_Rush_Type= 0
+public unit udg_Rush_Target= null
+public integer udg_Rush_TB= 0
+public integer udg_Rush_End= 0
+public trigger udg_Rush_Tri= null
+public unit udg_Rush_Unit= null
+public group udg_Time_FreezeGroup= null
+public group udg_Ex_Skill_Group= null
+public real udg_Rush_Damage= 0
+public real udg_Rush_DmR= 0
+public real udg_temp_x= 0
+public real udg_temp_y= 0
+public real udg_Rush_V= 0
+public group udg_Rush_HasD_Group= null
+public real udg_Rush_FTA= 0
+public integer udg_Rush_FT_int= 0
+public real udg_Rush_FTR= 0
+public real udg_Rush_FTL= 0
+public unit udg_temp_u= null
+public unit udg_temp_u2= null
+public boolean udg_temp_boolean= false
+public integer udg_StunType= 0
+public integer udg_DummyType= 0
+public group udg_Ex_Group= null
+public integer array udg_GloveOfSpeed
+public integer array udg_ShoesOfSpeed
+public integer udg_talk=0
+public integer udg_surrender1=0
+public integer udg_surrenderA=0
+public integer udg_surrenderB=0
+public integer udg_KLD_EX=0
+public integer udg_KDASH_EX=0
+public integer udg_BLACKYO_EX=0
+// ===================================================== 추가구문
+public group udg_Glove_Group= null
+public group udg_Shoes_Group= null
+public integer udg_int= 0
+public integer udg_Rush_Bullet= 0
+public real udg_temp_mv= 0
+public string udg_temp_string
+public integer udg_temp_int= 0
+public real udg_temp_real= 0
+public real udg_Rush_SPR= 0
+public trigger udg_Rush_SPTri= null
+public group udg_Rush_SPGroup= null
+public integer udg_shantu= 0
+public real udg_temp_real2= 0
+public integer udg_Rush_Stop_Type= 0
+public real udg_Rush_SPL= 0
+public integer array udg_temp_Lv
+public integer array udg_Condition_Skill
+public boolean udg_temp_boolean2= false
+public unit udg_temp_u3= null
+public boolean udg_temp_boolean1= false
+public boolean udg_Rush_Boolean= false
+public boolean udg_Bug_boolean= false
+public integer udg_TNycpat= 0
+public real udg_bgmReal= 0
+public group udg_Jump_Group= null
+public real udg_Gravity= 0
+public unit udg_temp_m= null
+public boolean udg_Game_Film_Cam_Boo= false
+public group udg_Lsw_E_Cam_Group= null
+public boolean udg_temp_Dam_Boo= false
+public boolean udg_temp_Has_Boo= false
+public real udg_temp_real3= 0
+public force udg_mugen_03= null
+public integer array udg_Skill_Ban
+public group udg_Group_Volume= null
+public string array udg_YS
+public integer array udg_xuanxiang_01
+public multiboard udg_Game_ScoreBoard= null
+public unit array udg_Game_B3_4_Hero
+public integer udg_temp_Hero_type= 0
+public unit udg_temp_hero= null
+public integer array udg_zhuanshu_01
+public integer udg_Dark_Plat= 0
+public player udg_Game_Master= null
+public boolean udg_Movieing= false
+public unit udg_temp_goal= null
+public integer udg_Dummy_Null= 0
+public integer array udg_K_Animotion
+public group udg_FighterGroup= null
+public group udg_temp_group= null
+public group udg_Hero_Death_Group= null
+public unit udg_Relife_Unit= null
+public unit udg_Death_Unit= null
+public unit udg_Killer= null
+public boolean udg_Model_Relife_On= false
+public boolean udg_Game_Over= false
+public integer udg_Player_Num= 0
+public group udg_Rush_Group_Other= null
+public location udg_Center_Point= null
+public boolean udg_Round_Over= false
+public integer udg_Round_Result= 0
+public sound udg_Last_ASound= null
+public player udg_Fighter_Player_L= null
+public player udg_Fighter_Player_R= null
+public integer udg_Charge_UnitType= 0
+public integer udg_temp_Skill= 0
+public group udg_Skill_CD_Group= null
+public timer udg_temp_timer= null
+public unit udg_temp_g= null
+public real udg_tempR= 0
+public real udg_tempX= 0
+public real udg_tempY= 0
+public real udg_tempZ= 0
+public group udg_Round_Clear_Group= null
+public location udg_Help_UnitLoc= null
+public player udg_temp_player= null
+public integer array udg_Challenge_Name
+public item udg_temp_Item= null
+public location udg_ZX_Point= null
+public unit udg_mj= null
+public rect udg_AI_Zone= null
+public unit udg_Boss= null
+public force udg_AI_Player_Group= null
+public real udg_x= 0
+public real udg_y= 0
+public integer udg_temp_UnitType= 0
+public integer udg_Rush_VS_Type= 0
+public force udg_Controller_Player_Group= null
+public location udg_MemberLoc= null
+public real udg_temp_angle= 0
+public trigger udg_temp_Trigger= null
+public real udg_temp_damage= 0
+public force udg_Referee_Group= null
+public force udg_Leave_Player_Group= null
+public group udg_GostGroup= null
+public group udg_DeadClear_Group= null
+public boolean udg_ghostSys_fresh_Boolean= false
+public integer udg_Dummy4Type= 0
+public force udg_AI_ZS_Back_Group= null
+public unit udg_temp_AI_unit= null
+public unit udg_temp_AI_goal= null
+public rect udg_Limit_Zone= null
+public force udg_PlayerGroupB= null
+public player udg_Player_A_Npc= null
+public player udg_Player_B_Npc= null
+public integer array udg_temp_Int_Arr
+public integer udg_Game_B1_Mode_WinCount= 0
+public integer udg_Game_B3_Mode_WinScore= 0
+public integer udg_Game_B4_Mode_WinScore= 0
+public integer udg_Win_Team_Int_Game= 0
+public integer array udg_Player_Game_B1_Mode_WinCount
+public integer array udg_Player_Game_B2_Mode_WinRound
+public integer array udg_Player_Game_B34567_Mode_Score
+public integer array udg_Game_B3_4_Mode_Data_Int_Arr
+public integer udg_Win_Team_Int_Round= 0
+public boolean udg_Game_Double_Hero_Boo= false
+public integer udg_Game_State= 0
+public integer udg_Hero_Type= 0
+public integer petrick_death= 0
+public integer petrick_taunt= 0
+public string udg_soundString
+public unit udg__temp_controller= null
+public unit udg_Hit_Counter= null
+public integer udg_DummyType4= 0
+public integer udg_Game_B567_Mode_WinScore= 0
+public integer udg_temp_score= 0
+public boolean udg_Game_Match_Boo= false
+public boolean udg_Shenrou= false
+public integer udg_Yang_T_BuffSkill_Final= 0
+public unit udg_WeakUnit= null
+public unit udg_SysWords_Killer= null
+public unit udg_SysWords_DeathUnit= null
+public boolean udg_IsTianTi= false
+public force udg_TT_AllPlayerGroup= null
+public boolean udg_TT_StopAutoCommitData= false
+public integer udg_TT_OtherDataCommitType= 0
+public player udg_temp_Player= null
+public real udg_temp_Damage= 0
+public integer array udg_TT_2V4_Int
+public group udg_Life_Lock_Group= null
+public group udg_Hero_Weak_Group= null
+public integer array udg_BaShenAniArray
+public integer array udg_Game_Number
+public integer udg_XiaNaExType= 0
+public itempool udg_Item_IntervenePool= null
+public boolean udg_Game_Ban_Hero_B1= false
+public force udg_PlayerGroupA= null
+public rect udg_Shanghai_Zone= null
+public integer array udg_Shiki_Animation
+public boolean array udg_BGM_Bloo
+public group udg_Sys_PauseGroup= null
+public group udg_Sys_ClearPauseGroup= null
+public trigger udg_Sys_PauseFunction= null
+public integer udg_temp_boolean_int= 0
+public trigger udg_temp_Trigger2= null
+public integer udg_Game_Inte= 0
+public string udg_string
+public unit udg_Damage_Unit= null
+public unit udg_Damage_Goal= null
+public sound udg_HeroBGM_ASound= null
+public integer array udg_buffSkill
+public real udg_Damage_real= 0
+public integer array udg_ui_kill
+public integer udg_Kill_Int= 0
+public unit array udg_Kill_Unit
+public unit array udg_Kill_Unit2
+public hashtable udg_HT_HeroChoose= null
+public integer udg_MainBackground_ui= 0
+public integer array udg_HeroPortrait_ui
+public group udg_Hero_Group= null
+public unit array udg_Player_Hero_Sys
+public boolean udg_Game_Ban_Hero= false
+public integer array udg_ui_Frame
+public hashtable udg_HT= null
+public force udg_Cam_Player_Group= null
+public real udg_bgmTime= 0
+public string array udg_anmslwsnd
+public integer udg_temp_Type= 0
+public fogmodifier array udg_Sight
+public integer array udg_StunSkill
+public integer array udg_Game_UnitType
+public sound udg_temp_sound= null
+public integer udg_mugen_Hero= 0
+public integer array udg_HeroPortraitBD_ui
+public integer array udg_HeroPortraitPBD_ui
+public integer udg_HeroImage_ui= 0
+public integer array udg_HeroTex_ui
+public integer udg_ConfirmButton_ui= 0
+public integer udg_RandomButton_ui= 0
+public integer array udg_CharacterChoose_ui
+public integer udg_Game_Mode_Type= 0
+public unit udg_temp_Unit= null
+public real udg_temp_Real= 0
+public integer udg_Special_Dummy= 0
+public force udg_PlayerGroupAll= null
+public integer udg_Game_Mode_C= 0
+public dialog udg_Game_Mode_Select= null
+public button array udg_Game_Mode_Select_AN
+public integer udg_Game_B2_Mode_WinRound= 0
+public unit udg_unitHoemoptysis= null
+public real udg_realHoemoptysis= 0
+public group udg_shiye_group= null
+//==============================================
+public integer udg_frameblueAca= 0
+public integer array udg_frameblueAca_An
+public integer array udg_frameblueAca_L
+//==============================================
+public integer udg_frameLuenpan= 0
+public integer array udg_frameLuenpanAn
+public unit udg_repel_Unit= null
+public real udg_repel_Dis= 0
+public real udg_repel_Ang= 0
+public real udg_repel_Time= 0
+public real udg_temp_dam_real= 0
+public integer udg_buff_Skill= 0
+public unit udg_buff_Unit= null
+public real udg_buff_Real= 0
+public integer array udg_buff_Buff
+public integer array udg_ui_moshianniu
+public sound array udg_heroSound
+public unitpool udg_AI_unitTypeGroup= null
+public integer udg_playerNum= 0
+public integer array udg_Clock_Timing
+public integer array udg_frameLuenpanL
+public trigger gg_trg_DoubleList_Init= null
+public trigger gg_trg_SlkSaveState01= null
+public trigger gg_trg_MaxSpeed= null
+public trigger gg_trg_Table= null
+public trigger gg_trg_Control_Unit_Lock= null
+public trigger gg_trg_Control_Input= null
+public trigger gg_trg_Rush_Event= null
+public trigger gg_trg_Bullet_Effct_Destroy= null
+public trigger gg_trg_Bullet_Ang_Change= null
+public trigger gg_trg_Rush_Init= null
+public trigger gg_trg_Rush_Group= null
+public trigger gg_trg_Rush_Target_Check= null
+public trigger gg_trg_Rush_Check= null
+public trigger gg_trg_Skill_Data_Condition= null
+public trigger gg_trg_Rush_Null= null
+public trigger gg_trg_Rush_NullWith_ReAni= null
+public trigger gg_trg_Rush_NullWithPause= null
+public trigger gg_trg_Rush_Damage= null
+public trigger gg_trg_Handle_Clear= null
+public trigger gg_trg_Dummy_ClearHandle= null
+public trigger gg_trg_Rush_Pak= null
+//public trigger gg_trg_Rush_Pak_Clea= null
+public trigger gg_trg_JiTui= null
+public trigger gg_trg_Player_Name= null
+public trigger gg_trg_dueiwaifangyu= null
+public trigger gg_trg_dueineifangyu= null
+public trigger gg_trg_mofafangyu= null
+public trigger gg_trg_wulifangyu= null
+public trigger gg_trg_toushewufangyu= null
+public trigger gg_trg_fangyu= null
+public trigger gg_trg_ghost_getOne= null
+public trigger gg_trg_ghost_sys_clear= null
+public trigger gg_trg_ghost_sys= null
+public trigger gg_trg_TT_AutoDataCommitData= null
+public trigger gg_trg_TT_OtherCommit= null
+public trigger gg_trg_TT_CommitResult= null
+public trigger gg_trg_TT_AutoSetMode= null
+public trigger gg_trg_PlayerScore= null
+public trigger gg_trg_TT_Reward1= null
+public trigger gg_trg_TT_Reward2= null
+public trigger gg_trg_TT_Reward3= null
+public trigger gg_trg_TT_2V4_A= null
+public trigger gg_trg_TT_2V4_B= null
+public trigger gg_trg_SkillPauseSet_temp_u_temp_real= null
+public trigger gg_trg_WQXH_T= null
+public trigger gg_trg_frameLunpan= null
+public trigger gg_trg_frameblueAca= null
+public trigger gg_trg_skillcd= null
+public trigger gg_trg____________________002_______u= null
+public trigger gg_trg_YoooBugBase= null
+public trigger gg_trg_Dummy= null
+public trigger gg_trg_Bezier= null
+public trigger gg_trg_heroChisato_Pick= null
+public trigger gg_trg_heroChisato_F_T= null
+public trigger gg_trg_heroChisato_Q_W= null
+public trigger gg_trg_heroChisato_E_R= null
+public trigger gg_trg_heroChisato_G= null
+public trigger gg_trg_heroChisato_Hit= null
+public trigger gg_trg_heroChisato_list= null
+public trigger gg_trg_hero_chen_Sound= null
+public trigger gg_trg_heroChen_Q_W_E= null
+public trigger gg_trg_heroChen_R_D_T= null
+public trigger gg_trg_heroMomiji_Sound= null
+public trigger gg_trg_heroMomiji_Q_W_E= null
+public trigger gg_trg_heroMomiji_D_F_R= null
+public trigger gg_trg_heroMomiji_T= null
+public trigger gg_trg_heroMomiji_G= null
+public trigger gg_trg_heroKabuto_Q= null
+public trigger gg_trg_heroKabuto_W= null
+public trigger gg_trg_heroKabuto_R= null
+public trigger gg_trg_heroKabuto_D_F= null
+public trigger gg_trg_heroKabuto_T= null
+public trigger gg_trg_heroKabuto_G= null
+public trigger gg_trg_LTL_Q1= null
+public trigger gg_trg_LTL_W1= null
+public trigger gg_trg_LTL_E1= null
+public trigger gg_trg_LTL_R1= null
+public trigger gg_trg_LTL_D1= null
+public trigger gg_trg_LTL_F= null
+public trigger gg_trg_LTL_G1= null
+public trigger gg_trg_LTL_G2= null
+public trigger gg_trg_heroJiuyuan_W_Q_E= null
+public trigger gg_trg_heroJiuyuan_R_D_F_T= null
+public trigger gg_trg_heroPatchouli_Fire_Skill= null
+public trigger gg_trg_heroPatchouli_Wind_Skill= null
+public trigger gg_trg_heroPatchouli_Water_Skill= null
+public trigger gg_trg_heroPatchouli_Soil_Skill= null
+public trigger gg_trg_heroPatchouli_Day_Skill= null
+public trigger gg_trg_heroPatchouli_T= null
+public trigger gg_trg_heroFnc_G= null
+public trigger gg_trg_Fnc_ShootActionInit= null
+public trigger gg_trg_Fnc_FlashBangPlayer= null
+public trigger gg_trg_Fnc_SuperAiming= null
+public trigger gg_trg_Fnc_BattleAreaScanner= null
+public trigger gg_trg_Fnc_FastShoot= null
+public trigger gg_trg_Fnc_SelectItem= null
+public trigger gg_trg_Fnc_ThrowItem= null
+public trigger gg_trg_Fnc_Throw_End= null
+public trigger gg_trg_Fnc_Roll= null
+public trigger gg_trg_Fnc_RollEnd= null
+public trigger gg_trg_Fnc_FastComboStrike= null
+public trigger gg_trg_Fnc_FastComboAction= null
+public trigger gg_trg_Fnc_PistolCombo= null
+public trigger gg_trg_Fnc_Pistol_End= null
+public trigger gg_trg_heroVarian_Pick= null
+public trigger gg_trg_heroVarian_Q_W= null
+public trigger gg_trg_heroVarian_E= null
+public trigger gg_trg_heroVarian_R1= null
+public trigger gg_trg_heroVarian_R2_Dam= null
+public trigger gg_trg_heroVarian_D= null
+public trigger gg_trg_heroVarian_F= null
+public trigger gg_trg_heroVarian_T_Dam= null
+public trigger gg_trg_heroVarian_G= null
+public trigger gg_trg_heroBCY2_Sound= null
+public trigger gg_trg_heroGray_Sound= null
+public trigger gg_trg_BCY2_Q= null
+public trigger gg_trg_BCY2_W= null
+public trigger gg_trg_BCY2_E= null
+public trigger gg_trg_BCY2_E2= null
+public trigger gg_trg_BCY2_R= null
+public trigger gg_trg_BCY2_T= null
+public trigger gg_trg_BCY2_G= null
+public trigger gg_trg_heroYaeSakura_Pick= null
+public trigger gg_trg_heroYaeSakura_Q_W= null
+public trigger gg_trg_heroYaeSakura_E= null
+public trigger gg_trg_heroYaeSakura_R= null
+public trigger gg_trg_heroYaeSakura_D= null
+public trigger gg_trg_heroYaeSakura_F= null
+public trigger gg_trg_heroYaeSakura_G= null
+public trigger gg_trg_BCY_W2= null
+public trigger gg_trg_BCY_E2= null
+public trigger gg_trg_HCZJ_G= null
+public trigger gg_trg_HCZJ_G2= null
+public trigger gg_trg_HCZJ_E= null
+public trigger gg_trg_HCZJ_F_Ex= null
+public trigger gg_trg_HCZJ_F0_Dam= null
+public trigger gg_trg_HCZJ_F_Dam= null
+public trigger gg_trg_HCZJ_F2_Dam= null
+public trigger gg_trg_HCZJ_F3_Dam= null
+public trigger gg_trg_HCZJ_RX= null
+public trigger gg_trg_HCZJ_Q= null
+public trigger gg_trg_HCZJ_Q_Dam= null
+public trigger gg_trg_HCZJ_D= null
+public trigger gg_trg_HCZJ_W2= null
+public trigger gg_trg_HCZJ_Q2_Dam= null
+public trigger gg_trg_heroDarkYoumu_Pick= null
+public trigger gg_trg_heroYoumu_Sound= null
+public trigger gg_trg_Youmu_Sword_End= null
+public trigger gg_trg_Youmu_Sword_Hit= null
+public trigger gg_trg_Youmu_F1= null
+public trigger gg_trg_Youmu_E_Defend= null
+public trigger gg_trg_Youmu_G_Start= null
+public trigger gg_trg_Youmu_EX_D= null
+public trigger gg_trg_Youmu_XD= null
+public trigger gg_trg_Youmu_F= null
+public trigger gg_trg_Youmu_F_Dam= null
+public trigger gg_trg_Youmu_Control_Unit= null
+public trigger gg_trg_Youmu_Q_new= null
+public trigger gg_trg_Youmu_W= null
+public trigger gg_trg_Youmu_W_Dam= null
+public trigger gg_trg_heroYoumu_E= null
+public trigger gg_trg_heroYoumu_R= null
+public trigger gg_trg_heroYoumu_T= null
+public trigger gg_trg_heroDarkYoumu_Tjiange= null
+public trigger gg_trg_Kurousagi_G= null
+public trigger gg_trg_Kurousagi_Q= null
+public trigger gg_trg_Kurousagi_W1= null
+public trigger gg_trg_Kurousagi_W2= null
+public trigger gg_trg_Kurousagi_E= null
+public trigger gg_trg_Kurousagi_R1= null
+public trigger gg_trg_Kurousagi_R2= null
+public trigger gg_trg_heroKurousagi_D_F= null
+public trigger gg_trg_Kurousagi_T= null
+public trigger gg_trg_heroKyo_Gyanchu1= null
+public trigger gg_trg_heroKyo_Gyanchu2= null
+public trigger gg_trg_heroKyo_Sound= null
+public trigger gg_trg_heroKyo_D_E= null
+public trigger gg_trg_CTJ_Q= null
+public trigger gg_trg_CTJ_E_Eff= null
+public trigger gg_trg_CZJ_R= null
+public trigger gg_trg_CTJ_D_Eff= null
+public trigger gg_trg_CTJ_F= null
+public trigger gg_trg_CTJ_F_Dam= null
+public trigger gg_trg_CTJ_T= null
+public trigger gg_trg_CTJ_T2_Eff= null
+public trigger gg_trg_CTJ_G= null
+public trigger gg_trg_CTJ_G2= null
+public trigger gg_trg_Kyo_G_Ex= null
+public trigger gg_trg_Kyo_G_ExCheck= null
+public trigger gg_trg_heroMaltet_G= null
+public trigger gg_trg_heroMaltet_G01= null
+public trigger gg_trg_heroMaltet_W= null
+public trigger gg_trg_heroMaltet_W2= null
+public trigger gg_trg_heroMaltet_R1= null
+public trigger gg_trg_heroMaltet_R2= null
+public trigger gg_trg_heroMaltet_D= null
+public trigger gg_trg_heroMaltet_F= null
+public trigger gg_trg_heroMaltet_T= null
+public trigger gg_trg_heroMurasamei_Sound= null
+public trigger gg_trg_heroMurasamei_Q_D_T= null
+public trigger gg_trg_heroMurasamei_W_R= null
+public trigger gg_trg_heroMurasamei_E_F= null
+public trigger gg_trg_heroMurasamei_G= null
+public trigger gg_trg_heroKula_G= null
+public trigger gg_trg_heroKula_G01= null
+public trigger gg_trg_heroKula_G02= null
+public trigger gg_trg_heroKula_Q_W= null
+public trigger gg_trg_KL_D_Fix= null
+public trigger gg_trg_KL_E= null
+public trigger gg_trg_KL_E_Dam= null
+public trigger gg_trg_KL_E2= null
+public trigger gg_trg_KL_E3= null
+public trigger gg_trg_KL_R= null
+public trigger gg_trg_KL_R2_Action= null
+public trigger gg_trg_KL_T= null
+public trigger gg_trg_KL_T_Eff= null
+public trigger gg_trg_KL_F= null
+public trigger gg_trg_KL_F_Defend_Eff= null
+public trigger gg_trg_heroDecade_Sound= null
+public trigger gg_trg_heroDecede_E_D_T_______u= null
+public trigger gg_trg_heroDecede_Q_Q_F_______u= null
+public trigger gg_trg_heroDecede_W_W_R_______u= null
+public trigger gg_trg_heroDecade_T= null
+public trigger gg_trg_heroSanji_Skill= null
+public trigger gg_trg_heroYuugi_Sound= null
+public trigger gg_trg_heroKarumi_G_______u= null
+public trigger gg_trg_heroYuugi_Skill= null
+public trigger gg_trg_heroYuugi_Q_E_T= null
+public trigger gg_trg_heroYuugi_D= null
+public trigger gg_trg_heroSakuya_G= null
+public trigger gg_trg_heroSakuya_Q= null
+public trigger gg_trg_heroSakuya_E= null
+public trigger gg_trg_heroSakuya_D= null
+public trigger gg_trg_heroSakuya_F= null
+public trigger gg_trg_heroSakuya_T= null
+public trigger gg_trg_heroAsuna_Sound= null
+public trigger gg_trg_heroAsuna_G= null
+public trigger gg_trg_heroAsuna_W_E2= null
+public trigger gg_trg_heroAsuna_E_Q= null
+public trigger gg_trg_heroAsuna_F= null
+public trigger gg_trg_heroAsuna_T_R= null
+public trigger gg_trg_heroAsuna_Hit= null
+public trigger gg_trg_Chain2Target= null
+public trigger gg_trg_heroReimi_Sound= null
+public trigger gg_trg_heroReimi_G= null
+public trigger gg_trg_heroReimi_Q_W_E= null
+public trigger gg_trg_heroReimi_R_D= null
+public trigger gg_trg_heroReimi_D2= null
+public trigger gg_trg_heroReimi_F1= null
+public trigger gg_trg_heroReimi_F1_Dam= null
+public trigger gg_trg_heroReimi_F2= null
+public trigger gg_trg_heroReimi_T= null
+public trigger gg_trg_heroFlander_Pick= null
+public trigger gg_trg_heroFlander_Q_W= null
+public trigger gg_trg_Fl_E= null
+public trigger gg_trg_Fl_E_Eff= null
+public trigger gg_trg_Fl_D= null
+public trigger gg_trg_Fl_R= null
+public trigger gg_trg_Fl_R_Dam= null
+public trigger gg_trg_FL_F= null
+public trigger gg_trg_Fl_G_Cut= null
+public trigger gg_trg_FL_G1_ExCheck= null
+public trigger gg_trg_FL_G1_EX01= null
+public trigger gg_trg_FL_G1_EX02= null
+public trigger gg_trg_FL_G_EX_fix= null
+public trigger gg_trg_Bolt_Create= null
+public trigger gg_trg_DmcFlanderInit= null
+public trigger gg_trg_DmcFlander_E= null
+public trigger gg_trg_DmcFlander_R= null
+public trigger gg_trg_DmcFlander_R_Hit= null
+public trigger gg_trg_DmcFlander_D= null
+public trigger gg_trg_DmcFlander_F= null
+public trigger gg_trg_DmcFlander_G= null
+public trigger gg_trg_Bashen_Cacnel= null
+public trigger gg_trg_ControlUnitGet= null
+public trigger gg_trg_Bashen_F= null
+public trigger gg_trg_Bashen_F_Dam= null
+public trigger gg_trg_Bashen_F2= null
+public trigger gg_trg_Bashen_Q_R= null
+public trigger gg_trg_Bashen_Q_Dam= null
+public trigger gg_trg_Bashen_E= null
+public trigger gg_trg_Bashen_E_Dam= null
+public trigger gg_trg_Bashen_R= null
+public trigger gg_trg_Bashen_R0_Dam= null
+public trigger gg_trg_Bashen_G= null
+public trigger gg_trg_Bashen_D= null
+public trigger gg_trg_Bashen_W= null
+public trigger gg_trg_Bashen_T= null
+public trigger gg_trg_Bashen_G2= null
+public trigger gg_trg_Bashen_G_Check= null
+public trigger gg_trg_heroCronus_Sound= null
+public trigger gg_trg_heroCronus_G= null
+public trigger gg_trg_heroCronus_Q_T= null
+public trigger gg_trg_heroCronus_W_R= null
+public trigger gg_trg_heroCronus_E= null
+public trigger gg_trg_heroCronus_D= null
+public trigger gg_trg_heroCronus_F= null
+public trigger gg_trg_heroSayaka_Pick= null
+public trigger gg_trg_heroSayaka_G= null
+public trigger gg_trg_heroSayaka_Q= null
+public trigger gg_trg_heroSayaka_W= null
+public trigger gg_trg_heroSayaka_WQ= null
+public trigger gg_trg_heroSayaka_WW= null
+public trigger gg_trg_heroSayaka_WE= null
+public trigger gg_trg_heroSayaka_E= null
+public trigger gg_trg_heroSayaka_R1= null
+public trigger gg_trg_heroSayaka_R2= null
+public trigger gg_trg_heroSayaka_D_F= null
+public trigger gg_trg_heroOswald_Sound= null
+public trigger gg_trg_Oswald_R_EX= null
+public trigger gg_trg_Oswald_R_EX_DAM= null
+public trigger gg_trg_Hero_Oswald_Skill= null
+public trigger gg_trg_Hero_Oswald_W= null
+public trigger gg_trg_Hero_Oswald_F2_Dam= null
+public trigger gg_trg_Hero_Oswald_G= null
+public trigger gg_trg_hero_Aaaaya_Sound= null
+public trigger gg_trg_Hero_Aaaaya_G= null
+public trigger gg_trg_Hero_Aaaaya_Q= null
+public trigger gg_trg_Hero_Aaaaya_W_T= null
+public trigger gg_trg_Hero_Aaaaya_E= null
+public trigger gg_trg_Hero_Aaaaya_R= null
+public trigger gg_trg_Hero_Aaaaya_D= null
+public trigger gg_trg_Hero_Aaaaya_F= null
+public trigger gg_trg_K_Bloo_R= null
+public trigger gg_trg_K_Bloo_R_mj_2= null
+public trigger gg_trg_K_Bloo_Q2= null
+public trigger gg_trg_K_Bloo_Q2_Dam= null
+public trigger gg_trg_K_Bloo_W= null
+public trigger gg_trg_K_E_Bloo_E= null
+public trigger gg_trg_K_Bloo_E_Dam= null
+public trigger gg_trg_K_E2_Bloo_E2= null
+public trigger gg_trg_Bloo_E3= null
+public trigger gg_trg_Bloo_F= null
+public trigger gg_trg_Bloo_F_Dam= null
+public trigger gg_trg_Bloo_T= null
+public trigger gg_trg_Bloo_D= null
+public trigger gg_trg_Bloo_Q= null
+public trigger gg_trg_Bloo_G= null
+public trigger gg_trg_Bloo_G_Ex= null
+public trigger gg_trg_Bloo_G2= null
+public trigger gg_trg_Bloo_GG_Check= null
+public trigger gg_trg_Bloo_G3= null
+public trigger gg_trg_heroMigatte_Q= null
+public trigger gg_trg_heroMigatte_W= null
+public trigger gg_trg_heroMigatte_E= null
+public trigger gg_trg_heroMigatte_R= null
+public trigger gg_trg_heroMigatte_D= null
+public trigger gg_trg_heroMigatte_F= null
+public trigger gg_trg_heroMigatte_T= null
+public trigger gg_trg____________________001= null
+public trigger gg_trg_Youmu_F_Dam_______u= null
+public trigger gg_trg_Youmu_R_______u= null
+public trigger gg_trg_exYoumu_G= null
+public trigger gg_trg_exYoumu_W_Q_T= null
+public trigger gg_trg_Youmu_E_EX= null
+public trigger gg_trg_Youmu_E_Dam= null
+public trigger gg_trg_Youmu_D_EX= null
+public trigger gg_trg_Youmu_F_EX= null
+public trigger gg_trg_Youmu_F_EX_Dam= null
+public trigger gg_trg_2BYoumu_E= null
+public trigger gg_trg_2BYoumuInit= null
+public trigger gg_trg_2BYoumu_F= null
+public trigger gg_trg_2BYoumu_F_End= null
+public trigger gg_trg_2BYoumu_FX_Dam= null
+public trigger gg_trg_2BYoumu_W2= null
+public trigger gg_trg_2BYoumu_G= null
+public trigger gg_trg_2BYoumu_R= null
+public trigger gg_trg_2BYoumu_R_Eff= null
+public trigger gg_trg_CT_G_Ex= null
+public trigger gg_trg_CT_D_Ex2_Eff= null
+public trigger gg_trg_CT_D_Ex= null
+public trigger gg_trg_CT_W_Ex2= null
+public trigger gg_trg_CT_W_Ex_Dam= null
+public trigger gg_trg_CT_W_Ex= null
+public trigger gg_trg_EXQY_Skill= null
+public trigger gg_trg_exNanaya_Q= null
+public trigger gg_trg_EXQY_E_Eff= null
+public trigger gg_trg_EXQY_F_Eff= null
+public trigger gg_trg_EXQY_G= null
+public trigger gg_trg____________________007= null
+public trigger gg_trg_TR_D_EX= null
+public trigger gg_trg_TR_T_EX= null
+public trigger gg_trg_TR_R_EX= null
+public trigger gg_trg_TR_G_EX= null
+public trigger gg_trg_TR_G_Check_______u= null
+public trigger gg_trg_TR_EXG= null
+public trigger gg_trg_CL9_Sound= null
+public trigger gg_trg_CL9_G= null
+public trigger gg_trg_CL9_Q= null
+public trigger gg_trg_CL9_W= null
+public trigger gg_trg_CL9_E= null
+public trigger gg_trg_CL9_F= null
+public trigger gg_trg_CL9_F_Dam= null
+public trigger gg_trg_CL9_HitBehaviour= null
+public trigger gg_trg_CL9_T= null
+public trigger gg_trg_exToono_Pick= null
+public trigger gg_trg_exToono_Q1= null
+public trigger gg_trg_exToono_W1= null
+public trigger gg_trg_exToono_E1= null
+public trigger gg_trg_exToono_R= null
+public trigger gg_trg_exToono_D= null
+public trigger gg_trg_exToono_F= null
+public trigger gg_trg_exToono_Hit= null
+public trigger gg_trg_exToono_list= null
+public trigger gg_trg_YD_Q1= null
+public trigger gg_trg_YD_Q2= null
+public trigger gg_trg_YD_W1= null
+public trigger gg_trg_YD_W_Eff= null
+public trigger gg_trg_YD_W1_Eff= null
+public trigger gg_trg_YD_W2= null
+public trigger gg_trg_YD_W4= null
+public trigger gg_trg_YD_E= null
+public trigger gg_trg_YD_R= null
+public trigger gg_trg_YD_D1= null
+public trigger gg_trg_YD_T= null
+public trigger gg_trg_YD_Yuan= null
+public trigger gg_trg_YD_G= null
+public trigger gg_trg_Yato_Q= null
+public trigger gg_trg_Yato_E= null
+public trigger gg_trg_Yato_R= null
+public trigger gg_trg_Yato_D= null
+public trigger gg_trg_Yato_F= null
+public trigger gg_trg_Yato_T= null
+public trigger gg_trg_Yato_G= null
+public trigger gg_trg_heroKarumi_G= null
+public trigger gg_trg_heroKarumi_Q_W= null
+public trigger gg_trg_heroKarumi_W_Dam= null
+public trigger gg_trg_heroKarumi_E1= null
+public trigger gg_trg_heroKarumi_E2= null
+public trigger gg_trg_heroKarumi_R= null
+public trigger gg_trg_heroKarumi_D= null
+public trigger gg_trg_heroKarumi_F= null
+public trigger gg_trg_heroKarumi_T= null
+public trigger gg_trg_Time_Unit= null
+public trigger gg_trg_heroAce_Sound= null
+public trigger gg_trg_Hero_Ace_Skill= null
+public trigger gg_trg_Hero_Ace_W_Dam= null
+public trigger gg_trg_Hero_Ace_E_Dam= null
+public trigger gg_trg_Hero_Ace_R_Dam= null
+public trigger gg_trg_Hero_Ace_G= null
+public trigger gg_trg_Hero_Ace_G_Dam= null
+public trigger gg_trg_heroKenpachi_Pick= null
+public trigger gg_trg_heroKenpachi_Sound= null
+public trigger gg_trg_heroKenpachi_Q= null
+public trigger gg_trg_heroKenpachi_W_R= null
+public trigger gg_trg_heroKenpachi_E_F= null
+public trigger gg_trg_heroKenpachi_D= null
+public trigger gg_trg_JB_Q_Dam= null
+public trigger gg_trg_JB_T_Other= null
+public trigger gg_trg_JB_G= null
+public trigger gg_trg_heroGoku_Q_W_E= null
+public trigger gg_trg_Hero_Goku_Q_Damage= null
+public trigger gg_trg_Hero_Goku_W_Damage= null
+public trigger gg_trg_Hero_Goku_E_Dam= null
+public trigger gg_trg_Hero_Goku_R= null
+public trigger gg_trg_Hero_Goku_D= null
+public trigger gg_trg_Hero_Goku_F= null
+public trigger gg_trg_Hero_Goku_T= null
+public trigger gg_trg_Jotaro_G= null
+public trigger gg_trg_Jotaro_Q_W= null
+public trigger gg_trg_Jotaro_W_Dam= null
+public trigger gg_trg_Jotaro_E= null
+public trigger gg_trg_Jotaro_R_F= null
+public trigger gg_trg_Jotaro_D= null
+public trigger gg_trg_Jotaro_T0_New= null
+public trigger gg_trg_Time_Freeze_Group= null
+public trigger gg_trg_DIO_G= null
+public trigger gg_trg_DIO_Q= null
+public trigger gg_trg_DIO_W_E_F= null
+public trigger gg_trg_DIO_W_Dam= null
+public trigger gg_trg_DIO_R= null
+public trigger gg_trg_DIO_D= null
+public trigger gg_trg_DIO_F_Dam= null
+public trigger gg_trg_DIO_T0_New= null
+public trigger gg_trg_heroTohno_Sound= null
+public trigger gg_trg_heroTohno_Attack= null
+public trigger gg_trg_ZG_Skill= null
+public trigger gg_trg_ZG_W_Eff= null
+public trigger gg_trg_ZG_F_Defend= null
+public trigger gg_trg_ZG_G= null
+public trigger gg_trg_ZG_G3_EX= null
+public trigger gg_trg_ZG_G4_EX= null
+public trigger gg_trg_ZG_GG_Check= null
+public trigger gg_trg_heroNanaya_Sound= null
+public trigger gg_trg_Nanaya_G7= null
+public trigger gg_trg_Nanaya_G= null
+public trigger gg_trg_Nanaya_W2= null
+public trigger gg_trg_heroNanaya_Q1_2_3= null
+public trigger gg_trg_Nanaya_Q1_Eff= null
+public trigger gg_trg_Nanaya_W1= null
+public trigger gg_trg_Nanaya_W3= null
+public trigger gg_trg_heroNanaya_E1_E3= null
+public trigger gg_trg_Nanaya_E1_Eff= null
+public trigger gg_trg_Nanaya_E2= null
+public trigger gg_trg_Nanaya_E3_Eff= null
+public trigger gg_trg_Nanaya_R1= null
+public trigger gg_trg_Nanaya_R1_Eff= null
+public trigger gg_trg_Nanaya_D= null
+public trigger gg_trg_Nanaya_F1= null
+public trigger gg_trg_Nanaya_G_ExCheck= null
+public trigger gg_trg_heroNanaya_Gzhidai= null
+public trigger gg_trg_heroNanaya_Gbiluo= null
+public trigger gg_trg_Archer_Q01= null
+public trigger gg_trg_Archer_W01= null
+public trigger gg_trg_Archer_W02_Dam= null
+public trigger gg_trg_Archer_E02= null
+public trigger gg_trg_Archer_R01= null
+public trigger gg_trg_Archer_R01_Dam= null
+public trigger gg_trg_Archer_R02= null
+public trigger gg_trg_Archer_R02_Dam= null
+public trigger gg_trg_Archer_D= null
+public trigger gg_trg_Archer_T= null
+public trigger gg_trg_Arhcer_G1= null
+public trigger gg_trg_Archer_G2= null
+public trigger gg_trg_Archer_G3= null
+public trigger gg_trg_heroRyougi_Sound= null
+public trigger gg_trg_Hero_Ryougi_Skill= null
+public trigger gg_trg_Hero_Ryougi_Q_Dam= null
+public trigger gg_trg_Hero_Ryougi_W_Dam= null
+public trigger gg_trg_Hero_Ryougi_G= null
+public trigger gg_trg_Yang_Q= null
+public trigger gg_trg_Yang_Q_Dam= null
+public trigger gg_trg_Yang_W= null
+public trigger gg_trg_Yang_W2_Dam= null
+public trigger gg_trg_Yang_E= null
+public trigger gg_trg_Yang_E_Dam= null
+public trigger gg_trg_Yang_E_Combie= null
+public trigger gg_trg_Yang_D= null
+public trigger gg_trg_Yang_R= null
+public trigger gg_trg_Yang_F2= null
+public trigger gg_trg_Yang_G= null
+public trigger gg_trg_Yang_T= null
+public trigger gg_trg_Yang_Init= null
+public trigger gg_trg_heroLsw_Pick= null
+public trigger gg_trg_Lsw_Q_W_E= null
+public trigger gg_trg_Lsw_E_Group= null
+public trigger gg_trg_Lsw_R= null
+public trigger gg_trg_Lsw_D= null
+public trigger gg_trg_Lsw_G= null
+public trigger gg_trg_heroLswB_Sound= null
+public trigger gg_trg_LswB_Q_F= null
+public trigger gg_trg_LswB_Q_Dam= null
+public trigger gg_trg_LswB_W_T= null
+public trigger gg_trg_LswB_E= null
+public trigger gg_trg_LswB_R= null
+public trigger gg_trg_LswB_G= null
+public trigger gg_trg_heroYoumu_Gyanchu1= null
+public trigger gg_trg_heroYoumu_Gyanchu2= null
+public trigger gg_trg_heroRozwel_T_______u= null
+public trigger gg_trg_heroGhost= null
+public trigger gg_trg_heroGoenitz_T________2= null
+public trigger gg_trg_Cronus=null
+public trigger gg_trg_KiritoEx_G3=null
+public trigger gg_trg_heroHiyori_T_______u= null
+public trigger gg_trg_123= null
+public trigger gg_trg_Youmu_ExG1= null
+public trigger gg_trg_Hit_Counter_Init= null
+public trigger gg_trg_youmu_G= null
+public trigger gg_trg_youmu_G_Skin01= null
+public trigger gg_trg_youmu_GEX= null
+public trigger gg_trg_youmu_G_Check= null
+public trigger gg_trg_youmu_norm_W= null
+public trigger gg_trg_youmu_norm_Q= null
+public trigger gg_trg_youmu_norm_Q_Ex= null
+public trigger gg_trg_Youmu_norm_R= null
+public trigger gg_trg_Youmu_norm_R_other= null
+public trigger gg_trg_Youmu_norm_D= null
+public trigger gg_trg_Youmu_norm_E= null
+public trigger gg_trg_youmu_norm_F_Start= null
+public trigger gg_trg_Youmu_norm_F= null
+public trigger gg_trg_Youmu_norm_F_Dam= null
+public trigger gg_trg_Youmu_norm_FX_Dam= null
+public trigger gg_trg_Youmu_norm_T= null
+public trigger gg_trg_Youmu_norm_TT= null
+public trigger gg_trg_Youmu_norm_T_eff= null
+public trigger gg_trg_TR_Q= null
+public trigger gg_trg_TR_Q_Eff= null
+public trigger gg_trg_TR_W= null
+public trigger gg_trg_TR_W2= null
+public trigger gg_trg_TR_E= null
+public trigger gg_trg_TR_R= null
+public trigger gg_trg_TR_D= null
+public trigger gg_trg_TR_F= null
+public trigger gg_trg_TR_F2= null
+public trigger gg_trg_TR_G= null
+public trigger gg_trg_TR_G_Ex= null
+public trigger gg_trg_TR_G_Check= null
+public trigger gg_trg_heroMiyako_Sound= null
+public trigger gg_trg_heroFlandre_Sound= null
+public trigger gg_trg_Dug_Q_D_T= null
+public trigger gg_trg_Dug_E= null
+public trigger gg_trg_Dug_E_Eff= null
+public trigger gg_trg_Dug_R_W= null
+public trigger gg_trg_Dug_F= null
+public trigger gg_trg_Dug_T= null
+public trigger gg_trg_Dug_T_Dam= null
+public trigger gg_trg_Dug_G= null
+public trigger gg_trg_DG_G= null
+public trigger gg_trg_heroSasuke_Sound= null
+public trigger gg_trg_heroSasuke_W= null
+public trigger gg_trg_heroSasuke_D= null
+public trigger gg_trg_Zz_Q= null
+public trigger gg_trg_Zz_E= null
+public trigger gg_trg_Zz_E2= null
+public trigger gg_trg_Zz_R_Damage= null
+public trigger gg_trg_Zz_T= null
+public trigger gg_trg_Zz_T_Damage= null
+public trigger gg_trg_Zz_F= null
+public trigger gg_trg_Zz_G= null
+public trigger gg_trg_Zz_Xz= null
+public trigger gg_trg_Zz_Xz_Eff= null
+//============================================================================
+public trigger gg_trg_ExZz_Q= null
+public trigger gg_trg_ExZz_Q_dam= null
+public trigger gg_trg_ExZz_W= null
+public trigger gg_trg_ExZz_E= null
+public trigger gg_trg_ExZz_E_dam= null
+public trigger gg_trg_ExZz_R= null
+public trigger gg_trg_ExZz_R_dam= null
+public trigger gg_trg_ExZz_D= null
+public trigger gg_trg_ExZz_D_Dam= null
+public trigger gg_trg_ExZz_F= null
+public trigger gg_trg_ExZz_G= null
+//============================================================================Ex사스케
+public trigger gg_trg_KamenSaber_Q= null
+public trigger gg_trg_KamenSaber_W= null
+public trigger gg_trg_KamenSaber_E= null
+public trigger gg_trg_KamenSaber_R= null
+public trigger gg_trg_KamenSaber_D= null
+public trigger gg_trg_KamenSaber_F= null
+public trigger gg_trg_KamenSaber_T= null
+public trigger gg_trg_KamenSaber_G= null
+//============================================================================가면 세이버
+public trigger gg_trg_heroSawada_Q= null
+public trigger gg_trg_heroSawada_Q_Dam= null
+public trigger gg_trg_heroSawada_W= null
+public trigger gg_trg_heroSawada_E= null
+public trigger gg_trg_heroSawada_R= null
+public trigger gg_trg_heroSawada_D= null
+public trigger gg_trg_heroSawada_D_Eff= null
+public trigger gg_trg_heroSawada_F= null
+public trigger gg_trg_heroSawada_T= null
+public trigger gg_trg_heroSawada_G= null
+//============================================================================사와다
+public trigger gg_trg_MOKOU_Q= null
+public trigger gg_trg_MOKOU_Q_DAM= null
+public trigger gg_trg_MOKOU_W= null
+public trigger gg_trg_MOKOU_E= null
+public trigger gg_trg_MOKOU_E_DAM= null
+public trigger gg_trg_MOKOU_R= null
+public trigger gg_trg_MOKOU_R_DAM= null
+public trigger gg_trg_MOKOU_D= null
+public trigger gg_trg_MOKOU_F_1= null
+public trigger gg_trg_MOKOU_F_2= null
+public trigger gg_trg_MOKOU_T= null
+public trigger gg_trg_MOKOU_G= null
+//============================================================================모코우
+public trigger gg_trg_IchigoSound= null
+public trigger gg_trg_Ichigo_Q= null
+public trigger gg_trg_Ichigo_Q_Dam= null
+public trigger gg_trg_Ichigo_W= null
+public trigger gg_trg_Ichigo_W_Dam= null
+public trigger gg_trg_Ichigo_E= null
+public trigger gg_trg_Ichigo_E_Eff= null
+public trigger gg_trg_Ichigo_R= null
+public trigger gg_trg_Ichigo_R_Dam= null
+public trigger gg_trg_Ichigo_Getsuga_Hit= null
+public trigger gg_trg_Ichigo_Getsuga_Hit2= null
+public trigger gg_trg_Ichigo_D= null
+public trigger gg_trg_Ichigo_F= null
+public trigger gg_trg_Ichigo_F_Dam= null
+public trigger gg_trg_Ichigo_T= null
+public trigger gg_trg_Ichigo_G= null
+//============================================================================이치고
+public trigger gg_trg_KoKoro_Q_1= null
+public trigger gg_trg_KoKoro_Q_1_Hit= null
+public trigger gg_trg_KoKoro_Q_2= null
+public trigger gg_trg_KoKoro_W_1= null
+public trigger gg_trg_KoKoro_W_1_Eff= null
+public trigger gg_trg_KoKoro_W_2= null
+public trigger gg_trg_KoKoro_W_2_Eff= null
+public trigger gg_trg_KoKoro_E_1= null
+public trigger gg_trg_KoKoro_E_2= null
+public trigger gg_trg_KoKoro_R= null
+public trigger gg_trg_KoKoro_R_eff= null
+public trigger gg_trg_KoKoro_R_Dam= null
+public trigger gg_trg_KoKoro_D= null
+public trigger gg_trg_KoKoro_F= null
+public trigger gg_trg_KoKoro_T= null
+public trigger gg_trg_KoKoro_G= null
+//============================================================================코코로
+public trigger gg_trg_MR_D= null
+public trigger gg_trg_MR_Q= null
+public trigger gg_trg_MR_Q_Eff= null
+public trigger gg_trg_MR_R= null
+public trigger gg_trg_MR_R_Damage= null
+public trigger gg_trg_MR_F= null
+public trigger gg_trg_MR_F_Damage= null
+public trigger gg_trg_MR_W= null
+public trigger gg_trg_MR_W_Damage= null
+public trigger gg_trg_MR_E_T= null
+public trigger gg_trg_MR_T_cd= null
+public trigger gg_trg_Correct_Bug= null
+public trigger gg_trg_Init= null
+public trigger gg_trg_MR_G= null
+public trigger gg_trg_MR_G_Bolt= null
+public trigger gg_trg_CT_G= null
+public trigger gg_trg_heroOkita_Q_W= null
+public trigger gg_trg_CT_Q2= null
+public trigger gg_trg_CT_E= null
+public trigger gg_trg_CT_R= null
+public trigger gg_trg_CT_R2= null
+public trigger gg_trg_CT_D_Defend= null
+public trigger gg_trg_CT_D= null
+public trigger gg_trg_CT_D_Move= null
+public trigger gg_trg_CT_T_Init= null
+public trigger gg_trg_CT_F= null
+public trigger gg_trg_ChongTian= null
+public trigger gg_trg_Sakura_zs= null
+public trigger gg_trg_ChongTian_G= null
+public trigger gg_trg_XN_New_D= null
+public trigger gg_trg_XN_NewF= null
+public trigger gg_trg_XN_Q= null
+public trigger gg_trg_XN_W= null
+public trigger gg_trg_XN_W_Damage= null
+public trigger gg_trg_XN_E= null
+public trigger gg_trg_XN_E_Get= null
+public trigger gg_trg_XN_F= null
+public trigger gg_trg_XN_R= null
+public trigger gg_trg_XN_D= null
+public trigger gg_trg_XN_G= null
+public trigger gg_trg_XN_GG= null
+public trigger gg_trg_XN_GG_Check= null
+public trigger gg_trg_R_Dummy= null
+public trigger gg_trg_STK_Q= null
+public trigger gg_trg_STK_R= null
+public trigger gg_trg_STK_Q_Dam= null
+public trigger gg_trg_STK_F= null
+public trigger gg_trg_STK_F_Damage= null
+public trigger gg_trg_STK_T= null
+public trigger gg_trg_STK_D= null
+public trigger gg_trg_STK_D_FixBUG= null
+public trigger gg_trg_STK_G= null
+public trigger gg_trg_CLD_Q= null
+public trigger gg_trg_CLD_E= null
+public trigger gg_trg_CLD_T= null
+public trigger gg_trg_CLD_R= null
+public trigger gg_trg_CLD_R_Eff= null
+public trigger gg_trg_CLD_F= null
+public trigger gg_trg_KL9_F_Dam= null
+public trigger gg_trg_CLD_StandReady= null
+public trigger gg_trg_CLD_D= null
+public trigger gg_trg_CLD_DD= null
+public trigger gg_trg_CLD_DD_Dam= null
+public trigger gg_trg_KLD_G= null
+public trigger gg_trg_KLD_G_Check= null
+public trigger gg_trg_KLD_EXG01= null
+public trigger gg_trg_KLD_EXG02= null
+public trigger gg_trg_KLD_EXG03= null
+public trigger gg_trg_heroKdash_Sound= null
+public trigger gg_trg____________________001________3= null
+public trigger gg_trg_K_Q= null
+public trigger gg_trg_K_E3= null
+public trigger gg_trg_K_F= null
+public trigger gg_trg_K_Bloo_W2= null
+public trigger gg_trg_K_F2_Dam= null
+public trigger gg_trg_K_R__1= null
+public trigger gg_trg_K_R2= null
+public trigger gg_trg_K_R_mj= null
+public trigger gg_trg_K_T= null
+public trigger gg_trg_K_D_fix= null
+public trigger gg_trg_K_G= null
+public trigger gg_trg_K_Ex= null
+public trigger gg_trg_K_GEX= null
+public trigger gg_trg_K_EX2= null
+public trigger gg_trg_K_GG_Check= null
+public trigger gg_trg____________________001________2= null
+public trigger gg_trg_XYL_Q= null
+public trigger gg_trg_XYL_QEnd= null
+public trigger gg_trg_XYL_W= null
+public trigger gg_trg_XYL_W1= null
+public trigger gg_trg_XYL_E= null
+public trigger gg_trg_XYL_E1= null
+public trigger gg_trg_XYL_R= null
+public trigger gg_trg_XYL_D= null
+public trigger gg_trg_XYL_F= null
+public trigger gg_trg_XYL_T_Init= null
+public trigger gg_trg_XYL_T_Eff= null
+public trigger gg_trg_XYL_G= null
+public trigger gg_trg_XYL_G_Dam= null
+public trigger gg_trg_XYL_REx_End= null
+public trigger gg_trg_XYL_R_Ex= null
+public trigger gg_trg_JCL_G= null
+public trigger gg_trg_heroKenshiro_Sound= null
+public trigger gg_trg_heroKenshiro_Pick= null
+public trigger gg_trg_heroKenshiro_Q= null
+public trigger gg_trg_heroKenshiro_W= null
+public trigger gg_trg_heroKenshiro_E= null
+public trigger gg_trg_heroKenshiro_R= null
+public trigger gg_trg_heroKenshiro_D= null
+public trigger gg_trg_heroKenshiro_F= null
+public trigger gg_trg_JCL_W1_Dam= null
+public trigger gg_trg_JCL_E1_Dam= null
+public trigger gg_trg_JCL_D_Dam= null
+public trigger gg_trg_JCL_F_Defend= null
+public trigger gg_trg_JCL_T_Buffer1= null
+public trigger gg_trg_JCL_T_Buffer0= null
+public trigger gg_trg_JCL_G_Word01= null
+public trigger gg_trg_JCL_G_Word02= null
+public trigger gg_trg_JCL_G_ExCheck= null
+public trigger gg_trg_JCL_G2= null
+public trigger gg_trg_MP_Q= null
+public trigger gg_trg_MP_Q1= null
+public trigger gg_trg_MP_E= null
+public trigger gg_trg_MP_R= null
+public trigger gg_trg_MP_R_Eff= null
+public trigger gg_trg_MP_T_New= null
+public trigger gg_trg_MP_D= null
+public trigger gg_trg_MP_D2= null
+public trigger gg_trg_MP_D_Eff= null
+public trigger gg_trg_MP_F= null
+public trigger gg_trg_MP_F_Dam= null
+public trigger gg_trg_MP_G= null
+public trigger gg_trg_QS_Q= null
+public trigger gg_trg_QS_W1= null
+public trigger gg_trg_QS_W2= null
+public trigger gg_trg_QS_E= null
+public trigger gg_trg_QS_R1= null
+public trigger gg_trg_QS_R2= null
+public trigger gg_trg_QS_R3= null
+public trigger gg_trg_QS_R4= null
+public trigger gg_trg_QS_D= null
+public trigger gg_trg_QS_FQ= null
+public trigger gg_trg_QS_FW2= null
+public trigger gg_trg_QS_FE2= null
+public trigger gg_trg_QS_FR1= null
+public trigger gg_trg_QS_FR2= null
+public trigger gg_trg_QS_FF2= null
+public trigger gg_trg_QS_T= null
+public trigger gg_trg_QS_G2= null
+public trigger gg_trg_QS_G3= null
+public trigger gg_trg_QS_G1= null
+public trigger gg_trg_QS_R_EX= null
+public trigger gg_trg_WN_Q= null
+public trigger gg_trg_WN_Q_Eff= null
+public trigger gg_trg_WN_W= null
+public trigger gg_trg_WN_E= null
+public trigger gg_trg_WN_R= null
+public trigger gg_trg_WN_R_Eff= null
+public trigger gg_trg_WN_R_mj= null
+public trigger gg_trg_WN_F= null
+public trigger gg_trg_WN_D2= null
+public trigger gg_trg_WN_D_Eff= null
+public trigger gg_trg_WN_D_Defend= null
+public trigger gg_trg_WN_G= null
+public trigger gg_trg_WN_T= null
+public trigger gg_trg_heroShino_Q= null
+public trigger gg_trg_SN_Q1_Eff= null
+public trigger gg_trg_SN_W1= null
+public trigger gg_trg_SN_E1= null
+public trigger gg_trg_SN_E1_Eff= null
+public trigger gg_trg_SN_E2= null
+public trigger gg_trg_SN_E2_Eff= null
+public trigger gg_trg_SN_R1= null
+public trigger gg_trg_SN_R2= null
+public trigger gg_trg_SN_D1= null
+public trigger gg_trg_SN_D2= null
+public trigger gg_trg_SN_F1= null
+public trigger gg_trg_SN_T= null
+public trigger gg_trg_SN_G= null
+public trigger gg_trg_SN_EXG1_01= null
+public trigger gg_trg_SN_EXG1_02= null
+public trigger gg_trg_SN_G_Check= null
+public trigger gg_trg_heroAlter_Pick= null
+public trigger gg_trg_heroAlter_Q_W= null
+public trigger gg_trg_heroAlter_E_D_R= null
+public trigger gg_trg_heroAlter_F= null
+public trigger gg_trg_C8_Q_Eff= null
+public trigger gg_trg_C8_E_Eff= null
+public trigger gg_trg_C8_D_Eff= null
+public trigger gg_trg_C8_G= null
+public trigger gg_trg_c8dz= null
+public trigger gg_trg_Kyo_G_ExCheck_______u= null
+public trigger gg_trg_Yuuka_Q= null
+public trigger gg_trg_Yuuka_W1= null
+public trigger gg_trg_Yuuka_W2= null
+public trigger gg_trg_Yuuka_W1_Eff= null
+public trigger gg_trg_Yuuka_W2_Eff= null
+public trigger gg_trg_heroYuuka_E_R= null
+public trigger gg_trg_Yuuka_D= null
+public trigger gg_trg_Yuuka_D_Eff= null
+public trigger gg_trg_Yuuka_F= null
+public trigger gg_trg_Yuuka_T= null
+public trigger gg_trg_Yuuka_G= null
+public trigger gg_trg_heroAky_Sound= null
+public trigger gg_trg_Aky_Q_W= null
+public trigger gg_trg_Aky_E= null
+public trigger gg_trg_Aky_R= null
+public trigger gg_trg_Aky_D= null
+public trigger gg_trg_Aky_F= null
+public trigger gg_trg_Aky_T= null
+public trigger gg_trg_Aky_G= null
+public trigger gg_trg_Misaka_Q= null
+public trigger gg_trg_Misaka_Q_End= null
+public trigger gg_trg_Misaka_W_E= null
+public trigger gg_trg_Misaka_R= null
+public trigger gg_trg_Misaka_R_dam= null
+public trigger gg_trg_Misaka_F_D= null
+public trigger gg_trg_Misaka_F_Dam= null
+public trigger gg_trg_Misaka_T= null
+public trigger gg_trg_Misaka_G= null
+public trigger gg_trg_heroKcore_sound= null
+public trigger gg_trg_Kzi_Q2= null
+public trigger gg_trg_Kzi_Q2_Dam= null
+public trigger gg_trg_Kzi_W= null
+public trigger gg_trg_Kzi_W2= null
+public trigger gg_trg_Kzi_E= null
+public trigger gg_trg_Kzi_E2= null
+public trigger gg_trg_Kzi_E3= null
+public trigger gg_trg_Kzi_F= null
+public trigger gg_trg_Kzi_F2_Dam= null
+public trigger gg_trg_Kzi_R= null
+public trigger gg_trg_Kzi_R2= null
+public trigger gg_trg_Kzi_D= null
+public trigger gg_trg_Kzi_G= null
+public trigger gg_trg_heroMarisa_Sound= null
+public trigger gg_trg_MLS_Q_Eff= null
+public trigger gg_trg_MLS_Q_Dam= null
+public trigger gg_trg_MLS_W_Q= null
+public trigger gg_trg_MLS_E1_Eff= null
+public trigger gg_trg_MLS_E2= null
+public trigger gg_trg_MLS_R= null
+public trigger gg_trg_MLS_D= null
+public trigger gg_trg_MLS_F= null
+public trigger gg_trg_MLS_T= null
+public trigger gg_trg_MLS_T_Eff= null
+public trigger gg_trg_MLS_G= null
+public trigger gg_trg_MLS_Word= null
+public trigger gg_trg_LastZZ_Q01= null
+public trigger gg_trg_LastZZ_Q01_dam= null
+public trigger gg_trg_heroSasuke2_Q2= null
+public trigger gg_trg_LastZZ_Q03= null
+public trigger gg_trg_LastZZ_W01= null
+public trigger gg_trg_LastZZ_W02= null
+public trigger gg_trg_LastZZ_W03= null
+public trigger gg_trg_heroSasuke2_E= null
+public trigger gg_trg_LastZZ_E01_dam= null
+public trigger gg_trg_LastZZ_E03_dam= null
+public trigger gg_trg_heroSasuke2_R= null
+public trigger gg_trg_LastZZ_D01= null
+public trigger gg_trg_LastZZ_F= null
+public trigger gg_trg_LastZZ_T= null
+public trigger gg_trg_LastZZ_G1= null
+public trigger gg_trg_LastZZ_G2= null
+public trigger gg_trg_HHCT_JASS= null
+public trigger gg_trg_HHCT_Q= null
+public trigger gg_trg_HHCT_Init= null
+public trigger gg_trg_HHCT_F_RecoverSelf= null
+public trigger gg_trg_HHCT_F5= null
+public trigger gg_trg_HHCT_F6= null
+public trigger gg_trg_heroHHCT_W= null
+public trigger gg_trg_HHCT_W2= null
+public trigger gg_trg_HHCT_E= null
+public trigger gg_trg_HHCT_EStart= null
+public trigger gg_trg_HHCT_EEnd= null
+public trigger gg_trg_HHCT_EQ= null
+public trigger gg_trg_HHCT_EQ2= null
+public trigger gg_trg_HHCT_R_F= null
+public trigger gg_trg_HHCT_F_End= null
+public trigger gg_trg_HHCT_F_Hit= null
+public trigger gg_trg_HHCT_R2= null
+public trigger gg_trg_HHCT_T_new= null
+public trigger gg_trg_HHCT_ER_new= null
+public trigger gg_trg_HHCT_ER2_new= null
+public trigger gg_trg_heroHHCT_D= null
+public trigger gg_trg_HHCT_ControlUnitGet= null
+public trigger gg_trg_HHCT_G= null
+public trigger gg_trg_HeiChong_G= null
+public trigger gg_trg_HHCT_G_ExCheck= null
+public trigger gg_trg_C_Matoka_Q_W= null
+public trigger gg_trg_C_Matoka_E= null
+public trigger gg_trg_C_Matoka_RQ= null
+public trigger gg_trg_C_Matoka_RW= null
+public trigger gg_trg_C_Matoka_F_D= null
+public trigger gg_trg_C_Matoka_T2= null
+public trigger gg_trg_C_Matoka_G= null
+public trigger gg_trg_heroSatsuki_E= null
+public trigger gg_trg_Hero_Satsuki_G= null
+public trigger gg_trg_Hero_Satsuki_Skill= null
+public trigger gg_trg_Hero_Satsuki_Q_Dam= null
+public trigger gg_trg_Hero_Satsuki_W01= null
+public trigger gg_trg_Hero_Satsuki_R01= null
+public trigger gg_trg_Hero_Satsuki_Dam= null
+public trigger gg_trg_TitleDisplay_ID1______________u= null
+public trigger gg_trg_TitleDisplay_ID2= null
+public trigger gg_trg_TitleDisplay1= null
+public trigger gg_trg_BQBXS01= null
+public trigger gg_trg_BQBXSUp= null
+public trigger gg_trg_BQBXSDown= null
+public trigger gg_trg_BQBXSRight= null
+public trigger gg_trg_BQBXSRight_______u= null
+public trigger gg_trg_Cam_Set= null
+public trigger gg_trg_Cam_Change= null
+public trigger gg_trg_Bug_Control1= null
+public trigger gg_trg_Bug_Control2= null
+public trigger gg_trg_Close_Func= null
+public trigger gg_trg_Stun_And_Stop= null
+public trigger gg_trg_Test_List= null
+public trigger gg_trg_Game_Win__Win_Team_Game_int_1_2= null
+public trigger gg_trg_Game_Start1= null
+public trigger gg_trg_WeatherLightning= null
+public trigger gg_trg_Game_Mode_Select_Show= null
+public trigger gg_trg_Game_Mode_Select_B1= null
+public trigger gg_trg_Game_Mode_Select_B2= null
+public trigger gg_trg_Game_Mode_Select_B3= null
+public trigger gg_trg_Game_Mode_Select_B5_6_7= null
+public trigger gg_trg_Game_Mode_Select_C= null
+public trigger gg_trg_Game_Mode_RobotXY1= null
+public trigger gg_trg_Game_Mode_RobotXY2= null
+public trigger gg_trg_Game_Mode_Init= null
+public trigger gg_trg_Player_Leave_Game= null
+public trigger gg_trg_Item_BanZhuan= null
+public trigger gg_trg_Item_YYYend= null
+public trigger gg_trg_Item_Ready= null
+public trigger gg_trg_Item_DieJia= null
+public trigger gg_trg_SysInit= null
+public trigger gg_trg_ShowIcon= null
+public trigger gg_trg_EX_ID1= null
+public trigger gg_trg_EX_ID2= null
+public trigger gg_trg_exPy03= null
+public trigger gg_trg_setHero01= null
+public trigger gg_trg_setHero02= null
+public trigger gg_trg_setHero03= null
+public trigger gg_trg_setHero04= null
+public trigger gg_trg_setHero05= null
+public trigger gg_trg_setHero06= null
+public trigger gg_trg_YD_D2= null
+public trigger gg_trg____________________002= null
+public trigger gg_trg____________________003= null
+public trigger gg_trg_heroDamage1= null
+public trigger gg_trg_heroDamage2= null
+public trigger gg_trg_heroDamageSkill= null
+public trigger gg_trg_heroDamageAttack= null
+public trigger gg_trg_HeroHemoptysis= null
+public trigger gg_trg_heroRepel= null
+public trigger gg_trg_Game_Mode123567_Init= null
+public trigger gg_trg_RePick= null
+public trigger gg_trg_RePick_InToCD_Mode2= null
+public trigger gg_trg_Delect_Item= null
+public trigger gg_trg_Re_Show_Hero_In_Select= null
+public trigger gg_trg_Delect_Hero= null
+public trigger gg_trg_Special_Hero_Init= null
+public trigger gg_trg_Ex_Item_Remove= null
+public trigger gg_trg____________________006= null
+public trigger gg_trg_Hero_Weak= null
+public trigger gg_trg_Hero_WeakEvent= null
+public trigger gg_trg_Hero_KillingWords= null
+public trigger gg_trg_Hero_KillSoundWorld= null
+public trigger gg_trg_Hero_Death_CountDown= null
+public trigger gg_trg_Hero_Death_Confirm= null
+public trigger gg_trg_Hero_Relife= null
+public trigger gg_trg_Hero_Death__Game_End= null
+public trigger gg_trg_Check= null
+public trigger gg_trg_NumbOfFighters= null
+public trigger gg_trg_HeroBGM= null
+public trigger gg_trg_BGM01= null
+public trigger gg_trg_Burst_Sound= null
+public trigger gg_trg_Burst_Get= null
+public trigger gg_trg_Burst= null
+public trigger gg_trg_AI_Pick_Hero= null
+public trigger gg_trg_AI_Unit_Set= null
+public trigger gg_trg_AI_Help_Sys_Alien_die= null
+public trigger gg_trg_AI_Help_Sys_Per_2s= null
+public trigger gg_trg_AI_GetZS_While_Relife= null
+public trigger gg_trg_Ex_Init= null
+public trigger gg_trg_Hero_ExItem_Get_One= null
+public trigger gg_trg_Hero_ExItem_Get_Two= null
+public trigger gg_trg_Ex_Get= null
+public trigger gg_trg_Ex_Words= null
+public trigger gg_trg_Ex_Drop= null
+public trigger gg_trg_Limit_zone_A_Left= null
+public trigger gg_trg_Limit_zone_A_Right= null
+public trigger gg_trg____________________008= null
+public trigger gg_trg_Game_Mode_B2_RoundOver__GameEnd= null
+public trigger gg_trg_Game_Mode_B3_Move_Hero_temp_hero_u= null
+public trigger gg_trg_Game_Mode_B37_RoundOver_Win_Team_Round_u= null
+public trigger gg_trg_Game_Mode_B7_Auto_Run= null
+public trigger gg_trg_Game_Mode_B37_Enter_Event= null
+public trigger gg_trg_Game_Mode_B3_RoundOver__GameEnd= null
+public trigger gg_trg_Game_Mode_B7_RoundOver__GameEnd= null
+public trigger gg_trg_ReSetUnit_temp_hero_u= null
+public trigger gg_trg_Item_PassOver= null
+public trigger gg_trg_ScoreBoard= null
+public trigger gg_trg_ScoreBoard_Updat_HeroIcon_temp_hero_u= null
+public trigger gg_trg_ScoreBoard_Updat= null
+public trigger gg_trg_Android_Skin01= null
+public trigger gg_trg_Round_Clear= null
+public trigger gg_trg_Item_LongshenZhufu= null
+public trigger gg_trg_Item_Bajiaoshan= null
+public trigger gg_trg_Item_Yuantujidang= null
+public trigger gg_trg_Item_Intervene01= null
+public trigger gg_trg_Time_Sys_0_02= null
+public trigger gg_trg_Time_Sys_0_1= null
+public trigger gg_trg_Time_Sys_0_5= null
+public trigger gg_trg_Time_Sys_1= null
+public trigger gg_trg_buff_Dispel= null
+public trigger gg_trg_buff_Guide= null
+public trigger gg_trg____________________005= null
+public trigger gg_trg_buff_Null= null
+public trigger gg_trg_def_Guide= null
+public unit gg_unit_h00C_0134= null
+public unit gg_unit_h00C_0135= null
+public unit gg_unit_hgry_0016= null
+public unit gg_unit_h00C_0074= null
+public unit gg_unit_h00C_0058= null
+public unit gg_unit_e003_0011= null
+public unit gg_unit_e00I_0050= null
+public unit gg_unit_e00I_0049= null
+public unit gg_unit_e00I_0034= null
+public unit gg_unit_hpea_0071= null
+public unit gg_unit_h00C_0092= null
+public unit gg_unit_h00C_0139= null
+public unit gg_unit_h00C_0097= null
+public unit gg_unit_h00C_0089= null
+public unit gg_unit_e00I_0033= null
+public unit gg_unit_e00I_0032= null
+public unit gg_unit_e00H_0029= null
+public unit gg_unit_h00C_0133= null
+public unit gg_unit_e024_0010= null
+public unit gg_unit_h00C_0088= null
+public unit gg_unit_h00C_0087= null
+public unit gg_unit_h00C_0086= null
+public unit gg_unit_h00C_0138= null
+public unit gg_unit_h00C_0136= null
+public unit gg_unit_e02Q_0121= null
+public unit gg_unit_e003_0095= null
+public unit gg_unit_h00C_0120= null
+public unit gg_unit_h00C_0137= null
+public unit gg_unit_e00F_0001= null
+public unit gg_unit_e00G_0012= null
+public unit gg_unit_e003_0014= null
+public unit gg_unit_e003_0015= null
+public unit gg_unit_e00H_0030= null
+public unit gg_unit_e00I_0040= null
+public real MapMaxX
+public real MapMinX
+public real MapMaxY
+public real MapMinY
+public trigger l__library_init
+//JASSHelper struct globals:
+public constant integer si__Table__dex=1
+public constant integer si__Table__handles=2
+public constant integer si__Table__agents=3
+public constant integer si__Table__reals=4
+public constant integer si__Table__booleans=5
+public constant integer si__Table__strings=6
+public constant integer si__Table__players=7
+public constant integer si__Table__widgets=8
+public constant integer si__Table__destructables=9
+public constant integer si__Table__items=10
+public constant integer si__Table__units=11
+public constant integer si__Table__abilitys=12
+public constant integer si__Table__timers=13
+public constant integer si__Table__triggers=14
+public constant integer si__Table__triggerconditions=15
+public constant integer si__Table__triggeractions=16
+public constant integer si__Table__events=17
+public constant integer si__Table__forces=18
+public constant integer si__Table__groups=19
+public constant integer si__Table__locations=20
+public constant integer si__Table__rects=21
+public constant integer si__Table__boolexprs=22
+public constant integer si__Table__sounds=23
+public constant integer si__Table__effects=24
+public constant integer si__Table__unitpools=25
+public constant integer si__Table__itempools=26
+public constant integer si__Table__quests=27
+public constant integer si__Table__questitems=28
+public constant integer si__Table__defeatconditions=29
+public constant integer si__Table__timerdialogs=30
+public constant integer si__Table__leaderboards=31
+public constant integer si__Table__multiboards=32
+public constant integer si__Table__multiboarditems=33
+public constant integer si__Table__trackables=34
+public constant integer si__Table__dialogs=35
+public constant integer si__Table__buttons=36
+public constant integer si__Table__texttags=37
+public constant integer si__Table__lightnings=38
+public constant integer si__Table__images=39
+public constant integer si__Table__ubersplats=40
+public constant integer si__Table__regions=41
+public constant integer si__Table__fogstates=42
+public constant integer si__Table__fogmodifiers=43
+public constant integer si__Table__hashtables=44
+public constant integer si__Table=45
+public constant integer si__TableArray=46
+public integer s__TableArray_tempTable
+public integer s__TableArray_tempEnd
+public constant integer si__ModSpeed=47
+public timer s__ModSpeed_tm= CreateTimer()
+public integer s__ModSpeed_instanceMaxCount= 0
+public integer array s__ModSpeed_prev
+public integer array s__ModSpeed_next
+public unit array s__ModSpeed_u
+public real array s__ModSpeed_lastX
+public real array s__ModSpeed_lastY
+public real array s__ModSpeed_speed
+public boolean array s__ModSpeed_lead
+public real s__ModSpeed_x
+public real s__ModSpeed_y
+public real s__ModSpeed_dx
+public real s__ModSpeed_dy
+public real s__ModSpeed_dist
+public real s__ModSpeed_rate
+public integer s__ModSpeed_table
+public constant integer si__YDWEAroundSystem__Data=48
+public integer si__YDWEAroundSystem__Data_F=0
+public integer si__YDWEAroundSystem__Data_I=0
+public integer array si__YDWEAroundSystem__Data_V
+public integer array s__YDWEAroundSystem__Data_Structs
+public integer s__YDWEAroundSystem__Data_Total= 0
+public unit array s__YDWEAroundSystem__Data_caster
+public unit array s__YDWEAroundSystem__Data_obj
+public real array s__YDWEAroundSystem__Data_dur
+public real array s__YDWEAroundSystem__Data_inter
+public real array s__YDWEAroundSystem__Data_each
+public real array s__YDWEAroundSystem__Data_rate
+public real array s__YDWEAroundSystem__Data_dis
+public real array s__YDWEAroundSystem__Data_rise
+public real array s__YDWEAroundSystem__Data_angle
+public real array s__YDWEAroundSystem__Data_radius
+public real array s__YDWEAroundSystem__Data_height
+public constant integer si__YDWETimerPattern__YDVector3=49
+public integer si__YDWETimerPattern__YDVector3_F=0
+public integer si__YDWETimerPattern__YDVector3_I=0
+public integer array si__YDWETimerPattern__YDVector3_V
+public real array s__YDWETimerPattern__YDVector3_x
+public real array s__YDWETimerPattern__YDVector3_y
+public real array s__YDWETimerPattern__YDVector3_z
+public constant integer si__YDWETimerPattern__Thread=50
+public integer si__YDWETimerPattern__Thread_F=0
+public integer si__YDWETimerPattern__Thread_I=0
+public integer array si__YDWETimerPattern__Thread_V
+public integer array s__YDWETimerPattern__Thread_des
+public integer array s__YDWETimerPattern__Thread_pos
+public integer array s__YDWETimerPattern__Thread_vel
+public unit array s__YDWETimerPattern__Thread_caster
+public unit array s__YDWETimerPattern__Thread_source
+public unit array s__YDWETimerPattern__Thread_target
+public unit array s__YDWETimerPattern__Thread_obj
+public real array s__YDWETimerPattern__Thread_ac
+public real array s__YDWETimerPattern__Thread_bc
+public real array s__YDWETimerPattern__Thread_dist
+public real array s__YDWETimerPattern__Thread_step
+public real array s__YDWETimerPattern__Thread_amount
+public integer array s__YDWETimerPattern__Thread_switch
+public integer array s__YDWETimerPattern__Thread_follow
+public integer array s__YDWETimerPattern__Thread_unitid
+public integer array s__YDWETimerPattern__Thread_skills
+public integer array s__YDWETimerPattern__Thread_order
+public integer array s__YDWETimerPattern__Thread_level
+public string array s__YDWETimerPattern__Thread_dsfx
+public string array s__YDWETimerPattern__Thread_gsfx
+public string array s__YDWETimerPattern__Thread_wsfx
+public string array s__YDWETimerPattern__Thread_part
+public boolean array s__YDWETimerPattern__Thread_recycle
+public boolean array s__YDWETimerPattern__Thread_killdest
+public boolean array s__YDWETimerPattern__Thread_volume
+public group array s__YDWETimerPattern__Thread_g
+public timer array s__YDWETimerPattern__Thread_t
+public constant integer si__YDWETimerPattern__Parabola=51
+public constant integer si__YDWETimerPattern__Linear=52
+public constant integer si__YDWETimerPattern__Deceleration=53
+public integer array si__YDWETimerPattern__Thread_type
+public trigger array st__YDWETimerPattern__Thread_onDestroy
+public trigger array st___prototype253
+public unit f__arg_unit1
+public real f__arg_real1
+public integer f__arg_this
+
+init
+  udg_HT = InitHashtable()

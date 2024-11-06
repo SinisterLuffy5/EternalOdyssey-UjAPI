@@ -1,0 +1,96 @@
+package Rush_pak initializer InitTrig_Rush_Pak
+
+import ACG_Package
+import YDWE_Package
+
+//===========================================================================
+// Trigger: Rush_Pak
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_Rush_PakActions takes nothing returns nothing
+ local integer ydl_localvar_step= LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76)
+ set ydl_localvar_step=ydl_localvar_step + 3
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xCFDE6C76, ydl_localvar_step)
+ call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7, ydl_localvar_step)
+	call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA, udg_Rush_Unit)
+	if ( ( ( HaveSavedReal(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB6A6EBAA)), 0x9715AC10) == true ) or ( HaveSavedInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB6A6EBAA)), 0x805D0E88) == true ) ) ) then
+		call SaveUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845, CreateUnit(GetOwningPlayer(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), udg_StunType, GetUnitX(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), GetUnitY(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0))
+		if ( ( LoadReal(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB6A6EBAA)), 0x9715AC10) > 0.00 ) ) then
+			call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x99F17007, DUMMY_A001)
+			call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE53DCF59, ( LoadReal(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x9715AC10) * 5.00 ))
+			if ( ( LoadReal(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB6A6EBAA)), 0x9715AC10) > 2.00 ) ) then
+				call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x99F17007, DUMMY_A002)
+				call SaveReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE53DCF59, ( ( LoadReal(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x9715AC10) - 2.00 ) * 5.00 ))
+			else
+			endif
+			call UnitAddAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845), LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x99F17007))
+			call SetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845), LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x99F17007), R2I(LoadReal(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xE53DCF59)))
+		else
+		endif
+		call SaveInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8A15845C, LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x805D0E88))
+		call SaveUnitHandle(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0x2F09B339, LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845))
+		call UnitAddAbility(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845), LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8A15845C))
+		if ( ( LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()), 0xECE825E7), 0xB6A6EBAA)), 0xAF9D7723) > 1 ) ) then
+			call SetUnitAbilityLevel(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x2B0A6845), LoadInteger(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0x8A15845C), LoadInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0xAF9D7723))
+			call RemoveSavedInteger(YDHT, GetHandleId(LoadUnitHandle(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step, 0xB6A6EBAA)), 0xAF9D7723)
+		else
+		endif
+	else
+	endif
+	if ( ( IsUnitPausedBJ(udg_Rush_Unit) == true ) ) then
+		call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x70109FE0, 1)
+	else
+		call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x70109FE0, 0)
+	endif
+	if ( ( GetUnitAbilityLevel(udg_Rush_Unit, 'Aloc') == 1 ) ) then
+		call SetUnitPosition(udg_Rush_Unit, GetUnitX(udg_Rush_Unit), GetUnitY(udg_Rush_Unit))
+	else
+	endif
+	if ( ( udg_Rush_Va >= 1000.00 ) ) then
+		set udg_Rush_Va=( udg_Rush_Va * 0.02 )
+	else
+	endif
+	call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0x69C14600, udg_Rush_Va)
+	call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xDE937C3B, udg_Rush_Aa)
+	call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xA2E2E751, udg_Rush_Atime)
+	if ( ( udg_Rush_Target != null ) ) then
+		set udg_Rush_Ang=( YDWEAngleBetweenUnits(udg_Rush_Unit , udg_Rush_Target) )
+		call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x07248B74, udg_Rush_Target)
+	else
+		call SaveUnitHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x07248B74, null)
+		call RemoveSavedHandle(YDHT, GetHandleId(udg_Rush_Unit), 0x07248B74)
+		set udg_Rush_Target=null
+	endif
+	if ( ( udg_Rush_Type == 1 ) ) then
+		call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xAC61EB61, 100.00)
+	else
+	endif
+	call SaveTriggerHandle(YDHT, GetHandleId(udg_Rush_Unit), 0xAEEA1156, udg_Rush_Tri)
+	call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xE0D3A756, udg_Rush_Ang)
+	call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0xEA9537FF, ( udg_Rush_Time * 100.00 ))
+	call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0x5AEEFA2E, udg_Rush_DmR)
+	call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0x2FA5B606, udg_Rush_Damage)
+	call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xFEE1B1B7, udg_Rush_AB)
+	call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x962ECFA8, udg_Rush_Type)
+	call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x1CAF462C, udg_Rush_Stop_Type)
+	call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x49277449, udg_Rush_TB)
+	call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xA5F6D6AD, 0)
+	call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0x0F2A5741, 0)
+	call SaveInteger(YDHT, GetHandleId(udg_Rush_Unit), 0xC02303AB, 100)
+	if ( ( RAbsBJ(( udg_Rush_Aa - udg_Rush_Atime )) != 0.00 ) ) then
+		call SaveReal(YDHT, GetHandleId(udg_Rush_Unit), 0x4FF2E93D, ( ( udg_Rush_Atime - 0.00 ) / 50.00 ))
+	else
+	endif
+	call GroupAddUnit(udg_Rush_Group, udg_Rush_Unit)
+	call GroupRemoveUnit(udg_Rush_Group_Other, udg_Rush_Unit)
+	set udg_Rush_Tri=gg_trg_Rush_Damage
+	//----------
+	call FlushChildHashtable(YDLOC, GetHandleId(GetTriggeringTrigger()) * ydl_localvar_step)
+endfunction
+//===========================================================================
+function InitTrig_Rush_Pak takes nothing returns nothing
+	set gg_trg_Rush_Pak=CreateTrigger()
+	call TriggerAddAction(gg_trg_Rush_Pak, function Trig_Rush_PakActions)
+endfunction

@@ -1,0 +1,14 @@
+package YDWESetUnitFacingToFaceUnitTimedNull
+
+//import ACG_Package
+import YDWESetUnitFacingToFaceLocTimedNull
+
+//library YDWESetUnitFacingToFaceUnitTimedNull:
+public function YDWESetUnitFacingToFaceUnitTimedNull takes unit whichUnit,unit target,real duration returns nothing
+    local location unitLoc= GetUnitLoc(target)
+    call YDWESetUnitFacingToFaceLocTimedNull(whichUnit , unitLoc , duration)
+    call RemoveLocation(unitLoc)
+    set unitLoc=null
+endfunction
+
+//library YDWESetUnitFacingToFaceUnitTimedNull ends

@@ -1,0 +1,28 @@
+package ACG_Main initializer init
+
+import ACG_Package
+import YDWE_Package
+import MaxSpeed
+
+function jasshelper__initstructs3868000()
+    st__YDWETimerPattern__Thread_onDestroy[50]=CreateTrigger()
+    st__YDWETimerPattern__Thread_onDestroy[51]=st__YDWETimerPattern__Thread_onDestroy[50]
+    st__YDWETimerPattern__Thread_onDestroy[52]=st__YDWETimerPattern__Thread_onDestroy[50]
+    st__YDWETimerPattern__Thread_onDestroy[53]=st__YDWETimerPattern__Thread_onDestroy[50]
+    TriggerAddCondition(st__YDWETimerPattern__Thread_onDestroy[50],Condition( function sa__YDWETimerPattern__Thread_onDestroy))
+    st___prototype253[1]=CreateTrigger()
+    TriggerAddAction(st___prototype253[1],function sa___prototype253_SetUnitMoveSpeedEx)
+    TriggerAddCondition(st___prototype253[1],Condition(function sa___prototype253_SetUnitMoveSpeedEx))
+    ExecuteFunc("s__ModSpeed_Init___onInit")
+endfunction
+
+function init()
+    ExecuteFunc("jasshelper__initstructs3868000")
+    //ExecuteFunc("SLK__init")
+    //ExecuteFunc("YDTriggerSaveLoadSystem__Init")
+    //ExecuteFunc("InitializeYD")
+    //ExecuteFunc("YDWEGeneralBounsSystem__Initialize")
+    //ExecuteFunc("YDWEItemAbilitySystemInit")
+    //ExecuteFunc("YDWETimerPattern__Init")
+    //ExecuteFunc("YDWETimerSystem__Init")
+endfunction

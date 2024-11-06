@@ -1,0 +1,13 @@
+package YDWESetUnitFacingToFaceLocTimedNull
+
+//import ACG_Package
+
+//library YDWESetUnitFacingToFaceLocTimedNull:
+public function YDWESetUnitFacingToFaceLocTimedNull takes unit whichUnit,location target,real duration returns nothing
+    local location unitLoc= GetUnitLoc(whichUnit)
+    call SetUnitFacingTimed(whichUnit, AngleBetweenPoints(unitLoc, target), duration)
+    call RemoveLocation(unitLoc)
+    set unitLoc=null
+endfunction
+
+//library YDWESetUnitFacingToFaceLocTimedNull ends

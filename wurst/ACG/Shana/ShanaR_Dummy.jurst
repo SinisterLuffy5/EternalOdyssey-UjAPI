@@ -1,0 +1,31 @@
+package ShanaR_Dummy initializer InitTrig_R_Dummy
+
+import ACG_Package
+
+//===========================================================================
+// Trigger: R_Dummy
+//自定义jass生成器 作者: 阿七  
+//有bug到魔兽地图编辑器吧 @w4454962 
+//技术交流群:692125060
+//===========================================================================
+function Trig_R_Dummy_Conditions takes nothing returns boolean
+	if ( not ( GetUnitTypeId(GetTriggerUnit()) == udg_DummyType ) ) then
+	return false
+	endif
+	return true
+endfunction
+function Trig_R_DummyActions takes nothing returns nothing
+	if ( ( GetUnitAbilityLevel(GetTriggerUnit(), DUMMY_A06V) == 1 ) ) then
+		//print("Shana R Dummy executed!")
+		call UnitRemoveAbility(GetTriggerUnit(), DUMMY_A06V)
+		call DestroyEffect(AddSpecialEffectTarget("war3mapImported\\shanafire.mdx", GetTriggerUnit(), "origin"))
+	else
+	endif
+endfunction
+//===========================================================================
+function InitTrig_R_Dummy takes nothing returns nothing
+	set gg_trg_R_Dummy=CreateTrigger()
+	call TriggerRegisterAnyUnitEventBJ(gg_trg_R_Dummy, EVENT_PLAYER_UNIT_DEATH)
+	call TriggerAddCondition(gg_trg_R_Dummy, Condition(function Trig_R_Dummy_Conditions))
+	call TriggerAddAction(gg_trg_R_Dummy, function Trig_R_DummyActions)
+endfunction

@@ -1,0 +1,378 @@
+package ACG_Core
+
+import ACG_Globals
+import YDWETimerSystem
+import YDWE_Base
+
+// Added 11.6.2024
+hashtable FSA_HASH = InitHashtable()
+
+// Added 11.6.2024
+public int ACG_DUMMY
+public int ACG_DUMMY_2
+
+public function SetUnitUserDataEx takes unit u, integer data returns nothing
+    call SaveInteger(FSA_HASH, 0, GetHandleId(u), data)
+endfunction
+public function GetUnitUserDataEx takes unit u returns integer
+    return LoadInteger(FSA_HASH, 0, GetHandleId(u))
+endfunction
+
+public function CBul takes unit master,real mv,real life,real face returns unit
+    local real x= GetUnitX(master)
+    local real y= GetUnitY(master)
+    local unit mj
+    //udg_UnitIndexerEnabled = false
+    mj = CreateUnit(GetOwningPlayer(master), udg_Rush_Bullet, x, y, face)
+    //udg_UnitIndexerEnabled = true
+    if life > 0 then
+    call UnitApplyTimedLife(mj, 'BHwe', life + 1)
+    endif
+    call SetUnitPathing(mj, false)
+    call SetUnitBlendTime(mj, 0)
+    call SetUnitAnimationByIndex(mj, 0)
+    call SetUnitPosition(mj, x, y)
+    call SetUnitFacing(mj, face)
+    call SetUnitScale(mj, mv, mv, mv)
+    return mj
+endfunction
+
+public function ASound takes string s returns nothing
+    local sound sd= CreateSound(s, false, false, false, 0, 10, "")
+    call PlaySoundBJ(sd)
+    call SetSoundVolume(sd, 110)
+    set udg_Last_ASound=sd
+    //call KillSoundWhenDone(sd)
+    set sd=null
+endfunction
+
+public function JumpSys takes unit u,real V,real Ga,integer Gn returns nothing
+    call YDWEFlyEnable(u)
+    call GroupAddUnit(udg_Jump_Group, u)
+    call SaveReal(YDHT, GetHandleId(u), 0x38344552, V)
+    call SaveReal(YDHT, GetHandleId(u), 0x9E4A4C40, Ga)
+    call SaveInteger(YDHT, GetHandleId(u), 0xD2719296, Gn)
+    if GetUnitFlyHeight(u) < 6 then
+        call SetUnitFlyHeight(u, 6, 0)
+    endif
+endfunction
+
+public function ZAngles_GetAngleDifference takes real a1,real a2 returns real
+    local real x
+    set a1=ModuloReal(a1, 360)
+    set a2=ModuloReal(a2, 360)
+    if a1 > a2 then
+        set x=a1
+        set a1=a2
+        set a2=x
+    endif
+    set x=a2 - 360
+    if a2 - a1 > a1 - x then
+        set a2=x
+    endif
+    return RAbsBJ(a1 - a2)
+endfunction
+
+public function ZInShanXing takes unit u,unit us,real dv returns boolean
+    local real x1= GetUnitX(us)
+    local real y1= GetUnitY(us)
+    local real x2= GetUnitX(u)
+    local real y2= GetUnitY(u)
+    local real ua= bj_RADTODEG * Atan2(y2 - y1, x2 - x1)
+    if ( ZAngles_GetAngleDifference(GetUnitFacing(us) , ua) > dv ) then
+        return false
+    endif
+    return true
+endfunction
+
+function GR takes handle h,string s returns real
+    local real r= LoadReal(udg_HT, GetHandleId(h), StringHash(s))
+    return r
+endfunction
+
+function GU takes handle h,string s returns unit
+    local unit u= LoadUnitHandle(udg_HT, GetHandleId(h), StringHash(s))
+    return u
+endfunction
+
+function Rush_A takes nothing returns nothing
+    local timer t= GetExpiredTimer()
+    local unit u= GU(t , "u")
+    local real r= GR(t , "r")
+    local real time= GR(t , "time")
+    local real timeout= GR(t , "timeout")
+    local real x0=GetUnitX(u)
+    local real y0=GetUnitY(u)
+    local real x
+    local real y
+    local real ang= GR(t , "ang")
+    if time > 0 and IsUnitAliveBJ(u) then
+    call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "time" )), (( time - timeout)*1.0)) // INLINED!!
+    set x=x0 + CosBJ(ang) * r
+    set y=y0 + SinBJ(ang) * r
+    call SetUnitX(u, x)
+    call SetUnitY(u, y)
+    else
+    call FlushChildHashtable(udg_HT, GetHandleId((t))) // INLINED!!
+    call DestroyTimer(t)
+    set t=null
+    set u=null
+    endif
+    set t=null
+    set u=null
+endfunction
+
+public function Rush takes unit u,real ang,real dis,real timeout,real time returns nothing
+local timer t= CreateTimer()
+local real r= timeout * dis / time
+call SaveUnitHandle(udg_HT, GetHandleId((t )), StringHash(( "u" )), ( u)) // INLINED!!
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "ang" )), (( ang)*1.0)) // INLINED!!
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "r" )), (( r)*1.0)) // INLINED!!
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "time" )), (( time)*1.0)) // INLINED!!
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "timeout" )), (( timeout)*1.0)) // INLINED!!
+call TimerStart(t, timeout, true, function Rush_A)
+set t=null
+endfunction
+
+public function UnitInLine takes real x0,real y0,real angle,real d,unit u returns boolean
+    local real k=TanBJ(angle)
+    local real b=y0 - k * x0
+    local real C=1000
+    local real A=C * k / ( y0 - k * x0 )
+    local real B=- 1 * C / ( y0 - k * x0 )
+    local real x= GetUnitX(u)
+    local real y= GetUnitY(u)
+    local real ua= bj_RADTODEG * Atan2(y0 - y, x0 - x)
+    //local real r = 60//单位体积
+    local real dis= RAbsBJ(A * x + B * y + C) / SquareRoot(A * A + B * B)
+    if dis <= d and ZAngles_GetAngleDifference(angle , ua) >= 90 then
+        return true
+    else
+        return false
+    endif
+endfunction
+
+function sc___prototype253_evaluate takes integer i,unit a1,real a2 returns nothing
+    set f__arg_unit1=a1
+    set f__arg_real1=a2
+
+    call TriggerEvaluate(st___prototype253[i])
+endfunction
+
+public function h__SetUnitMoveSpeed takes unit a0, real a1 returns nothing
+    //hook: SetUnitMoveSpeedEx
+    call sc___prototype253_evaluate(1,a0,a1)
+    call SetUnitMoveSpeed(a0,a1)
+endfunction
+
+public function STSA takes unit u,unit g returns nothing
+    call IssueTargetOrder(u, "thunderbolt", g)
+    call UnitApplyTimedLife(u, 'BHwe', 0.10)
+endfunction
+
+public function STS takes unit u,real time returns unit
+    local unit m= CreateUnit(GetOwningPlayer(u), udg_StunType, GetUnitX(u), GetUnitY(u), 0)
+    local integer a = -1
+    local integer b
+    if time > 0 and time <= 2 then
+        set a=0
+    endif
+    if time > 2 and time <= 4 then
+        set a=1
+        set time=time - 2
+    endif
+    if time > 4 and time <= 6 then
+        set a=2
+        set time=time - 4
+    endif
+    set b=R2I(time / 0.2)
+    call UnitAddAbility(m, udg_StunSkill[a])
+    call SetUnitAbilityLevel(m, udg_StunSkill[a], b)
+    return m
+endfunction
+
+public function jumpSys_Out takes unit u returns nothing
+    call GroupRemoveUnit(udg_Jump_Group, u)
+    call RemoveSavedReal(YDHT, GetHandleId(u), 0x38344552)
+    call RemoveSavedReal(YDHT, GetHandleId(u), 0x9E4A4C40)
+    call RemoveSavedInteger(YDHT, GetHandleId(u), 0xD2719296)
+endfunction
+
+public function CationWords takes unit u,real time,string s,real z,real v,integer n returns nothing
+    local integer r= 0
+    local integer g= 0
+    local integer b= 0
+    local texttag t= CreateTextTag()
+    if n == 1 then
+    set r=255
+    endif
+    if n == 2 then
+    set g=255
+    endif
+    if n == 3 then
+    set b=255
+    endif
+    call SetTextTagText(t, s, v)
+    call SetTextTagColor(t, r, g, b, 255)
+    call SetTextTagPosUnit(t, u, GetUnitFlyHeight(u) + z)
+    call SetTextTagVelocity(t, 0.00, 0.03)
+    call SetTextTagLifespan(t, time)
+    call SetTextTagPermanent(t, false)
+    call SetTextTagVisibility(t, true)
+    set t=null
+endfunction
+
+public function Dummy_Effect takes unit master,integer id,real mv,string e,real Zangle,real life,real x,real y,real face returns unit
+    local unit mj= CreateUnit(GetOwningPlayer(master), id, x, y, face)
+    if life != - 1 then
+        call UnitApplyTimedLife(mj, 'BHwe', life)
+    endif
+    call SetUnitX(mj, x)
+    call SetUnitY(mj, y)
+    call SetUnitFacing(mj, face)
+    call SetUnitScale(mj, mv, mv, mv)
+    call SetUnitTimeScale(mj, 10)
+    if Zangle != 0 then
+        call SetUnitAnimationByIndex(mj, R2I(Zangle * 0.695))
+    else
+        call SetUnitAnimationByIndex(mj, 0)
+    endif
+    if life > 0 then
+        call YDWETimerDestroyEffect(life , AddSpecialEffectTarget(e, mj, "origin"))
+    else
+        call DestroyEffect(AddSpecialEffectTarget(e, mj, "origin"))
+        if life != - 1 then
+            call KillUnit(mj)
+        endif
+    endif
+    return mj
+endfunction
+
+public function AngFt takes unit u,unit g,real in2 returns real
+    local real out
+    local real a= YDWEAngleBetweenUnits(u , g)
+    set out=2 * a - (in2 + 180 )
+    return out
+endfunction
+
+public function AngFtL takes unit u,unit g,real in2 returns real
+    local real out
+    local real a= GetUnitFacing(u)
+    set out=2 * a - ( in2 + 180 )
+    return out
+endfunction
+
+public function UnitInLineL takes real x0,real y0,real angle,real d,real e,unit u returns boolean
+    local boolean bb= false
+    local real k=TanBJ(angle)
+    local real b=y0 - k * x0
+    local real C=1000
+    local real A=C * k / ( y0 - k * x0 )
+    local real B=- 1 * C / ( y0 - k * x0 )
+    local real x= GetUnitX(u)
+    local real y= GetUnitY(u)
+    local real ua= bj_RADTODEG * Atan2(y0 - y, x0 - x)
+    local real dis= RAbsBJ(A * x + B * y + C) / SquareRoot(A * A + B * B)
+    if dis <= d and ZAngles_GetAngleDifference(angle , ua) >= 90 then
+    set bb=true
+    else
+    set bb=false
+    endif
+    if bb == true then
+    set k=- 1 / k
+    set b=y0 - k * x0
+    set A=C * k / ( y0 - k * x0 )
+    set B=- 1 * C / ( y0 - k * x0 )
+    set dis=RAbsBJ(A * x + B * y + C) / SquareRoot(A * A + B * B)
+    if dis < e then
+    set bb=true
+    else
+    set bb=false
+    endif
+    endif
+    return bb
+endfunction
+
+function CVU_A takes nothing returns nothing
+local timer t= GetExpiredTimer()
+local real time= GR(t , "time")
+local unit u= GU(t , "u")
+local real vv= GR(t , "vv")
+local real v= GR(t , "v") + vv
+if time > 0 then
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "time" )), (( time - 0.02)*1.0)) // INLINED!!
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "v" )), (( v)*1.0)) // INLINED!!
+call SetUnitScale(u, v, v, v)
+else
+call FlushChildHashtable(udg_HT, GetHandleId((t))) // INLINED!!
+call DestroyTimer(t)
+set t=null
+set u=null
+endif
+endfunction
+
+public function CVU takes unit u,real life,real v,real vv returns nothing
+local timer t= CreateTimer()
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "time" )), (( life)*1.0)) // INLINED!!
+call SaveUnitHandle(udg_HT, GetHandleId((t )), StringHash(( "u" )), ( u)) // INLINED!!
+//call SR(t,"vv",vv/life*0.02)
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "vv" )), (( ( vv - v ) / life * 0.02)*1.0)) // INLINED!!
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "v" )), (( v)*1.0)) // INLINED!!
+call TimerStart(t, 0.02, true, function CVU_A)
+set t=null
+endfunction
+
+function UHX_A takes nothing returns nothing
+local timer t= GetExpiredTimer()
+local real time= GR(t , "time")
+local unit hx= GU(t , "hx")
+local real alpv= GR(t , "alpv")
+local real alp= GR(t , "alp") - alpv
+if time > 0 then
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "time" )), (( time - 0.02)*1.0)) // INLINED!!
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "alp" )), (( alp)*1.0)) // INLINED!!
+call SetUnitVertexColor(hx, 255, 255, 255, R2I(alp))
+else
+call RemoveUnit(hx)
+call FlushChildHashtable(udg_HT, GetHandleId((t))) // INLINED!!
+call DestroyTimer(t)
+set t=null
+set hx=null
+endif
+endfunction
+
+public function UHX takes unit u,real life returns nothing
+local timer t= CreateTimer()
+if life > 0 then
+call UnitApplyTimedLife(u, 'BHwe', life * 2)
+endif
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "time" )), (( life)*1.0)) // INLINED!!
+call SaveUnitHandle(udg_HT, GetHandleId((t )), StringHash(( "hx" )), ( u)) // INLINED!!
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "alpv" )), (( 255 / life * 0.02)*1.0)) // INLINED!!
+call SaveReal(udg_HT, GetHandleId((t )), StringHash(( "alp" )), (( 255)*1.0)) // INLINED!!
+call TimerStart(t, 0.02, true, function UHX_A)
+set t=null
+endfunction
+
+function GP takes handle h,string s returns player
+local player p= LoadPlayerHandle(udg_HT, GetHandleId(h), StringHash(s))
+return p
+endfunction
+
+function ShockPlayer_A takes nothing returns nothing
+local timer t= GetExpiredTimer()
+call CameraClearNoiseForPlayer(GP(t , "p"))
+call FlushChildHashtable(udg_HT, GetHandleId((t))) // INLINED!!
+call DestroyTimer(t)
+set t=null
+endfunction
+
+public function ShockPlayer takes unit u,real time,real z returns nothing
+local player p= GetOwningPlayer(u)
+local timer t= CreateTimer()
+call CameraSetEQNoiseForPlayer(p, z)
+call SavePlayerHandle(udg_HT, GetHandleId((t )), StringHash(( "p" )), ( p)) // INLINED!!
+call TimerStart(t, time, false, function ShockPlayer_A)
+set p=null
+set t=null
+endfunction

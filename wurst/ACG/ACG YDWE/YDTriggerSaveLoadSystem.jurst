@@ -1,0 +1,9 @@
+package YDTriggerSaveLoadSystem initializer YDTriggerSaveLoadSystem__Init
+
+import ACG_Globals
+
+//library YDTriggerSaveLoadSystem:
+function YDTriggerSaveLoadSystem__Init takes nothing returns nothing
+    set YDHT=InitHashtable()
+    set YDLOC=InitHashtable()
+endfunction
